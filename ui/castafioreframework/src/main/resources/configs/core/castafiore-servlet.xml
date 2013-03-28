@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+
+	<context:component-scan base-package="com.maureva.financial.web" />
+
+
+	<bean id="controllerClassNameHandlerMapping" class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"></bean>
+
+	<bean id="annotationMethodHandlerAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean class="com.maureva.financial.customize.ExportResponseHTTPMessageConverter"></bean>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+					<property name="objectMapper">
+						<bean class="com.maureva.financial.customize.CustomObjectMapper"></bean>
+					</property>
+				</bean>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"></bean>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="writeAcceptCharset" value="false"></property>
+				</bean>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"></bean>
+				<bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean>
+
+
+	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+	</mvc:interceptors>
+
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="cookieName" value="locale" />
+		<property name="cookieMaxAge" value="30" />
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="ignoreAcceptHeader" value="true" />
+		<property name="favorPathExtension" value="true" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="json" value="application/json" />
+				<entry key="jasper" value="application/pdf" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+					<property name="objectMapper">
+						<bean class="com.maureva.financial.customize.CustomObjectMapper"></bean>
+					</property>	
+				</bean>
+			</list>
+		</property>
+		<property name="order" value="0"></property>
+	</bean>
+		<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename" value="views" />
+		<property name="order" value="1"></property>
+	</bean>
+		<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+			<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+			<property name="prefix" value="/WEB-INF/views/"/>
+			<property name="suffix" value=".jsp"/>
+			<property name="order" value="2"></property>
+		</bean>
+
+	<mvc:annotation-driven />
+
+</beans>
+
