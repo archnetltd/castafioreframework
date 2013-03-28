@@ -1,0 +1,1289 @@
+body {
+	background: #FFFFFF none repeat scroll 0 0;
+	color: #444444;
+	font-family: "Segoe UI", Frutiger, Tahoma, "Helvetica", "Helvetica Neue",
+		Arial, sans-serif;
+	font-size: 62.5%;
+	margin: 20px;
+}
+
+.ui-dialog label,.ui-dialog input {
+	
+}
+
+.ui-dialog input.text {
+	margin-bottom: 12px;
+	/**padding: 0.4em;**/
+	width: 95%;
+}
+
+.ui-dialog fieldset {
+	border: 0 none;
+	/**margin-top: 25px;*/
+	padding: 0;
+}
+
+.ui-dialog .ui-state-highlight,.ui-dialog .ui-state-error {
+	padding: 0.3em;
+}
+
+.fg-button {
+	outline: 0;
+	margin: 0 4px 0 0;
+	padding: .4em 1em;
+	text-decoration: none !important;
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+	zoom: 1;
+}
+
+.fg-button .ui-icon {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+	left: 50%;
+	margin-left: -8px;
+}
+
+a.fg-button {
+	float: left;
+}
+
+/* remove extra button width in IE */
+button.fg-button {
+	width: auto;
+	overflow: visible;
+}
+
+button.fg-button-small {
+	padding: 0px 0 1px 0;
+	height: 19px;
+	width: 60px;
+	margin: 0 3px
+}
+
+.fg-button-icon-left {
+	padding-left: 2.1em;
+}
+
+.fg-button-icon-right {
+	padding-right: 2.1em;
+}
+
+.fg-button-icon-left .ui-icon {
+	right: auto;
+	left: .2em;
+	margin-left: 0;
+}
+
+.fg-button-icon-right .ui-icon {
+	left: auto;
+	right: .2em;
+	margin-left: 0;
+}
+
+.fg-button-icon-solo {
+	display: block;
+	width: 8px;
+	text-indent: -9999px;
+}
+
+/* solo icon buttons must have block properties for the text-indent to work */
+.fg-buttonset {
+	float: left;
+}
+
+.fg-buttonset .fg-button {
+	float: left;
+}
+
+.fg-buttonset-single .fg-button,.fg-buttonset-multi .fg-button {
+	margin-right: -1px;
+}
+
+.fg-toolbar {
+	padding: .5em;
+	margin: 0;
+}
+
+.fg-toolbar .fg-buttonset {
+	margin-right: 1.5em;
+	padding-left: 1px;
+}
+
+.fg-toolbar .fg-button {
+	font-size: 1em;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+/* Styles for jQuery menu widget
+Author:	Maggie Wachs, maggie@filamentgroup.com
+Date:		September 2008
+*/
+	/* REQUIRED STYLES - the menus will only render correctly with these rules */
+.fg-menu-container {
+	position: absolute;
+	top: 0;
+	left: -999px;
+	padding: .4em;
+	overflow: hidden;
+}
+
+.fg-menu-container.fg-menu-flyout {
+	overflow: visible;
+}
+
+.fg-menu,.fg-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.fg-menu {
+	position: relative;
+}
+
+.fg-menu-flyout .fg-menu {
+	position: static;
+}
+
+.fg-menu ul {
+	position: absolute;
+	top: 0;
+}
+
+.fg-menu ul ul {
+	top: -1px;
+}
+
+.fg-menu-container.fg-menu-ipod .fg-menu-content,.fg-menu-container.fg-menu-ipod .fg-menu-content ul
+	{
+	background: none !important;
+}
+
+.fg-menu.fg-menu-scroll,.fg-menu ul.fg-menu-scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.fg-menu li {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.fg-menu li li {
+	font-size: 1em;
+}  /* inner li font size must be reset so that they don't blow up */
+.fg-menu-flyout ul ul {
+	padding: .4em;
+}
+
+.fg-menu-flyout li {
+	position: relative;
+}
+
+.fg-menu-scroll {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.fg-menu-breadcrumb {
+	margin: 0;
+	padding: 0;
+}
+
+.fg-menu-footer {
+	margin-top: .4em;
+	padding: .4em;
+}
+
+.fg-menu-header {
+	margin-bottom: .4em;
+	padding: .4em;
+}
+
+.fg-menu-breadcrumb li {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0 .2em;
+	font-size: .9em;
+	opacity: .7;
+}
+
+.fg-menu-breadcrumb li.fg-menu-prev-list,.fg-menu-breadcrumb li.fg-menu-current-crumb
+	{
+	clear: left;
+	float: none;
+	opacity: 1;
+}
+
+.fg-menu-breadcrumb li.fg-menu-current-crumb {
+	padding-top: .2em;
+}
+
+.fg-menu-breadcrumb a,.fg-menu-breadcrumb span {
+	float: left;
+}
+
+.fg-menu-footer a:link,.fg-menu-footer a:visited {
+	float: left;
+	width: 100%;
+	text-decoration: none;
+}
+
+.fg-menu-footer a:hover,.fg-menu-footer a:active {
+	
+}
+
+.fg-menu-footer a span {
+	float: left;
+	cursor: pointer;
+}
+
+.fg-menu-breadcrumb .fg-menu-prev-list a:link,.fg-menu-breadcrumb .fg-menu-prev-list a:visited,.fg-menu-breadcrumb .fg-menu-prev-list a:hover,.fg-menu-breadcrumb .fg-menu-prev-list a:active
+	{
+	background-image: none;
+	text-decoration: none;
+}
+
+.fg-menu-breadcrumb .fg-menu-prev-list a {
+	float: left;
+	padding-right: .4em;
+}
+
+.fg-menu-breadcrumb .fg-menu-prev-list a .ui-icon {
+	float: left;
+}
+
+.fg-menu-breadcrumb .fg-menu-current-crumb a:link,.fg-menu-breadcrumb .fg-menu-current-crumb a:visited,.fg-menu-breadcrumb .fg-menu-current-crumb a:hover,.fg-menu-breadcrumb .fg-menu-current-crumb a:active
+	{
+	display: block;
+	background-image: none;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+/* REQUIRED LINK STYLES: links are "display:block" by default; if the menu options are split into 
+	selectable node links and 'next' links, the script floats the node links left and floats the 'next' links to the right	*/
+.fg-menu a:link,.fg-menu a:visited,.fg-menu a:hover,.fg-menu a:active {
+	float: left;
+	width: 92%;
+	padding: .3em 3%;
+	text-decoration: none;
+	outline: 0 !important;
+}
+
+.fg-menu a {
+	border: 1px dashed transparent;
+}
+
+.fg-menu a.ui-state-default:link,.fg-menu a.ui-state-default:visited,.fg-menu a.ui-state-default:hover,.fg-menu a.ui-state-default:active,.fg-menu a.ui-state-hover:link,.fg-menu a.ui-state-hover:visited,.fg-menu a.ui-state-hover:hover,.fg-menu a.ui-state-hover:active,.fg-menu a.ui-state-active:link,.fg-menu a.ui-state-active:visited,.fg-menu a.ui-state-active:hover,.fg-menu a.ui-state-active:active
+	{
+	border-style: solid;
+	font-weight: normal;
+}
+
+.fg-menu a span {
+	display: block;
+	cursor: pointer;
+}
+
+/* SUGGESTED STYLES - for use with jQuery UI Themeroller CSS */
+.fg-menu-indicator span {
+	float: left;
+}
+
+.fg-menu-indicator span.ui-icon {
+	float: right;
+}
+
+.fg-menu-content.ui-widget-content,.fg-menu-content ul.ui-widget-content
+	{
+	border: 0;
+}
+
+/* ICONS AND DIVIDERS */
+.fg-menu.fg-menu-has-icons a:link,.fg-menu.fg-menu-has-icons a:visited,.fg-menu.fg-menu-has-icons a:hover,.fg-menu.fg-menu-has-icons a:active
+	{
+	padding-left: 20px;
+}
+
+.fg-menu .horizontal-divider hr,.fg-menu .horizontal-divider span {
+	padding: 0;
+	margin: 5px .6em;
+}
+
+.fg-menu .horizontal-divider hr {
+	border: 0;
+	height: 1px;
+}
+
+.fg-menu .horizontal-divider span {
+	font-size: .9em;
+	text-transform: uppercase;
+	padding-left: .2em;
+}
+
+.thumbnail {
+	list-style: none;
+	list-style-image: none;
+}
+
+.thumbnail li {
+	float: left;
+	padding: 3px;
+}
+
+.feicon {
+	margin: 5px 0px 0px 0px;
+	width: 60px;
+	height: 60px;
+	float: left;
+}
+
+.fethumbnail {
+	margin: auto;
+	height: 47px;
+}
+
+.felabelContainer {
+	margin: 5px auto;
+	font-size: 11px;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 24px;
+}
+
+.felabel {
+	cursor: pointer;
+	color: rgb(0, 0, 0);
+	text-align: center;
+}
+
+.feimgCtn {
+	margin: 0px auto 0px;
+	width: 50px;
+	height: 50px;
+}
+
+.feimg {
+	margin: auto;
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+}
+
+.iconSelected {
+	background-color: #cbddf3;
+}
+
+.ui-list-widget {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ui-list-widget li {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/bullet-orange.gif)
+		no-repeat scroll 0 0;
+	padding-left: 18px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+.casta-tick-button {
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-position: -64px -144px;
+}
+
+.UITableIcon {
+	width: 16px;
+	position: relative;
+	bottom: 3px;
+	right: 4px;
+	cursor: pointer;
+}
+
+.dynaform {
+	
+}
+
+.dynaformRow {
+	
+}
+
+.dynaformLabel {
+	text-align: right;
+	padding-right: 10px;
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+.dynaformInput {
+	font-family: Verdana, Arial, sans-serif;
+	text-align: left;
+}
+
+.dynaformInput input,.dynaformInput button,.dynaformInput select {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 12px;
+}
+
+.small-text {
+	color: #525E69;
+	line-height: normal;
+	font-family: "Trebuchet MS", Arial, Helvetica, Geneva, sans-serif,
+		"Lucida Grande";
+	font-size: 11px;
+}
+
+.ui-panel-header {
+	font-size: 12px;
+	height: auto;
+	line-height: normal;
+	margin: 0;
+	padding: 2px 5px 1px;
+	text-align: left;
+	text-transform: uppercase;
+}
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/ /*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
+
+.loadmask {
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-moz-opacity: 0.5;
+	opacity: .50;
+	filter: alpha(opacity = 50);
+	background-color: #CCC;
+	width: 100%;
+	height: 100%;
+	zoom: 1;
+}
+
+.loadmask-msg {
+	z-index: 20001;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid #6593cf;
+	background: #c3daf9;
+	padding: 2px;
+}
+
+.loadmask-msg div {
+	padding: 5px 10px 5px 25px;
+	background: #fbfbfb url('loading.gif') no-repeat 5px 5px;
+	line-height: 16px;
+	border: 1px solid #a3bad9;
+	color: #222;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	cursor: wait;
+}
+
+.masked {
+	overflow: hidden !important;
+}
+
+.masked-relative {
+	position: relative !important;
+}
+
+.masked-hidden {
+	visibility: hidden !important;
+}
+
+
+
+.catalogue{
+	
+	height: 475px;
+	overflow-y: auto;
+	margin: 0 23px;
+}
+
+.catalogue .product{
+	float: left;
+	margin: 5px;
+}
+
+.product{
+	width: 150px;
+}
+.product-price{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0px 5px;
+	color: #990000
+}
+.product-title{
+	font-size: 13px;
+	
+	padding: 0px 5px;
+	color: #004B91;
+	text-decoration: underline;
+	cursor: pointer;
+	
+}
+
+.product-title-container{
+	text-align: center;
+	padding: 5px;
+}
+
+.product-image{
+	padding: 5px 0;
+	text-align: center;
+}
+
+.product-price-container{
+	text-align: left;
+	padding: 5px;
+}
+
+
+.cart{
+	width: 350px;
+}
+.cart .product-title{
+	float: left;
+}
+
+.cart .product-price{
+	float: right;
+}
+
+.cart .product-item{
+	height: 27px;
+	margin: 5px;
+	padding-top: 5px;
+}
+
+/* Styles for jQuery menu widget
+Author:	Maggie Wachs, maggie@filamentgroup.com
+Date:		September 2008
+*/
+
+
+/* REQUIRED STYLES - the menus will only render correctly with these rules */	
+
+.fg-menu-container { position: absolute; top:0; left:-999px; padding: .4em;  overflow: hidden; }
+.fg-menu-container.fg-menu-flyout { overflow: visible; }
+
+.fg-menu, .fg-menu ul { list-style-type:none; padding: 0; margin:0; }
+
+.fg-menu { position:relative; }
+.fg-menu-flyout .fg-menu { position:static; }
+
+.fg-menu ul { position:absolute; top:0; }
+.fg-menu ul ul { top:-1px; }
+
+.fg-menu-container.fg-menu-ipod .fg-menu-content, 
+.fg-menu-container.fg-menu-ipod .fg-menu-content ul { background: none !important; }
+
+.fg-menu.fg-menu-scroll,
+.fg-menu ul.fg-menu-scroll { overflow: scroll;  overflow-x: hidden; }
+
+.fg-menu li { clear:both; float:left; width:100%; margin: 0; padding:0; border: 0; }	
+.fg-menu li li { font-size:1em; } /* inner li font size must be reset so that they don't blow up */
+
+.fg-menu-flyout ul ul { padding: .4em; }
+.fg-menu-flyout li { position:relative; }
+
+.fg-menu-scroll { overflow: scroll; overflow-x: hidden; }
+
+.fg-menu-breadcrumb { margin: 0; padding: 0; }
+
+.fg-menu-footer {  margin-top: .4em; padding: .4em; }
+.fg-menu-header {  margin-bottom: .4em; padding: .4em; }
+
+.fg-menu-breadcrumb li { float: left; list-style: none; margin: 0; padding: 0 .2em; font-size: .9em; opacity: .7; }
+.fg-menu-breadcrumb li.fg-menu-prev-list,
+.fg-menu-breadcrumb li.fg-menu-current-crumb { clear: left; float: none; opacity: 1; }
+.fg-menu-breadcrumb li.fg-menu-current-crumb { padding-top: .2em; }
+
+.fg-menu-breadcrumb a, 
+.fg-menu-breadcrumb span { float: left; }
+
+.fg-menu-footer a:link,
+.fg-menu-footer a:visited { float:left; width:100%; text-decoration: none; }
+.fg-menu-footer a:hover,
+.fg-menu-footer a:active {  }
+
+.fg-menu-footer a span { float:left; cursor: pointer; }
+
+.fg-menu-breadcrumb .fg-menu-prev-list a:link,
+.fg-menu-breadcrumb .fg-menu-prev-list a:visited,
+.fg-menu-breadcrumb .fg-menu-prev-list a:hover,
+.fg-menu-breadcrumb .fg-menu-prev-list a:active { background-image: none; text-decoration:none; }
+	
+.fg-menu-breadcrumb .fg-menu-prev-list a { float: left; padding-right: .4em; }
+.fg-menu-breadcrumb .fg-menu-prev-list a .ui-icon { float: left; }
+	
+.fg-menu-breadcrumb .fg-menu-current-crumb a:link,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:visited,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:hover,
+.fg-menu-breadcrumb .fg-menu-current-crumb a:active { display:block; background-image:none; font-size:1.3em; text-decoration:none; }
+
+
+
+/* REQUIRED LINK STYLES: links are "display:block" by default; if the menu options are split into 
+	selectable node links and 'next' links, the script floats the node links left and floats the 'next' links to the right	*/
+
+.fg-menu a:link,
+.fg-menu a:visited,
+.fg-menu a:hover,
+.fg-menu a:active { float:left; width:92%; padding:.3em 3%; text-decoration:none; outline: 0 !important; }
+
+.fg-menu a { border: 1px dashed transparent; }
+
+.fg-menu a.ui-state-default:link,
+.fg-menu a.ui-state-default:visited,
+.fg-menu a.ui-state-default:hover,
+.fg-menu a.ui-state-default:active,
+.fg-menu a.ui-state-hover:link,
+.fg-menu a.ui-state-hover:visited,
+.fg-menu a.ui-state-hover:hover,
+.fg-menu a.ui-state-hover:active,
+ .fg-menu a.ui-state-active:link,
+ .fg-menu a.ui-state-active:visited,
+ .fg-menu a.ui-state-active:hover,
+.fg-menu a.ui-state-active:active { border-style: solid; font-weight: normal; }
+
+.fg-menu a span { display:block; cursor:pointer; }
+
+
+ /* SUGGESTED STYLES - for use with jQuery UI Themeroller CSS */	
+ 
+.fg-menu-indicator span { float:left; }
+.fg-menu-indicator span.ui-icon { float:right; }
+
+.fg-menu-content.ui-widget-content, 
+.fg-menu-content ul.ui-widget-content { border:0; }
+
+
+/* ICONS AND DIVIDERS */
+
+.fg-menu.fg-menu-has-icons a:link,
+.fg-menu.fg-menu-has-icons a:visited,
+.fg-menu.fg-menu-has-icons a:hover,
+.fg-menu.fg-menu-has-icons a:active { padding-left:20px; }
+
+.fg-menu .horizontal-divider hr, .fg-menu .horizontal-divider span { padding:0; margin:5px .6em; }
+.fg-menu .horizontal-divider hr { border:0; height:1px; }
+.fg-menu .horizontal-divider span { font-size:.9em; text-transform: uppercase; padding-left:.2em; }
+
+.casta-portal-wrapper {
+	margin: 0 auto;
+	min-height: 600px;
+	min-width: 800px;
+}
+
+.casta-portal-content {
+	float: left;
+	display: inline;
+	
+	min-height: 525px;
+}
+
+.casta-portal-header {
+	float: left;
+	min-height: 25px;
+}
+
+.casta-portal-footer {
+	clear: both;
+	min-height: 25px;
+}
+
+.casta-portal-navigation {
+	float: left;
+	min-height: 25px;
+}
+
+.casta-portal-left {
+	float: left;
+	min-height: 525px;
+}
+
+.casta-portal-right {
+	float: left;
+	min-height: 525px;
+}
+
+***********************************
+
+.portal-wrapper {
+	margin: 0 auto;
+	width: 985px;
+}
+
+.portal-content {
+	float: left;
+	color: #333;
+	background: #FFFFFF;
+	
+	width: 565px;
+	display: inline;
+}
+
+.portal-header {
+	color: #333;
+	width: 985px;
+	float: left;
+	height: 75px;
+	background: #6B6659;
+}
+
+.portal-footer {
+	width: 985px;
+	height: 25px;
+	clear: both;
+	color: #333;
+	background: #6B6659;
+}
+
+.portal-navigation {
+	float: left;
+	width: 985px;
+	height: 25px;
+	color: #333;
+	background: #8AA1B6;
+}
+
+.portal-leftcolumn {
+	color: #333;
+	width: 210px;
+	float: left;
+}
+
+.portal-rightcolumn {
+	color: #333;
+	width: 210px;
+	float: left;
+}
+
+
+	.content, .contentA{
+		
+		width:420px
+	}
+	.left{
+		width:150px;
+		float:left;
+		padding:7px 0px 0px 7px;
+		min-height:24px;
+	}
+	.right{
+		width:230px;
+		float:left;
+		padding:5px;
+		min-height:24px;
+	}
+	.clear{
+		float:none;
+		clear:both;
+		height:0px;
+	}
+	.row{
+		background-color:none;
+		display:block;
+		min-height:32px;
+		border: 1px solid white;
+		margin: 5px;
+	}
+	.content.text, .contentA.text{
+		width:190px;
+	}
+	
+	.column{
+		float:left; 
+		width:420px;
+		min-height:300px;
+		margin-right: 6px
+	}
+	
+	.wizard-button{
+		float: right !important;
+		margin-right: 15px;
+		margin-top: 10px
+	}
+	
+}
+
+
+
+.simple-grey {
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding-bottom: 19px;
+	padding-left: 10px;
+}
+
+.simple-grey ul,.simple-grey li {
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.simple-grey a:link,.simple-grey a:visited {
+	background: #E8EBF0;
+	border: 1px solid #ccc;
+	color: #666;
+	float: left;
+	font-size: small;
+	font-weight: normal;
+	line-height: 14px;
+	margin-right: 8px;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+}
+
+.simple-grey a:link .active,.simple-grey a:visited .active {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+	color: #000;
+}
+
+.simple-grey a:hover {
+	color: #f00;
+}
+
+.simple-grey ul a:hover {
+	color: #f00 !important;
+}
+
+/** end of simple grey***/ /**bullet proof**/
+.bulletproof {
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: #ccc;
+	border-bottom: 1px solid #999;
+}
+
+.bulletproof li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+.bulletproof a {
+	float: left;
+	display: block;
+	padding: 6px 30px 6px 5px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 90%;
+	color: #666;
+	background: #ccc url(img/nav_slant.gif) no-repeat top right;
+}
+
+.bulletproof li:first-child {
+	padding-left: 20px;
+}
+
+.bulletproof a:hover {
+	color: #000;
+}
+
+ul.bulletproof {
+	clear: left;
+	
+}
+
+/**end bullet proof**/ /**start simple green **/
+ul.simple-green {
+	text-align: left;
+	margin: 1em 0 1em 0;
+	font: bold 11px verdana, arial, sans-serif;
+	border-bottom: 1px solid #6c6;
+	list-style-type: none;
+	padding: 3px 10px 3px 10px;
+}
+
+ul.simple-green li {
+	display: inline;
+}
+
+ul.simple-green li a {
+	padding: 3px 4px;
+	border: 1px solid #6c6;
+	background-color: #cfc;
+	color: #666;
+	margin-right: 0px;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+ul.simple-green a:hover {
+	background: #fff;
+}
+
+/**start slant menu**/
+.slant {
+	margin: 0;
+	padding: 0;
+	background: #808259 url(img/nav_bg.jpg) 0 0 repeat-x;
+	width: 100%;
+	float: left;
+	border: 1px solid #42432d;
+	border-width: 1px 0;
+}
+
+.slant li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+.slant a:link,.slant a:visited {
+	color: #000;
+	background: #b2b580;
+	padding: 20px 40px 4px 10px;
+	float: left;
+	width: auto;
+	border-right: 1px solid #42432d;
+	text-decoration: none;
+	font: bold 1em/ 1em Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 2px #555;
+}
+
+.slant a:hover {
+	color: #fff;
+	background: #727454;
+}
+
+.slant li:first-child a {
+	border-left: 1px solid #42432d;
+}
+
+.slant a:active {
+	background: #e35a00;
+	color: #fff;
+}
+
+/**sliding door**/
+.sliding-door {
+	float: left;
+	width: 100%;
+	background: #DAE0D2 url("img/bg.gif") repeat-x bottom;
+	font-size: 93%;
+	line-height: normal;
+	margin: 0;
+	padding: 10px 0 0;
+	list-style: none;
+}
+.sliding-door li {
+	float: left;
+	background: url("img/left_both.gif") no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 9px;
+	border-bottom: 1px solid #765;
+}
+
+.sliding-door a {
+	float: left;
+	display: block;
+	width: .1em;
+	background: url("img/right_both.gif") no-repeat right top;
+	padding: 5px 15px 4px 6px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #765;
+}
+.sliding-door a {
+	width: auto;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.sliding-door a {
+	float: none;
+}
+/* End IE5-Mac hack */
+.sliding-door a:hover {
+	color: #333;
+}
+.sliding-door li:hover,.sliding-door li:hover a {
+	background-position: 0% -150px;
+	color: #333;
+}
+.sliding-door li:hover a {
+	background-position: 100% -150px;
+}
+
+.header {
+	font-size: 12px;
+	padding: 1px 0 1px 4px;
+	width: 130px;
+}
+
+.item{
+	line-height: 240% !important;
+}
+.item li {
+	border: 1px solid black;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+	text-align: center;
+	background-color: beige;
+	position: relative;
+	list-style-image: none;
+	list-style: none;
+}
+
+.item li:hover {
+	border: 1px solid black;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+	text-align: center;
+	background-color: silver;
+	position: relative;
+	list-style-image: none;
+	list-style: none;
+}
+
+.evt-textarea {
+	width: 433px;
+	height: 200px;
+	border: none;
+}
+
+.evt-combo {
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 433px;
+	height: 15px;
+}
+
+.evt {
+	width: 435px;
+	border: solid 1px silver;
+}
+
+.evt-alternate {
+	width: 435px;
+	border: solid 1px silver;
+	border-top: none;
+}
+
+.label {
+	width: 100px;
+	float: left;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	border-left: 1px silver solid;
+	border-top: 1px silver solid;
+	border-bottom: 1px silver solid;
+	padding-right: 2px;
+	background-color: #deecfd;
+	text-align: right;
+	margin: 0px;
+	height: 13px;
+}
+
+select.input {
+	width: 204px !important;
+	height: 15px !important;
+}
+
+input.input,select.input {
+	float: left;
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 200px;
+	height: 13px;
+}
+
+.unit-combo {
+	float: left;
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 50px;
+	height: 15px;
+}
+
+.menuBar {
+	background-color: beige;
+	width: 100px;
+	font: bold 11px tahoma, arial, helvetica, sans-serif;
+	text-align: center;
+	padding: 3px;
+	border: solid 1px silver;
+	margin: auto;
+	color: steelBlue;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.menuBar:hover {
+	background-color: maroon;
+	width: 100px;
+	font: bold 11px tahoma, arial, helvetica, sans-serif;
+	text-align: center;
+	padding: 3px;
+	border: solid 1px silver;
+	margin: auto;
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.menu-x {
+	background-color: #7EADD9;
+	left: 17px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 74px;
+	width: 125px;
+}
+
+.body-x {
+	border: solid 1px silver;
+}
+
+.components {
+	border-bottom: 1px solid silver;
+	cursor: pointer;
+	margin-top: 2px;
+	padding-left: 4px;
+	position: relative;
+}
+
+.components:hover {
+	background-color: beige;
+}
+
+.des-accordeon {
+	margin-right: 5px;
+}
+
+.group {
+	margin-top: 3px;
+}
+
+.x-active {
+	border: solid 1px steelBlue;
+}
+
+.ex-module-name {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.ex-row {
+	height: 45px;
+	padding: 3px 5px 3px 5px;
+	display: block;
+	margin: 5px;
+}
+
+.ex-col1 {
+	float: left;
+}
+
+.ex-col2 {
+	float: right;
+	
+	position: relative;
+	top: 13px;
+}
+
+.EXTableDataSourceConfigForm .label1 {
+	font-size: 12px;
+}
+
+.EXTableDataSourceConfigForm .label2 {
+	font-size: 12px;
+}
+
+.EXTableDataSourceConfigForm select {
+	border: 1px solid silver;
+	margin-left: 23px;
+}
+
+.EXTableDataSourceConfigForm textarea {
+	border: 1px solid silver;
+	margin-left: 3px;
+	width: 260px;
+	height: 80px;
+}

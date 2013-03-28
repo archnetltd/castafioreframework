@@ -1,0 +1,143 @@
+BODY,LI {
+	font: 13px Arial, sans-serif;
+	font-weight: normal;
+	line-height: 16px; /* Mainly for non-link text */
+}
+
+NOSCRIPT,.warning {
+	font-style: italic;
+	font-size: 13px;
+}
+
+.pcTLMenu {
+	position: relative;
+	top: 0;
+	left: 0;
+}  /* Top UL */
+.pcTLMenu,.pcTLMenu UL { /* All LIs. */
+	list-style: none;
+	margin: 0 10px 0 0;
+	padding: 0;
+}
+
+.pcTLMenu UL {
+	margin-left: 20px;
+} 
+.pcTLMenu .TLMclosed UL {
+	display: none
+}  
+.pcTLMenu A {
+	display: block;
+	width: 100%; /* Width:100% is CRITICAL for IE!!! */
+	margin: 0;
+	padding-left: 25px; /* Indent text past icon. */
+}
+
+/* Non-menu stuff in LIs - can contain links. */
+.pcTLMenu LI P { /* Same margins & padding as A tags. */
+	margin: 0 0 0 25px;
+	padding-left: 0;
+}
+
+/* IE can't do width:auto, but it overrides width:100% on As for menu items. */
+.pcTLMenu P A {
+	display: inline;
+	width: auto;
+	padding-left: 0;
+}
+
+/****************************************
+LINK ICONS
+*	Bg images for links which are part of menu, but not for  
+	non-menu links in LIs (e.g. "How to enable Javascript").
+*	IE does not understand child selectors, only descendants. So must use 
+	"redundant" combos of descendant selectors to control specificity.
+****************************************/
+.pcTLMenu .TLMopen A { /* Open folder. */
+	background-image: url(castafiore/resource?spec=classpath:org/castafiore/resource/tree/folderopen2.gif);
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+}
+
+.pcTLMenu .TLMclosed A { /* Closed folder. */
+	background-image: url(castafiore/resource?spec=classpath:org/castafiore/resource/tree/folderclosed.gif);
+	background-repeat: no-repeat;
+	background-position: 3px 3px;
+}
+
+
+
+.pcTLMenu .doc A {
+	background-image: url(castafiore/resource?spec=classpath:org/castafiore/resource/tree/doc2.gif);
+	background-repeat: no-repeat;
+	background-position: 4px 3px;
+}
+
+.pcTLMenu .TLMcurrItem A {
+	background-image: url(castafiore/resource?spec=classpath:org/castafiore/resource/tree/curr_doc.gif);
+	background-repeat: no-repeat;
+	background-position: 3px 1px;
+}
+
+.pcTLMenu .doc P A,.pcTLMenu .TLMpopup P A,.pcTLMenu .TLMopen P A,.pcTLMenu .TLMclosed P A
+	{
+	background-image: none;
+}
+
+.pcTLMenu A {
+	text-decoration: none;
+}
+
+.pcTLMenu .TLMopen A,.pcTLMenu .TLMclosed A {
+	font-weight: bold;
+	color: green;
+}
+
+.pcTLMenu LI.menuSep {
+	background-color: #eeeeee;
+	border: solid 1px silver;
+	padding-left: 5px;
+}
+
+.pcTLMenu .doc A,.pcTLMenu .TLMpopup A,.pcTLMenu .TLMopen P A,.pcTLMenu .TLMclosed P A
+	{
+	font-weight: normal;
+}
+
+.pcTLMenu .doc A:link,.pcTLMenu .TLMpopup A:link,.pcTLMenu .TLMopen P A:link,.pcTLMenu .TLMclosed P A:link,.pcTLMenu .doc A:active,.pcTLMenu .TLMpopup A:active,.pcTLMenu .TLMopen P A:active,.pcTLMenu .TLMclosed P A:active
+	{
+	color: blue;
+}
+
+.pcTLMenu .doc A:visited,.pcTLMenu .TLMpopup A:visited,.pcTLMenu .TLMopen P A:visited,.pcTLMenu .TLMclosed P A:visited
+	{
+	color: purple;
+}
+
+.pcTLMenu .doc A:hover,.pcTLMenu .TLMpopup A:hover,.pcTLMenu .TLMopen P A:hover,.pcTLMenu .TLMclosed P A:hover
+	{
+	background-color: #ffffee;
+	color: red;
+}
+
+/* "Please enable Javascript" at bottom of menu, outside ULs. */
+A {
+	text-decoration: none;
+}
+
+A:link,A:active {
+	color: blue;
+}
+
+A:visited {
+	color: purple;
+}
+
+A:hover {
+	color: red;
+	background-color: #ffffdd;
+}
+
+P {
+	margin-top: 0;
+}
