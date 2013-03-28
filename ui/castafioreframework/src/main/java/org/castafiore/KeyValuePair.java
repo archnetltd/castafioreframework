@@ -20,7 +20,7 @@ package org.castafiore;
 import java.io.Serializable;
 
 /**
- * 
+ * Interface for working with key value pairs
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com

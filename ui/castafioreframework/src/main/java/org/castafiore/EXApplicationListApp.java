@@ -38,7 +38,6 @@ public class EXApplicationListApp extends EXApplication implements ApplicationCo
 	
 	private ApplicationContext context = null;
 	
-	//private Map<String, Application> apps = new HashMap<String, Application>();
 	private String[] apps;
 
 	public EXApplicationListApp() {

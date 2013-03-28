@@ -16,26 +16,27 @@
  */
  package org.castafiore;
 
+ /**
+  * Thrown whenever a component is added to a layout container passing an invalid layout data
+  * @author Kureem Rossaye
+  *
+  */
 public class InvalidLayoutDataException extends RuntimeException {
 
 	public InvalidLayoutDataException() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public InvalidLayoutDataException(String message, Throwable cause) {
 		super(message, cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	public InvalidLayoutDataException(String message) {
 		super(message);
-		// TODO Auto-generated constructor stub
 	}
 
 	public InvalidLayoutDataException(Throwable cause) {
 		super(cause);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**

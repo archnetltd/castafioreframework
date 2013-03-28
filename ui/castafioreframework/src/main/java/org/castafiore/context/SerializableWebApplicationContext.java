@@ -20,6 +20,11 @@ import java.io.Serializable;
 
 import org.springframework.web.context.support.XmlWebApplicationContext;
 
+/**
+ * Class that makes the {@link XmlWebApplicationContext} serializable
+ * @author Kureem Rossaye
+ *
+ */
 public class SerializableWebApplicationContext extends XmlWebApplicationContext implements Serializable{
 
 	public SerializableWebApplicationContext() {

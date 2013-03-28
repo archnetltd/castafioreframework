@@ -22,61 +22,123 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.panel.EXPanel;
 import org.castafiore.ui.ex.panel.Panel;
 import org.castafiore.ui.tabbedpane.TabModel;
 import org.castafiore.ui.tabbedpane.TabPanel;
 
+/**
+ * 
+ * Some constants of css classes used by jquery-ui
+ * @author Kureem Rossaye
+ *
+ */
 public interface JQContants {
 
-	
+	/**
+	 * Style class for accordeon
+	 */
 	public final static String ACC_STYLE = "ui-accordion ui-widget ui-helper-reset";
 	
+	/**
+	 * Used for accordeon
+	 */
 	public final static String ACC_HEADER_OPEN_STYLE = "ui-accordion-header ui-helper-reset ui-state-default ui-corner-top";
 	
+	/**
+	 * Used for accordeon
+	 */
 	public final static String ACC_HEADER_CLOSE_STYLE = "ui-accordion-header ui-helper-reset ui-state-default ui-corner-all";
 	
+	/**
+	 * Used for accordeon
+	 */
 	public final static String ACC_ARROW_OPEN_STYLE = "ui-icon ui-icon-triangle-1-s";
+	
+	/**
+	 * Used for accordeon
+	 */
 	public final static String ACC_ARROW_CLOSE_STYLE = "ui-icon ui-icon-triangle-1-e";
 	
+	/**
+	 * Used for accordeon
+	 */
 	public final static String ACC_CONTENT_STYLE = "ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active";
 	
-	
-	
-	
-
+	/**
+	 * Used for Tab panel
+	 */
 	public final static String TABS_STYLE = "ui-tabs ui-widget-content ui-corner-all";
 
+	/**
+	 * Used for tab panel
+	 */
 	public final static String TABS_HEADER_STYLE = "ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all";
 
+	/**
+	 * Used for tab panel
+	 */
 	public final static String TABS_ACTIVE_TAB_STYLE = "ui-state-default ui-corner-top ui-tabs-selected ui-state-active";
 
+	/**
+	 * Used for tab panel
+	 */
 	public final static String TABS_INACTIVE_TAB_STYLE = "ui-state-default ui-corner-top";
 
+	/**
+	 * Used for tab panel
+	 */
 	public final static String TABS_SELECTED_TAB_CONTENT_STYLE = "ui-tabs-panel ui-widget-content ui-corner-bottom";
 
-	//public final static String DIALOG_DEF_STYLE = "overflow: hidden; display: block; outline-color: -moz-use-text-color; outline-style: none; outline-width: 0px; height: auto;";
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_STYLE = "ui-dialog ui-widget ui-widget-content ui-corner-all";
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_TITLE_BAR_STYLE = "ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix";
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_TITLE_STYLE = "ui-dialog-title";
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_CLOSE_BUTTON_STYLE = "ui-dialog-titlebar-close ui-state-default ui-corner-all";
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_CLOSE_ICON_STYLE = "ui-icon ui-icon-closethick";
+	
 
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_CONTENT_STYLE = "ui-dialog-content ui-widget-content";
 
-	
-
+	/**
+	 * Used for dialog panel
+	 */
 	public final static String DIALOG_FOOTER_STYLE = "ui-dialog-buttonpane ui-widget-content ui-helper-clearfix";
 
+	/**
+	 * Used for buttons
+	 */
 	public final static String BUTTON_STYLE = "ui-state-default ui-corner-all";
 	
+	/**
+	 * Used for icons
+	 */
 	public final static String ICON_STYLE = "ui-icon";
 
+	/**
+	 * Background positions for icons
+	 */
 	public final static String[] ICONS_BACK_POSITON = new String[] { "-16px 0",
 			"-32px 0", "-48px 0", "-64px 0", "-80px 0", "-96px 0", "-112px 0",
 			"-128px 0", "-144px 0", "0 -16px", "-16px -16px", "-32px -16px",
@@ -123,6 +185,10 @@ public interface JQContants {
 
 	};
 
+	
+	/**
+	 * Static event to open a tab
+	 */
 	public final static Event EVT_SHOW_TAB = new Event() {
 
 		public void ClientAction(ClientProxy container) {
@@ -141,23 +207,17 @@ public interface JQContants {
 				String oTab = tab.getAttribute("t");
 				Container content = panel.getChild("c-" + oTab);
 				if (index.equals(oTab)) {
-					// this is the selected tab
-					//tab.setAttribute("class", TABS_ACTIVE_TAB_STYLE);
 					
 					if ("false".equalsIgnoreCase(isInitialised)) {
 						Container rContent = panel.getModel().getTabContentAt(
 								panel, Integer.parseInt(index));
 						content.addChild(rContent);
-						//((EXTabPanel)panel).getTabRenderer().onActivateContent(panel, model, Integer.parseInt(oTab), rContent);
-						//on init goes here
 					}
 					tab.setAttribute("init", "true");
 					content.setDisplay(true);
 					panel.getTabRenderer().onSelect(panel, model, Integer.parseInt(oTab), tab);
 				} else {
 					tab.setAttribute("class", TABS_INACTIVE_TAB_STYLE);
-					// content.setAttribute("class",
-					// TABS_UNSELECTED_TAB_CONTENT_STYLE);
 					content.setDisplay(false);
 					panel.getTabRenderer().onDeselect(panel, model, Integer.parseInt(oTab), tab);
 				}
@@ -171,6 +231,9 @@ public interface JQContants {
 
 	};
 
+	/**
+	 * Close event to close any {@link Panel}
+	 */
 	public final static Event CLOSE_EVENT = new Event() {
 
 		public void ClientAction(ClientProxy container) {
@@ -194,6 +257,9 @@ public interface JQContants {
 
 	};
 	
+	/**
+	 * Static event to hide any {@link Panel}
+	 */
 	public final static Event HIDE_EVENT = new Event() {
 
 		public void ClientAction(ClientProxy container) {
@@ -204,14 +270,13 @@ public interface JQContants {
 
 		public boolean ServerAction(Container container,
 				Map<String, String> request) throws UIException {
-			//return false;
-			container.getAncestorOfType(EXPanel.class).setDisplay(false);
-			return true;
+			
+			container.getAncestorOfType(Panel.class).setDisplay(false);
+			return false;
 		}
 
 		public void Success(ClientProxy container, Map<String, String> request)
 				throws UIException {
-			// TODO Auto-generated method stub
 
 		}
 
