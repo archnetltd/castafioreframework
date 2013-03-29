@@ -20,7 +20,7 @@
  * When a component implements this interface, it has the ability to react when the page is reloaded
  * 
  * Can be used to re-initialise state of component when page is refreshed.
- * @author kureem
+ * @author Kureem Rossaye
  *
  */
 public interface RefreshSentive {
