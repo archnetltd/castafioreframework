@@ -18,8 +18,8 @@
 package org.castafiore.ui.scripting;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -112,7 +112,7 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 	public Map<String, Object> getContext() {
 		if(context_ == null)
 		{
-			context_ = new HashMap<String, Object>(1);
+			context_ = new LinkedHashMap<String, Object>();
 			context_.put("component", this);
 		}
 		return context_;
@@ -198,7 +198,7 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 			return html;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "<h1>There was an error<h1><p>" + e.getMessage() + "</p>";
+			return "<h1>There was an error<h1><p>" + JavascriptUtil.javaScriptEscape( e.getMessage()) + "</p>";
 			//throw new IllegalStateException(e);
 		}
 	}
@@ -216,7 +216,7 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 	
 	public String getTemplate() {
 		try{
-			if(getRoot().getServerName().equals("localhostdd")){
+			if(getRoot().getServerName().equals("localhost")){
 				return ResourceUtil.getTemplate(getTemplateLocation(), getRoot());
 			}
 			Map bean = BaseSpringUtil.getBean("templateCache");
@@ -289,7 +289,7 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 	public List<DroppableSection> getSections() {
 		List<Container> children = getChildren();
 		
-		List<DroppableSection> sections = new ArrayList<DroppableSection>();
+		List<DroppableSection> sections = new ArrayList<DroppableSection>(children.size());
 		for(Container c : children){
 			DroppableSection ds = new DroppableSection(c.getId(), c.getName(), c.getName());
 			sections.add(ds);
@@ -305,7 +305,7 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 
 	public void validateLayoutData(String layoutData)
 			throws InvalidLayoutDataException {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
