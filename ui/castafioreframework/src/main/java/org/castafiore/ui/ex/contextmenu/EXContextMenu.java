@@ -14,59 +14,55 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.ui.ex.contextmenu;
+package org.castafiore.ui.ex.contextmenu;
 
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
+
 /**
- * This class is the component that represents a context menu.
- * Normally it is the engine that uses this component.
+ * This class is the component that represents a context menu. Normally it is
+ * the engine that uses this component.
+ * 
  * @see ContextMenuAble
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Dec 16, 2008
+ *         kureem@gmail.com Dec 16, 2008
  */
 public class EXContextMenu extends EXContainer {
 
 	private ContextMenuModel model = null;
-	
+
 	public EXContextMenu(String name, ContextMenuModel model) {
 		super(name, "div");
 		setStyleClass("contextMenu");
 		setStyle("display", "none");
 		this.model = model;
 		refresh();
-		
+
 	}
-	
-	
-	
-	public void refresh()
-	{
+
+	public void refresh() {
 		this.getChildren().clear();
-		
-		
+
 		EXContainer ul = new EXContainer("", "ul");
-		
+
 		addChild(ul);
-		
-		for(int i = 0; i < model.size(); i ++)
-		{
-			//<li id="open"><img src="folder.png" /> Open</li>
-			
+
+		for (int i = 0; i < model.size(); i++) {
+			// <li id="open"><img src="folder.png" /> Open</li>
+
 			EXContainer li = new EXContainer("", "li");
-			
+
 			EXContainer img = new EXContainer("", "img");
 			img.setAttribute("src", model.getIconSource(i));
 			li.addChild(img);
 			ul.addChild(li);
 			Event event = model.getEventAt(i);
-			if(event != null)
+			if (event != null)
 				li.addEvent(model.getEventAt(i), Event.CLICK);
 			img.setText(model.getTitle(i));
 		}
-		
+
 		this.setRendered(false);
 	}
 

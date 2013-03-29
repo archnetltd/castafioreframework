@@ -17,13 +17,12 @@
 package org.castafiore.ui.ex;
 
 
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javolution.util.FastMap;
-import javolution.util.FastSet;
-import javolution.util.FastTable;
 
 import org.castafiore.ui.Application;
 import org.castafiore.ui.Container;
@@ -53,7 +52,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	
 	
 
-	private Map<String, String> readonlyAttributes_ = new FastMap<String, String>();
+	private Map<String, String> readonlyAttributes_ = new LinkedHashMap<String, String>();
 	
 	
 	private Layout layout_;
@@ -61,7 +60,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	
 	private Set<String> resources =null;
 	
-	private List<Container> children_  =  new FastTable<Container>();
+	private List<Container> children_  =  new LinkedList<Container>();
 	
 	
 
@@ -74,7 +73,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		Assert.notNull(script, "cannot add a null script");
 		if(resources == null)
 		{
-			resources = new FastSet<String>();
+			resources = new LinkedHashSet<String>();
 		}
 		resources.add(script);
 		return this;
@@ -460,7 +459,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		//logger.debug("adding stylesheet " + stylesheeturl);
 		if(resources == null)
 		{
-			resources = new FastSet<String>();
+			resources = new LinkedHashSet<String>();
 		}
 		resources.add(stylesheeturl);	
 		return this;

@@ -14,12 +14,11 @@ import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.form.button.Button;
 import org.castafiore.ui.input.Decoder;
 import org.castafiore.ui.input.Encoder;
-import org.castafiore.ui.js.Var;
 import org.castafiore.utils.ComponentUtil;
 
 public class EXFieldSet extends EXContainer implements StatefullComponent{
 
-	private int columns = 1;
+	private int columns = 1; 
 	
 	
 	public EXFieldSet(String name, String title, boolean doubleColumn) {

@@ -12,6 +12,8 @@
 	
     <bean id="castafioreInterceptorRegistry" class="org.castafiore.ui.interceptors.SpringInterceptorRegistry"></bean>
     
+    <bean class="org.castafiore.ui.SpringApplicationRegistry"></bean>
+    
     <util:map id="templateCache"></util:map>
     
     <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">

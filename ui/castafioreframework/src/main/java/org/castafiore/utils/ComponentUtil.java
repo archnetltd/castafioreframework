@@ -27,14 +27,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.castafiore.ui.Application;
-import org.castafiore.ui.ApplicationRegistryUtil;
+import org.castafiore.ui.ApplicationRegistry;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.WebServletAwareApplication;
 import org.castafiore.ui.engine.context.CastafioreApplicationContextHolder;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.panel.EXPanel;
+import org.springframework.context.ApplicationContext;
 /**
  * Utility classe with various methods to work with Components
  * 
@@ -267,7 +267,7 @@ public class ComponentUtil {
 	 * @param response - The response of the page into which to render the application
 	 * @throws ServletException - Whenever an error occures
 	 */
-	public static void loadApplication(HttpServletRequest request, HttpServletResponse response)throws ServletException{
+	public static void loadApplication(HttpServletRequest request, HttpServletResponse response, ApplicationContext context)throws ServletException{
 		String applicationId = request.getParameter("casta_applicationid");
 		String userIdentity = request.getParameter("casta_userid");
 		String portalPath = request.getParameter("casta_portalpath");
@@ -283,7 +283,7 @@ public class ComponentUtil {
 				isNew = true;
 				
 				//logger.debug("application :" + applicationId + " not found in session. Loading fresh application from registry");
-				application = ApplicationRegistryUtil.getApplicationRegistry().getApplication(request, response);
+				application = context.getBean(ApplicationRegistry.class).getApplication(request, response);
 				if(application == null)
 				{
 					//logger.error("there is no bean with name " + applicationId  + " configured in application registry");

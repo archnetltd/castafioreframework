@@ -69,7 +69,10 @@ public class ResourceUtil {
 		
 	public static String getDownloadURL(String type, String path)
 	{
-		return "castafiore/resource?spec="+type+":" + path;
+		if(path.startsWith("/"))
+			return "castafiore/resource/"+type+"" + path;
+		else
+			return "castafiore/resource/"+type+"/" + path;
 	}
 	
 	
@@ -285,7 +288,7 @@ public class ResourceUtil {
 }
 	
 	public static String getUploadDir(){
-		return ((Map)BaseSpringUtil.getBean("uploadprops")).get("upload.dir").toString();
+		return  "c:\\data";//((Map)BaseSpringUtil.getBean("uploadprops")).get("upload.dir").toString();
 	}
 
 }

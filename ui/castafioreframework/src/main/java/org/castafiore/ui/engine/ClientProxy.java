@@ -20,12 +20,9 @@ package org.castafiore.ui.engine;
 
 import java.util.HashMap;
 import java.util.Iterator;
-
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import javolution.text.TextBuilder;
-import javolution.util.FastTable;
 
 import org.apache.commons.collections.map.ListOrderedMap;
 import org.castafiore.Constant;
@@ -88,7 +85,7 @@ public final class ClientProxy implements Constant {
 		this.commands = (List<KeyValuePair>)buffer.get(idref);
 		if(commands == null)
 		{
-			commands = new FastTable<KeyValuePair>();
+			commands = new LinkedList<KeyValuePair>();
 			buffer.put(idref, commands);
 		}
 		this.buffer = buffer;
@@ -100,7 +97,7 @@ public final class ClientProxy implements Constant {
 		
 		this.buffer = new ListOrderedMap();
 		
-		commands = new FastTable<KeyValuePair>();
+		commands = new LinkedList<KeyValuePair>();
 		buffer.put(getIdRef(), commands);
 		
 	}
@@ -129,7 +126,7 @@ public final class ClientProxy implements Constant {
 		this.commands = (List<KeyValuePair>) buffer.get(getIdRef());
 		if(commands == null)
 		{
-			commands = new FastTable<KeyValuePair>();
+			commands = new LinkedList<KeyValuePair>();
 			buffer.put(getIdRef(), commands);
 		}
 		this.buffer = buffer;
@@ -144,7 +141,7 @@ public final class ClientProxy implements Constant {
 	 */
 	public ClientProxy IF(Expression expression, ClientProxy toExecuteIfTrue, ClientProxy executeifFalse)
 	{		
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 		builder.append("if(").append(expression.getExpression()).append("){").append(toExecuteIfTrue.getCompleteJQuery()).append("}");
 		
 		if(executeifFalse != null)
@@ -189,7 +186,7 @@ public final class ClientProxy implements Constant {
 	 */
 	public String getCompleteJQuery()
 	{
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 		
 		Iterator selectors = buffer.keyList().iterator();
 		while(selectors.hasNext())
@@ -251,7 +248,7 @@ public final class ClientProxy implements Constant {
 	public ClientProxy executeFunction(String functionName,Object...params){
 	
 			//TextBuilder p = new TextBuilder();
-		TextBuilder p = new TextBuilder();
+		StringBuilder p = new StringBuilder();
 			int count = 0;
 			for(Object o : params){
 				if(count > 0)
@@ -579,7 +576,7 @@ public final class ClientProxy implements Constant {
 	{
 		
 		List<Container> containers = container_.getChildren();
-		List<ClientProxy> result = new FastTable<ClientProxy>();
+		List<ClientProxy> result = new LinkedList<ClientProxy>();
 		for(Container c: containers)
 		{
 			result.add(new ClientProxy(c, buffer));
@@ -597,7 +594,7 @@ public final class ClientProxy implements Constant {
 		
 		
 		String componentId = component.getId();
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 
 		//next sibbling is rendered, we append before next sibbling
 		if(component.getParent() instanceof TemplateComponent)
@@ -1184,7 +1181,7 @@ public final class ClientProxy implements Constant {
 	
 	public static String getCurrentJQuery_(List<KeyValuePair> commands, String idRef)
 	{
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 		
 		String result = "";
 

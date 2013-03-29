@@ -17,11 +17,10 @@
 
 package org.castafiore.ui.ex;
 
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-
-import javolution.util.FastMap;
-import javolution.util.FastSet;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.html.HTMLTag;
@@ -38,13 +37,13 @@ import org.springframework.util.Assert;
 public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		Container {
 
-	protected Set<String> changedStyles_ = new FastSet<String>();
+	protected Set<String> changedStyles_ = new LinkedHashSet<String>();
 
-	protected Set<String> changedAttributes_ = new FastSet<String>();
+	protected Set<String> changedAttributes_ = new LinkedHashSet<String>();
 
-	protected Map<String, String> attributes_ = new FastMap<String, String>();
+	protected Map<String, String> attributes_ = new LinkedHashMap<String, String>();
 
-	private Map<String, String> styles_ = new FastMap<String, String>();
+	private Map<String, String> styles_ = new LinkedHashMap<String, String>();
 
 	private String tag_;
 

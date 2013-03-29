@@ -17,11 +17,10 @@
 
 package org.castafiore.ui.ex;
 
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-
-import javolution.util.FastMap;
-import javolution.util.FastTable;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.events.Event;
@@ -35,7 +34,7 @@ import org.castafiore.ui.html.DynamicHTMLTag;
  */
 public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTMLTag , Container
 {
-	private Map<Integer, List<Event>> events = new FastMap<Integer, List<Event>>();
+	private Map<Integer, List<Event>> events = new LinkedHashMap<Integer, List<Event>>();
 
 	public EXDynamicHTMLTag(String name, String tagName) 
 	{
@@ -72,7 +71,7 @@ public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTML
 		} 
 		else 
 		{
-			events.put(type, new FastTable<Event>());
+			events.put(type, new LinkedList<Event>());
 			events.get(type).add(event);
 		}
 		setRendered(false);

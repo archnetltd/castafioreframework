@@ -14,93 +14,44 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.utils;
+package org.castafiore.utils;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.castafiore.context.SerializableWebApplicationContext;
-import org.castafiore.web.servlet.AbstractCastafioreServlet;
-import org.springframework.beans.factory.config.BeanDefinition;
+import org.castafiore.web.servlet.Castafiore;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.MessageSource;
-import org.springframework.web.context.ConfigurableWebApplicationContext;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 public class BaseSpringUtil {
-	
-	private static ConfigurableWebApplicationContext context = null;
-	
-	//private static ThreadLocal<ApplicationContext> ContextThreadHolder = new ThreadLocal<ApplicationContext>();
-	 
-	public static void init(AbstractCastafioreServlet servlet){
-		if(context == null){
-			context = new SerializableWebApplicationContext();
-			context.setServletConfig(servlet.getServletConfig());
-			context.setNamespace("castafiore");
-			//wac.setConfigLocation(getContextConfigLocation());
-			context.setConfigLocation("/WEB-INF/configs/**/*-config.xml");
-			context.setServletContext(servlet.getServletContext());
-			context.refresh();
-		}
+
+	public static ApplicationContext getApplicationContext() {
+
+		return Castafiore.getCurrentContext();
+
 	}
-	
-	
-	public static ApplicationContext getApplicationContext(){
-		
-		if(context == null){
-			throw new RuntimeException("Application context has not been initialised yet....");
-		}
-		return context;
-		
-		
-	}
-	
-public static <T extends Object> T getBeanOfType(Class<T> clazz){
-		
-		if(containerBuffer.containsKey(clazz)){
-			return (T)getApplicationContext().getBean(containerBuffer.get(clazz));
+
+	public static <T extends Object> T getBeanOfType(Class<T> clazz) {
+
+		if (containerBuffer.containsKey(clazz)) {
+			return (T) getApplicationContext().getBean(
+					containerBuffer.get(clazz));
 		}
 		String[] names = getApplicationContext().getBeanNamesForType(clazz);
-		
-		if(names != null && names.length > 0){
+
+		if (names != null && names.length > 0) {
 			containerBuffer.put(clazz, names[0]);
-			return (T)getApplicationContext().getBean(names[0]);
-		}throw new RuntimeException("cannot find bean of type " + clazz.getName() + " configured in any application context");
+			return (T) getApplicationContext().getBean(names[0]);
+		}
+		throw new RuntimeException("cannot find bean of type "
+				+ clazz.getName() + " configured in any application context");
 	}
-	
-private static Map<Class<?>, String> containerBuffer = new HashMap<Class<?>, String>();
-	
+
+	private static Map<Class<?>, String> containerBuffer = new HashMap<Class<?>, String>();
+
 	public static <T> T getBean(String beanId) {
-		
-	  	return (T)getApplicationContext().getBean(beanId);
-	  
+
+		return (T) getApplicationContext().getBean(beanId);
+
 	}
-	
-	public static BeanDefinition getBeanDefinition(String beanId)
-	{
-		return ((XmlWebApplicationContext) getApplicationContext()).getBeanFactory().getBeanDefinition(beanId);
-	}
-	
-	public static MessageSource getMessageSource()
-	{
-		return getBean("messageSource");
-	}
-	
-	public static Locale getCurrentLocale()
-	{
-		return Locale.ENGLISH;
-	}
-	
-//	public static <T extends Object> T getBeanOfType(Class<T> clazz){
-//		String[] names = getApplicationContext().getBeanNamesForType(clazz);
-//		
-//		if(names != null && names.length > 0){
-//			return (T)getApplicationContext().getBean(names[0]);
-//		}throw new RuntimeException("cannot find bean of type " + clazz.getName() + " configured in any application context");
-//	}
 
 }

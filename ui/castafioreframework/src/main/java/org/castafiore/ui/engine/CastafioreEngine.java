@@ -18,13 +18,11 @@
 package org.castafiore.ui.engine;
 
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javolution.text.TextBuilder;
-import javolution.util.FastTable;
 
 import org.apache.commons.collections.map.ListOrderedMap;
 import org.castafiore.ComponentNotFoundException;
@@ -77,7 +75,7 @@ public final class CastafioreEngine {
 	public  synchronized String getJQuery(Container container, String parentId, Container root,  ListOrderedMap buffer)
 	{
 		
-		TextBuilder builder = new TextBuilder();
+		StringBuilder builder = new StringBuilder();
 		
 		//new jquery
 		
@@ -269,8 +267,8 @@ public final class CastafioreEngine {
 	public  synchronized String executeServerAction(String componentId,  Application application, String parentId, Map<String, String> parameters)
 	{
 		
-		List<StatefullComponent> statefullcomponents =  new FastTable<StatefullComponent>();
-		List<Container> cCo = new FastTable<Container>();
+		List<StatefullComponent> statefullcomponents =  new ArrayList<StatefullComponent>();
+		List<Container> cCo = new ArrayList<Container>();
 
 		//logger.debug("extracting components from dom");
 		ComponentUtil.fastExtractComponents(application, statefullcomponents, cCo,componentId);
@@ -304,7 +302,7 @@ public final class CastafioreEngine {
 			component = cCo.get(0);
 		}
 		
-		TextBuilder result = new TextBuilder();
+		StringBuilder result = new StringBuilder();
 		
 		List<Event> events = null;
 		Event event = null;

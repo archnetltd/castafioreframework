@@ -21,10 +21,6 @@ public class EXDynaformPanel extends EXPanel implements DynaForm{
 		super(name, title);
 		Container fieldSet = ComponentUtil.getContainer("fieldSet", "table", null, "dynaform");
 		fieldSet.setDisplay(false);
-		//fieldSet.setStyle("border", "none 0");
-		//fieldSet.setStyle("margin-top", "25px");
-		//fieldSet.setStyle("padding", "0");
-		
 		setBody(fieldSet);
 	}
 	

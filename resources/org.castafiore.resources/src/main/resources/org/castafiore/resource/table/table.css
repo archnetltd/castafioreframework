@@ -94,7 +94,7 @@
 
 .EXPageIterator .LastTopPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -17px;
 	cursor: pointer;
 	vertical-align: middle;
@@ -102,28 +102,28 @@
 
 .EXPageIterator .NextTopPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -51px;
 	cursor: pointer;
 }
 
 .EXPageIterator .LastPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -119px;
 	cursor: pointer;
 }
 
 .EXPageIterator .NextPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -85px;
 	cursor: pointer;
 }
 
 .EXPageIterator .DisableLastTopPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left top;
 	cursor: pointer;
 	vertical-align: middle;
@@ -131,21 +131,21 @@
 
 .EXPageIterator .DisableNextTopPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -34px;
 	cursor: pointer;
 }
 
 .EXPageIterator .DisableLastPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -102px;
 	cursor: pointer;
 }
 
 .EXPageIterator .DisableNextPageIcon {
 	background: transparent
-		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		url(ArrowPageIterator.gif)
 		no-repeat scroll left -68px;
 	cursor: pointer;
 }

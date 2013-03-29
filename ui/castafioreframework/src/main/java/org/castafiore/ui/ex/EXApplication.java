@@ -24,6 +24,9 @@ import java.util.Map;
 import java.util.Set;
 
 import org.castafiore.ui.Application;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * 
@@ -37,17 +40,19 @@ import org.castafiore.ui.Application;
  * Implementation of Application.
  * Most simple implementation
  */
-public abstract  class EXApplication extends EXContainer implements Application {
+public   class EXApplication extends EXContainer implements Application , ApplicationContextAware{
 
-	private Map<String, Object> configs = new LinkedHashMap<String, Object>(0);
+	private Map<String, Object> configs = new LinkedHashMap<String, Object>();
 	
-	private Set<String> resources = new LinkedHashSet<String>(0);
+	private Set<String> resources = new LinkedHashSet<String>();
 	
-	private Set<String> bufferedResources = new LinkedHashSet<String>(0);
+	private Set<String> bufferedResources = new LinkedHashSet<String>();
 	
-	private Map<String, String> cookies = new LinkedHashMap<String, String>(0);
+	private Map<String, String> cookies = new LinkedHashMap<String, String>();
 	
-	private Map<String, String> newCookies = new LinkedHashMap<String, String>(0);
+	private Map<String, String> newCookies = new LinkedHashMap<String, String>();
+	
+	private ApplicationContext context_;
 	
 	public EXApplication(String name) {
 		super(name, "div");
@@ -138,6 +143,18 @@ public abstract  class EXApplication extends EXContainer implements Application 
 	
 	public Map<String, String> getNewCookies(){
 		return newCookies;
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
+		this.context_ = context;
+		
+	}
+	
+	
+	public ApplicationContext getApplicationContext(){
+		return context_;
 	}
 	
 	

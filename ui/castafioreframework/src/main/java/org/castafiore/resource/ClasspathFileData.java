@@ -29,6 +29,8 @@ public class ClasspathFileData extends BinaryFileData {
 
 
 	public String getLocation() {
+		if(location.startsWith("/"))
+			location = location.substring(1);
 		return location;
 	}
 

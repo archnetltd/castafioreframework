@@ -41,7 +41,7 @@ $.fn.castafiore = function(app, params){
 		me.append("<div id='root_"+app+"'>");
 		me.append("<div id='script_"+app+"'>");
 		$("#script_" + app).mask('Please wait....');
-		var url = "castafiore/?casta_applicationid=" + app;
+		var url = "castafiore/ui/?casta_applicationid=" + app;
 		var curUrl = window.location.href;
 		var p = curUrl.split('?')[1];
 		if(p){
@@ -99,7 +99,7 @@ function sCall(params)
 	});
 	params.requestId=requestId++;
 
-	$.post("castafiore/"+requestId+".jsp",params,function(data){
+	$.post("castafiore/ui",params,function(data){
 		$("#script_"+params['casta_applicationid']).append(data);
 	}, "text")
 }

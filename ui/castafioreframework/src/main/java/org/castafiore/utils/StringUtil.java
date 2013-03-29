@@ -273,10 +273,10 @@ public final class StringUtil {
 	public static String buildattributesFromMap(Map<String, String> attributes) {
 		StringBuilder builder = new StringBuilder();
 
-		Iterator<String> keyIte = attributes.keySet().iterator();
+		String[] as = attributes.keySet().toArray(new String[attributes.size()]);
 
-		while (keyIte.hasNext()) {
-			String attr = keyIte.next();
+		for (String attr : as) {
+			//String attr = keyIte.next();
 
 			String value = attributes.get(attr);
 
