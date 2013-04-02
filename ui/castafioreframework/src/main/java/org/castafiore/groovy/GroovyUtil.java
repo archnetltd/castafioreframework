@@ -21,7 +21,7 @@ import groovy.text.SimpleTemplateEngine;
 import groovy.text.Template;
 import groovy.text.TemplateEngine;
 /**
- * 
+ * Simple utility class to help creating groovy templates
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * Oct 22, 2008

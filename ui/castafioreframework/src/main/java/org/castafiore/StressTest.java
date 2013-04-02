@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Random;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.DescriptibleApplication;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
@@ -28,7 +29,7 @@ import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.EXGrid;
 import org.castafiore.ui.ex.form.button.EXButton;
 
-public class StressTest extends EXApplication {
+public class StressTest extends EXApplication implements DescriptibleApplication {
 	
 	private final static String[] colors = new String[]{"aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"};
 
@@ -109,7 +110,7 @@ public class StressTest extends EXApplication {
 		addEvent(new Event(){
 
 			public void ClientAction(ClientProxy container) {
-				container.setTimeout(container.clone().makeServerRequest(this), 4000);
+				container.setTimeout(container.clone().makeServerRequest(this), 400);
 				//container.makeServerRequest(this);
 			}
 
@@ -118,7 +119,7 @@ public class StressTest extends EXApplication {
 				EXGrid grid = (EXGrid)container.getDescendentByName("grid");
 				int cols = grid.getColumns();
 				
-				if(cols < 20){
+				if(cols < 50){
 
 					grid.addRow();
 					int rows = grid.getRows() - 1;
@@ -173,6 +174,11 @@ public class StressTest extends EXApplication {
 		}, Event.READY);
 		
 		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String getDescription() {
+		return "Application for performing stress tests";
 	}
 
 }

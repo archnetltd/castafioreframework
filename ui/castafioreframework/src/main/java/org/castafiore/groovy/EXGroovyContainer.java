@@ -27,7 +27,8 @@ import org.castafiore.ui.scripting.EXTemplateComponent;
 import org.castafiore.ui.scripting.compiler.Compiler;
 import org.castafiore.utils.JavascriptUtil;
 /**
- * 
+ * An {@link EXTemplateComponent} that uses groovy script as template.<br>
+ * Very convenient class that harness the whole power of groovy into your web application
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
