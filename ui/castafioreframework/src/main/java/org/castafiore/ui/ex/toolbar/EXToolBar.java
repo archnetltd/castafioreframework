@@ -17,8 +17,7 @@
 
 package org.castafiore.ui.ex.toolbar;
 
-import org.castafiore.ui.ex.Corners;
-import org.castafiore.ui.ex.EXWidget;
+import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.ViewModel;
 /**
  * 
@@ -27,20 +26,23 @@ import org.castafiore.ui.ex.ViewModel;
  *          kureem@gmail.com
  * Oct 22, 2008
  */
-public class EXToolBar extends EXWidget implements ToolBar  {
+public class EXToolBar extends EXContainer implements ToolBar  {
 
 	private ViewModel<ToolBarItem> model ;
 	
 	public EXToolBar(String name, ViewModel<ToolBarItem> model) {
 		this(name);
+		setStyle("padding", "4px").setStyle("display", "inline-block");
+		addClass("ui-widget-header").addClass("ui-corner-all");
 		setModel(model);
+		
 	}
 
 	
 	public EXToolBar(String name) {
 		super(name, "div");
-		setStyleClass("fg-toolbar ui-widget-header ui-helper-clearfix");
-		setCorners(Corners.ALL);
+		setStyle("padding", "4px").setStyle("display", "inline-block");
+		addClass("ui-widget-header").addClass("ui-corner-all");
 	}
 	
 	public ViewModel<ToolBarItem> getModel() {
@@ -68,7 +70,7 @@ public class EXToolBar extends EXWidget implements ToolBar  {
 
 
 	public ToolBar addItem(ToolBarItem button) {
-		button.setStyle("float", "left");
+		button.setStyle("display", "inline-block").setStyle("margin-right", "7px");
 		addChild(button);
 		return this;
 	}

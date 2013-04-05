@@ -10,5 +10,7 @@
 	
 	<bean id="stress" class="org.castafiore.StressTest" scope="session"></bean>
 	
+	<bean id="showcase" class="org.castafiore.demo.ShowCase"></bean>
+	
 	<bean id="apps" class="org.castafiore.EXApplicationListApp" scope="session" init-method="init"></bean>
 </beans>

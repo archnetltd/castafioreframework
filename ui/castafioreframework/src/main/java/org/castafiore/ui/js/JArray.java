@@ -75,6 +75,17 @@ public void sort(){
 		internal_.add("\"" + JavascriptUtil.javaScriptEscape(s)+ "\"");
 		return this;  
 	}
+	
+	/**
+	 * add a simple string
+	 * @param s
+	 * @return
+	 */
+	public JArray add(Number s)
+	{
+		internal_.add(s + "");
+		return this;  
+	}
 
 	/**
 	 * add a function

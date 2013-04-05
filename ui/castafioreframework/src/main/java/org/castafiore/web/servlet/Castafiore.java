@@ -30,6 +30,7 @@ import org.castafiore.resource.BinaryFileData;
 import org.castafiore.resource.FileData;
 import org.castafiore.resource.ResourceLocator;
 import org.castafiore.ui.Application;
+import org.castafiore.ui.CastafioreController;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.engine.CastafioreEngine;
 import org.castafiore.ui.engine.context.CastafioreApplicationContextHolder;
@@ -169,20 +170,27 @@ public class Castafiore implements ApplicationContextAware {
 		}
 	}
 
-	@RequestMapping("methods/**/*")
-	public void doMethod(HttpServletRequest request,
+	@RequestMapping("methods/{application}/{componentid}")
+	public void doMethod(@PathVariable("application") String applicationid, @PathVariable("componentid") String componentid,HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		pre(request, response);
-		String applicationid = request.getParameter("applicationid");
-		String componentid = request.getParameter("componentid");
 		String methodName = request.getParameter("method");
-		String param = request.getParameter(request.getParameter("paramName"));
+		String param = request.getParameter("paramName")!= null? request.getParameter(request.getParameter("paramName")):null;
 		try {
-
+			CastafioreApplicationContextHolder.getCurrentApplication();
 			Application applicationInstance = (Application) ((HttpServletRequest) request)
 					.getSession().getAttribute(applicationid);
+			if(applicationInstance == null){
+				applicationInstance = (Application)context_.getBean(applicationid);
+			}
 			Container c = ComponentUtil.getContainerById(applicationInstance,
 					componentid);
+			
+			if(c instanceof CastafioreController){
+				((CastafioreController)c).handleRequest(request, response);
+				return;
+			}
+			
 			Object o = c.getClass().getMethod(methodName, String.class)
 					.invoke(c, param);
 			if (o != null) {
@@ -422,7 +430,7 @@ public class Castafiore implements ApplicationContextAware {
 				script = getEngine(request).getJQuery(applicationInstance,
 						"root_" + applicationId, applicationInstance,
 						new ListOrderedMap());
-				script = script + "hideloading();";
+				//script = script + "hideloading();";
 
 			} else if ((componentId != null && eventId != null)
 					&& applicationInstance != null) {
@@ -431,7 +439,7 @@ public class Castafiore implements ApplicationContextAware {
 							componentId, applicationInstance,
 							"root_" + applicationId, params);
 
-					script = script + "hideloading();";
+					//script = script + "hideloading();";
 
 				} catch (ComponentNotFoundException cnfe) {
 

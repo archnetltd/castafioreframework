@@ -17,93 +17,180 @@
  package org.castafiore.ui.ex.form.button;
 
 import org.castafiore.JQContants;
-import org.castafiore.ui.Container;
-import org.castafiore.ui.Dimension;
-import org.castafiore.utils.ComponentUtil;
+import org.castafiore.ui.engine.ClientProxy;
+import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.utils.StringUtil;
 
-public class EXIconButton extends AbstractButton implements JQContants {
+public class EXIconButton extends EXContainer implements Button , JQContants{
+	
+	private String text;
+	
+	private Icons iconLeft;
+	
+	private Icons iconRight;
+	
+	private String iconLeftUrl;
+	
+	private String iconRightUrl;
 
-	public EXIconButton(String name, String text, Icons eicon) {
-		super(name, "a");
-		addClass("fg-button-icon-left");
-		setHeight(Dimension.parse("12px"));
-		Container icon = ComponentUtil.getContainer("icon", "span", null, ICON_STYLE);
-		addChild(icon);
+	@Override
+	public void onReady(ClientProxy proxy) {
+		super.onReady(proxy);
+		proxy.addClass("ui-button").addClass("ui-widget").addClass("ui-state-default").addClass("ui-corner-" + getAttribute("corner"));
+		proxy.mouseover(proxy.clone().addClass("ui-state-hover")).mouseout(proxy.clone().removeClass("ui-state-hover").removeClass("ui-state-active").mousedown(proxy.clone().addClass("ui-state-active")));
+		if(StringUtil.isNotEmpty(text)){
+			if(iconLeft != null && iconRight != null){
+				proxy.addClass("ui-button-text-icons");
+				String txt = "<span class='ui-button-icon-primary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconLeft.ordinal()]+"'></span><span class='ui-button-text'>"+text+"</span>";
+				txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconRight.ordinal()]+"'></span>";
+				proxy.html(txt);
+			}else if(iconLeft == null && iconRight != null){
+				proxy.addClass("ui-button-text-icons");
+				String txt = "<span class='ui-button-text'>"+text+"</span>";
+				txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconRight.ordinal()]+"'></span>";
+				proxy.html(txt);
+			}else if(iconLeft != null && iconRight == null){
+				proxy.addClass("ui-button-text-icon-primary");
+				String txt = "<span class='ui-button-icon-primary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconLeft.ordinal()]+"'></span><span class='ui-button-text'>"+text+"</span>";
+				proxy.html(txt);
+			}else if(iconLeft == null && iconRight==null){
+				
+				if(iconLeftUrl == null && iconRightUrl == null){
+					proxy.addClass("ui-button-text-only");
+					String txt = "<span class='ui-button-text'>"+text+"</span>";
+					proxy.html(txt);
+				}else if(iconLeftUrl != null && iconRightUrl != null){
+					proxy.addClass("ui-button-text-icons");
+					String txt = "<span class='ui-button-icon-primary ui-icon' style='background-image:url("+iconLeftUrl+")'></span><span class='ui-button-text'>"+text+"</span>";
+					txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-image:url("+iconRightUrl+")'></span>";
+					proxy.html(txt);
+				}else if(iconLeftUrl == null && iconRightUrl != null){
+					proxy.addClass("ui-button-text-icons");
+					String txt = "<span class='ui-button-text'>"+text+"</span>";
+					txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-image:url("+iconRightUrl+")'></span>";
+					proxy.html(txt);
+				}else if(iconLeftUrl != null && iconRightUrl == null){
+					proxy.addClass("ui-button-text-icon-primary");
+					String txt = "<span class='ui-button-icon-primary ui-icon' style='background-image:url("+iconLeftUrl+")'></span><span class='ui-button-text'>"+text+"</span>";
+					proxy.html(txt);
+				}
+			}
+			
+		}else{
+			if(iconLeft != null && iconRight != null){
+				proxy.addClass("ui-button-icons-only");
+				String txt = "<span class='ui-button-icon-primary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconLeft.ordinal()]+"'></span><span class='ui-button-text'>&nbsp;</span>";
+				txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconRight.ordinal()]+"'></span>";
+				proxy.html(txt);
+			}else if(iconLeft == null && iconRight != null){
+				proxy.addClass("ui-button-icons-only");
+				String txt = "<span class='ui-button-text'>&nbsp;</span>";
+				txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconRight.ordinal()]+"'></span>";
+				proxy.html(txt).setStyle("width", "2.7em");
+			}else if(iconLeft != null && iconRight == null){
+				proxy.addClass("ui-button-icons-only");
+				String txt = "<span class='ui-button-icon-primary ui-icon' style='background-position:"+ICONS_BACK_POSITON[iconLeft.ordinal()]+"'></span><span class='ui-button-text'>&nbsp;</span>";
+				
+				proxy.html(txt).setStyle("width", "2.7em");
+			}else if(iconLeft == null && iconRight==null){
+				
+				if(iconLeftUrl == null && iconRightUrl == null){
+					proxy.addClass("ui-button-icons-only");
+					String txt = "<span class='ui-button-text'>&nbsp;</span>";
+					proxy.html(txt);
+				}else if(iconLeftUrl != null && iconRightUrl != null){
+					proxy.addClass("ui-button-icons-only");
+					String txt = "<span class='ui-button-icon-primary ui-icon' style='background-image:url("+iconLeftUrl+")'></span><span class='ui-button-text'>&nbsp;</span>";
+					txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-image:url("+iconRightUrl+")'></span>";
+					proxy.html(txt);
+				}else if(iconLeftUrl == null && iconRightUrl != null){
+					proxy.addClass("ui-button-icons-only");
+					String txt = "<span class='ui-button-text'>&nbsp;</span>";
+					txt = txt + "<span class='ui-button-icon-secondary ui-icon' style='background-image:url("+iconRightUrl+")'></span>";
+					proxy.html(txt).setStyle("width", "2.7em");
+				}else if(iconLeftUrl != null && iconRightUrl == null){
+					proxy.addClass("ui-button-icons-only");
+					String txt = "<span class='ui-button-icon-primary ui-icon' style='background-image:url("+iconLeftUrl+")'></span><span class='ui-button-text'>&nbsp;</span>";
+					proxy.html(txt).setStyle("width", "2.7em");
+				}
+			}
+		}
+	}
+
+	public EXIconButton(String name, String text, Icons leftIcon, Icons rightIcon) {
+		super(name, "button");
+		setButtonText(text).setIconLeft(leftIcon).setIconRight(rightIcon);
+		setAttribute("corner", "all");
 		
-		Container uiText = ComponentUtil.getContainer("text", "div", text, null);
-		addChild(uiText);
-		
-		setIcon(eicon);
-		setText(text);
+	}
+	
+	public EXIconButton(String name, String text, Icons leftIcon) {
+		super(name, "button");
+		setButtonText(text).setIconLeft(leftIcon);
+		setAttribute("corner", "all");
 	}
 	
 	public EXIconButton(String name, String text) {
-		this(name, text, null);
+		super(name, "button");
+		setButtonText(text);
+		setAttribute("corner", "all");
 	}
 	
-	public EXIconButton(String name,  Icons eicon) {
-		this(name, null, eicon);
-	}
-	public void setIcon(Icons icon){
-		if(icon != null){
-		 	int ordinal = icon.ordinal();
-		 	getChild("icon").setStyle("background-position", ICONS_BACK_POSITON[ordinal]);
-		 	getChild("icon").setDisplay(true);
-		 	addClass("fg-button-icon-left");
-			addClass("fg-button-icon-right");
-		}else{
-			removeClass("fg-button-icon-left");
-			removeClass("fg-button-icon-right");
-			getChild("icon").setDisplay(false);
-		}
+
+	public EXIconButton(String name,  Icons leftIcon) {
+		super(name, "button");
+		setIconLeft(leftIcon);
+		setAttribute("corner", "all");
 	}
 	
-	public void setIcon(String iconUrl){
-		getChild("icon").setStyle("background-position", (String)null);
-		getChild("icon").setStyle("background-image", "url('"+iconUrl+"')");
-		addClass("fg-button-icon-left");
-		addClass("fg-button-icon-right");
+	public String getButtonText() {
+		return text;
 	}
-	
-	public Container setText(String text){
-		if(StringUtil.isNotEmpty(text)){
-			getChild("text").setText(text);
-			getChild("text").setDisplay(true);
-		}else{
-			removeClass("fg-button-icon-left");
-			removeClass("fg-button-icon-right");
-			addClass("fg-button-icon-solo");
-			getChild("text").setDisplay(false);
-		}
-		return this;
-	}
-	
-	public String getLabel(){
-		return getChild("text").getText();
-	}
-	
-	public void setLabel(String text){
-		setText(text);
-	}
-	
-	
-	/**
-	 * 1 . left
-	 * 2 . right
-	 * @param position
-	 */
-	public EXIconButton setIconPosition(int position){
-		removeClass("fg-button-icon-left");
-		removeClass("fg-button-icon-right");
-		removeClass("fg-button-icon-solo");
-		
-		if(position == 1){
-			addClass("fg-button-icon-left");
-		}else{
-			addClass("fg-button-icon-right");
-		}
+
+	public EXIconButton setButtonText(String text) {
+		this.text = text;
 		return this;
 	}
 
+	public Icons getIconLeft() {
+		return iconLeft;
+	}
+
+	public EXIconButton setIconLeft(Icons iconLeft) {
+		this.iconLeft = iconLeft;
+		this.iconLeftUrl = null;
+		return this;
+	}
+
+	public Icons getIconRight() {
+		return iconRight;
+	}
+
+	public EXIconButton setIconRight(Icons iconRight) {
+		this.iconRight = iconRight;
+		this.iconRightUrl = null;
+		return this;
+	}
+
+	public String getIconLeftUrl() {
+		return iconLeftUrl;
+	}
+
+	public EXIconButton setIconLeftUrl(String iconLeftUrl) {
+		this.iconLeftUrl = iconLeftUrl;
+		this.iconLeft = null;
+		return this;
+	}
+
+	public String getIconRightUrl() {
+		return iconRightUrl;
+	}
+
+	public EXIconButton setIconRightUrl(String iconRightUrl) {
+		this.iconRightUrl = iconRightUrl;
+		this.iconRight = null;
+		return this;
+	}
+	
+	
 }

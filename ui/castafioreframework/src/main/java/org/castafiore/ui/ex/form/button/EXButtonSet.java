@@ -25,13 +25,11 @@ public class EXButtonSet extends EXContainer implements ToolBarItem {
 	
 	private ViewModel<ToolBarItem> model; 
 	
-	private boolean touching = false;
+	private boolean touching = true;
 
 	public EXButtonSet(String name, ViewModel<ToolBarItem> buttons) {
 		super(name, "div");
-		
-		addClass("fg-buttonset");
-		addClass("ui-helper-clearfix");
+		addClass("ui-buttonset");
 		setModel(buttons);
 	}
 	
@@ -79,55 +77,38 @@ public class EXButtonSet extends EXContainer implements ToolBarItem {
 		int childrens = getChildren().size();
 		for(int i = 0; i < childrens; i ++){
 			Container c = getChildren().get(i);
-			c.removeClass("ui-corner-all");
-			c.removeClass("ui-corner-left");
-			c.removeClass("ui-corner-right");
-			
 			if(touching){
-				if(i== 0){
+				if(i == 0){
+					c.setAttribute("corner", "left");
+					c.removeClass("ui-corner-all");
 					c.addClass("ui-corner-left");
-				}else if( i== (childrens - 1)){
-					c.addClass("ui-corner-right");
+					c.removeClass("ui-corner-right");
 				}
 				
+				if(i == childrens-1){
+					c.removeClass("ui-corner-all");
+					c.addClass("ui-corner-right");
+					c.removeClass("ui-corner-left");
+					c.setAttribute("corner", "right");
+				}
+				
+				if(i!= 0 && i != (childrens-1)){
+					c.removeClass("ui-corner-all");
+					c.removeClass("ui-corner-right");
+					c.removeClass("ui-corner-left");
+					c.setAttribute("corner", "none");
+				}
 			}else{
 				c.addClass("ui-corner-all");
+				c.setAttribute("corner", "all");
 			}
 		}
-		
-		if(touching){
-			addClass("fg-buttonset-multi");
-		}else{
-			removeClass("fg-buttonset-multi");
-		}
-		
-//		if(getChildren().size() >=2){
-//			int last = getChildren().size() - 1;
-//			getChildByIndex(0).removeClass("ui-corner-all");
-//			getChildByIndex(0).removeClass("ui-corner-left");
-//			getChildByIndex(0).removeClass("ui-corner-right");
-//			getChildByIndex(last).removeClass("ui-corner-all");
-//			getChildByIndex(last).removeClass("ui-corner-left");
-//			getChildByIndex(last).removeClass("ui-corner-right");
-//			if(touching){
-//				getChildByIndex(0).addClass("ui-corner-left");
-//				getChildByIndex(last).addClass("ui-corner-right");
-//				addClass("fg-buttonset-multi");
-//			}else{
-//				getChildByIndex(0).addClass("ui-corner-all");
-//				getChildByIndex(last).addClass("ui-corner-all");
-//				removeClass("fg-buttonset-multi");
-//			}
-//		}
-		
-		
-		
-		//addClass(styleClass)
+
 	}
 
 
 	public EXButtonSet addItem(ToolBarItem b ){
-		b.setStyle("float", "left");
+		
 		addChild(b);
 		reAdjustTouching();
 		return this;

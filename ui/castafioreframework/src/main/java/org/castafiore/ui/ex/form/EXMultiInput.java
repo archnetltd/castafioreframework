@@ -62,7 +62,7 @@ public abstract class EXMultiInput extends EXContainer implements StatefullCompo
 	}
 	
 	protected Button getButton(String name, Icons icon,String method ){
-		EXIconButton button = new EXIconButton(name, icon);
+		EXIconButton button = new EXIconButton(name,null, icon);
 		button.setWidth(Dimension.parse("0px"));
 		button.setHeight(Dimension.parse("4px"));
 		button.removeClass("ui-corner-all");

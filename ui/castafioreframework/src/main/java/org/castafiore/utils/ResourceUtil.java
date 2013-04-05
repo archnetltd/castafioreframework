@@ -30,6 +30,7 @@ import org.apache.commons.lang.StringUtils;
 import org.castafiore.resource.ResourceLocator;
 import org.castafiore.resource.ResourceLocatorFactory;
 import org.castafiore.ui.Application;
+import org.castafiore.ui.CastafioreController;
 import org.castafiore.ui.Container;
 
 
@@ -131,7 +132,7 @@ public class ResourceUtil {
 		Application app = c.getRoot();
 		
 		String applicationid = app.getName();
-		return "castafiore/methods?applicationid=" + applicationid + "&componentid=" + componentid + "&method=" + methodName + "&"+paramName+"=" + parameter +"&paramName=" +  paramName;
+		return "castafiore/methods/" + applicationid + "/" + componentid + "?method=" + methodName + "&"+paramName+"=" + parameter +"&paramName=" +  paramName;
 	}
 	
 	public static String getMethodUrl(Container c, String methodName, String paramName){
@@ -139,7 +140,15 @@ public class ResourceUtil {
 		Application app = c.getRoot();
 		
 		String applicationid = app.getName();
-		return "castafiore/methods?applicationid=" + applicationid + "&componentid=" + componentid + "&method=" + methodName + "&paramName=" + paramName;
+		return "castafiore/methods/" + applicationid + "/" + componentid + "?method=" + methodName + "&paramName=" + paramName;
+	}
+	
+	public static String getMethodUrl(CastafioreController c){
+		String componentid = c.getId();
+		Application app = c.getRoot();
+		
+		String applicationid = app.getName();
+		return "castafiore/methods/" + applicationid + "/" + componentid;
 	}
 	
 	public static String getJavascriptURL(String path)

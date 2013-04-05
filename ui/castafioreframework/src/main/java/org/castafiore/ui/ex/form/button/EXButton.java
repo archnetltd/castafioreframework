@@ -17,7 +17,7 @@
 
 package org.castafiore.ui.ex.form.button;
 
-import org.castafiore.JQContants;
+import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
 
 
@@ -28,13 +28,23 @@ import org.castafiore.ui.ex.EXContainer;
  *          kureem@gmail.com
  * Oct 22, 2008
  */
-public class EXButton extends AbstractButton implements JQContants, Button {
+public class EXButton extends EXContainer implements  Button {
 
 	public EXButton(String name, String label) {
 		super(name, "button");
 		
 		setText(label);
+		addClass("ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only").setAttribute("role", "button").setAttribute("aria-disabled", "false");
 	
 	}
+
+	@Override
+	public void onReady(ClientProxy proxy) {
+		super.onReady(proxy);
+		proxy.html("<span class='ui-button-text'>"+ getText() + "</span>").mouseover(proxy.clone().addClass("ui-state-hover")).mouseout(proxy.clone().removeClass("ui-state-hover").removeClass("ui-state-active").mousedown(proxy.clone().addClass("ui-state-active")));
+	}
+	
+	
+	
 	
 }

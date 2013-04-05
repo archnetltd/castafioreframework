@@ -40,10 +40,10 @@ jQuery.getCSS = function( url ) {
 $.fn.castafiore = function(params){
 		var me = $(this);
 		var app = me.attr('id');
-		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/1.css');
-		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/blueprint/screen.css');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/1.css');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/blueprint/screen.css');
 		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/aristo/theme.css');
-		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/EXFinder.css');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/EXFinder.css');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery-ui-1.8.21.js');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.maskedinput-1.3.js');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.rightClick.js');

@@ -17,69 +17,39 @@
 
 package org.castafiore.ui.ex.form;
 
-import java.util.Map;
-
-import org.castafiore.ui.Container;
-import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
-import org.castafiore.ui.events.Event;
-import org.castafiore.utils.EventUtil;
 import org.castafiore.utils.ResourceUtil;
+
 /**
  * 
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
 public class EXColorPicker extends EXInput {
 
 	public EXColorPicker(String name) {
 		super(name);
-		addScript(ResourceUtil.getJavascriptURL("jquery/ui.colorpicker.js"));
-		addStyleSheet(ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/colorpicker/colorpicker.css"));
-		addEvent(new ColorPickerEvent(), Event.CLICK);
-		
 	}
-	
+
 	public EXColorPicker(String name, String value) {
 		super(name);
-		addScript(ResourceUtil.getJavascriptURL("jquery/ui.colorpicker.js"));
-		addStyleSheet(ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/colorpicker/colorpicker.css"));
-		addEvent(new ColorPickerEvent(), Event.CLICK);
 		setValue(value);
-		setAttribute("method", "clear");
-		setAttribute("ancestor", getClass().getName());
-		addEvent(EventUtil.GENERIC_FORM_METHOD_EVENT, Event.DOUBLE_CLICK);
-		
+
 	}
-	
-	public void clear(){
-		setValue("transparent");
-		setStyle("background-color", "none");
+
+	@Override
+	public void onReady(ClientProxy proxy) {
+
+		super.onReady(proxy);
+
+		proxy.getCSS(ResourceUtil.getDownloadURL("classpath",
+				"org/castafiore/resource/colorpicker/colorpicker.css"));
+		proxy.getScript(
+				ResourceUtil.getJavascriptURL("jquery/ui.colorpicker.js"),
+				proxy.clone().click(
+						proxy.clone()
+								.appendJSFragment("startColorPicker(this)")));
 	}
-	
-	public static class ColorPickerEvent implements Event{
-
-		public void ClientAction(ClientProxy application) {
-			application.appendJSFragment("startColorPicker(this)");
-			
-		}
-
-		public boolean ServerAction(Container component, Map<String, String> requestParameters) throws UIException {
-			// TODO Auto-generated method stub
-			return false;
-		}
-
-		public void Success(ClientProxy component, Map<String, String> requestParameters) throws UIException {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
-	
-	
-
-	
 
 }
