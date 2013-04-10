@@ -9,6 +9,11 @@ import org.castafiore.easyui.grid.DataGridModel;
 import org.castafiore.easyui.grid.PropertyGrid;
 import org.castafiore.easyui.grid.PropertyGridModel;
 import org.castafiore.easyui.grid.Tree;
+import org.castafiore.easyui.layout.Layout;
+import org.castafiore.easyui.layout.RegionPanel;
+import org.castafiore.easyui.layout.TabModel;
+import org.castafiore.easyui.layout.Tabs;
+import org.castafiore.ui.Container;
 import org.castafiore.ui.DescriptibleApplication;
 import org.castafiore.ui.ex.EXApplication;
 import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
@@ -21,6 +26,7 @@ import org.castafiore.ui.ex.form.EXDateTimePicker;
 import org.castafiore.ui.ex.form.EXDimensionInput;
 import org.castafiore.ui.ex.form.EXEditableLabel;
 import org.castafiore.ui.ex.form.EXInput;
+import org.castafiore.ui.ex.form.EXLabel;
 import org.castafiore.ui.ex.form.EXMaskableInput;
 import org.castafiore.ui.ex.form.EXPassword;
 import org.castafiore.ui.ex.form.EXRichTextArea;
@@ -38,12 +44,14 @@ import org.castafiore.ui.ex.toolbar.EXToolBar;
 import org.castafiore.ui.ex.tree.TreeNode;
 import org.castafiore.ui.menu.EXMenu;
 import org.castafiore.ui.menu.EXMenuItem;
+import org.castafiore.ui.tabbedpane.TabPanel;
 
 public class ShowCase extends EXApplication implements DescriptibleApplication{
 
 	public ShowCase() {
 		super("showcase");
-		addTree();
+		//addTree();
+		//testLayouts();
 //		addPropertyGrid();
 //		addDataGrid();
 //		EXBorderLayoutContainer bl = new EXBorderLayoutContainer("df");
@@ -51,10 +59,90 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 //		bl.addChild(addButtons(), EXBorderLayoutContainer.TOP);
 //		bl.addChild(getForms(), EXBorderLayoutContainer.CENTER);
 //		addChild(bl);
+		addChild(getTabs());
 	}
 	
 	
-	public void addTree(){
+	public Tabs getTabs(){
+		TabModel model = new TabModel() {
+			
+			@Override
+			public int size() {
+				return 3;
+			}
+			
+			@Override
+			public String getTabLabelAt(TabPanel pane, int index, boolean selected) {
+				return "Tab label " + index;
+			}
+			
+			@Override
+			public Container getTabContentAt(TabPanel pane, int index) {
+			
+					return new EXLabel("sdfsd", "sdfsfsdfsdfsd");
+			}
+			
+			@Override
+			public int getSelectedTab() {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+			
+			@Override
+			public boolean isClosable(int index) {
+				return true;
+			}
+			
+			@Override
+			public String getIconCls(int index) {
+				return "icon-save";
+			}
+		};
+		
+		Tabs tabs = new Tabs("sfs").setModel(model).setFit(true);
+		return tabs;
+	}
+	
+	public void testLayouts(){
+		
+		
+		Layout layout = new Layout("my layout");
+		
+		RegionPanel north = new RegionPanel("north", "North panel","north");
+		north.setIconCls("icon-add").setSplit(true).setStyle("height", "100px");
+		
+		RegionPanel center = new RegionPanel("center", "Center panel","center");
+		center.setIconCls("icon-add").setSplit(true).setStyle("height", "300px");
+		
+		RegionPanel east = new RegionPanel("east", "east panel","east");
+		east.setIconCls("icon-add").setSplit(true).setStyle("width", "200px");
+		
+		RegionPanel west = new RegionPanel("west", "west panel","west");
+		west.setIconCls("icon-add").setSplit(true).setStyle("width", "200px");
+		
+		RegionPanel south = new RegionPanel("south", "south panel","south");
+		south.setIconCls("icon-add").setSplit(true).setStyle("height", "75px");
+		
+		layout.addRegion(north);
+		layout.addRegion(west);
+		layout.addRegion(center);
+		layout.addRegion(east);
+		//layout.addRegion(south);
+		
+		center.addChild(this.getTabs().setStyle("width", "500px").setStyle("height", "500px"));
+		north.addChild(this.addButtons());
+		west.addChild(this.addPropertyGrid());
+		east.addChild(this.addTree());
+		//addChild(layout)
+		addChild(layout.setStyle("width", "1000px").setStyle("height", "600px"));
+		//panel.setBody(layout);
+		
+		//addChild(panel.setStyle("height", "700px").setStyle("width", "700px"));
+		
+		
+	}
+	
+	public Tree addTree(){
 		org.castafiore.easyui.grid.TreeNode node = new org.castafiore.easyui.grid.TreeNode() {
 			
 			@Override
@@ -174,10 +262,11 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 		
 		
 		Tree tree = new Tree("dfsd").setRootNode(node).setAnimate(true);
-		addChild(tree.showCheckbox(true).showLines(true).enableDragNDrop(true));
+		tree.showCheckbox(true).showLines(true).enableDragNDrop(true);
+		return tree;
 	}
 	
-	public void addPropertyGrid(){
+	public PropertyGrid addPropertyGrid(){
 		PropertyGridModel model = new PropertyGridModel() {
 			
 			@Override
@@ -211,12 +300,12 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 		};
 		
 		PropertyGrid g = new PropertyGrid("pp").setModel(model).showGroup(true);
-		addChild(g);
+		return g;
 		
 		
 	}
 	
-	public void addDataGrid(){
+	public DataGrid addDataGrid(){
 		DataGridColumnModel cols = new DataGridColumnModel() {
 			
 			@Override
@@ -315,7 +404,8 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 		};
 		DataGrid grid = new DataGrid("grid");
 		grid.setModel(model).setColumnModel(cols).showPagination(true);
-		addChild(grid);
+		return grid;
+		//addChild(grid);
 	}
 	
 	
