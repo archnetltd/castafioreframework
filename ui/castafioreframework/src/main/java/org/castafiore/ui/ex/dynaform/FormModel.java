@@ -19,6 +19,7 @@ package org.castafiore.ui.ex.dynaform;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
+import org.castafiore.ui.ex.form.button.Button;
 import org.castafiore.ui.ex.form.button.EXButton;
 /**
  * This class represents a form model. It is used with the {@link EXDynaForm} component. 
@@ -78,7 +79,7 @@ public interface FormModel {
 	 * @param form	- The form on which the button is to be rendered
 	 * @return
 	 */
-	public EXButton getActionAt(int index, DynaForm form);
+	public Button getActionAt(int index, DynaForm form);
 	
 
 

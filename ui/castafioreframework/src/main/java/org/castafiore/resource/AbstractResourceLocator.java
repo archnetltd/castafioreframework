@@ -18,9 +18,20 @@
 
 import org.castafiore.utils.StringUtil;
 
+/**
+ * Abstract convenient class implementing {@link ResourceLocator}<br>
+ * @see ClassPathResourceLocator
+ * @author Kureem Rossaye
+ *
+ */
 public abstract class AbstractResourceLocator implements ResourceLocator{
 	
 	
+	/**
+	 * Extracts the identifier of the specification of the resource
+	 * @param spec
+	 * @return
+	 */
 	public String getIdentifier(String spec)
 	{
 		return StringUtil.split(spec, ":")[1];

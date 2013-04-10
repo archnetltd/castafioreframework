@@ -22,9 +22,17 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import org.castafiore.ui.UIException;
+import org.castafiore.ui.ex.form.EXUpload;
 import org.castafiore.utils.IOUtil;
 import org.castafiore.utils.ResourceUtil;
 
+/**
+ * Concrete implementation of the {@link FileData} interface<br>
+ * This class handles resource on the file system<br>
+ * This class is used in the {@link EXUpload} class to return the file or list of files uploaded
+ * @author arossaye
+ *
+ */
 public class BinaryFileData implements FileData{
 	
 

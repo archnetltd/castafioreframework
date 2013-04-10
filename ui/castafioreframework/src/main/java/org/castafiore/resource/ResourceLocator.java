@@ -16,7 +16,12 @@
  */
  package org.castafiore.resource;
 
-
+/**
+ * Interface for resolving resources based on the specification.<br>
+ * Implementations of this interface can optionally resize the resource to the specified width if possible
+ * @author Kureem Rossaye
+ *
+ */
 public interface ResourceLocator {
 	
 	public FileData getResource(String spec, String width)throws Exception;

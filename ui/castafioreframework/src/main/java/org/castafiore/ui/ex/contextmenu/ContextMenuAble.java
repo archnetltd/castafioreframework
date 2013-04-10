@@ -20,7 +20,7 @@ import org.castafiore.ui.Container;
 /**
  * This interface is used to create a context menu to a component by right clicking on it
  * 
- * Simple make your component implements this interface and implemente the required method
+ * Simple make your component implements this interface and implement the required method
  * 
  * {@link ContextMenuAble}
  * 

@@ -17,8 +17,16 @@
  package org.castafiore.resource;
 
 
+ /**
+  * Implementation of {@link ResourceLocator} for finding resources in the classpath
+  * @author arossaye
+  *
+  */
 public class ClassPathResourceLocator extends AbstractResourceLocator {
 
+	/**
+	 * Returns the resource from the specified classpath
+	 */
 	public FileData getResource(String spec, String width) throws Exception {
 		ClasspathFileData file = new ClasspathFileData();
 		file.setLocation(getIdentifier(spec));

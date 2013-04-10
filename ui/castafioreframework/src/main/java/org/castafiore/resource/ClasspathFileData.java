@@ -18,6 +18,11 @@
 
 import java.io.InputStream;
 
+/**
+ * Extends the {@link BinaryFileData} to be able to handle binary files in the classpath<br>
+ * @author Kureem Rossaye
+ *
+ */
 public class ClasspathFileData extends BinaryFileData {
 
 	private String location;

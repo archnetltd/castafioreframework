@@ -18,20 +18,51 @@
 
 import java.io.InputStream;
 
+/**
+ * Interface for handling binary data
+ * @author arossaye
+ *
+ */
 public interface FileData {
 	
+	/**
+	 * 
+	 * @return - The name of the resource
+	 */
 	public String getName();
 	
+	/**
+	 * Sets the name of the resource
+	 * @param name
+	 */
 	public void setName(String name);
 	
+	/**
+	 * 
+	 * @return mimetype of the resource
+	 */
 	public String getMimeType() ;
 	
+	/**
+	 * Provides an inputstream pointing to the resource
+	 * @return
+	 * @throws Exception
+	 */
 	public InputStream getInputStream() throws Exception;
 	
 	//public void write(byte[] bytes)throws Exception;
 	
+	/**
+	 * Overwrite the underlying resource with the specified stream
+	 * @param in
+	 * @throws Exception
+	 */
 	public void write(InputStream in)throws Exception;
 	
+	/**
+	 * Sets an accessible url for the resource
+	 * @param url
+	 */
 	public void setUrl(String url);
 
 }

@@ -23,6 +23,16 @@
 			</roles>
 			<email>humyrahbegum@gmail.com</email>
 		</contributor>
+		<contributor>
+			<name>Kureem Rossaye</name>
+			<organization>ArchNet ltd</organization>
+			<organizationUrl>http://www.archnetltd.com</organizationUrl>
+			<roles>
+				<role>Programmer</role>
+				<role>Designer</role>
+			</roles>
+			<email>kureem@gmail.com</email>
+		</contributor>
 	</contributors>
 
 	<properties>
