@@ -6,7 +6,7 @@ import java.util.Date;
 import org.openswing.swing.message.receive.java.ValueObjectImpl;
 
 public class Payment extends ValueObjectImpl{
-	
+	 
 private String code;
 	
 	private Date dateOfTransaction;

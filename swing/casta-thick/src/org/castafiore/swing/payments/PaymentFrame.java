@@ -21,17 +21,22 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRootPane;
 import javax.swing.JSlider;
+import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.castafiore.swing.orders.FSCodeVO;
+import org.castafiore.swing.print.PrintUtil;
 import org.openswing.swing.client.ComboBoxControl;
 import org.openswing.swing.client.CurrencyControl;
 import org.openswing.swing.client.DateControl;
 import org.openswing.swing.client.LabelControl;
+import org.openswing.swing.client.OptionPane;
 import org.openswing.swing.client.TextAreaControl;
 import org.openswing.swing.client.TextControl;
 import org.openswing.swing.domains.java.Domain;
@@ -112,7 +117,7 @@ public class PaymentFrame extends JFrame implements ChangeListener, ActionListen
 
 			mainPanel.setFormController(dataController);
 
-			setSize(375, 600);
+			setSize(400, 600);
 			//pack();
 			setVisible(true);
 
@@ -128,7 +133,7 @@ public class PaymentFrame extends JFrame implements ChangeListener, ActionListen
 
 		lblCode.setText("FS Code");
 		lblDate.setText("Date");
-		lblPaymentMethods.setText("combobox");
+		lblPaymentMethods.setText("Payment Method");
 		lblAmount.setText("Amount");
 		lblChequeNo.setText("Cheque No");
 		lblPos.setText("Pos");
@@ -279,8 +284,10 @@ public class PaymentFrame extends JFrame implements ChangeListener, ActionListen
 		
 		
 		
-		String next = new SimpleDateFormat("MMM/yyyy").format(cal.getTime());
 		
+		Calendar forward = (Calendar)cal.clone();
+		forward.add(Calendar.MONTH, 1);
+		String next = new SimpleDateFormat("MMM/yyyy").format(forward.getTime());
 		
 		String description = "Payment of installment for " + detail.getFsCode()  +"\n up to " + new SimpleDateFormat("dd/MMM/yyyy").format(cal.getTime()) + "\n next installment for " + next;
 		this.description.setText(description);
@@ -288,16 +295,79 @@ public class PaymentFrame extends JFrame implements ChangeListener, ActionListen
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//
-		
-		String accCode = detail.getFsCode();
-		BigDecimal ttl = new BigDecimal( amount.getDouble());
-		String paymentMethod = paymentMethods.getValue().toString();
-		String chequeNo = this.chequeNo.getText();
-		String pos = this.pos.getValue().toString();
-		String description = this.description.getValue().toString();
-		
-		new PaymentService().savePayement(accCode, ttl, paymentMethod, chequeNo, pos, description);
+	
+		try{
+			BigDecimal ttl = null;
+			String paymentMethod = null;
+			String pos = null;
+			
+			
+			String accCode = detail.getFsCode();
+			
+			try{
+				ttl = new BigDecimal( amount.getDouble());
+			}catch(Exception ee){
+				OptionPane.showMessageDialog(this, "Please enter a valid amount for the payment", "Error in Amount", JOptionPane.ERROR_MESSAGE);
+				amount.requestFocus();
+				amount.setBorder(new LineBorder(Color.RED, 1));
+				return;
+			}
+			
+			try{
+				paymentMethod = paymentMethods.getValue().toString();
+			}catch(Exception ee){
+				OptionPane.showMessageDialog(this, "Please enter a valid payment method", "Error in Payment method", JOptionPane.ERROR_MESSAGE);
+				paymentMethods.requestFocus();
+				paymentMethods.setBorder(new LineBorder(Color.RED, 1));
+				return;
+				
+			}
+			String chequeNo = this.chequeNo.getText();
+			
+			try{
+				pos = this.pos.getValue().toString();
+			}catch(Exception ee){
+				OptionPane.showMessageDialog(this, "Please enter a valid POS", "Error in POS", JOptionPane.ERROR_MESSAGE);
+				this.pos.requestFocus();
+				this.pos.setBorder(new LineBorder(Color.RED, 1));
+				return;
+			}
+			
+			String description = this.description.getValue().toString();
+			
+			
+			if(ttl == null || ttl.intValue() ==0){
+				OptionPane.showMessageDialog(this, "Please enter a valid amount for the payment", "Error in Amount", JOptionPane.ERROR_MESSAGE);
+				amount.requestFocus();
+				amount.setBorder(new LineBorder(Color.RED, 1));
+				return;
+			}
+			
+			if(paymentMethod == null || paymentMethod.trim().length() ==0){
+				OptionPane.showMessageDialog(this, "Please enter a valid payment method", "Error in Payment method", JOptionPane.ERROR_MESSAGE);
+				paymentMethods.requestFocus();
+				paymentMethods.setBorder(new LineBorder(Color.RED, 1));
+				return;
+			}
+			
+			if(pos == null || pos.trim().length() ==0){
+				OptionPane.showMessageDialog(this, "Please enter a valid POS", "Error in POS", JOptionPane.ERROR_MESSAGE);
+				this.pos.requestFocus();
+				this.pos.setBorder(new LineBorder(Color.RED, 1));
+				return;
+			}
+			
+			Object result = new PaymentService().savePayement(accCode, ttl, paymentMethod, chequeNo, pos, description);
+			//String result = "34567";
+			
+			PrintUtil.printPaymentReceipt(result.toString(), accCode, new SimpleDateFormat("dd-MMM-yyyy").format(date.getDate()), ttl.toPlainString(), description, code.getCustomer());
+			
+			
+			OptionPane.showMessageDialog(this, "Payment properly processed", "Payment succesful", JOptionPane.INFORMATION_MESSAGE);
+		}catch(Exception ee){
+			ee.printStackTrace();
+			OptionPane.showMessageDialog(this, "Error occured while processing payment:" + ee.getMessage(), "Error in Payment", JOptionPane.ERROR_MESSAGE);
+		}
 		
 //		try{
 //		JEditorPane ed = new JEditorPane();

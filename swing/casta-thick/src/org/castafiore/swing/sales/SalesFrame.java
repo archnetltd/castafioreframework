@@ -10,6 +10,13 @@ public class SalesFrame extends InternalFrame{
 	
 	private WizardPanel wizard;
 	
+	private CatalogueInnerPanel catalogue;
+	
+	private AppFormContact appForm;
+	
+	private DependentsForm dependants;
+	
+	
 	public SalesFrame() {
 		super();
 		jbInit();
@@ -19,9 +26,13 @@ public class SalesFrame extends InternalFrame{
 		setLayout(new BorderLayout());
 		wizard = new WizardPanel();
 		
-		wizard.addPanel(new CatalogueInnerPanel());
-		wizard.addPanel(new AppFormContact());
-		wizard.addPanel(new DependentsForm());
+		catalogue = new CatalogueInnerPanel();
+		appForm = new AppFormContact();
+		dependants = new DependentsForm();
+		
+		wizard.addPanel(catalogue);
+		wizard.addPanel(appForm);
+		wizard.addPanel(dependants);
 		setVisible(true);
 		wizard.setVisible(true);
 		

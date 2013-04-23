@@ -1,8 +1,8 @@
 package org.castafiore.swing.orders;
 
+import java.awt.Dimension;
 import java.util.Collection;
 
-import org.castafiore.swing.payments.Payment;
 import org.castafiore.swing.payments.PaymentGridFrameController;
 import org.openswing.swing.lookup.client.LookupController;
 import org.openswing.swing.lookup.client.LookupListener;
@@ -20,13 +20,14 @@ public class FSCodeLookupController extends LookupController implements LookupLi
 		this.addLookup2ParentLink("fsCode", "fsCode");
 		this.addLookup2ParentLink("customer", "customer");
 		this.setPreferredWidthColumn("fsCode", 120);
-		this.setPreferredWidthColumn("customer", 300);
+		this.setPreferredWidthColumn("customer", 330);
 		this.setSortableColumn("fsCode", true);
 		this.setSortableColumn("customer", true);
 		this.setFilterableColumn("fsCode", true);
 		this.setFilterableColumn("customer", true);
 	    this.setAllColumnVisible(true);
 	    this.addLookupListener(this);
+	    setFramePreferedSize(new Dimension(500, 500));
 	    
 	}
 	

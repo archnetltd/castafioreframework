@@ -1,4 +1,4 @@
-package org.castafiore.swing.payments;
+package org.castafiore.swing.print;
 
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -34,6 +34,8 @@ public class PrintDevice {
 		
 	    print(printerName, p);
 	  }
+	
+	
 
 	
 	public static void print(String printerName, Printable p){

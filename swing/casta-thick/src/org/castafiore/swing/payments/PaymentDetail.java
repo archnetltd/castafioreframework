@@ -13,7 +13,7 @@ public class PaymentDetail {
 	
 	private int installmentsPaid;
 	
-
+ 
 
 	public String getFsCode() {
 		return fsCode;

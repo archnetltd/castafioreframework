@@ -6,6 +6,7 @@ import org.openswing.swing.client.GridControl;
 import org.openswing.swing.domains.java.Domain;
 import org.openswing.swing.table.columns.client.ComboColumn;
 import org.openswing.swing.table.columns.client.TextColumn;
+import org.openswing.swing.util.java.Consts;
 import org.openswing.swing.wizard.client.WizardInnerPanel;
 
 public class DependentsForm extends WizardInnerPanel{
@@ -21,6 +22,7 @@ public class DependentsForm extends WizardInnerPanel{
 	public DependentsForm() {
 		super();
 		jbInit();
+		
 	}
 
 	
@@ -32,29 +34,52 @@ public class DependentsForm extends WizardInnerPanel{
 
 
 
+	@Override
+	public void init() {
+		super.init();
+		grid.setMode(Consts.EDIT);
+	}
+
+
+
 	public void jbInit(){
 		Domain genders = new Domain("GENDERS");
+		genders.addDomainPair("Male", "Male");
+		genders.addDomainPair("Female", "Female");
 		gender.setDomain(genders);
+		gender.setMinWidth(70);
+		gender.setMaxWidth(70);
 		gender.setColumnName("gender");
+		gender.setEditableOnEdit(true);
+		
 		name.setEditableOnEdit(true);
 		name.setColumnName("name");
+		name.setMinWidth(260);
 		serial.setColumnName("id");
+		serial.setAutoFitColumn(true);
 		nic.setColumnName("nic");
 		nic.setEditableOnEdit(true);
 		nic.setVisible(true);
+		nic.setMinWidth(110);
+		
 		grid.getColumnContainer().add(serial, null);
 		grid.getColumnContainer().add(name,null);
 		grid.getColumnContainer().add(nic,null);
 		grid.getColumnContainer().add(gender,null);
-		grid.setController(new DependentsGridController());
+		DependentsGridController  c = new DependentsGridController();
+		grid.setController(c);
+		grid.setGridDataLocator(c);
 		grid.setValueObjectClassName(DependantVO.class.getName());
+		
+		
 		
 		setLayout(new BorderLayout());
 		add(grid, BorderLayout.CENTER);
 		
-		grid.reloadData();
+		
 		
 		grid.setVisible(true);
+		grid.reloadData();
 		setVisible(true);
 	}
 

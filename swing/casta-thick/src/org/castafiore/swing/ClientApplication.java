@@ -43,7 +43,13 @@ public class ClientApplication {
     props.setProperty("pos","Point of sale");
     props.setProperty("customer","Customer");
     props.setProperty("amount","Amount");
+    props.setProperty("Search FS Code","Search FS Code");
+    props.setProperty("dateCreated","Date Created");
+    props.setProperty("code","Code");
+    props.setProperty("total","Total");
+    props.setProperty("pointOfSale","Point of Sale");
     props.setProperty("chequeNo","Cheque No");
+    
 
     ButtonsAuthorizations auth = new ButtonsAuthorizations();
     auth.addButtonAuthorization("F1",true,false,true);

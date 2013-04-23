@@ -1,4 +1,4 @@
-package org.castafiore.swing.payments;
+package org.castafiore.swing.print;
 
 import java.awt.Color;
 import java.awt.Container;

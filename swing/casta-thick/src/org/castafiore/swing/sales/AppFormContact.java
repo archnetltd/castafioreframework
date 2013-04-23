@@ -21,7 +21,7 @@ public class AppFormContact extends WizardInnerPanel{
 	private Form contactForm = new Form();
 	
 	private Form principalForm = new Form();
-	
+	  
 
 	TextControl fullName = new TextControl();
 	TextControl surname = new TextControl();

@@ -51,7 +51,7 @@ public class PaymentGridFrame extends InternalFrame {
 		this.controller = controller;
 		try {
 			jbInit();
-			setSize(900, 675);
+			setSize(605, 500);
 			payments.setController(controller);
 			payments.setGridDataLocator(controller);
 			setVisible(true);
@@ -107,6 +107,7 @@ public class PaymentGridFrame extends InternalFrame {
 		insertButton.addActionListener(new GridFrame_insertButton_actionAdapter(this));
 
 		fsCode.setLookupController(new FSCodeLookupController(controller));
+
 
 		this.getContentPane().add(payments, BorderLayout.CENTER);
 		this.getContentPane().add(buttonsPanel, BorderLayout.NORTH);

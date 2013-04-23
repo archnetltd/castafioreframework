@@ -103,11 +103,18 @@ public class CastafioreClientMDIController implements MDIController{
 	@Override
 	public DefaultTreeModel getApplicationFunctions() {
 		 DefaultMutableTreeNode root = new OpenSwingTreeNode();
+		 
 		    DefaultTreeModel model = new DefaultTreeModel(root);
-		    ApplicationFunction n1 = new ApplicationFunction("Payments","Payments",null, "getPayments");
-		    ApplicationFunction n2 = new ApplicationFunction("Sales", "Sales",null,"getSales");
-		    root.add(n1);
-		    root.add(n2);
+		    ApplicationFunction modules = new ApplicationFunction("Modules", null);
+		    ApplicationFunction payments = new ApplicationFunction("Payments","Payments",null, "getPayments");
+		    ApplicationFunction sales = new ApplicationFunction("Sales", "Sales",null,"getSales");
+		    ApplicationFunction tools = new ApplicationFunction("Tools", null);
+		    ApplicationFunction options = new ApplicationFunction("Options", "Options","setup.gif","getOptions");
+		    root.add(modules);
+		    modules.add(sales);
+		    modules.add(payments);
+		    root.add(tools);
+		    tools.add(options);
 		    return model;
 	}
 
