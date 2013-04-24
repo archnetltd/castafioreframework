@@ -123,9 +123,8 @@ public class PaymentService {
 		b.append("&pos=").append(URLEncoder.encode(pos));
 		b.append("&description=").append(URLEncoder.encode(description, "UTF-8"));
 		
-		readUrl(b.toString());
-
-		return "success";
+		String data = readUrl(b.toString());
+		return data.replace("\n", "");
 		}catch(Exception e){
 			e.printStackTrace();
 			throw new RuntimeException(e);

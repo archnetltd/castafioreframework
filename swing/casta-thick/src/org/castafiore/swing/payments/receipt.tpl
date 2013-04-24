@@ -1,4 +1,4 @@
-<div style="width:10cm">
+<div style="width:7.5cm">
 <table style="border: 2px solid; padding: 4px; width: 100%;">
 
 	<tr>
