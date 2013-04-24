@@ -1,1 +1,1 @@
-start "jre6\bin\java.exe -jar" castafiore.jar
+start "jre\bin\java.exe -jar" castafiore.jar
