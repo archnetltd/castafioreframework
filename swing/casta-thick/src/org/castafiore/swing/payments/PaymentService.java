@@ -8,6 +8,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.castafiore.swing.options.PropertiesUtil;
 import org.castafiore.swing.orders.FSCodeVO;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,7 +17,7 @@ public class PaymentService {
 
 	private final static ObjectMapper mapper = new ObjectMapper();
 	
-	private final static String ENDPOINT = "http://68.68.109.26/elie";
+	private final static String ENDPOINT = PropertiesUtil.properties.getProperty("server.endpoint", "http://68.68.109.26/elie");
 
 	public List<Payment> getPayments(String FSCode) {
 
@@ -24,7 +25,7 @@ public class PaymentService {
 			return new ArrayList<Payment>();
 		}
 		try {
-			String data = readUrl(ENDPOINT + "/castafiore/methods?controller=orderscontroller&action=findpayments&page=0&pageSize=100&fs=" + FSCode);
+			String data = readUrl(ENDPOINT + "/castafiore/methods?controller=orderscontroller&action=findpayments&page=0&pageSize=100&fs=" + URLEncoder.encode( FSCode, "UTF-8"));
 
 			Payment[] da = mapper.readValue(data.getBytes("UTF-8"),
 					Payment[].class);
@@ -66,7 +67,7 @@ public class PaymentService {
 	
 	public PaymentDetail getPaymentDetail(String fsCode){
 		try {
-			String data = readUrl(ENDPOINT + "/castafiore/methods?controller=orderscontroller&action=getpdetails&fs=" + fsCode);
+			String data = readUrl(ENDPOINT + "/castafiore/methods?controller=orderscontroller&action=getpdetails&fs=" + URLEncoder.encode( fsCode, "UTF-8"));
 
 			PaymentDetail pd = mapper.readValue(data.getBytes("UTF-8"), PaymentDetail.class);
 			

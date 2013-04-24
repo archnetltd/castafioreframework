@@ -17,6 +17,7 @@ public class OptionsFrame extends InternalFrame{
 	
 	TextControl thermalPrinterName = new TextControl();
 	TextControl normalPrinterName = new TextControl();
+	TextControl serverEndpoint = new TextControl();
 	
 	
 	
@@ -36,8 +37,13 @@ public class OptionsFrame extends InternalFrame{
 		normalPrinterName.setAttributeName("normalPrinterName");
 		thermalPrinterName.setEnabledOnEdit(true);
 		normalPrinterName.setEnabledOnEdit(true);
+		
+		serverEndpoint.setAttributeName("server.endpoint");
+		serverEndpoint.setEnabledOnEdit(true);
+		
 		properties.addProperty("Thermal Printer",thermalPrinterName , "TM00000", PropertiesUtil.properties.getProperty("thermalPrinterName", "TM00000"));
 		properties.addProperty("Normal Printer",normalPrinterName , "HP-4567", PropertiesUtil.properties.getProperty("normalPrinterName", "HP-4567"));
+		properties.addProperty("Server Endpoint",serverEndpoint , "http://68.68.109.26/elie", PropertiesUtil.properties.getProperty("server.endpoint", "http://68.68.109.26/elie"));
 		
 		SaveButton save = new SaveButton();
 		EditButton edit = new EditButton();

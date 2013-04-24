@@ -23,9 +23,14 @@ public class PropertiesUtil {
 		File configs = new File("configs.properties");
 		if(!configs.exists()){
 			configs.createNewFile();
+			FileOutputStream fout = new FileOutputStream(new File("configs.properties"));
+			fout.write("server.endpoint=http://68.68.109.26/elie\n".getBytes());
+			fout.flush();
+			fout.close();
 		}
 		
 		properties.load(new FileInputStream(configs));
+		
 	}
 	
 	public static void saveProperties(String key, String value)throws Exception{

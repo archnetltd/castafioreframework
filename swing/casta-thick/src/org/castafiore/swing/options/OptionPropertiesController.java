@@ -6,7 +6,7 @@ import org.openswing.swing.properties.client.PropertyGridController;
 public class OptionPropertiesController extends PropertyGridController{
 
 	
-	public static String[] propertyNames = new String[]{"thermalPrinterName", "normalPrinterName"} ;
+	public static String[] propertyNames = new String[]{"thermalPrinterName", "normalPrinterName", "server.endpoint"} ;
 	
 	
 	public OptionPropertiesController() {
