@@ -1,13 +1,21 @@
 package org.castafiore.swing.sales;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SaveContractDTO {
+import org.openswing.swing.message.receive.java.ValueObjectImpl;
+
+public class SaveContractDTO extends ValueObjectImpl{
 	
 	private String plan;
+	
+	private String planDetail;
+	
+	private Date date;
 	
 	private Map<String, String> options = new HashMap<String, String>();
 	
@@ -60,6 +68,10 @@ public class SaveContractDTO {
 	private String bankAccountNumber;
 	
 	private String bankName;
+	
+	private String status;
+	
+	private BigDecimal installment = BigDecimal.ZERO;
 
 	public String getPlan() {
 		return plan;
@@ -276,7 +288,46 @@ public class SaveContractDTO {
 	public void setBankName(String bankName) {
 		this.bankName = bankName;
 	}
-	
-	
 
+	public String getPlanDetail() {
+		return planDetail;
+	}
+
+	public void setPlanDetail(String planDetail) {
+		this.planDetail = planDetail;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	public String getCustomer(){
+		return contactFirstName + " " + contactLastName;
+	}
+	
+	public void setCustomer(String customer){
+		
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public BigDecimal getInstallment() {
+		return installment;
+	}
+
+	public void setInstallment(BigDecimal installment) {
+		this.installment = installment;
+	}
+
+	
 }

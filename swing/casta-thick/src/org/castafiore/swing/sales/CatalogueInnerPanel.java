@@ -1,5 +1,6 @@
 package org.castafiore.swing.sales;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -10,11 +11,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import org.castafiore.swing.sales.options.PlanOptionsPropertyGridController;
 import org.openswing.swing.client.ComboBoxControl;
 import org.openswing.swing.client.DateControl;
 import org.openswing.swing.client.LabelControl;
+import org.openswing.swing.client.PropertyGridControl;
 import org.openswing.swing.client.TextControl;
 import org.openswing.swing.domains.java.Domain;
 import org.openswing.swing.form.client.Form;
@@ -33,6 +37,7 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 	ComboBoxControl promotion = new ComboBoxControl();
 	ComboBoxControl pointOfSales = new ComboBoxControl();
 	Map<String,Form> options = new HashMap<String, Form>();
+	JPanel formPanel = new JPanel();
 	
 //	Form formPaymentOptions = new Form();
 //	ComboBoxControl paymentMethods = new ComboBoxControl();
@@ -89,7 +94,7 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		promdom.addDomainPair("3Months", "3 Months Promotion");
 		promotion.setDomain(promdom);
 		
-		
+		add(form);
 		
 		form.setBorder(border);
 		
@@ -117,12 +122,15 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		
 		form.add(new LabelControl("Promotion"), 	new GridBagConstraints(0, 3, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,new Insets(5, 5, 5, 5), 0, 0));
 		form.add(promotion, 						new GridBagConstraints(1, 3, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL,new Insets(5, 5, 5, 5), 0, 0));
-		add(form);
 		
+		
+		
+		formPanel.setLayout(new CardLayout(10, 10));
+		add(formPanel);
 		try{
 			Form f = OptionsBuilder.buildForm("A");
 			options.put("A", f);
-			add(f);
+			formPanel.add(f);
 			}catch(Exception e){
 				e.printStackTrace();
 			}
@@ -135,7 +143,9 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		
 		if(!options.containsKey(value)){
 			try{
-			options.put(value, OptionsBuilder.buildForm(value));
+				Form f = OptionsBuilder.buildForm(value);
+				formPanel.add(f);
+			options.put(value, f);
 			}catch(Exception ee){
 				ee.printStackTrace();
 				throw new RuntimeException(ee);
@@ -151,6 +161,8 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 			}
 			f.setVisible(true);
 		}
+		
+		formPanel.validate();
 	
 	}
 	

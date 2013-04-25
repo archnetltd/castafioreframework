@@ -2,10 +2,12 @@ package org.castafiore.swing.sales;
 
 import java.awt.BorderLayout;
 
+import javax.swing.JFrame;
+
 import org.openswing.swing.mdi.client.InternalFrame;
 import org.openswing.swing.wizard.client.WizardPanel;
 
-public class SalesFrame extends InternalFrame{
+public class SalesFrame extends JFrame{
 	
 	
 	private WizardPanel wizard;
@@ -37,7 +39,8 @@ public class SalesFrame extends InternalFrame{
 		wizard.setVisible(true);
 		
 		setSize(500, 400);
-		add(wizard, BorderLayout.CENTER);
+		
+		getContentPane().add(wizard, BorderLayout.CENTER);
 	}
 
 }
