@@ -20,6 +20,7 @@ public class SalesGridFrame extends InternalFrame implements ActionListener{
 	
 	GridControl sales = new GridControl();
 	
+	TextColumn fsCode = new TextColumn();
 	DateColumn date = new DateColumn();
 	TextColumn plan = new TextColumn();
 	TextColumn planDetail = new TextColumn();
@@ -41,13 +42,20 @@ public class SalesGridFrame extends InternalFrame implements ActionListener{
 	public void jbInit(){
 		setLayout(new BorderLayout());
 		sales.setValueObjectClassName(SaveContractDTO.class.getName());
+		fsCode.setColumnFilterable(true);
+		fsCode.setColumnName("fsCode");
+		fsCode.setColumnSortable(true);
+		fsCode.setColumnVisible(true);
+		fsCode.setColumnSelectable(true);
+		sales.getColumnContainer().add(fsCode,null);
+		
+		
 		date.setColumnFilterable(true);
 		date.setColumnName("date");
 		date.setColumnSortable(true);
 		date.setColumnVisible(true);
 		date.setEditableOnEdit(true);
 		date.setEditableOnInsert(true);
-	
 		sales.getColumnContainer().add(date,null);
 		
 		plan.setColumnFilterable(true);

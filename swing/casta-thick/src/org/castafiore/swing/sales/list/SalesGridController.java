@@ -21,6 +21,7 @@ public class SalesGridController extends GridController implements GridDataLocat
 		List<SaveContractDTO> result = new ArrayList<SaveContractDTO>();
 		for(int i =0; i<200;i++){
 			SaveContractDTO d= new SaveContractDTO();
+			d.setFsCode("FS9993/12");
 			d.setContactFirstName("First Name");
 			d.setContactLastName("Last Name");
 			d.setDate(new Date());

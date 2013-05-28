@@ -1,14 +1,21 @@
 package org.castafiore.swing;
 
+import java.awt.event.KeyEvent;
 import java.util.Hashtable;
 import java.util.Properties;
 
 import javax.swing.JSlider;
+import javax.swing.KeyStroke;
 
 import org.openswing.swing.internationalization.java.EnglishOnlyResourceFactory;
 import org.openswing.swing.permissions.client.LoginDialog;
 import org.openswing.swing.permissions.java.ButtonsAuthorizations;
 import org.openswing.swing.util.client.ClientSettings;
+
+import com.jgoodies.looks.plastic.Plastic3DLookAndFeel;
+import com.jgoodies.looks.plastic.PlasticLookAndFeel;
+import com.jgoodies.looks.plastic.PlasticXPLookAndFeel;
+import com.jgoodies.looks.windows.WindowsLookAndFeel;
 
 
 /**
@@ -60,10 +67,12 @@ public class ClientApplication {
         auth
     );
 
+    ClientSettings.LOOK_AND_FEEL_CLASS_NAME = WindowsLookAndFeel.class.getName();
     ClientSettings.VIEW_MANDATORY_SYMBOL = true;
-    ClientSettings.ALLOW_OR_OPERATOR = false;
-    ClientSettings.INCLUDE_IN_OPERATOR = false;
+    ClientSettings.ALLOW_OR_OPERATOR = true;
+    ClientSettings.INCLUDE_IN_OPERATOR = true;
     ClientSettings.SHOW_FILTER_SYMBOL = true;
+ 
 
    
     //JSlider slider = new JSlider(0, 20);

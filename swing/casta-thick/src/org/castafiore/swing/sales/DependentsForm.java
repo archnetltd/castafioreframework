@@ -9,7 +9,7 @@ import org.openswing.swing.table.columns.client.TextColumn;
 import org.openswing.swing.util.java.Consts;
 import org.openswing.swing.wizard.client.WizardInnerPanel;
 
-public class DependentsForm extends WizardInnerPanel{
+public class DependentsForm extends WizardInnerPanel implements DataCollector{
 	
 	TextColumn serial= new TextColumn();
 	TextColumn name = new TextColumn();
@@ -81,6 +81,14 @@ public class DependentsForm extends WizardInnerPanel{
 		grid.setVisible(true);
 		grid.reloadData();
 		setVisible(true);
+	}
+
+
+
+	@Override
+	public void collect(SaveContractDTO dto) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

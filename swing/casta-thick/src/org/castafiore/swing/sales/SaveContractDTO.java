@@ -17,6 +17,8 @@ public class SaveContractDTO extends ValueObjectImpl{
 	
 	private Date date;
 	
+	private String pointOfSale;
+	
 	private Map<String, String> options = new HashMap<String, String>();
 	
 	private String source;
@@ -47,7 +49,7 @@ public class SaveContractDTO extends ValueObjectImpl{
 	
 	private String principalLastName;
 	
-	private String principaltNic;
+	private String principalNic;
 	
 	private String principalEmail;
 	
@@ -72,6 +74,16 @@ public class SaveContractDTO extends ValueObjectImpl{
 	private String status;
 	
 	private BigDecimal installment = BigDecimal.ZERO;
+	
+	
+
+	public String getPointOfSale() {
+		return pointOfSale;
+	}
+
+	public void setPointOfSale(String pointOfSale) {
+		this.pointOfSale = pointOfSale;
+	}
 
 	public String getPlan() {
 		return plan;
@@ -201,13 +213,7 @@ public class SaveContractDTO extends ValueObjectImpl{
 		this.principalLastName = principalLastName;
 	}
 
-	public String getPrincipaltNic() {
-		return principaltNic;
-	}
-
-	public void setPrincipaltNic(String principaltNic) {
-		this.principaltNic = principaltNic;
-	}
+	
 
 	public String getPrincipalEmail() {
 		return principalEmail;
@@ -327,6 +333,14 @@ public class SaveContractDTO extends ValueObjectImpl{
 
 	public void setInstallment(BigDecimal installment) {
 		this.installment = installment;
+	}
+
+	public String getPrincipalNic() {
+		return principalNic;
+	}
+
+	public void setPrincipalNic(String principalNic) {
+		this.principalNic = principalNic;
 	}
 
 	

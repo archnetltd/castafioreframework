@@ -2,11 +2,11 @@ package org.castafiore.swing.sales;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -14,11 +14,9 @@ import java.util.Map;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
-import org.castafiore.swing.sales.options.PlanOptionsPropertyGridController;
 import org.openswing.swing.client.ComboBoxControl;
 import org.openswing.swing.client.DateControl;
 import org.openswing.swing.client.LabelControl;
-import org.openswing.swing.client.PropertyGridControl;
 import org.openswing.swing.client.TextControl;
 import org.openswing.swing.domains.java.Domain;
 import org.openswing.swing.form.client.Form;
@@ -26,7 +24,7 @@ import org.openswing.swing.form.model.client.ValueChangeEvent;
 import org.openswing.swing.form.model.client.ValueChangeListener;
 import org.openswing.swing.wizard.client.WizardInnerPanel;
 
-public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChangeListener{
+public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChangeListener, DataCollector{
 	
 	Form form = new Form();
 	ComboBoxControl plans = new ComboBoxControl();
@@ -39,16 +37,6 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 	Map<String,Form> options = new HashMap<String, Form>();
 	JPanel formPanel = new JPanel();
 	
-//	Form formPaymentOptions = new Form();
-//	ComboBoxControl paymentMethods = new ComboBoxControl();
-//	ComboBoxControl chequeNo = new ComboBoxControl();
-//	ComboBoxControl bankAccountNumber = new ComboBoxControl();
-//	ComboBoxControl bankName = new ComboBoxControl();
-	
-	//JPanel options = new JPanel();
-	
-	
-	
 	public CatalogueInnerPanel() {
 		super();
 		jbInit();
@@ -56,7 +44,28 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 
 	public String getPanelId() {
 	    return getClass().getName();
-	  }
+	}
+	
+	
+	@Override
+	public void collect(SaveContractDTO dto) {
+		dto.setPlan(this.plans.getValue().toString());
+		dto.setFsCode(this.invoice.getText());
+		dto.setDate(date.getDate());
+		dto.setSalesAgent(agent.getValue().toString());
+		dto.setSource(agent.getValue().toString());
+		dto.setPromotion(promotion.getValue().toString());
+		dto.setPointOfSale(pointOfSales.getValue().toString());
+		
+		Component[] comps = formPanel.getComponents();
+		for(Component c : comps){
+			if(c.getName().endsWith(dto.getPlan())){
+				Form opts = (Form)c;
+				//opts.get
+			}
+		}
+		
+	}
 
 	public void jbInit(){
 		setLayout(new GridLayout(2, 1));
@@ -97,10 +106,7 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		add(form);
 		
 		form.setBorder(border);
-		
-		//form.add(new LabelControl(label),			new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,new Insets(5, 5, 5, 5), 0, 0));
-		//form.add(control,	 						new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL,new Insets(5, 5, 5, 5), 0, 0));
-		
+				
 		form.add(new LabelControl("Plan"), 			new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.NONE,new Insets(5, 5, 5, 5), 0, 0));
 		form.add(plans, 							new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL,new Insets(5, 5, 5, 5), 0, 0));
 		
@@ -129,6 +135,7 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		add(formPanel);
 		try{
 			Form f = OptionsBuilder.buildForm("A");
+			f.setName("A");
 			options.put("A", f);
 			formPanel.add(f);
 			}catch(Exception e){
@@ -165,6 +172,8 @@ public class CatalogueInnerPanel extends WizardInnerPanel implements ValueChange
 		formPanel.validate();
 	
 	}
+
+	
 	
 	
 	
