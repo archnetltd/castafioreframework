@@ -20,9 +20,19 @@ import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.tree.TreeNode;
 
+/**
+ * A menu controlled by the {@link TreeNode}
+ * @author arossaye
+ *
+ */
 public class EXMenu extends EXContainer {
 	private TreeNode<EXMenuItem> node;
 
+	/**
+	 * Creates a menu with the specified name and populated with the specified {@link TreeNode}
+	 * @param name The name of the menu
+	 * @param node The {@link TreeNode} to populate the menu
+	 */
 	public EXMenu(String name, TreeNode<EXMenuItem> node) {
 		super(name, "ul");
 
@@ -31,10 +41,19 @@ public class EXMenu extends EXContainer {
 
 	}
 
+	/**
+	 * Constructs an empty menu
+	 * @param name
+	 */
 	public EXMenu(String name){
 		this(name,null);
 	}
 	
+	/**
+	 * Re creates the menu with the specified {@link TreeNode}
+	 * @param node The {@link TreeNode}
+	 * @return The newly created {@link EXMenu}
+	 */
 	public EXMenu setModel(TreeNode<EXMenuItem> node) {
 		this.node = node;
 		this.getChildren().clear();
@@ -53,6 +72,10 @@ public class EXMenu extends EXContainer {
 		return this;
 	}
 
+	/**
+	 * The {@link TreeNode} of the menu
+	 * @return
+	 */
 	public TreeNode<EXMenuItem> getModel() {
 		return node;
 	}

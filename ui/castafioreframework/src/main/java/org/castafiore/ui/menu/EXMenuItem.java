@@ -16,10 +16,22 @@
  */
  package org.castafiore.ui.menu;
 
+import java.awt.MenuItem;
+
 import org.castafiore.ui.ex.EXContainer;
 
+/**
+ * Represents an item in a menu
+ * @author arossaye
+ *
+ */
 public class EXMenuItem extends EXContainer {
 
+	/**
+	 * Constructs a {@link MenuItem}
+	 * @param name The name of the menu item
+	 * @param label The label to display on the menu item
+	 */
 	public EXMenuItem(String name, String label) {
 		super(name, "a");
 		setAttribute("href", "#");

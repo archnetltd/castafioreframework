@@ -16,8 +16,18 @@
  */
  package org.castafiore.ui.menu;
 
+ /**
+  * Interface that helps to handle menu actions on implementation of this interface
+  * @author arossaye
+  *
+  */
 public interface MenuListener {
 	
+	/**
+	 * Executed when an {@link EXMenuItem} is clicked or whatever
+	 * @param menuItem the {@link EXMenuItem} clicked
+	 * @param menu The {@link EXMenu} on which this {@link EXMenuItem} is found.
+	 */
 	public void onSelectItem(EXMenuItem menuItem, EXMenu menu);
 
 }
