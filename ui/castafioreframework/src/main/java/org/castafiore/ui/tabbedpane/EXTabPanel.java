@@ -22,6 +22,17 @@ import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.utils.ComponentUtil;
 
+/**
+ * This class represents a tab panel.<br>
+ * It is lazy loaded. Meaning that the content are instantiated and loaded on browser only when it is opened.<br>
+ * Once content is loaded, it is cached in memory and browser.<br>
+ * The content of the panel is delegated to the {@link TabModel}<br>
+ * The layout of the tab header is handled to the {@link TabRenderer}. A default implementation of JQuery UI is provided.
+ * 
+ * 
+ * @author arossaye
+ *
+ */
 public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 
 	protected TabModel model;
@@ -45,6 +56,10 @@ public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 		return model;
 	}
 	
+	/**
+	 * Recreates the Panel based on the new tab model
+	 * @param model the model
+	 */
 	public void setModel(TabModel model) {
 		
 		this.model = model;
@@ -106,26 +121,47 @@ public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @return the {@link TabContentDecorator}
+	 */
 	public TabContentDecorator getTabContentDecorator() {
 		return tabContentDecorator;
 	}
 
+	/**
+	 * sets the {@link TabContentDecorator}
+	 * @param tabContentDecorator The tab content decorator
+	 */
 	public void setTabContentDecorator(TabContentDecorator tabContentDecorator) {
 		this.tabContentDecorator = tabContentDecorator;
 		setModel(model);
 	}
+	
 
+	/**
+	 * @return the {@link TabRenderer}
+	 */
 	public TabRenderer getTabRenderer() {
 		return tabRenderer;
 	}
 
+	/**
+	 * sets the {@link TabRenderer}
+	 * 
+	 * @param tabRenderer The {@link TabRenderer}
+	 */
 	public void setTabRenderer(TabRenderer tabRenderer) {
 		this.tabRenderer = tabRenderer;
 		setModel(model);
 	}
 
 
+	/**
+	 * JQuery UI style {@link TabRenderer}
+	 * @author arossaye
+	 *
+	 */
 	public static class JQTabRenderer implements TabRenderer{
 
 		public Container getComponentAt(TabPanel pane, TabModel model,
@@ -150,7 +186,11 @@ public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 
 	}
 	
-	
+	/**
+	 * Jquery UI style {@link TabContentDecorator}
+	 * @author arossaye
+	 *
+	 */
 	public static class JQTabContentDecorator implements TabContentDecorator{
 
 		@Override

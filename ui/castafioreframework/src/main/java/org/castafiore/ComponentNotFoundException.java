@@ -17,7 +17,7 @@
  package org.castafiore;
 
 /**
- * {@link RuntimeException} whenever the an event is to be executed, and the component holding the event does not exist
+ * {@link RuntimeException} whenever there is an event is to be executed, and the component holding the event does not exist
  * @author Kureem Rossaye
  * @since 1.0
  *

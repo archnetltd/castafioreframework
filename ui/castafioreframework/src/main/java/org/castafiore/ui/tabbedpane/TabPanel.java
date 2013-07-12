@@ -18,10 +18,23 @@
 
 import org.castafiore.ui.Container;
 
+/**
+ * Interface governing implementations of {@link TabPanel}
+ * @author arossaye
+ *
+ */
 public interface TabPanel extends Container {
 	
+	/**
+	 * Returns the {@link TabModel}
+	 * @return the {@link TabModel}
+	 */
 	public TabModel getModel();
 	
+	/**
+	 * the {@link TabRenderer}
+	 * @return The {@link TabRenderer}
+	 */
 	public TabRenderer getTabRenderer();
 
 }

@@ -27,15 +27,29 @@ import org.castafiore.ui.scripting.compiler.Compiler;
 import org.castafiore.utils.JavascriptUtil;
 import org.castafiore.utils.StringUtil;
 
+/**
+ * Implementation of {@link EXTemplateComponent} that extracts a portion of an html template <br>
+ * It uses Jericho library to handle the parsing of the html template and extracting the required portion
+ * @author arossaye
+ *
+ */
 public class EXJericoComponent extends EXTemplateComponent implements Compiler {
 	
-	//private String selector = null;
-	//int index = 0;
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 
 	
-	
+	/**
+	 * Constructs an instance of this class
+	 * @param name The name of the component
+	 * @param templateLocation The location of the template
+	 * @param selector The selector which will be the root tag of the template
+	 * @param index index of returned result of the selector if ever there are more than one
+	 */
 	public EXJericoComponent(String name, String templateLocation, String selector, int index) {
 		super(name, templateLocation);
 		setAttribute("selector", selector);
@@ -43,22 +57,37 @@ public class EXJericoComponent extends EXTemplateComponent implements Compiler {
 	}
 	
 	
-
+	/**
+	 * The selector used
+	 * @return The selector
+	 */
 	public String getSelector() {
 		
 		return getAttribute("selector");
 	}
 
+	/**
+	 * Sets the selector
+	 * @param selector The selector
+	 */
 	public void setSelector(String selector) {
 		setAttribute("selector", selector);
 		setRendered(false);
 	}
 
+	/**
+	 * Returns the element index used
+	 * @return The element index
+	 */
 	public int getIndex() {
 		return Integer.parseInt(getAttribute("elemindex"));
 		
 	}
 
+	/**
+	 * 
+	 * @param index
+	 */
 	public void setIndex(int index) {
 		setAttribute("elemindex", index + "");
 		setRendered(false);

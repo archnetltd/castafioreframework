@@ -20,6 +20,7 @@ package org.castafiore.ui.scripting.compiler;
 import java.util.Map;
 
 /**
+ * Interface handling the compilation of template against a context.
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -27,6 +28,13 @@ import java.util.Map;
  */
 public interface Compiler {
 	
+	/**
+	 * Compiles the template and return a string of the template
+	 * @param template
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
 	public String compile(String template, Map<String, Object> context)throws Exception;
 
 }

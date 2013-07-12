@@ -21,7 +21,7 @@ import java.io.Serializable;
 
 import org.castafiore.ui.Container;
 /**
- * 
+ * Interface responsible for the rendering of tab panel headers
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -29,9 +29,23 @@ import org.castafiore.ui.Container;
  */
 public interface TabRenderer extends Serializable{
 	
+	/**
+	 * Returns the tab header
+	 * @param pane The {@link TabPanel} on which to render the tab
+	 * @param model The {@link TabModel} applied on the {@link TabPanel}
+	 * @param index The current index of the tab
+	 * @return the tab to place on the header
+	 */
 	public Container getComponentAt(TabPanel pane, TabModel model, int index);
 	
 	
+	/**
+	 * decorates the tab header when it is selected
+	 * @param pane The {@link TabPanel} which is being used
+	 * @param model The {@link TabModel} applied on the {@link TabPanel}
+	 * @param index The index of the tab
+	 * @param tab The actual tab being selected
+	 */
 	public void onSelect(TabPanel pane, TabModel model, int index, Container tab);
 	
 	
