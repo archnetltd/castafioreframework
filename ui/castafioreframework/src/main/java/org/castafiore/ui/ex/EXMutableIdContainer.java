@@ -20,6 +20,10 @@ import org.castafiore.ui.Container;
 
 public class EXMutableIdContainer extends EXContainer {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id ;
 	
 	public EXMutableIdContainer(String name, String tagName, String id) {

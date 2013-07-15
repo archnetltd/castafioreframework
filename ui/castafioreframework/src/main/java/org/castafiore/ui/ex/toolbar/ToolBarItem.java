@@ -18,6 +18,11 @@
 
 import org.castafiore.ui.Container;
 
+/**
+ * Interface to mark up a toolbar item
+ * @author arossaye
+ *
+ */
 public interface ToolBarItem extends Container {
 
 }

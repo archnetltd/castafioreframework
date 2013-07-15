@@ -20,7 +20,7 @@ package org.castafiore.ui.ex.toolbar;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.ViewModel;
 /**
- * 
+ * Default implementation of a toolbar. Classical jquery ui like toolbar
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -28,6 +28,10 @@ import org.castafiore.ui.ex.ViewModel;
  */
 public class EXToolBar extends EXContainer implements ToolBar  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ViewModel<ToolBarItem> model ;
 	
 	public EXToolBar(String name, ViewModel<ToolBarItem> model) {

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.ui.ex.tree;
+package org.castafiore.ui.ex.tree;
 
 import java.util.Map;
 
@@ -27,30 +27,40 @@ import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.utils.ResourceUtil;
 
-public class EXTree extends EXContainer{
-	
-	
-	public static Event OPEN = new Event(){
+public class EXTree extends EXContainer {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static Event OPEN = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
 			container.mask(container.getAncestorOfType(EXTree.class));
-			container.makeServerRequest(new JMap().put("action", container.getAttribute("action")),this);
-			
+			container.makeServerRequest(
+					new JMap().put("action", container.getAttribute("action")),
+					this);
+
 		}
 
 		public boolean ServerAction(Container container,
 				Map<String, String> request) throws UIException {
-			
+
 			String action = request.get("action");
-			
-			if("open".equals(action))
-			{
-				request.put("idto", container.getAncestorOfType(Node.class).Open());
-			}
-			else
-			{
-				request.put("idto",container.getAncestorOfType(Node.class).Close());
-				
+
+			if ("open".equals(action)) {
+				request.put("idto", container.getAncestorOfType(Node.class)
+						.Open());
+			} else {
+				request.put("idto", container.getAncestorOfType(Node.class)
+						.Close());
+
 			}
 			return true;
 		}
@@ -59,28 +69,31 @@ public class EXTree extends EXContainer{
 				throws UIException {
 			String action = request.get("action");
 			String id = request.get("idto");
-			
+
 			ClientProxy proxy = new ClientProxy("#" + id);
-			if(action.equalsIgnoreCase("open"))
-			{
-				
-				container.mergeCommand(proxy.setStyle("display", "none").slideDown(100));
+			if (action.equalsIgnoreCase("open")) {
+
+				container.mergeCommand(proxy.setStyle("display", "none")
+						.slideDown(100));
+			} else {
+				container.mergeCommand(proxy.setStyle("display", "block")
+						.slideUp(100));
 			}
-			else
-			{
-				container.mergeCommand(proxy.setStyle("display", "block").slideUp(100));
-			}
-			
+
 		}
-		
+
 	};
-	
-	
-	public static Event CLOSE = new Event(){
+
+	public static Event CLOSE = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
 			container.makeServerRequest(this);
-			
+
 		}
 
 		public boolean ServerAction(Container container,
@@ -91,215 +104,219 @@ public class EXTree extends EXContainer{
 
 		public void Success(ClientProxy container, Map<String, String> request)
 				throws UIException {
-			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 	};
 
 	public EXTree(String name, TreeNode<EXTreeComponent> treeNode) {
 		super(name, "div");
-		setStyle("font-family", "Verdana,Geneva,Arial,Helvetica,sans-serif; font-size: 11px");
-		
-		
-		//EXContainer component = treeNode.getComponent();
-		//addChild(component);
-		
+		setStyle("font-family",
+				"Verdana,Geneva,Arial,Helvetica,sans-serif; font-size: 11px");
+
 		Node root = new Node("root", treeNode);
-		//root.Open();
-		
 		addChild(root);
 		setStyle("width", "auto");
 		setHeight(Dimension.parse("500px"));
 		setStyle("overflow", "auto");
-		
+
 	}
-	
-	
+
 	/**
 	 * deletes the node containing the component with specified id
+	 * 
 	 * @param idOfComponentHolding
 	 */
-	public Node getNode(String idOfComponentHolding){
-		
-		 Node node = getDescendentById(idOfComponentHolding).getAncestorOfType(Node.class);
-		 return node;		
+	public Node getNode(String idOfComponentHolding) {
+
+		Node node = getDescendentById(idOfComponentHolding).getAncestorOfType(
+				Node.class);
+		return node;
 	}
-	
-	
-	
-	//public void refreshNode()
-	
-	
-	public class Node extends EXContainer
-	{
-		public Node(String name, TreeNode node) {
+
+	public class Node extends EXContainer {
+
+		private static final long serialVersionUID = 1L;
+
+		public Node(String name, TreeNode<EXTreeComponent> node) {
 			super(name, "div");
 			setStyle("padding-left", "10px");
 			addChild(new NodeContainer(node));
 		}
-		
-		public void refreshNode(){
-			TreeNode treeNode = getDescendentOfType(NodeContainer.class).treeNode;
+
+		public void refreshNode() {
+			TreeNode<EXTreeComponent> treeNode = getDescendentOfType(NodeContainer.class).treeNode;
 			treeNode.refresh();
 			this.getChildren().clear();
 			this.setRendered(false);
-			
+
 			addChild(new NodeContainer(treeNode));
-			
+
 			Open();
 		}
-		
-		public String Open()
-		{
+
+		public String Open() {
 			return getDescendentOfType(NodeContainer.class).Open();
 		}
-		
-		public String Close()
-		{
+
+		public String Close() {
 			return getDescendentOfType(NodeContainer.class).Close();
 		}
 	}
-	
-	
-	public class NodeContainer extends EXContainer{
-		
-		private TreeNode treeNode;
-		
+
+	public class NodeContainer extends EXContainer {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		private TreeNode<EXTreeComponent> treeNode;
+
 		private int size;
-		
-		public  NodeContainer( TreeNode treeNode)
-		{
+
+		public NodeContainer(TreeNode<EXTreeComponent> treeNode) {
 			super("NodeContainer", "div");
-			
+
 			this.treeNode = treeNode;
 			this.size = treeNode.childrenCount();
 			boolean isLeaf = treeNode.isLeaf();
-			
-			TreeFramework tf = new TreeFramework(getDepth(treeNode), isLeaf, size);
+
+			TreeFramework tf = new TreeFramework(getDepth(treeNode), isLeaf,
+					size);
 			addChild(tf);
-			
+
 			Container userObject = treeNode.getComponent();
-			if(userObject != null)
-			{
+			if (userObject != null) {
 				userObject.setStyle("display", "inline");
 				addChild(userObject);
 			}
-			
-			if(!isLeaf)
-			{
+
+			if (!isLeaf) {
 				EXContainer children = new EXContainer("children", "div");
 				children.setDisplay(false);
 				addChild(children);
 			}
 		}
-		
-		public String Open()
-		{
-			if(size > 0)
-			{
-				Container children= getChild("children");
+
+		public String Open() {
+			if (size > 0) {
+				Container children = getChild("children");
 				children.setDisplay(true);
 				int currentSize = children.getChildren().size();
-				getDescendentOfType(Plus.class).setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/tree/img/nolines_minus.gif"));
+				getDescendentOfType(Plus.class)
+						.setAttribute(
+								"src",
+								ResourceUtil
+										.getDownloadURL("classpath",
+												"org/castafiore/resource/tree/img/nolines_minus.gif"));
 				getDescendentOfType(Plus.class).setAttribute("action", "close");
-				if(currentSize != this.size)
-				{
+				if (currentSize != this.size) {
 					children.getChildren().clear();
 					children.setRendered(false);
-					for(int i = 0; i < size; i ++)
-					{
+					for (int i = 0; i < size; i++) {
 						children.addChild(new Node("", treeNode.getNodeAt(i)));
 					}
 				}
 			}
 			return getChild("children").getId();
 		}
-		
-		public String Close()
-		{
+
+		public String Close() {
 			getChild("children").setDisplay(false);
-			getDescendentOfType(Plus.class).setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/tree/img/nolines_plus.gif"));
+			getDescendentOfType(Plus.class)
+					.setAttribute(
+							"src",
+							ResourceUtil
+									.getDownloadURL("classpath",
+											"org/castafiore/resource/tree/img/nolines_plus.gif"));
 			getDescendentOfType(Plus.class).setAttribute("action", "open");
 			return getChild("children").getId();
 		}
 	}
-	
-	
-	public static int getDepth(TreeNode treeNode)
-	{
+
+	public static int getDepth(TreeNode<EXTreeComponent> treeNode) {
 		int i = 0;
-		
-		TreeNode tmp = treeNode;
-		while(tmp != null)
-		{
+
+		TreeNode<EXTreeComponent> tmp = treeNode;
+		while (tmp != null) {
 			i++;
 			tmp = tmp.getParent();
 		}
 		return i;
 	}
-	
-	
-	public class TreeFramework extends EXContainer{
+
+	public class TreeFramework extends EXContainer {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public TreeFramework(int depth, boolean isLeft, int childrenCount) {
 			super("TreeFramework", "div");
 			setStyle("display", "inline");
-			for(int i =0; i < depth; i ++)
-			{
-				if((i == depth - 1) && !isLeft && childrenCount > 0)
-				{
+			for (int i = 0; i < depth; i++) {
+				if ((i == depth - 1) && !isLeft && childrenCount > 0) {
 					addChild(new Plus());
-				}
-				else
-				{
+				} else {
 					addChild(new Empty());
 				}
-					
+
 			}
 		}
-		
+
 	}
-	
-	
-	
-	public static class Plus extends EXContainer
-	{
+
+	public static class Plus extends EXContainer {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public Plus() {
 			super("Plus", "img");
-			setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/tree/img/nolines_plus.gif"));
+			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
+					"org/castafiore/resource/tree/img/nolines_plus.gif"));
 			addEvent(OPEN, Event.CLICK);
 			setAttribute("action", "open");
 			setStyle("vertical-align", "middle");
 		}
-		
+
 	}
-	
-		
-	public static class Minus extends EXContainer
-	{
+
+	public static class Minus extends EXContainer {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public Minus(String name) {
 			super(name, "img");
-			setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/tree/img/nolines_minus.gif"));
+			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
+					"org/castafiore/resource/tree/img/nolines_minus.gif"));
 			addEvent(OPEN, Event.CLICK);
 		}
-		
+
 	}
-	
-	
-	
-	public static class Empty extends EXContainer
-	{
+
+	public static class Empty extends EXContainer {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public Empty() {
 			super("Empty", "img");
-			setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/tree/img/empty.gif"));
+			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
+					"org/castafiore/resource/tree/img/empty.gif"));
 			setStyle("vertical-align", "middle");
 			setStyle("width", "10px");
 		}
-		
+
 	}
 
 }

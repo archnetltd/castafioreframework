@@ -40,9 +40,13 @@ public class EXUpload extends EXGroovyContainer implements StatefullComponent
 	private List<FileData> items = new ArrayList<FileData>();
 	public EXUpload(String name)
 	{
-		super(name, "sd.html");
+		super(name, ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/upload/EXUpload.groovy"));
 		
 		
+	}
+	
+	public String getApplicationId(){
+		return getRoot().getId();
 	}
 	public FileData getFile() {
 		if(items.size() == 0)
@@ -59,15 +63,15 @@ public class EXUpload extends EXGroovyContainer implements StatefullComponent
 		this.items.add(item);
 	}
 	public Decoder getDecoder() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	public Encoder getEncoder() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	public String getRawValue() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	public Object getValue() {
@@ -77,15 +81,15 @@ public class EXUpload extends EXGroovyContainer implements StatefullComponent
 			return items;
 	}
 	public void setDecoder(Decoder decoder) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	public void setEncoder(Encoder encoder) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	public void setRawValue(String rawValue) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	public void setValue(Object value) {

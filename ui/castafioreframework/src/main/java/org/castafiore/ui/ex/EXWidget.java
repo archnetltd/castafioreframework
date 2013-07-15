@@ -18,6 +18,10 @@
 
 public class EXWidget extends EXContainer {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final static String[] CORNERS = new String[]{
 		"top", "right", "bottom", "left", "tl", "tr", "bl", "br", "all"
 	};

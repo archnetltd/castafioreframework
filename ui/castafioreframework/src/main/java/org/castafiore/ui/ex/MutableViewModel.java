@@ -24,6 +24,10 @@ import org.castafiore.ui.ex.form.button.Button;
 
 public class MutableViewModel implements ViewModel<Container> {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<Container> items = new ArrayList<Container>();
 
 	public int bufferSize() {

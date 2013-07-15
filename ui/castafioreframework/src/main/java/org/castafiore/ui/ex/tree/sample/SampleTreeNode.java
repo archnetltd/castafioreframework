@@ -21,6 +21,10 @@ import org.castafiore.ui.ex.tree.TreeNode;
 
 public class SampleTreeNode implements TreeNode<EXTreeComponent> {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int depth = 0;
 	private int breadth = 0;
 	private TreeNode<EXTreeComponent> parent = null;

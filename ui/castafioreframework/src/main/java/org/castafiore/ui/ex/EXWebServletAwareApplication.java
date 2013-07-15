@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.castafiore.ui.WebServletAwareApplication;
 
+/**
+ * More specialization of {@link EXApplication} exposing Servlet API to developer.
+ * This convenient implementation should be used only of there is need to directly access the Servlet API. This creates a direct dependency of the API in application code
+ * @author arossaye
+ *
+ */
 public abstract class EXWebServletAwareApplication extends EXApplication implements WebServletAwareApplication{
 
 	public EXWebServletAwareApplication(String name) {

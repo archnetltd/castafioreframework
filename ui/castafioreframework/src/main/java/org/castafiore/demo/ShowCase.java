@@ -40,6 +40,7 @@ import org.castafiore.ui.ex.form.button.EXButtonSet;
 import org.castafiore.ui.ex.form.button.EXIconButton;
 import org.castafiore.ui.ex.form.button.EXSplitButton;
 import org.castafiore.ui.ex.form.button.Icons;
+import org.castafiore.ui.ex.layout.EXBorderLayoutContainer;
 import org.castafiore.ui.ex.toolbar.EXToolBar;
 import org.castafiore.ui.ex.tree.TreeNode;
 import org.castafiore.ui.menu.EXMenu;
@@ -51,15 +52,16 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 	public ShowCase() {
 		super("showcase");
 		//addTree();
-		//testLayouts();
-//		addPropertyGrid();
+//		testLayouts();
+//addPropertyGrid();
 //		addDataGrid();
-//		EXBorderLayoutContainer bl = new EXBorderLayoutContainer("df");
-//		bl.setDisplay(true);
-//		bl.addChild(addButtons(), EXBorderLayoutContainer.TOP);
-//		bl.addChild(getForms(), EXBorderLayoutContainer.CENTER);
-//		addChild(bl);
-		addChild(getTabs());
+		setStyle("font-size", "64%");
+		EXBorderLayoutContainer bl = new EXBorderLayoutContainer("df");
+		bl.setDisplay(true);
+		bl.addChild(addButtons(), EXBorderLayoutContainer.TOP);
+		bl.addChild(getForms(), EXBorderLayoutContainer.CENTER);
+		addChild(bl);
+//		addChild(getTabs());
 	}
 	
 	

@@ -32,7 +32,6 @@ public abstract class EXPrompt extends EXDynaformPanel {
 	public EXPrompt(String name, String title, String text) {
 		super(name,title);
 		
-		//DefaultMsgBoxModel model = new DefaultMsgBoxModel();
 		
 		
 		addField(text, new EXInput("input"));

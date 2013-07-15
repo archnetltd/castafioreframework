@@ -26,15 +26,29 @@ import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 
 /**
+ * Component or Container used to display a node of the {@link EXTree} component
  * 
- *  @author Kureem Rossaye<br> kureem@gmail.com
- * Oct 22, 2008
+ * @author Kureem Rossaye<br>
+ *         kureem@gmail.com Oct 22, 2008
  */
 public class EXNode extends EXContainer {
 
-	private TreeNode node = null;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
+	private TreeNode<Container> node = null;
+
+	/**
+	 * Static event to open or close a node of a tree
+	 */
 	public static Event OPEN_CLOSE_EVENT = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void Success(ClientProxy container, Map<String, String> request)
 				throws UIException {
@@ -43,14 +57,14 @@ public class EXNode extends EXContainer {
 
 		public void ClientAction(ClientProxy container) {
 
-			container.makeServerRequest( this);
+			container.makeServerRequest(this);
 
 		}
 
 		public boolean ServerAction(Container container,
 				Map<String, String> request) throws UIException {
-			if (container.getParent().getStyleClass().equalsIgnoreCase(
-					"TLMclosed")) {
+			if (container.getParent().getStyleClass()
+					.equalsIgnoreCase("TLMclosed")) {
 				((EXNode) container.getParent()).open();
 			} else {
 				((EXNode) container.getParent()).close();
@@ -60,7 +74,12 @@ public class EXNode extends EXContainer {
 
 	};
 
-	public EXNode(String name, TreeNode node) {
+	/**
+	 * Constructs
+	 * @param name
+	 * @param node
+	 */
+	public EXNode(String name, TreeNode<Container> node) {
 		super(name, "li");
 		Container userObject = node.getComponent();
 		if (node.isLeaf())
@@ -86,7 +105,7 @@ public class EXNode extends EXContainer {
 			if (getDescendentByName("ul") == null) {
 				EXContainer ul = new EXContainer("ul", "ul");
 				for (int i = 0; i < node.childrenCount(); i++) {
-					TreeNode child = node.getNodeAt(i);
+					TreeNode<Container> child = node.getNodeAt(i);
 					EXNode childNode = new EXNode("", child);
 					ul.addChild(childNode);
 
@@ -104,11 +123,11 @@ public class EXNode extends EXContainer {
 		}
 	}
 
-	public TreeNode getNode() {
+	public TreeNode<Container> getNode() {
 		return node;
 	}
 
-	public void setNode(TreeNode node) {
+	public void setNode(TreeNode<Container> node) {
 
 		this.node = node;
 		refresh();

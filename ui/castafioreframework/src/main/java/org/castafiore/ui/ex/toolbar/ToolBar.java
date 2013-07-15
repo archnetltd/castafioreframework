@@ -14,15 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.ui.ex.toolbar;
+package org.castafiore.ui.ex.toolbar;
 
 import org.castafiore.ui.Container;
 
+/**
+ * Interface for implementing toolbars
+ * 
+ * @author arossaye
+ * 
+ */
 public interface ToolBar extends Container {
-	
-	
-	
-	
+
+	/**
+	 * Adds an item into the toolbar
+	 * 
+	 * @param button
+	 * @return
+	 */
 	public ToolBar addItem(ToolBarItem button);
 
 }

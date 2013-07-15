@@ -20,25 +20,53 @@ package org.castafiore.ui.ex.tree;
 import java.io.Serializable;
 
 import org.castafiore.ui.Container;
+
 /**
- * 
+ * Interface representing a node to be used in a tree
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
 public interface TreeNode<T extends Container> extends Serializable {
-	
-    int childrenCount();
 
-    public TreeNode<T> getNodeAt(int index);
-    
-    public T getComponent();
-    
-    public boolean isLeaf();
-    
-    public TreeNode<T> getParent();
-    
-    public void refresh();
+	/**
+	 * Returns the number of children for this node
+	 * 
+	 * @return
+	 */
+	int childrenCount();
+
+	/**
+	 * The node for the specified index
+	 * 
+	 * @param index
+	 * @return
+	 */
+	public TreeNode<T> getNodeAt(int index);
+
+	/**
+	 * The component it holds
+	 * 
+	 * @return
+	 */
+	public T getComponent();
+
+	/**
+	 * States if this node is a leaf node or not
+	 * 
+	 * @return
+	 */
+	public boolean isLeaf();
+
+	/**
+	 * 
+	 * @return The parent of this node. Null if root node
+	 */
+	public TreeNode<T> getParent();
+
+	/**
+	 * Refreshes and re-arranges the nodes if necessary
+	 */
+	public void refresh();
 
 }

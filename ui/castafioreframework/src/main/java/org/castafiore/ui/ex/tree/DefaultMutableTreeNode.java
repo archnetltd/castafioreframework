@@ -20,93 +20,105 @@ package org.castafiore.ui.ex.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.Container;
+
 /**
- * 
+ * Default convenient implementation of a {@link TreeNode} that allows addition
+ * and removal of children node.
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
-public class DefaultMutableTreeNode implements TreeNode {
+public class DefaultMutableTreeNode implements TreeNode<Container> {
 
-	
-	private List<TreeNode> children = new ArrayList<TreeNode>();
-	
-	private TreeNode parent;
-	
-	private EXContainer userObject = null;
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private List<TreeNode<Container>> children = new ArrayList<TreeNode<Container>>();
+
+	private TreeNode<Container> parent;
+
+	private Container userObject = null;
+
 	private boolean leaf;
-	
-	
-	
-	public DefaultMutableTreeNode(EXContainer userContainer,  boolean isLeaf)
-	{
+
+	/**
+	 * Constructs a {@link TreeNode} with the specified userContainer to hold and stating if this is going to be a leaf
+	 * @param userContainer The user container to hold
+	 * @param isLeaf if this is a leaf node or not
+	 */
+	public DefaultMutableTreeNode(Container userContainer, boolean isLeaf) {
 		this.userObject = userContainer;
 		this.leaf = isLeaf;
 	}
-	
-	public void addChild(TreeNode node)
-	{
-		if(node instanceof DefaultMutableTreeNode)
-			((DefaultMutableTreeNode)node).setParent(this); 
+
+	/**
+	 * Adds a child node to this node
+	 * @param node
+	 */
+	public void addChild(TreeNode<Container> node) {
+		if (node instanceof DefaultMutableTreeNode)
+			((DefaultMutableTreeNode) node).setParent(this);
 		children.add(node);
 	}
-	
+
+	/**
+	 * Returns the number of children for this node
+	 */
 	public int childrenCount() {
-		if(children != null)
-		{
+		if (children != null) {
 			return this.children.size();
 		}
 		return 0;
 	}
 
-	public EXContainer getComponent() {
-	
+	/**
+	 * Returns the user container of this node
+	 */
+	public Container getComponent() {
+
 		return userObject;
 	}
 
-	public TreeNode getNodeAt(int index) {
-		try
-		{
+	/**
+	 * Returns a child node for the specified index.
+	 * If cannot or index is greater or equal than children or is negative, returns null.
+	 */
+	public TreeNode<Container> getNodeAt(int index) {
+		try {
 			return children.get(index);
-		}
-		catch(Exception e)
-		{
-			
+		} catch (Exception e) {
+
 		}
 		return null;
 	}
 
-	
-
-	
-
-	
-	
-	
-	
-
+	/**
+	 * States if this a leaf or not. Does not count the number of children. Only returns the leaf attribute
+	 */
 	public boolean isLeaf() {
 		return leaf;
 	}
 
-	public TreeNode getParent() {
+	/**
+	 * Returns the parent node
+	 */
+	public TreeNode<Container> getParent() {
 		return parent;
 	}
 
-	public void setParent(TreeNode parent) {
+	/**
+	 * Sets the parent node of this node
+	 * @param parent
+	 */
+	public void setParent(TreeNode<Container> parent) {
 		this.parent = parent;
 	}
 
 	public void refresh() {
-		// TODO Auto-generated method stub
-		
+
 	}
-
-	
-
-	
 
 }
