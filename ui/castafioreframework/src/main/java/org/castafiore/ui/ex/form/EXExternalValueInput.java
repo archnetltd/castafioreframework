@@ -17,7 +17,7 @@
  package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.form.button.Button;
+import org.castafiore.ui.ex.button.Button;
 
 public abstract class EXExternalValueInput extends EXMultiInput{
 

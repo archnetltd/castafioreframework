@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.Decoder;
 import org.castafiore.ui.Dimension;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.form.button.Button;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
+import org.castafiore.ui.ex.button.Button;
 import org.castafiore.utils.ComponentUtil;
 
 public class EXFieldSet extends EXContainer implements StatefullComponent{

@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.DynamicHTMLTag;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.html.DynamicHTMLTag;
 
 /**
  * 

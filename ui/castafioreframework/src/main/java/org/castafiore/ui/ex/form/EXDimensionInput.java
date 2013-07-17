@@ -18,13 +18,13 @@
 
 import java.util.ArrayList;
 
+import org.castafiore.ui.Decoder;
 import org.castafiore.ui.Dimension;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.form.list.DefaultDataModel;
-import org.castafiore.ui.ex.form.list.EXSelect;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
+import org.castafiore.ui.ex.list.DefaultDataModel;
+import org.castafiore.ui.ex.list.EXSelect;
 
 public class EXDimensionInput extends EXContainer implements StatefullComponent {
 

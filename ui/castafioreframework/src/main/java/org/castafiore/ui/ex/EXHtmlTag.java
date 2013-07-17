@@ -23,7 +23,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.html.HTMLTag;
+import org.castafiore.ui.HTMLTag;
 import org.castafiore.ui.js.Var;
 import org.castafiore.utils.JavascriptUtil;
 import org.castafiore.utils.StringUtil;

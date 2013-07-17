@@ -19,8 +19,8 @@ package org.castafiore.ui.ex.dynaform;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
-import org.castafiore.ui.ex.form.button.Button;
-import org.castafiore.ui.ex.form.button.EXButton;
+import org.castafiore.ui.ex.button.Button;
+import org.castafiore.ui.ex.button.EXButton;
 /**
  * This class represents a form model. It is used with the {@link EXDynaForm} component. 
  * 

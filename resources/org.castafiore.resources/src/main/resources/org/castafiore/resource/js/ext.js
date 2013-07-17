@@ -1,18 +1,7 @@
 var requestId=0;
 var loadingTimeout;
 var loadingActive=-1;
-function getBrowserWidth(){
-	var myWidth=0;
-	if(typeof (window.innerWidth)=="number"){myWidth=window.innerWidth
-}else{if(document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)){myWidth=document.documentElement.clientWidth
-}else{if(document.body&&(document.body.clientWidth||document.body.clientHeight)){myWidth=document.body.clientWidth
-}}}return myWidth
-}function getBrowserHeight(){var myHeight=0;
-if(typeof (window.innerWidth)=="number"){myHeight=window.innerHeight
-}else{if(document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)){myHeight=document.documentElement.clientHeight-37
-}else{if(document.body&&(document.body.clientWidth||document.body.clientHeight)){myHeight=document.body.clientHeight
-}}}return myHeight
-}	
+
 
 $.fn.scrollable = function(options){
 		var el = $(this);
@@ -35,24 +24,38 @@ jQuery.getCSS = function( url ) {
 	
 
 
-	
-$.fn.castafiore = function(app, params){
+
+
+$.fn.castafiore = function(params){
+		
 		var me = $(this);
-		me.append("<div id='root_"+app+"'>");
-		me.append("<div id='script_"+app+"'>");
-		$("#script_" + app).mask('Please wait....');
-		var url = "castafiore/ui/?casta_applicationid=" + app;
-		var curUrl = window.location.href;
-		var p = curUrl.split('?')[1];
-		if(p){
-			url = url +'&' + p;
-		}
+		var app = me.attr('id');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/1.css');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/blueprint/screen.css');
+		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/aristo/theme.css');
+		//jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/EXFinder.css');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery-ui-1.8.21.js');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.maskedinput-1.3.js');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.rightClick.js');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.blockUI.js');
+		//jQuery.getScript('http://68.68.109.26/upstage/ckeditor/ckeditor/ckeditor.js');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.plugin.js',function(){
+			me.append("<div id='root_"+app+"'>");
+			me.append("<div id='script_"+app+"'>");
+			var url = "castafiore/ui/?casta_applicationid=" + app;
+			var curUrl = window.location.href;
+			var p = curUrl.split('?')[1];
+			if(p){
+				url = url +'&' + p;
+			}
 
-		if(!params){
-			params = {};
-		}
+			if(!params){
+				params = {};
+			}
 
-		$.ajax({url: url,type: 'POST',dataType: 'text',data:params,success: function(data){$("#script_" + app).html(data);}});		
+			$.ajax({url: url,type: 'POST',dataType: 'text',data:params,success: function(data){$("#script_" + app).html(data);}});	
+		});
+			
 };
 	
 function loading(){

@@ -26,7 +26,7 @@ import org.castafiore.ui.LayoutContainer;
 import org.castafiore.ui.PopupContainer;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.scripting.EXXHTMLFragment;
+import org.castafiore.ui.ex.layout.template.EXXHTMLFragment;
 import org.castafiore.utils.ComponentUtil;
 import org.castafiore.utils.ResourceUtil;
 

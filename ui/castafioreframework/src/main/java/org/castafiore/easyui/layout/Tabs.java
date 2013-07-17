@@ -4,9 +4,9 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.ex.tab.TabPanel;
+import org.castafiore.ui.ex.tab.TabRenderer;
 import org.castafiore.ui.js.JMap;
-import org.castafiore.ui.tabbedpane.TabPanel;
-import org.castafiore.ui.tabbedpane.TabRenderer;
 import org.castafiore.utils.StringUtil;
 
 public class Tabs extends EXContainer implements TabPanel{
@@ -117,7 +117,7 @@ public class Tabs extends EXContainer implements TabPanel{
 	}
 
 	@Override
-	public org.castafiore.ui.tabbedpane.TabModel getModel() {
+	public org.castafiore.ui.ex.tab.TabModel getModel() {
 		return model;
 	}
 

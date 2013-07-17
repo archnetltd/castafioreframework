@@ -20,11 +20,11 @@ package org.castafiore.ui.ex.form;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.castafiore.groovy.EXGroovyContainer;
 import org.castafiore.resource.FileData;
+import org.castafiore.ui.Decoder;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
+import org.castafiore.ui.ex.layout.template.EXGroovyContainer;
 import org.castafiore.utils.ResourceUtil;
 /**
  * 

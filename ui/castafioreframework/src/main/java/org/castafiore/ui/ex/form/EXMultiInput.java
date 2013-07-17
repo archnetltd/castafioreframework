@@ -20,17 +20,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.Decoder;
 import org.castafiore.ui.Dimension;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.EXGrid;
 import org.castafiore.ui.ex.EXGrid.EXRow;
-import org.castafiore.ui.ex.form.button.Button;
-import org.castafiore.ui.ex.form.button.EXIconButton;
-import org.castafiore.ui.ex.form.button.Icons;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
+import org.castafiore.ui.ex.button.Button;
+import org.castafiore.ui.ex.button.EXIconButton;
+import org.castafiore.ui.ex.button.Icons;
 import org.castafiore.utils.EventUtil;
 import org.castafiore.utils.StringUtil;
 

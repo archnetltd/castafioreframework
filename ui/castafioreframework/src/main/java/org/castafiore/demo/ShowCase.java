@@ -16,6 +16,11 @@ import org.castafiore.easyui.layout.Tabs;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.DescriptibleApplication;
 import org.castafiore.ui.ex.EXApplication;
+import org.castafiore.ui.ex.button.EXButton;
+import org.castafiore.ui.ex.button.EXButtonSet;
+import org.castafiore.ui.ex.button.EXIconButton;
+import org.castafiore.ui.ex.button.EXSplitButton;
+import org.castafiore.ui.ex.button.Icons;
 import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
 import org.castafiore.ui.ex.form.EXAddressAutoComplete;
 import org.castafiore.ui.ex.form.EXAutoComplete;
@@ -35,17 +40,12 @@ import org.castafiore.ui.ex.form.EXTextArea;
 import org.castafiore.ui.ex.form.EXTimePicker;
 import org.castafiore.ui.ex.form.EXTimeRangerPicker;
 import org.castafiore.ui.ex.form.EXUpload;
-import org.castafiore.ui.ex.form.button.EXButton;
-import org.castafiore.ui.ex.form.button.EXButtonSet;
-import org.castafiore.ui.ex.form.button.EXIconButton;
-import org.castafiore.ui.ex.form.button.EXSplitButton;
-import org.castafiore.ui.ex.form.button.Icons;
 import org.castafiore.ui.ex.layout.EXBorderLayoutContainer;
+import org.castafiore.ui.ex.navigation.EXMenu;
+import org.castafiore.ui.ex.navigation.EXMenuItem;
+import org.castafiore.ui.ex.tab.TabPanel;
 import org.castafiore.ui.ex.toolbar.EXToolBar;
 import org.castafiore.ui.ex.tree.TreeNode;
-import org.castafiore.ui.menu.EXMenu;
-import org.castafiore.ui.menu.EXMenuItem;
-import org.castafiore.ui.tabbedpane.TabPanel;
 
 public class ShowCase extends EXApplication implements DescriptibleApplication{
 

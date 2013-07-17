@@ -24,14 +24,14 @@ import java.util.List;
 
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.ex.button.EXButton;
 import org.castafiore.ui.ex.dynaform.DynaForm;
 
 import org.castafiore.ui.ex.dynaform.FormModel;
 import org.castafiore.ui.ex.dynaform.annotations.Field;
 import org.castafiore.ui.ex.dynaform.annotations.ValidatorConfig;
 import org.castafiore.ui.ex.dynaform.validator.Validator;
-import org.castafiore.ui.ex.form.button.EXButton;
-import org.castafiore.ui.ex.form.list.DataModel;
+import org.castafiore.ui.ex.list.DataModel;
 import org.castafiore.utils.ExceptionUtil;
 /**
  * 

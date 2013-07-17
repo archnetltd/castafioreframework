@@ -19,7 +19,7 @@ package org.castafiore.ui.ex.dynaform.validator;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
-import org.castafiore.ui.ex.form.table.EXPagineableTable;
+import org.castafiore.ui.ex.table.EXPagineableTable;
 import org.castafiore.utils.StringUtil;
 /**
  * 

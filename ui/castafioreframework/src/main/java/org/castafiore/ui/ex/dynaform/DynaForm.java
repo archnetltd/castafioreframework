@@ -21,7 +21,7 @@ import java.util.Map;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
-import org.castafiore.ui.ex.form.button.Button;
+import org.castafiore.ui.ex.button.Button;
 
 /**
  * 

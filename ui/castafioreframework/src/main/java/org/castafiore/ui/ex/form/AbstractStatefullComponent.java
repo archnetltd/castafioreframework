@@ -17,10 +17,10 @@
 
 package org.castafiore.ui.ex.form;
 
+import org.castafiore.ui.Decoder;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
 import org.castafiore.utils.ExceptionUtil;
 
 /**

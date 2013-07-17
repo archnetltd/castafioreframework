@@ -11,7 +11,7 @@ import java.util.Map;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.engine.ClientProxy;
-import org.castafiore.ui.ex.form.button.Button;
+import org.castafiore.ui.ex.button.Button;
 import org.castafiore.ui.ex.panel.EXPanel;
 import org.castafiore.utils.ComponentUtil;
 

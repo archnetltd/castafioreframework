@@ -39,7 +39,7 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import org.castafiore.ui.ex.form.list.DefaultDataModel;
+import org.castafiore.ui.ex.list.DefaultDataModel;
 
 /**
  * The Class IOUtil.

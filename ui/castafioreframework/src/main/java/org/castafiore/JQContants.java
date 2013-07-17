@@ -23,8 +23,8 @@ import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.panel.Panel;
-import org.castafiore.ui.tabbedpane.TabModel;
-import org.castafiore.ui.tabbedpane.TabPanel;
+import org.castafiore.ui.ex.tab.TabModel;
+import org.castafiore.ui.ex.tab.TabPanel;
 
 /**
  * 

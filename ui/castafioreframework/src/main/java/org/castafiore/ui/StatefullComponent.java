@@ -17,8 +17,6 @@
 
 package org.castafiore.ui;
 
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
 
 /**
  * 

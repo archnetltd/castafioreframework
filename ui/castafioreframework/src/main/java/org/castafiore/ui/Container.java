@@ -23,7 +23,6 @@ import java.util.Set;
 
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.layout.Layout;
-import org.castafiore.ui.html.DynamicHTMLTag;
 import org.castafiore.ui.js.JMap;
 
 /**

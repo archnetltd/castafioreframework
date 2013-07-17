@@ -6,13 +6,13 @@ package org.castafiore.ui.ex.form;
 import java.util.Map;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.Decoder;
+import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.input.Decoder;
-import org.castafiore.ui.input.Encoder;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.Var;
 

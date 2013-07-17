@@ -12,14 +12,15 @@
 				applicationName = "apps";
 			}
 		%>
-		<div id="application"></div>
+		<div id="<%=applicationName%>"></div>
 		
 		
 		<script type="text/javascript" src="castafiore/resource/classpath/org/castafiore/resource/js/jquery-1.7.2.js"></script>
 		<script type="text/javascript" src="ext.js"></script>
+		<script type="text/javascript" src="http://68.68.109.26/upstage/ckeditor/ckeditor/ckeditor.js"></script>
 		<script>
 			$(document).ready(function(){
-				$('#application').castafiore('<%=applicationName%>');
+				$('#<%=applicationName%>').castafiore();
 			});
 		</script>
 	</body>

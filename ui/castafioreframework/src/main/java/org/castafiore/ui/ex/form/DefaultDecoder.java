@@ -17,9 +17,9 @@
 
 package org.castafiore.ui.ex.form;
 
+import org.castafiore.ui.Decoder;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.UIException;
-import org.castafiore.ui.input.Decoder;
 /**
  * 
  * 

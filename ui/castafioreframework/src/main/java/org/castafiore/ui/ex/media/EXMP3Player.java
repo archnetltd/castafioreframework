@@ -5,11 +5,11 @@ package org.castafiore.ui.ex.media;
 
 import java.util.Map;
 
-import org.castafiore.ui.scripting.EXXHTMLFragment;
-import org.castafiore.ui.scripting.compiler.Compiler;
+import org.castafiore.ui.ex.Compiler;
+import org.castafiore.ui.ex.layout.template.EXXHTMLFragment;
 import org.castafiore.utils.ResourceUtil;
 
-public class EXMP3Player extends EXXHTMLFragment implements org.castafiore.ui.scripting.compiler.Compiler{
+public class EXMP3Player extends EXXHTMLFragment implements org.castafiore.ui.ex.Compiler{
 
 	
 

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.form.button.Button;
+import org.castafiore.ui.ex.button.Button;
 
 public class MutableViewModel implements ViewModel<Container> {
 	

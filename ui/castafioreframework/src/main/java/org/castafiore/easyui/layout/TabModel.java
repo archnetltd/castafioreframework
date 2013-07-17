@@ -1,6 +1,6 @@
 package org.castafiore.easyui.layout;
 
-public interface TabModel extends org.castafiore.ui.tabbedpane.TabModel{
+public interface TabModel extends org.castafiore.ui.ex.tab.TabModel{
 	
 	public boolean isClosable(int index);
 	

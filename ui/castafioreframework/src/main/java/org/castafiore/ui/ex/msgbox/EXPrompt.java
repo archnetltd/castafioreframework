@@ -23,9 +23,9 @@ import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
+import org.castafiore.ui.ex.button.EXButton;
 import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
 import org.castafiore.ui.ex.form.EXInput;
-import org.castafiore.ui.ex.form.button.EXButton;
 
 public abstract class EXPrompt extends EXDynaformPanel {
 
