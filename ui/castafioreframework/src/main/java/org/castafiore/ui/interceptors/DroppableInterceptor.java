@@ -24,7 +24,6 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.Droppable;
 import org.castafiore.ui.events.AdvancedDroppableEvent;
 import org.castafiore.ui.events.Event;
-import org.castafiore.utils.ResourceUtil;
 /**
  * 
  * 

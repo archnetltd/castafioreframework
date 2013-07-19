@@ -26,6 +26,11 @@ import org.castafiore.ui.ex.EXContainer;
 
 public class EXWarning extends EXContainer{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public EXWarning(String name) {
 		super(name, "div");
 		addClass("ui-widget");
@@ -35,6 +40,12 @@ public class EXWarning extends EXContainer{
 		addEvent(new Event(){
 
 			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+
 			public void ClientAction(ClientProxy container) {
 				container.setTimeout(container.clone().fadeOut(100, container.clone().makeServerRequest(this)), 100);
 				
@@ -50,7 +61,6 @@ public class EXWarning extends EXContainer{
 			
 			public void Success(ClientProxy container,
 					Map<String, String> request) throws UIException {
-				// TODO Auto-generated method stub
 				
 			}
 			

@@ -20,16 +20,43 @@ import java.io.Serializable;
 
 import org.castafiore.ui.Container;
 
+/**
+ * Interface exposing methods to create and interact with a table
+ * @author Kureem Rossaye
+ *
+ */
 public interface Table extends Container, Serializable{
 	
+	/**
+	 * Sets the {@link TableModel} of the table<br>
+	 * The {@link TableModel} is responsible for holding the content of the table
+	 * @param model
+	 */
 	public void setModel(TableModel model);
 	
+	/**
+	 * 
+	 * @return The table model of the table
+	 */
 	public TableModel getModel();
 	
+	/**
+	 * Returns the number of pages expected to be created in the table.<br> If the table is not expected to be pagineable, return 1
+	 * @return 
+	 * 
+	 */
 	public int getPages();
 	
+	/**
+	 * The current page with starting index = 0
+	 * @return The current page
+	 */
 	public int  getCurrentPage();
 	
+	/**
+	 * Change page to the specified value
+	 * @param page The page to change
+	 */
 	public void changePage(int page);
 
 }

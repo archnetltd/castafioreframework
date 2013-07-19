@@ -17,43 +17,46 @@
 
 package org.castafiore.ui.ex.list;
 
-import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.form.AbstractStatefullComponent;
+
 /**
  * 
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
-public abstract class AbstractEXList<T> extends AbstractStatefullComponent implements List<T>
-{
+public abstract class AbstractEXList<T> extends AbstractStatefullComponent
+		implements List<T> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private DataModel<T> model_;
-	
+
 	private ListItemRenderer<T> renderer_ = null;
-	
-	public AbstractEXList(String name, String tagName,DataModel<T> model) {
+
+	public AbstractEXList(String name, String tagName, DataModel<T> model) {
 		super(name, tagName);
-		this.setModel(model);	
-		
+		this.setModel(model);
+
 	}
 
 	@Override
 	public void refresh() {
-		if(this.renderer_ == null)
+		if (this.renderer_ == null)
 			return;
 		this.getChildren().clear();
 		this.setRendered(false);
 		int size = model_.getSize();
-		for(int i = 0; i < size; i ++)
-		{
+		for (int i = 0; i < size; i++) {
 			T value = model_.getValue(i);
-			ListItem<T> container = renderer_.getCellAt(i, value, model_,this);
+			ListItem<T> container = renderer_.getCellAt(i, value, model_, this);
 			addItem(container);
 		}
-		
+
 	}
- 
+
 	public ListItemRenderer<T> getRenderer() {
 		return renderer_;
 	}
@@ -74,50 +77,40 @@ public abstract class AbstractEXList<T> extends AbstractStatefullComponent imple
 
 	@Override
 	public Object getValue() {
-		try
-		{
+		try {
 			return model_.getValue(Integer.parseInt(getRawValue()));
+		} catch (Exception e) {
+
 		}
-		catch(Exception e)
-		{
-			
-		}
-		
+
 		return null;
 	}
 
-	public abstract  void selectItem(ListItem<T>  item, boolean selected);
-	
+	public abstract void selectItem(ListItem<T> item, boolean selected);
+
 	@Override
 	public void setValue(Object value) {
-		
-		
-		try
-		{
-			for(int i = 0; i < model_.getSize(); i ++)
-			{
+
+		try {
+			for (int i = 0; i < model_.getSize(); i++) {
 				ListItem<T> selectedChild = getItem(i);
 				boolean selected = model_.getValue(i).equals(value);
 				selectedChild.setSelected(selected);
 				selectItem(selectedChild, selected);
-				if(selected)
+				if (selected)
 					setRawValue(i + "");
 			}
-		}
-		catch(Exception e)
-		{
-			
+		} catch (Exception e) {
+
 		}
 	}
-
 
 	public String getRawValue() {
 		return getAttribute("value");
 	}
 
-
 	public void setRawValue(String rawValue) {
-		
+
 		setAttribute("value", rawValue);
 	}
 }

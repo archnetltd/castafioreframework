@@ -35,6 +35,11 @@ import org.castafiore.utils.ComponentUtil;
  */
 public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected TabModel model;
 	
 	private TabRenderer tabRenderer = new JQTabRenderer();
@@ -164,6 +169,11 @@ public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 	 */
 	public static class JQTabRenderer implements TabRenderer{
 
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		public Container getComponentAt(TabPanel pane, TabModel model,
 				int index) {
 			Container tab = ComponentUtil.getContainer("tt", "a" ,"", null);
@@ -192,6 +202,11 @@ public class EXTabPanel extends EXContainer implements JQContants , TabPanel{
 	 *
 	 */
 	public static class JQTabContentDecorator implements TabContentDecorator{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		@Override
 		public void decorateContent(Container contentContainer) {

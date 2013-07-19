@@ -32,143 +32,147 @@ import org.castafiore.ui.ex.form.EXInput;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.utils.ResourceUtil;
 
-
-
-
 /**
  * 
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
-public class EXDropdown<T>  extends EXContainer implements StatefullComponent{
-	
-	private final static Event OPEN = new Event(){
+public class EXDropdown<T> extends EXContainer implements StatefullComponent {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private final static Event OPEN = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
-			//container.hover(fn1, fn2)
-			String inputId = container.getAncestorOfType(EXDropdown.class).getChildren().get(0).getChildren().get(0).getId();
-			String dropdownId = container.getAncestorOfType(EXDropdown.class).getChildren().get(1).getId();
-			container.addMethod("adjustBelow", new JMap().put("input", inputId).put("dropdown", dropdownId));
-			//.getAncestorOfType(EXDropdown.class).getChildren().get(1).fadeIn(100);
-			//ifClose.setAttribute("state", "open");
-			
-			//ClientProxy ifOpen = container.clone().setAttribute("state", "close").getAncestorOfType(EXDropdown.class).getChildren().get(1).fadeOut(100);
-			//container.IF(container.getAttribute("state").equal("close"), ifClose, ifOpen);*/
+			String inputId = container.getAncestorOfType(EXDropdown.class)
+					.getChildren().get(0).getChildren().get(0).getId();
+			String dropdownId = container.getAncestorOfType(EXDropdown.class)
+					.getChildren().get(1).getId();
+			container.addMethod("adjustBelow", new JMap().put("input", inputId)
+					.put("dropdown", dropdownId));
 			container.makeServerRequest(this);
-			
+
 		}
 
-		public boolean ServerAction(Container container, Map<String, String> request) throws UIException {
-			if(container.getAttribute("state").equals("close")){
-				container.getAncestorOfType(EXDropdown.class).getDescendentOfType(EXList.class).setDisplay(true);
+		public boolean ServerAction(Container container,
+				Map<String, String> request) throws UIException {
+			if (container.getAttribute("state").equals("close")) {
+				container.getAncestorOfType(EXDropdown.class)
+						.getDescendentOfType(EXList.class).setDisplay(true);
 				container.setAttribute("state", "open");
-			}else{
-				container.getAncestorOfType(EXDropdown.class).getDescendentOfType(EXList.class).setDisplay(false);
+			} else {
+				container.getAncestorOfType(EXDropdown.class)
+						.getDescendentOfType(EXList.class).setDisplay(false);
 				container.setAttribute("state", "close");
 			}
-			//container.getAncestorOfType(EXDropdown.class).getDropdown().setDisplay(true);
 			return true;
 		}
 
-		public void Success(ClientProxy container, Map<String, String> request) throws UIException {
-			// TODO Auto-generated method stub
-			
+		public void Success(ClientProxy container, Map<String, String> request)
+				throws UIException {
+
 		}
-		
+
 	};
-	
-	private final static Event CLOSE = new Event(){
+
+	private final static Event CLOSE = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
-			container.getAncestorOfType(EXDropdown.class).getChildren().get(1).fadeOut(100);
-			
+			container.getAncestorOfType(EXDropdown.class).getChildren().get(1)
+					.fadeOut(100);
+
 		}
 
-		public boolean ServerAction(Container container, Map<String, String> request) throws UIException {
-			container.getAncestorOfType(EXDropdown.class).getDropdown().setDisplay(false);
+		public boolean ServerAction(Container container,
+				Map<String, String> request) throws UIException {
+			container.getAncestorOfType(EXDropdown.class).getDropdown()
+					.setDisplay(false);
 			return true;
 		}
 
-		public void Success(ClientProxy container, Map<String, String> request) throws UIException {
-			// TODO Auto-generated method stub
-			
+		public void Success(ClientProxy container, Map<String, String> request)
+				throws UIException {
+
 		}
-		
+
 	};
-	
-	private final static Event updateText = new Event(){
+
+	private final static Event updateText = new Event() {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
-			container.makeServerRequest( this);
-			
+			container.makeServerRequest(this);
+
 		}
 
-		public boolean ServerAction(Container container, Map<String, String> request) throws UIException {
-			//container.getAncestorOfType(EXDropdown.class)
-			Object value = ((StatefullComponent)container).getValue();
-			container.getAncestorOfType(EXDropdown.class).getDescendentOfType(EXInput.class).setValue(value);
+		public boolean ServerAction(Container container,
+				Map<String, String> request) throws UIException {
+			Object value = ((StatefullComponent) container).getValue();
+			container.getAncestorOfType(EXDropdown.class)
+					.getDescendentOfType(EXInput.class).setValue(value);
 			return true;
 		}
 
-		public void Success(ClientProxy container, Map<String, String> request) throws UIException {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	};
-	
-	
-	
+		public void Success(ClientProxy container, Map<String, String> request)
+				throws UIException {
 
-	
-	
+		}
+
+	};
 
 	public EXDropdown(String name, StatefullComponent list) {
-		
+
 		super(name, "div");
-		
+
 		EXContainer inputLayer = new EXContainer("inputLayer", "div");
-		
+
 		addChild(inputLayer);
 		EXInput field = new EXInput("field");
-		//field.setHeight(Dimension.parse("16px"));
-		//field.setStyleClass("x-form-text x-form-field x-form-focus");
 		inputLayer.addChild(field);
-		
+
 		EXContainer trigger = new EXContainer("trigger", "img");
 		trigger.setAttribute("state", "close");
 		trigger.addEvent(OPEN, Event.CLICK);
-		//trigger.setStyleClass("x-form-trigger");
-		trigger.setAttribute("src", ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/dropdown/s.gif"));
+		trigger.setAttribute("src", ResourceUtil.getDownloadURL("classpath",
+				"org/castafiore/resource/dropdown/s.gif"));
 		inputLayer.addChild(trigger);
-		
+
 		EXContainer dropdownWrap = new EXContainer("", "div");
-		//dropdownWrap.setStyleClass("x-combo-list");
-		//dropdownWrap.setStyle("z-index", "11000");
-		//dropdownWrap.setStyle("position", "absolute");
 		addChild(dropdownWrap);
 
 		dropdownWrap.addChild(list);
 		dropdownWrap.setDisplay(false);
 		list.addEvent(CLOSE, Event.CLICK);
 		list.addEvent(updateText, Event.CLICK);
-		
-		//setWidth(Dimension.parse("195px"));
-		//list.setStyle("width", "195px");
+
 		list.setName("list");
-		
-		
+
 	}
-	
+
 	public EXDropdown(String name, DataModel<T> model) {
-		this(name,new EXList<T>("list", model));
+		this(name, new EXList<T>("list", model));
 	}
-	
+
 	@Override
-	public Container setWidth(Dimension dimension)
-	{
+	public Container setWidth(Dimension dimension) {
 		int amount = dimension.getAmount();
 		int inputAmount = amount - 23;
 		super.setWidth(dimension);
@@ -176,36 +180,26 @@ public class EXDropdown<T>  extends EXContainer implements StatefullComponent{
 		getDropdown().setWidth(dimension);
 		return this;
 	}
-	
-//	public  EXList<T> getList(DataModel<T> model)
-//	{
-//		EXList<T> list = new EXList<T>("list", model);
-//		return list;
-//	}
-	
-	
-	public StatefullComponent getInput()
-	{
-		return (StatefullComponent)getChildByIndex(0).getChildByIndex(0);
+
+	public StatefullComponent getInput() {
+		return (StatefullComponent) getChildByIndex(0).getChildByIndex(0);
 	}
 
-	public StatefullComponent getDropdown()
-	{
-		return (StatefullComponent)getChildByIndex(1).getChildByIndex(0);
+	public StatefullComponent getDropdown() {
+		return (StatefullComponent) getChildByIndex(1).getChildByIndex(0);
 	}
 
 	public String getRawValue() {
 		return getInput().getRawValue();
 	}
 
-
 	public void setRawValue(String rawValue) {
 		getInput().setRawValue(rawValue);
-		
+
 	}
 
 	public Decoder getDecoder() {
-		
+
 		return getInput().getDecoder();
 	}
 
@@ -219,22 +213,18 @@ public class EXDropdown<T>  extends EXContainer implements StatefullComponent{
 
 	public void setDecoder(Decoder decoder) {
 		getInput().setDecoder(decoder);
-		
+
 	}
 
 	public void setEncoder(Encoder encoder) {
 		getInput().setEncoder(encoder);
-		
+
 	}
 
 	public void setValue(Object value) {
 		getInput().setValue(value);
 		getDropdown().setValue(value);
-		
+
 	}
-	
-	
-	
-	
 
 }

@@ -12,8 +12,25 @@ import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 
+/**
+ * Specialization of an {@link EXTable} to add editable feature to it<br>
+ * It uses a more specialized model and  cellrenderer
+ * @author arossaye
+ *
+ */
 public class EXEditableTable extends EXTable implements Event{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Creates an editable table wit the specified name, model and cellrenderer
+	 * @param name The name of the table
+	 * @param model The {@link EditableTableModel} to apply on the table
+	 * @param renderer The {@link EditableCellRenderer} to apply on the table
+	 */
 	public EXEditableTable(String name, EditableTableModel model, EditableCellRenderer renderer) {
 		super(name, model, renderer);
 	}

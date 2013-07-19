@@ -22,15 +22,33 @@ import java.io.Serializable;
 import org.castafiore.ui.Container;
 /**
  * 
- * 
+ * Layout of each cell of a table is delegated to implementations of this interface
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * Oct 22, 2008
  */
 public interface CellRenderer extends Serializable {
 	
+	/**
+	 * Returns a new {@link Container} for the specified parameters
+	 * @param row The row of the table
+	 * @param column The column of the table
+	 * @param page The page of the table if the table is paginable
+	 * @param model The model applied on the table
+	 * @param table The table itself
+	 * @return The container to display in the table for the specified row, column and page
+	 */
 	public Container getComponentAt(int row, int column,int page, TableModel model, EXTable table);
 	
+	/**
+	 * Changes the content of anything of the container for the specified cell when a page is changed
+	 * @param component
+	 * @param row
+	 * @param column
+	 * @param page
+	 * @param model
+	 * @param table
+	 */
 	public void onChangePage(Container component,  int row,	int column,int page, TableModel model, EXTable table);
 
 }

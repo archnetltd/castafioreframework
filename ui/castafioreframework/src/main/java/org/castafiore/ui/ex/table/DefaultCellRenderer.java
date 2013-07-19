@@ -22,13 +22,17 @@ import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.utils.ResourceUtil;
 /**
  * 
- * 
+ * Default implementation of {@link CellRenderer} Simply returns a <span></span>
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * Oct 22, 2008
  */
 public class DefaultCellRenderer implements CellRenderer {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public final static CellRenderer INSTANCE = new DefaultCellRenderer();
 
 	public Container getComponentAt(int row, int column,int page, TableModel model,

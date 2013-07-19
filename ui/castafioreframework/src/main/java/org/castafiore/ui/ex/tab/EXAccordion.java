@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.ui.ex.navigation;
+ package org.castafiore.ui.ex.tab;
 
 import java.util.Map;
 
@@ -25,30 +25,50 @@ import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.EXWidget;
-import org.castafiore.ui.ex.tab.TabModel;
-import org.castafiore.ui.ex.tab.TabPanel;
-import org.castafiore.ui.ex.tab.TabRenderer;
 import org.castafiore.utils.ComponentUtil;
 
-public class EXAccordeon extends EXWidget implements JQContants, TabPanel {
+/**
+ * Simple jquery-ui like accordion. It is actually a {@link TabPanel}
+ * @author arossaye
+ *
+ */
+public class EXAccordion extends EXWidget implements JQContants, TabPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TabModel model;
 
-	public EXAccordeon(String name) {
+	/**
+	 * Creates an accordion with the specified name
+	 * @param name
+	 */
+	public EXAccordion(String name) {
 		super(name, "div");
 		addClass("ui-accordion");
 		setReset();
 	}
 
+	/**
+	 * Returns the model of the accordion
+	 */
 	public TabModel getModel() {
 		return model;
 	}
 
+	/**
+	 * Sets the {@link TabModel} for this accordion
+	 * @param model The {@link TabModel} to apply
+	 */
 	public void setModel(TabModel model) {
 		this.model = model;
 		refresh();
 	}
 	
+	/**
+	 * Recreates the accordion completely
+	 */
 	public void refresh(){
 		
 		this.getChildren().clear();
@@ -68,6 +88,11 @@ public class EXAccordeon extends EXWidget implements JQContants, TabPanel {
 	}
 	
 	public static class EXACCItem extends EXContainer{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public EXACCItem(String name, String label, Container content, boolean selected, int index) {
 			super(name, "div");
@@ -106,9 +131,13 @@ public class EXAccordeon extends EXWidget implements JQContants, TabPanel {
 		
 		private static class TOGGLE implements Event{
 
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
 			public void ClientAction(ClientProxy container) {
 				//set all open item's header to down
-				String accId = container.getAncestorOfType(EXAccordeon.class).getId();
+				String accId = container.getAncestorOfType(EXAccordion.class).getId();
 				ClientProxy downAllArrows = new ClientProxy("#" + accId +  " .ui-icon-triangle-1-s").setAttribute("class", ACC_ARROW_CLOSE_STYLE);
 				ClientProxy hideAllContents =new ClientProxy("#" + accId +  " .acc_is_open .contentContainer").slideUp(100).mergeCommand(new ClientProxy("#" + accId +  " .acc_is_open").setAttribute("class", "acc_is_close"));
 				ClientProxy closeAll  = hideAllContents.mergeCommand(downAllArrows);
@@ -127,14 +156,14 @@ public class EXAccordeon extends EXWidget implements JQContants, TabPanel {
 
 			
 			public boolean ServerAction(Container container,Map<String, String> request) throws UIException {
-				TabModel model =  container.getAncestorOfType(EXAccordeon.class).model;
-				Container c = model.getTabContentAt(container.getAncestorOfType(EXAccordeon.class), Integer.parseInt(container.getAttribute("hindex")));
+				TabModel model =  container.getAncestorOfType(EXAccordion.class).model;
+				Container c = model.getTabContentAt(container.getAncestorOfType(EXAccordion.class), Integer.parseInt(container.getAttribute("hindex")));
 				container.getAncestorOfType(EXACCItem.class).getChild("content").addChild(c.setDisplay(true));
 				container.setRendered(false);
 				return true;
 			}
 			public void Success(ClientProxy container,Map<String, String> request) throws UIException {
-				String accId = container.getAncestorOfType(EXAccordeon.class).getId();
+				String accId = container.getAncestorOfType(EXAccordion.class).getId();
 				ClientProxy downAllArrows = new ClientProxy("#" + accId +  " .ui-icon-triangle-1-s").setAttribute("class", ACC_ARROW_CLOSE_STYLE);
 				ClientProxy hideAllContents =new ClientProxy("#" + accId +  " .acc_is_open .contentContainer").slideUp(100).mergeCommand(new ClientProxy("#" + accId +  " .acc_is_open").setAttribute("class", "acc_is_close"));
 				ClientProxy closeAll  = hideAllContents.mergeCommand(downAllArrows);
@@ -150,7 +179,6 @@ public class EXAccordeon extends EXWidget implements JQContants, TabPanel {
 
 	@Override
 	public TabRenderer getTabRenderer() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

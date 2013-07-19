@@ -28,6 +28,11 @@ import org.castafiore.ui.ex.EXContainer;
 public class EXMenuItem extends EXContainer {
 
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * Constructs a {@link MenuItem}
 	 * @param name The name of the menu item
 	 * @param label The label to display on the menu item

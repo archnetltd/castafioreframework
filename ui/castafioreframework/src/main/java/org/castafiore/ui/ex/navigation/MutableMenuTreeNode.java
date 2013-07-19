@@ -16,6 +16,11 @@ import org.castafiore.ui.ex.tree.TreeNode;
 public class MutableMenuTreeNode implements TreeNode<EXMenuItem>{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private TreeNode<EXMenuItem> parent;
 	
 	private EXMenuItem component;

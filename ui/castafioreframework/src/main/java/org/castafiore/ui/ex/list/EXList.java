@@ -35,6 +35,11 @@ import org.castafiore.utils.ComponentVisitor;
  */
 public class EXList<T> extends AbstractEXList<T> implements ListItemRenderer<T>{
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public EXList(String name, DataModel<T> model) {
 		super(name, "ul", model);
 		setStyle("padding", "0").setStyle("margin", "0");
@@ -63,12 +68,16 @@ public class EXList<T> extends AbstractEXList<T> implements ListItemRenderer<T>{
 		addChild(new EXContainer(getChildren().size() + "", "li").setStyle("list-style","none").addChild(item));
 		item.addEvent(new Event() {
 			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void Success(ClientProxy container, Map<String, String> request)
 					throws UIException {
-				// TODO Auto-generated method stub
-				
 			}
+			
 			
 			@Override
 			public boolean ServerAction(final Container container, Map<String, String> request)
@@ -79,16 +88,10 @@ public class EXList<T> extends AbstractEXList<T> implements ListItemRenderer<T>{
 					
 					@Override
 					public void doVisit(Container c) {
-						//c.removeClass("ui-state-active");
 						exList.selectItem((EXListItem)c, c.getName().equalsIgnoreCase(container.getName()));
 						
 					}
 				});
-				
-//				container.addClass("ui-state-active");
-//				
-//				container.getAncestorOfType(EXList.class).selectItem(item, true);
-				
 				return true;
 			}
 			

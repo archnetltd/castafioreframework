@@ -26,6 +26,10 @@ import org.castafiore.ui.ex.tree.TreeNode;
  *
  */
 public class EXMenu extends EXContainer {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private TreeNode<EXMenuItem> node;
 
 	/**

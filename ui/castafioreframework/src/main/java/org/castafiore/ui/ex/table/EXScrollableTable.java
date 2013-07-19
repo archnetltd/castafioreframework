@@ -7,16 +7,34 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.Scrollable;
 import org.castafiore.ui.ex.EXContainer;
 
+/**
+ * Wrapper around a {@link EXTable} to make it Sortable
+ * @author arossaye
+ *
+ */
 public class EXScrollableTable extends EXContainer implements Scrollable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int page = 0;
 
+	/**
+	 * Constructs a scrollable table with the specified name and {@link EXTable}
+	 * @param name
+	 * @param table
+	 */
 	public EXScrollableTable(String name,EXTable table) {
 		super(name, "div");
 		addChild(table);
 		setStyle("overflow", "scroll");
 	}
 
+	/**
+	 * Adds a page to the table<br>
+	 * Event executed when scrolling
+	 */
 	@Override
 	public void addPage() {
 		
@@ -65,7 +83,6 @@ public class EXScrollableTable extends EXContainer implements Scrollable{
 
 	@Override
 	public boolean isScrollable() {
-		// TODO Auto-generated method stub
 		return true;
 	}
 

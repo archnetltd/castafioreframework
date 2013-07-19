@@ -30,6 +30,11 @@ import org.castafiore.utils.ExceptionUtil;
  */
 public class DefaultSelectDecoder implements Decoder{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public String decode(Object value, StatefullComponent component)
 			throws UIException {
 		if(component instanceof EXSelect)

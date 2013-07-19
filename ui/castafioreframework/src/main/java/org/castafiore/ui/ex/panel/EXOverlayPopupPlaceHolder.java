@@ -9,13 +9,23 @@ import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.js.Var;
 
+/**
+ * A popup placeholder that help to display popups in modal mode in an overlay
+ * @author arossaye
+ *
+ */
 public class EXOverlayPopupPlaceHolder extends EXContainer{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	public EXOverlayPopupPlaceHolder(String name) {
 		super(name, "div");
 		setStyle("display", "none").setStyle("width","100%").setStyle("height", "100%")
 		.setStyle("opacity", "0.75").setStyle("background-color", "black").setStyle("position", "fixed").setStyle("top", "0").setStyle("left", "0").setStyle("z-index", "3000");
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void onReady(ClientProxy p){

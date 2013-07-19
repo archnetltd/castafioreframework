@@ -28,12 +28,15 @@ import org.castafiore.utils.ComponentUtil;
 
 public class EXPanel extends EXContainer implements JQContants, Panel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public EXPanel(String name, String title) {
 		super(name, "div");
-		//setDisplay(false);
 		setStyle("visibility", "hidden");
 		setAttribute("class", DIALOG_STYLE);
-		//setAttribute("style", DIALOG_DEF_STYLE);
 		setStyle("z-index", "1000");
 		
 		Container titleBar = ComponentUtil.getContainer("titleBar", "div",null, DIALOG_TITLE_BAR_STYLE);
@@ -56,7 +59,6 @@ public class EXPanel extends EXContainer implements JQContants, Panel{
 		
 		
 		Container content = ComponentUtil.getContainer("content", "div", null, DIALOG_CONTENT_STYLE);
-		//content.setAttribute("style", DIALOG_CONTENT_DEF_STYLE);
 		content.setStyle("height", "auto").setStyle("min-height", "61px").setStyle("width", "auto");
 		
 		addChild(content);

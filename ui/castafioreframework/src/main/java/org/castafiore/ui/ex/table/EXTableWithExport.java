@@ -6,7 +6,17 @@ package org.castafiore.ui.ex.table;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.ex.EXContainer;
 
+/**
+ * Wrapper around an {@link EXTable} and adds buttons to export the table in excel, pdf or chart 
+ * @author arossaye
+ *
+ */
 public class EXTableWithExport extends EXContainer{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public EXTableWithExport(String name, TableModel model) {
 		super(name, "div");

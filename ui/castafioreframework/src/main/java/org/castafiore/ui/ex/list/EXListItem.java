@@ -9,6 +9,11 @@ import org.castafiore.ui.ex.EXContainer;
 
 public class EXListItem<T> extends EXContainer implements ListItem<T>{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private T data = null;
 	
 	private boolean selected = false;

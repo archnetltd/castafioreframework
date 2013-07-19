@@ -28,6 +28,10 @@ import java.util.List;
  */
 public class DefaultDataModel<T> implements DataModel<T> {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private List<T> data_ = new ArrayList<T>();
 	
 	public DefaultDataModel()

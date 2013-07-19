@@ -29,14 +29,16 @@ import org.castafiore.ui.ex.form.EXInput;
 
 public abstract class EXPrompt extends EXDynaformPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	public EXPrompt(String name, String title, String text) {
 		super(name,title);
 		
-		
-		
 		addField(text, new EXInput("input"));
-		//model.setTitle(title);
-		//model.setText(text);
 		EXButton yesButton = new EXButton("ok", "Ok");
 		yesButton.addEvent(new OnOkEvent(), Event.CLICK);
 		addButton(yesButton);
@@ -44,32 +46,11 @@ public abstract class EXPrompt extends EXDynaformPanel {
 		EXButton noButton = new EXButton("cancel", "Cancel");
 		noButton.addEvent(CLOSE_EVENT, Event.CLICK);
 		addButton(noButton);
-		
-		//setModel(model);
-		
 	}
-	
-//	public void addMessage(String message){
-//	 	String txt = getDescendentByName("text").getText();
-//	 	txt = txt + "<br>" + message;
-//	 	getDescendentByName("text").setText(txt);
-//		
-//	}
-
-	
-	
-//	@Override
-//	public void init() {
-//		
-//		super.init();
-//		EXInput input = new EXInput("input");
-//		input.setWidth(Dimension.parse("218px"));
-//		addChild(input);
-//	}
 	
 	public String getInputValue()
 	{
-		return  ((StatefullComponent)getDescendentByName("input")).getValue().toString();//getDescendentOfType(EXInput.class).getValue().toString();
+		return  ((StatefullComponent)getDescendentByName("input")).getValue().toString();
 	}
 	
 	public StatefullComponent getInput(){
@@ -83,6 +64,11 @@ public abstract class EXPrompt extends EXDynaformPanel {
 	
 	public static class OnOkEvent implements Event
 	{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		public void ClientAction(ClientProxy container) {
 			container.mask(container.getAncestorOfType(EXPrompt.class));

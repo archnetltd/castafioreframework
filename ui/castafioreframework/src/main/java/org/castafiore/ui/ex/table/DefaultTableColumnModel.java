@@ -17,9 +17,11 @@
 
 package org.castafiore.ui.ex.table;
 
+import org.castafiore.ui.Container;
 import org.castafiore.ui.ex.EXContainer;
 /**
- * 
+ * Default {@link TableColumnModel} implementation<br>
+ * Simly creates a nice header jquery-ui styled
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -28,7 +30,12 @@ import org.castafiore.ui.ex.EXContainer;
 public class DefaultTableColumnModel implements TableColumnModel {
 
 	
-	public EXContainer getColumnAt(int index, EXTable table, TableModel model) {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Container getColumnAt(int index, EXTable table, TableModel model) {
 		
 		EXContainer column = new EXContainer("" + index, "th");
 		column.addClass("ui-widget-header");

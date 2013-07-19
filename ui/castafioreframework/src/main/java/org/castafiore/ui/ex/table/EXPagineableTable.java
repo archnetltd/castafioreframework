@@ -27,7 +27,7 @@ import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.Var;
 /**
- * 
+ * Wrapper around an {@link Table} to make is paginable.
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -35,47 +35,39 @@ import org.castafiore.ui.js.Var;
  */
 public class EXPagineableTable extends EXContainer {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	/**
+	 * Constructs a paginable table with the specified name and {@link Table}
+	 * @param name
+	 * @param table
+	 */
 	public EXPagineableTable(String name, Table table) {
 		super(name, "div");
 		
 		addChild(table);
 		createPaginator(table);
 	}
+	
+	/**
+	 * 
+	 * @return The table paginated
+	 */
 	public Table getTable()
 	{
 		return getDescendentOfType(Table.class);
 	}
+
+
+
 	
 	/**
-<div class="EXPageIterator">
-	<div class="PageIteratorContainer">
-		<div class="RightPageIteratorBlock">
-			<a class="Icon LastTopPageIcon" /> 
-			<a class="Icon LastPageIcon"></a>
-
-			<div class="Number">
-				<a class="PageSelected">1</a>
-				<a>2</a>
-			</div>
-
-			<a class="Icon NextPageIcon" />
-
-
-			<a class="Icon NextTopPageIcon"><span /></a>
-
-			<div style="clear: left;"><span /></div>
-			
-		</div>
-	</div>
-</div>
-
-
-	
-
-	 * @param table
+	 * Recreates the Paginator and the table as well
 	 */
-	
-	
 	public void refresh()
 	{
 		if(this.getChildren().size() >1)
@@ -100,6 +92,11 @@ public class EXPagineableTable extends EXContainer {
 			addChild(pagin);
 			pagin.addEvent(new Event(){
 	
+				/**
+				 * 
+				 */
+				private static final long serialVersionUID = 1L;
+
 				@Override
 				public void ClientAction(ClientProxy container) {
 					
@@ -133,7 +130,6 @@ public class EXPagineableTable extends EXContainer {
 				@Override
 				public void Success(ClientProxy container,
 						Map<String, String> request) throws UIException {
-					// TODO Auto-generated method stub
 					
 				}
 				

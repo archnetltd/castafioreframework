@@ -19,7 +19,7 @@ package org.castafiore.ui.ex.table;
 
 import java.io.Serializable;
 
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.Container;
 
 /**
  * 
@@ -31,7 +31,7 @@ import org.castafiore.ui.ex.EXContainer;
 public interface TableColumnModel extends Serializable {
 	
 	
-	   public EXContainer getColumnAt(int index,EXTable table, TableModel model);
+	   public Container getColumnAt(int index,EXTable table, TableModel model);
 
 	   
 	    

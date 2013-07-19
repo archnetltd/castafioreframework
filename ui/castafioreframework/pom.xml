@@ -6,6 +6,13 @@
 
 	<name>Catafiore Web Framework</name>
 	<url>http://www.archnetltd.com</url>
+
+	<distributionManagement>
+		<repository>
+			<id>mydav</id>
+			<url>http://68.68.109.26/upstage/dav/upstage/Media</url>
+		</repository>
+	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>java.net</id>

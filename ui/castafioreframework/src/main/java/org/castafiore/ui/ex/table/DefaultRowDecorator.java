@@ -17,9 +17,10 @@
 
 package org.castafiore.ui.ex.table;
 
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.Container;
 /**
- * 
+ * Default implementation of {@link RowDecorator}<br>
+ * Simply alternates the color of rows
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -28,7 +29,15 @@ import org.castafiore.ui.ex.EXContainer;
 public class DefaultRowDecorator implements RowDecorator {
 
 	
-	public void decorateRow(int rowCount, EXContainer row, EXTable table,
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * adds the class "ui-state-highlight" when even row
+	 */
+	public void decorateRow(int rowCount, Container row, Table table,
 			TableModel model) {
 		
 		if ((rowCount % 2) == 0)

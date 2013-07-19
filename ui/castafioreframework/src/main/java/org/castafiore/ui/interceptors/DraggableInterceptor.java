@@ -25,7 +25,8 @@ import org.castafiore.ui.Draggable;
 import org.castafiore.ui.events.AdvancedDraggableEvent;
 import org.castafiore.ui.events.Event;
 /**
- * 
+ * Interceptor to transparently add Draggable feature to a component.<br>
+ * The programmer simply need to make his component implement {@link Draggable}. This interceptor will be used under the hood to add the functionalities
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com

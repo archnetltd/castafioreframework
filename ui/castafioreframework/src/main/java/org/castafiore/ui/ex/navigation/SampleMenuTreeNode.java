@@ -20,6 +20,10 @@ import org.castafiore.ui.ex.tree.TreeNode;
 
 public class SampleMenuTreeNode implements TreeNode<EXMenuItem> {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int depth = 0;
 	private int breadth = 0;
 	private TreeNode<EXMenuItem> parent = null;

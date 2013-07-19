@@ -19,9 +19,9 @@ package org.castafiore.ui.ex.table;
 
 import java.io.Serializable;
 
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.Container;
 /**
- * 
+ * Allows to decorate rows of a table
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -29,7 +29,13 @@ import org.castafiore.ui.ex.EXContainer;
  */
 public interface RowDecorator extends Serializable{
 	
-	
-	public void decorateRow(int rowCount, EXContainer row, EXTable table, TableModel model);
+	/**
+	 * decorates the row
+	 * @param rowCount - The row number
+	 * @param row The row itself
+	 * @param table The table in which the row belongs
+	 * @param model The model of the table
+	 */
+	public void decorateRow(int rowCount, Container row, Table table, TableModel model);
 
 }

@@ -38,20 +38,50 @@ public interface TableModel extends Serializable {
      */
 	public int getRowCount();
 	
+	/**
+	 * Returns the number of columns in the table
+	 * @return
+	 */
 	public int getColumnCount();
 	
 	
+	/**
+	 * 
+	 * @return The number of pages in the table
+	 */
 	public int getRowsPerPage();
 	
 	
+	/**
+	 * The name of the column for the specified index
+	 * @param index The index of the column
+	 * @return
+	 */
 	public String getColumnNameAt(int index);
 	
+	/**
+	 * Returns the  value for the specified co-ordinate of the table
+	 * @param col the column of the table
+	 * @param row The row of the table
+	 * @param page The page of the table
+	 * @return The value to place in the specified cell. This value will be passed via the {@link CellRenderer} 
+	 */
 	public Object getValueAt(int col, int row, int page);
 	
 	
-	
+	/**
+	 * The default class for values in the specified column.<br> Can be used as an indicated to choose the correct container to provide in the {@link CellRenderer}
+	 * @param columnIndex 
+	 * @return The type of the values in the specified column
+	 */
 	public Class<?> getColumnClass(int columnIndex);
 	
+	/**
+	 * States whether the specified row and column is editable<br>Can be used as an indicated to choose the correct container to provide in the {@link CellRenderer}
+	 * @param rowIndex The row
+	 * @param columnIndex The column
+	 * @return is editable or not.
+	 */
 	public boolean isCellEditable(int rowIndex, int columnIndex);
 	
 	
