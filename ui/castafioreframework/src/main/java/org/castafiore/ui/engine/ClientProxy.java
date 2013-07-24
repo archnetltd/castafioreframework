@@ -24,7 +24,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.collections.map.ListOrderedMap;
 import org.castafiore.Constant;
 import org.castafiore.KeyValuePair;
 import org.castafiore.SimpleKeyValuePair;
@@ -39,6 +38,7 @@ import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.JSObject;
 import org.castafiore.ui.js.Var;
 import org.castafiore.utils.JavascriptUtil;
+import org.castafiore.utils.ListOrderedMap;
 import org.castafiore.utils.StringUtil;
 import org.springframework.util.Assert;
 /**
@@ -188,7 +188,7 @@ public final class ClientProxy implements Constant {
 	{
 		StringBuilder builder = new StringBuilder();
 		
-		Iterator selectors = buffer.keyList().iterator();
+		Iterator selectors = buffer.keySet().iterator();
 		while(selectors.hasNext())
 		{
 			String selector = selectors.next().toString();

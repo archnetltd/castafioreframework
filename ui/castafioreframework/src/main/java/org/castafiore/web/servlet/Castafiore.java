@@ -19,11 +19,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.collections.map.ListOrderedMap;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.apache.commons.lang.StringUtils;
 import org.castafiore.ComponentNotFoundException;
 import org.castafiore.Constant;
 import org.castafiore.resource.BinaryFileData;
@@ -40,6 +38,8 @@ import org.castafiore.ui.js.JSObject;
 import org.castafiore.utils.ChannelUtil;
 import org.castafiore.utils.ComponentUtil;
 import org.castafiore.utils.IOUtil;
+import org.castafiore.utils.ListOrderedMap;
+import org.castafiore.utils.StringUtil;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -154,7 +154,7 @@ public class Castafiore implements ApplicationContextAware {
 					.getBean("resourcelocator_" + spec);
 			String url = request.getRequestURL().toString();
 
-			String res = StringUtils.splitByWholeSeparator(url, spec)[1];
+			String res = StringUtil.splitByWholeSeparator(url, spec)[1];
 
 			FileData f = locator.getResource(spec + ":" + res, "");
 			OutputStream os = response.getOutputStream();

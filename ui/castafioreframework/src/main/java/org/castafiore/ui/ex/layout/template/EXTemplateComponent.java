@@ -23,10 +23,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.htmlparser.jericho.Attribute;
-import net.htmlparser.jericho.Attributes;
-import net.htmlparser.jericho.Source;
-
 import org.castafiore.InvalidLayoutDataException;
 import org.castafiore.ui.Container;
 import org.castafiore.ui.LayoutContainer;
@@ -170,31 +166,32 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 		}
 		try {
 			String html = this.getCompiler().compile(getTemplate(), getContext());
-			if(forceStyle){
-				Source source = new Source(html);
-				Attributes attrs = source.getFirstElement().getAttributes();
-				if(attrs != null){
-					//id
-					//class
-					//style
-					//name
-					for(int i = 0; i < attrs.size(); i ++){
-						Attribute attr = attrs.get(i);
-						String name = attr.getName();
-						String value = attr.getValue();
-						//System.out.println(name  + ":" + value);
-						if(name.equals("id")){
-							this.id = attr.getValue();
-						}else{
-							setAttribute(name, value);
-						}
-					}
-				}
-				html = JavascriptUtil.javaScriptEscape(html);
-				tmpTpl = html;
-			}else{
-				html = JavascriptUtil.javaScriptEscape(html);
-			}
+//			if(forceStyle){
+//				Source source = new Source(html);
+//				Attributes attrs = source.getFirstElement().getAttributes();
+//				if(attrs != null){
+//					//id
+//					//class
+//					//style
+//					//name
+//					for(int i = 0; i < attrs.size(); i ++){
+//						Attribute attr = attrs.get(i);
+//						String name = attr.getName();
+//						String value = attr.getValue();
+//						//System.out.println(name  + ":" + value);
+//						if(name.equals("id")){
+//							this.id = attr.getValue();
+//						}else{
+//							setAttribute(name, value);
+//						}
+//					}
+//				}
+//				html = JavascriptUtil.javaScriptEscape(html);
+//				tmpTpl = html;
+//			}else{
+//				
+//			}
+			html = JavascriptUtil.javaScriptEscape(html);
 			return html;
 		} catch (Exception e) {
 			e.printStackTrace();

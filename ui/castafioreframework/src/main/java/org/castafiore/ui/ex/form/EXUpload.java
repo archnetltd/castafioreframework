@@ -19,87 +19,101 @@ package org.castafiore.ui.ex.form;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.castafiore.resource.FileData;
 import org.castafiore.ui.Decoder;
 import org.castafiore.ui.Encoder;
 import org.castafiore.ui.StatefullComponent;
-import org.castafiore.ui.ex.layout.template.EXGroovyContainer;
+import org.castafiore.ui.ex.Compiler;
+import org.castafiore.ui.ex.layout.template.EXXHTMLFragment;
 import org.castafiore.utils.ResourceUtil;
+
 /**
  * 
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
-public class EXUpload extends EXGroovyContainer implements StatefullComponent
-{
+public class EXUpload extends EXXHTMLFragment implements StatefullComponent,
+		Compiler {
 
-	
 	private List<FileData> items = new ArrayList<FileData>();
-	public EXUpload(String name)
-	{
-		super(name, ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/upload/EXUpload.groovy"));
-		
-		
+
+	public EXUpload(String name) {
+		super(name, ResourceUtil.getDownloadURL("classpath",
+				"org/castafiore/resource/upload/EXUpload.groovy"));
+
 	}
-	
-	public String getApplicationId(){
+
+	public String compile(String template, Map<String, Object> context)
+			throws Exception {
+		return template.trim()
+				.replace("${component.applicationId}", getRoot().getId())
+				.replace("${component.id}", getId());
+	}
+
+	public Compiler getCompiler() {
+		return this;
+	}
+
+	public String getApplicationId() {
 		return getRoot().getId();
 	}
+
 	public FileData getFile() {
-		if(items.size() == 0)
+		if (items.size() == 0)
 			return null;
 		return items.get(0);
 	}
-	//value is set in castafioreServlet
+
+	// value is set in castafioreServlet
 	public void setFile(FileData item) {
 		items.clear();
 		this.items.add(item);
 	}
-	
+
 	public void addFile(FileData item) {
 		this.items.add(item);
 	}
+
 	public Decoder getDecoder() {
-		
+
 		return null;
 	}
+
 	public Encoder getEncoder() {
-		
+
 		return null;
 	}
+
 	public String getRawValue() {
-		
+
 		return null;
 	}
+
 	public Object getValue() {
-		if(items.size() ==1)
-		return getFile();
+		if (items.size() == 1)
+			return getFile();
 		else
 			return items;
 	}
+
 	public void setDecoder(Decoder decoder) {
-		
-		
+
 	}
+
 	public void setEncoder(Encoder encoder) {
-		
-		
+
 	}
+
 	public void setRawValue(String rawValue) {
-		
-		
+
 	}
+
 	public void setValue(Object value) {
-		setFile((FileData)value);
-		
+		setFile((FileData) value);
+
 	}
-	
-	
-	
-	
-	
 
 }

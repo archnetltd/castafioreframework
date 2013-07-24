@@ -18,13 +18,12 @@
 package org.castafiore.ui.js;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.apache.commons.collections.map.ListOrderedMap;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.utils.JavascriptUtil;
+import org.castafiore.utils.ListOrderedMap;
 
 /**
  * Represents a javascript map. This class should be used in conjunction with {@link ClientProxy} to transfer javascript variable

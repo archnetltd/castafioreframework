@@ -4,13 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 	
 	
-	<bean id="helloworld" class="org.castafiore.demo.HelloWorldApplication" scope="session"></bean>
+	<bean id="showcase" class="org.castafiore.demo.ShowCase" scope="session"></bean>
 	
-	<bean id="animations" class="org.castafiore.demo.Animations" scope="session"></bean>
-	
-	<bean id="stress" class="org.castafiore.StressTest" scope="session"></bean>
-	
-	<bean id="showcase" class="org.castafiore.demo.ShowCase"></bean>
-	
-	<bean id="apps" class="org.castafiore.EXApplicationListApp" scope="session" init-method="init"></bean>
+
 </beans>

@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.collections.map.ListOrderedMap;
 import org.castafiore.ComponentNotFoundException;
 import org.castafiore.Constant;
 import org.castafiore.ui.Application;
@@ -44,6 +43,7 @@ import org.castafiore.ui.js.Var;
 import org.castafiore.utils.BaseSpringUtil;
 import org.castafiore.utils.ComponentUtil;
 import org.castafiore.utils.EventUtil;
+import org.castafiore.utils.ListOrderedMap;
 
 
 /**

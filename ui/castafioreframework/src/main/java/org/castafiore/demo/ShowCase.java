@@ -11,7 +11,6 @@ import org.castafiore.ui.ex.button.EXIconButton;
 import org.castafiore.ui.ex.button.EXSplitButton;
 import org.castafiore.ui.ex.button.Icons;
 import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
-import org.castafiore.ui.ex.form.EXAddressAutoComplete;
 import org.castafiore.ui.ex.form.EXAutoComplete;
 import org.castafiore.ui.ex.form.EXCheckBox;
 import org.castafiore.ui.ex.form.EXColorPicker;
@@ -155,7 +154,7 @@ public class ShowCase extends EXApplication implements DescriptibleApplication{
 		}
 		panel.addField("Autocomplete", new EXAutoComplete("autocomplete", "",dict));
 		
-		panel.addField("Address", new EXAddressAutoComplete("address",""));
+		
 		
 		panel.addField("Checkbox", new EXCheckBox("checkbox",true));
 		

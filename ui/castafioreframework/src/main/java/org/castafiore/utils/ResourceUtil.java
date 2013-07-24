@@ -18,7 +18,6 @@
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,7 +25,6 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
 import org.castafiore.resource.ResourceLocator;
 import org.castafiore.resource.ResourceLocatorFactory;
 import org.castafiore.ui.Application;
@@ -190,7 +188,7 @@ public class ResourceUtil {
 		}catch(Exception e){
 			
 			try{
-				String[] asSpec = StringUtils.splitByWholeSeparator(templateLocation , "spec=");
+				String[] asSpec = StringUtil.splitByWholeSeparator(templateLocation , "spec=");
 				if(asSpec != null && asSpec.length == 2){
 					String spec = asSpec[1];
 					ResourceLocator locator = ResourceLocatorFactory.getResourceLocator(spec);

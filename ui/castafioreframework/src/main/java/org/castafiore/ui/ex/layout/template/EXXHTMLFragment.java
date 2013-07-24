@@ -20,7 +20,6 @@ package org.castafiore.ui.ex.layout.template;
 import java.util.Map;
 
 import org.castafiore.ui.ex.Compiler;
-import org.castafiore.utils.JavascriptUtil;
 /**
  * 
  * 
