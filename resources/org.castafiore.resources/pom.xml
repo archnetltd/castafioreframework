@@ -5,5 +5,10 @@
 	<artifactId>org.castafiore.resources</artifactId>
 	<version>0.0.1</version>
 	
-	
+	<distributionManagement>
+		<repository>
+			<id>mydav</id>
+			<url>http://68.68.109.26/upstage/dav/archnetltd/repository</url>
+		</repository>
+	</distributionManagement>
 </project>
