@@ -20,7 +20,8 @@ package org.castafiore.ui;
 import java.io.Serializable;
 
 /**
- * 
+ * Base interface for all components in the castafiore web framework<br>
+ * Basically a marker interface
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com

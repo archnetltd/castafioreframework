@@ -20,9 +20,43 @@ package org.castafiore.ui;
 import org.castafiore.ui.js.JMap;
 
 /**
- * If a component implements this interface, it automatically becomes a droppable.
+ * If a component implements this interface, it automatically becomes a droppable.<br>
  * 
- * Furtermore, components implementing this interface can use event of types DND_ACTIVATE, DND_DEACTIVATE, DND_OVER, DND_OUT, DND_DROP
+ * Furtermore, components implementing this interface can use event of types
+ * <table>
+ * 		<th>
+ * 			<tr>
+ * 				<td><b>Event</b></td>
+ * 				<td><b>Description</b></td>
+ * 			<tr>
+ * 		<th>
+ * 		<tbody>
+ * 			<tr>
+ * 				<td>Event.DND_ACTIVATE</td>
+ * 				<td>Executed when droppable activates</td>
+ * 			</tr>
+ * 			<tr>
+ * 				<td>Event.DND_DEACTIVATE</td>
+ * 				<td>Executed when droppable de-activates</td>
+ * 			</tr>
+ * 			<tr>
+ * 				<td>Event.DND_OVER</td>
+ * 				<td>Executed when draggable is over the droppable</td>
+ * 			</tr>
+ * 			<tr>
+ * 				<td>Event.DND_OUT</td>
+ * 				<td>Executed when draggable gets out of droppable</td>
+ * 			</tr>
+ * 			<tr>
+ * 				<td>Event.DND_DROP</td>
+ * 				<td>Executed when draggable is dropped on droppable</td>
+ * 			</tr>
+ * 		</tbody>
+ * 				
+ * </table> 
+ * <code>
+ * asdas
+ * </code>
  * 
  * 
  * @author Kureem Rossaye<br>
@@ -32,11 +66,17 @@ import org.castafiore.ui.js.JMap;
 public interface Droppable extends Container {
 	
 	/**
-	 * return all the styleclasses that this droppable accepts.
-	 * @return
+	 *  
+	 * @return all the styleclasses that this droppable accepts.
 	 */
 	public String[] getAcceptClasses();
 	
+	/**
+	 * The options to be applied on the droppable component.<br>
+	 * <a href="http://jqueryui.com/">jquery ui</a> has been used to implement the droppable feature under the hood<br>Please
+	 * refer to this <a href="http://api.jqueryui.com/droppable/">http://api.jqueryui.com/droppable/</a> for a list of available options 
+	 * @return The options to be applied on this droppable component
+	 */
 	public JMap getDroppableOptions();
 
 }

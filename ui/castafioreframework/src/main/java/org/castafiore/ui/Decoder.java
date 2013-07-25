@@ -21,6 +21,8 @@ import java.io.Serializable;
 
 
 /**
+ * A decoder in form components that converts object into string to be serialized and rendered on the browser<br>
+ * Implementations of this interface has role to convert the specified value for the specified form component into a valid string
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -28,6 +30,13 @@ import java.io.Serializable;
  */
 public interface Decoder extends Serializable {
 	
+	/**
+	 * Converts the object into a valid string to be rendered on the browser
+	 * @param value The value to convert
+	 * @param component The form component holding this value
+	 * @return The string to be rendered on the browser
+	 * @throws UIException Thrown if ever there is an exception
+	 */
 	public String decode(Object value, StatefullComponent component)throws UIException;
 
 }

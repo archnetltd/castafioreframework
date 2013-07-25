@@ -22,12 +22,18 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 
- * 
+ * Interface to define the contract between CastafioreEngine and the {@link ApplicationRegistry}
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * Oct 22, 2008
  */
 public interface ApplicationRegistry {
 	
+	/**
+	 * Loads a web application based on the web context
+	 * @param request The request
+	 * @param response The response
+	 * @return The {@link Application} configured in the implementation of this {@link ApplicationRegistry}
+	 */
 	public Application getApplication(HttpServletRequest request, HttpServletResponse response);
 }

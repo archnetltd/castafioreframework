@@ -31,7 +31,12 @@ import org.castafiore.ui.js.JMap;
  */
 public interface Draggable extends Container {
 	
-	
+	/**
+	 * The options to be applied on the draggable component.<br>
+	 * <a href="http://jqueryui.com/">jquery ui</a> has been used to implement the draggable feature under the hood<br>Please
+	 * refer to this <a href="http://api.jqueryui.com/draggable/">http://api.jqueryui.com/draggable/</a> for a list of available options 
+	 * @return The options to be applied on this draggable component
+	 */
 	public JMap getDraggableOptions();
 	
 }

@@ -100,10 +100,16 @@ public interface Application extends Container  {
 	 */
 	public String getCookie(String name, String defaultValue);
 	
-	
+	/**
+	 * 
+	 * @return The session id of the session
+	 */
 	public String getSessionId();
 	
-	
+	/**
+	 * 
+	 * @return The remote address of the web application
+	 */
 	public String getRemoteAddress();
 
 }

@@ -20,7 +20,7 @@ package org.castafiore.ui;
 import org.castafiore.utils.StringUtil;
 
 /**
- * 
+ * Class that encapsulates all the dimension and units used on a web browser
  * 
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
@@ -34,16 +34,43 @@ public class Dimension {
 	
 	private String ov;
 
+	/**
+	 * Constructs a {@link Dimension} for the specified unit and amount.<br>
+	 * <b>Valid units are
+	 * <ul>
+	 * 	<li>px</li>
+	 * <li>%</li>
+	 * <li>cm</li>
+	 * <li>pt</li>
+	 * <li>mm</li>
+	 * <li>ex</li>
+	 * <li>em</li>
+	 * <li>in</li>
+	 * <li>pc</li>
+	 * </ul>
+	 * @param unit The unit
+	 * @param amount The amount in integer
+	 */
 	public Dimension(String unit, int amount) {
 		super();
 		this.unit = unit;
 		this.amount = amount;
 	}
+	
+	/**
+	 * Creates a {@link Dimension} based on a string representation that can be parsed
+	 * @param userDefined The userdefined string
+	 */
 	public Dimension(String userDefined) {
 		super();
 		this.ov = userDefined;
 	}
 	
+	/**
+	 * Creates a {@link Dimension} by parsing a string representation of a dimension
+	 * @param dimension The string representation
+	 * @return The dimension created
+	 */
 	public static Dimension parse(String dimension)
 	{
 		if(StringUtil.isNotEmpty(dimension))
@@ -97,29 +124,54 @@ public class Dimension {
 		}
 		return null;
 	}
+	
+	/**
+	 * Creates a {@link Dimension} based simply on an integer value.<br>
+	 * The default unit is pixel (px)
+	 * @param amount
+	 */
 	public Dimension(int amount) {
 		super();
 		this.amount = amount;
 	}
 	
 
+	/**
+	 * 
+	 * @return The unit of this dimension
+	 */
 	public String getUnit() {
 		return unit;
 	}
 
+	/**
+	 * Sets the unit of this dimension
+	 * @param unit The unit of this dimension
+	 */
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 
+	/**
+	 * Returns the amount of this dimension
+	 * @return The amount of this dimension
+	 */
 	public int getAmount() {
 		return amount;
 	}
 
+	/**
+	 * Sets the amount of this dimension
+	 * @param amount The amount of this dimension
+	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
 
+	/**
+	 * Converts the {@link Dimension} into a string representation to be rendered on the browser
+	 */
 	@Override
 	public String toString() {
 		if(StringUtil.isNotEmpty(ov)){

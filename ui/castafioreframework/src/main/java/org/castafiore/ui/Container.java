@@ -27,6 +27,8 @@ import org.castafiore.ui.js.JMap;
 
 /**
  * 
+ * Most important interface in the castafiore web framework.<br>
+ * All components usable in the framework implements this interface
  * 
  * @author : Kureem Rossaye
  *          kureem@gmail.com
@@ -34,6 +36,7 @@ import org.castafiore.ui.js.JMap;
  * @param <T>
  */
 
+@SuppressWarnings("deprecation")
 public interface Container extends DynamicHTMLTag {
 	
 	
