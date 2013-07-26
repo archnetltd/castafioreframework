@@ -1,0 +1,72 @@
+<root>
+	<actors>
+		<actor name="customer"></actor>
+		<actor name="merchant"></actor>
+	</actors>
+	<state value="NEW">
+		<possible-actions>
+			<action name="customerCancelOrder" actor="customer" next-state="CUSTOMER_CANCEL_ORDER">
+			</action>
+			<action name="merchantCancelOrder" actor="merchant"  next-state="MERCHANT_CANCEL_ORDER">
+				<parameter name="message"></parameter>
+			</action>
+			<action name="merchantStartProcessing" actor="merchant" next-state="PROCESSING"></action>
+		</possible-actions>
+	</state>
+	
+
+	<state value="CUSTOMER_CANCEL_ORDER">
+		<possible-actions>
+			<action name="merchantClosesOrder" actor="merchant" next-state="CLOSED">
+				<parameter name="message"></parameter>
+			</action>
+		</possible-actions>
+	</state>
+	
+	
+	<state value="MERCHANT_CANCEL_ORDER">
+		<possible-actions>
+			<action name="merchantClosesOrder" actor="merchant" next-state="CLOSED">
+				<parameter name="message"></parameter>
+			</action>
+		</possible-actions>
+	</state>
+	
+	
+	
+	<state value="PROCESSING">
+		<possible-actions>
+			<action name="merchantApproveForDelivery" actor="merchant" next-state="ON_DELIVERY"></action>
+		</possible-actions>
+	</state>
+	
+	
+	<state value="ON_DELIVERY">
+		<possible-actions>
+			<action name="customerApprovesForPayment" actor="customer" next-state="DELIVERED"></action>
+			<action name="customerUnApprovedForPayment" actor="customer" next-state="CONFLICT"></action>
+		</possible-actions>
+	</state>
+	
+	<state value="DELIVERED">
+		<possible-actions>
+			<action name="merchantAcknowledgePayment" actor="merchant" next-state="PAID"></action>
+			<action name="merchantUnAcknowledgePayment" actor="merchant" next-state="CONFLICT"></action>
+		</possible-actions>
+	</state>
+
+	<state value="CONFLICT">
+		<possible-actions>
+			<action name="administratorCloseConflict" actor="admin" next-state="CLOSED"></action>
+		</possible-actions>
+		<possible-actions>
+			<action name="administratorSendConflictToCourt" actor="admin" next-state="COURT"></action>
+		</possible-actions>
+	</state>
+	
+	<state value="COURT">
+		<possible-actions>
+			<action name="courtCloseConflict" actor="admin" next-state="CLOSED"></action>
+		</possible-actions>
+	</state>
+</root>

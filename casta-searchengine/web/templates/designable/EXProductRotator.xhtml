@@ -1,0 +1,41 @@
+<div style="margin-top: 30px;" class="cart-widget">
+
+
+<script type="text/javascript">
+function slideSwitch() {
+    var $active = $('.slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('.slideshow IMG:last');
+    var $next =  $active.next().length ? $active.next()
+        : $('.slideshow IMG:first');
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 5000 );
+});
+
+</script>
+
+<style type="text/css">
+.slideshow{position:relative;height:350px;}
+.slideshow IMG{position:absolute;top:0;left:0;z-index:8;opacity:0.0;width: 200px;height: 150px}
+.slideshow IMG.active{z-index:10;opacity:1.0;}
+.slideshow IMG.last-active{z-index:9;}
+</style>
+
+
+	<div name="divs" class="slideshow">
+	    <img src="image1.jpg" alt="Slideshow Image 1" class="active" />
+	    <img src="image2.jpg" alt="Slideshow Image 2" />
+	    <img src="image3.jpg" alt="Slideshow Image 3" />
+	    <img src="image4.jpg" alt="Slideshow Image 4" />
+	    <img src="image5.jpg" alt="Slideshow Image 5" />
+	</div>
+</div>

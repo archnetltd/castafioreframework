@@ -132,6 +132,24 @@ public final class ClientProxy implements Constant {
 		this.buffer = buffer;
 	}
 	
+	
+	public ClientProxy FOR(Expression assignment,Expression comparision,Expression increment, ClientProxy body){
+		
+		
+		/**
+		 * for(var i = 0;i<12;i++){
+		 * 	
+		 * }
+		 */
+		StringBuilder b = new StringBuilder();
+		b.append("for(").append( assignment.getExpression()).append(";").append(comparision.getExpression()).append(";").append(increment).append("){");
+		b.append(body.getCompleteJQuery()).append("}");
+		
+		this.appendJSFragment(b.toString());
+		
+		return this;
+	}
+	
 	/**
 	 * This method provides possibility to make a conditional statement
 	 * @param expression 		- an expression  that should return a boolean

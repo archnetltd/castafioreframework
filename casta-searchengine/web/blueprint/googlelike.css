@@ -1,0 +1,229 @@
+div#footer {background: none repeat scroll 0 0 #FFFFFF;border: 0 none;clear: both;color: #999999;font-size: 0.9em;line-height: 1.25em;margin: 0 auto !important;padding: 2em 9em 1em !important;text-align: center;width: 640px;}
+.cart-title-info{color: beige;font-family: caption;font-size: 14px;font-style: italic;font-weight: bold;}
+.accessAid {display: block !important;height: 1px !important;left: -500em !important;line-height: 0 !important;overflow: hidden !important;position: absolute !important;text-indent: -9999em !important;top: 0 !important;width: 1px !important;}
+div#footer ul {list-style-type: none;margin: 0.7em 0;padding: 0;}
+div#footer ul li {border-right: 1px solid #999999;display: inline;margin: 0;padding: 0 0 0 0.4em !important;}
+#mainLoading{color: red;font-weight: bold;font-family: arial;margin: auto;width:120px;height:20px;border: double 3px red;background: pink;position: fixed;text-align: center;top: 0px;display: none;}
+.malladvertisementpanel .error{width: 228px !important;} 
+div#footer ul li a {color: #084482 !important; margin-right: 0.5em; text-decoration: underline; white-space: nowrap;}
+.MallTable{background: silver;}
+.MallTable tfoot{color: black;}
+.MallTable thead tr th{cursor: pointer;}
+.MallTable tfoot td{font-weight: bold;}
+.MallTable thead th div .messages{clear:both;color:steelBlue;border:solid 1px;padding:10px;margin:10px;background:pink;}
+.cardInfo{width: 273px; font-family: arial; padding: 10px; background-color: #CCCCCC; -moz-border-radius: 5px; -webkit-border-radius: 5px;color: black;}
+.cardInfo input{margin: 0px; width: 258px}
+.cardInfo .data{margin: 15px 0px}
+.cardInfo .label{font-size: 12px; margin: 5px 0px}
+.cardInfo .title{margin: 0 0 15px}
+.cardInfo select{width: 258px; margin: 0px}
+.cardInfo .expiration select{width: 100px; margin: 0 30px 0 0;}
+.billingInfo{width: 273px; font-family: arial; padding: 10px; background-color: #CCCCCC; -moz-border-radius: 5px; -webkit-border-radius: 5px;color: black;}
+.billingInfo input{margin: 0px}
+.billingInfo .data{margin: 5px 0px}
+.billingInfo .data label{width: 115px; float: left; font-size: 12px; margin: 3px 0px}
+.billingInfo .address{width: 115px; font-size: 12px; margin: 3px 0px;border: none;padding: 0}
+.billingInfo .address input{width: 259px;}
+.billingInfo .title{margin: 0 0 15px}
+.deliverypopup{width: 570px; border: thin solid gray ; padding: 5px; font-family: arial; font-size: 13px; background-color: #4A3E10;  -moz-border-radius: 15px; -webkit-border-radius: 15px; float: left; }
+.deliverypopup .body{width: 550px; border: thin solid gray; padding: 5px;  margin: 0 4px; background-color: #FFB278; -moz-border-radius: 10px; -webkit-border-radius: 10px;}
+.deliverypopup .title{margin: 10px 0; font-weight: bold; font-size: 20px; padding: 0px 5px; color: beige;}
+.deliverypopup .data .input{width: 120px; float: left;}
+.deliverypopup .warningMess{border: thin solid gray; margin: 5px 10px; width: 486px; background-color: #FFBDC9; font-size: 12px;}
+.deliverypopup .warningMess li{margin: 5px 0px; color: #EB0000; font-weight: bold; }
+.deliverypopup .deliveryDetails{height:85px; padding:5px}
+.deliverypopup .deliveryAddress{padding:5px; margin: 5px}
+.deliverypopup .data{margin: 3px}
+.deliverypopup .subtitle{margin: 10px 0; font-weight: bold; font-size: 16px;  }
+.deliverypopup .subtitle label{text-decoration: underline;}
+.deliverypopup .deliveryAddress input{width: 300px;margin: 0;padding: 0}
+.deliverypopup .buttonArea button{width: 75px; height: 25px; margin: 10px 6px 10px 10px; float: right}
+.container{-moz-border-radius: 19px 19px 19px 19px;background: none repeat scroll 0 0 #414754;color: white; margin-top: 20px;padding: 10px;width: 970px;}
+.companyProfile .details a{color: #8F4C4D; font-size: 14px; font-weight: bold;}
+.companyProfile .companyDetails .companyName{color: #8F4C4D; font-size: 18px; font-weight: bold; text-decoration: underline; }
+.EXSearchBar select{float: left; padding: 2px 0px; border: 1px outset silver; margin-top: 9px;}
+.shopSearchResults{width: 560px;}
+.shopSearchResults .shopEntry{color:black; width: 510px; padding: 10px; background-color: #816312; font-family: arial; -moz-border-radius: 9px; -webkit-border-radius: 9px; float: left; margin: 5px}
+.shopSearchResults .shopEntry h3{padding: 0px; margin: 0px 0px 10px; text-decoration: underline;}
+.shopSearchResults .shopEntry .body{width: 490px; background-color: #DBDBA7; padding: 10px; float: left;}
+.shopSearchResults .shopEntry .body .top{width: 490px; float: left; border: none;}
+.shopSearchResults .shopEntry .body .top .logo img{width: 112px; height: 64px; margin-right: 15px;}
+.shopSearchResults .shopEntry .body .top p{font-size: 11px; width: 350px; float: left; text-align: justify; margin: 7px 0px;}
+.shopSearchResults .shopEntry .body .top .categories{font-size: 13px; font-weight: bold;}
+.shopSearchResults .shopEntry .body .top .categories div{float: left; margin-right: 15px; margin-bottom: 5px;}
+.shopSearchResults .shopEntry .body .top .logo{ margin: 5px; float: left}
+.shopSearchResults .shopEntry .body .bottom .detail{margin: 0px 10px; float: left; }
+.shopSearchResults .shopEntry .body .bottom .detail label{font-size: 11px; font-weight: normal; }
+.shopSearchResults .shopEntry .body  .bottom .contactinfo{margin: 0px 10px; float: right; }
+.shopSearchResults .shopEntry .body  .bottom .contactinfo label{font-size: 11px; font-weight: normal; }
+.shopSearchResults .shopEntry .body  .bottom .contactinfo label.email{font-weight: bold;}
+.shopSearchResults .shopEntry .body  .bottom .contactinfo a{color: #8F4C4D; font-size: 14px; font-weight: bold;}
+.shopSearchResults .shopEntry .body  .bottom .button{margin: 0px; float: right; vertical-align: bottom; width: 307px}
+.shopSearchResults .shopEntry .body  .bottom .button div{float: left;  margin: 0;}
+.shopSearchResults .shopEntry .body  .bottom .button button{font-size: 11px; }
+.companyProfile{min-width:490px; arial; border: solid silver; padding: 5px; float: left; -moz-border-radius: 25px; -webkit-border-radius: 25px; background-color: #f5f0ed}
+.companyProfile .contactInfo{width: 250px; float: left; background-color: #D4CBB0; padding: 15px; font-size: 13px; -moz-border-radius: 20px; -webkit-border-radius: 20px; margin: 5px}
+.companyProfile .contactInfo .logo{width: 224px; margin: auto; margin-bottom: 15px}
+.companyProfile .contactInfo .details{margin: auto; margin-bottom: 10px; width: 200px;}
+.companyProfile .companyDetails{ float: left; padding: 15px;}
+.companyProfile .companyDetails .input{padding-bottom: 15px}
+.companyProfile .companyDetails .input .label{font-size: 14px; font-weight: bold; margin: 0px; padding: 0 0 5px;}
+.companyProfile .companyDetails .input .detail{font-size: 12px; margin:0px; padding: 0px;width:175px}
+.companyProfile .companyDetails .input .detail p{margin-bottom: 0px; text-align: justify;}
+.companyProfile label{font-weight: normal;}
+.mall .themessage{cursor:pointer;  width:400px;position:fixed;margin-left:275px;margin-top:-17px;display:none;border-top:none;text-align: center;-moz-border-radius-bottomleft: 9px; -webkit-border-bottom-left-radius: 9px; -moz-border-radius-bottomright: 9px; -webkit-border-bottom-right-radius: 9px;font-weight: bold; }
+.merchantcard .companyProfile{width: 100%;margin:auto;margin-left:3px;margin-top:10px}
+.deliverypopup .body  label ,.deliverypopup .body .data{color : black;}
+.mall {background: url("topback.png") no-repeat scroll 0 0 transparent;height: 116px;width: 968px;}
+.mall .top{background: none repeat scroll 0 0 transparent;color: black;margin: 7px 0 0;padding: 5px 7px 0;}
+.mall .top a{margin : 0.3em 0.5em 0 0.5em;float: left;}
+.mall .top a.mine{color: black;float: right;font-weight: bold;}
+.mallsearchinput{font-size:143%;}
+.logoarea{background: url("Rs1-logo.png") repeat scroll 0 0 transparent;cursor: pointer;height: 88px;position: relative;top: -25px;width: 220px;}
+.mallactionpanel{min-height: 800px;}
+.malladvertisementpanel{min-height: 800px;width:240px;}
+.malladvertisementpanel .span-6{width:258px;margin-bottom:0.5em;}
+.malladvertisementpanel .span-6 img.span-2{width:96px;height: 54px;margin:5px;border: double;}
+.malladvertisementpanel .span-6 a.span-4{width:120px}
+.EXSearchBar{background: none repeat scroll 0 0 transparent;height: 75px;margin: 0;padding: 6px 21px;}
+.malladvertisementpanel .malladvlist .title{background: url(hl.png) repeat scroll 0 0 #703211;color: white;font-weight: bold;margin: 0 0 0 0.5em;padding: 5px 10px;}
+.malladvertisementpanel .malladvlist .footer{margin: 0.5em;border-bottom: double 4px #BBBBBB;padding:5px;}
+.msr{background: none repeat scroll 0 0 #DBDBA7;border: 7px solid #816312;color: black;float: left;margin-bottom: 1.5em;padding-bottom: 5px;padding-left: 4px;position: relative;width: 95%;-moz-border-radius:9px;}
+.msr .msr-header{height: 30px;background:#816312;padding: 0pt;margin: 0pt;position: relative;left: -4px;width: 526px;}
+.msr .title{margin:0px 0 3px 9px}
+.msr .title a{color:black}
+.msr .description{font-size: 1.2em;}
+.mallcatlist h5{background: url(h.png) repeat scroll 0 0 #703211;color: wheat;margin: 0 0 5px;padding: 5px 0 5px 10px;}
+.mallcatlist ul{background: none repeat scroll 0 0 silver;list-style: none outside none;margin: 0 0 0 0;}
+.mallcatlist ul li a{}
+.malloptions ul li a{font-weight: bold;font-size: 12px;text-decoration: none;color: black;color: #1D1559}
+.mallcatlist ul li{    border-bottom: 1px dotted;cursor: pointer; margin-left: -40px;padding: 5px;}
+.malloptions ul li a.selected{font-weight: bold;color:#111; }
+.categories  ul{list-style-image: url("catbullet.gif");padding-left: 20px}
+.categories  ul li a{}
+.categories  ul li a{font-weight: bold;font-size: 12px;}
+.categories  ul li{margin-bottom: 5px;margin-left:0px;background: none;}
+.categories  ul li a.selected{font-weight: bold;color:#111; }
+.categories ul{list-style:none;padding:0;margin:0;}
+.categories h5{display:none;}
+.categories .title{cursor: pointer;display: block;margin: 4px auto;padding-left: 0;padding-right: 0;text-align: center;}
+.productcard .slider{width: 530px; height: 300px;float: left;}
+.productcard .slider img{width: 500px;height: 280px;margin: 10px 10px;}
+.productcard .like, .productcard .nolike{height: 10px;margin: 5px;clear: both;}
+.productcard .like{background-color: green;}
+.productcard .nolike{background-color: red;}
+.productcard .actions{padding: 0px 20px;float: right;}
+.productcard .desc-wrapper{border: solid 1px #BBBBBB;padding: 10px 0;margin:10px 0;}
+.commentinput{clear:both;float:left;height:70px;width:372px;}
+.productcard button.save{float:left}
+.productcard .provided {margin-bottom:0;margin-top: 10px;}
+.productcard .comments {margin:0;clear:left}
+.productcard .commentAuthor{width: 48px;height: 48px;margin: 10px;}
+.wi{color: white;}
+.EXCreditsInfo label{color: black;font-weight: bold;float: right;} 
+.adv-product-list{background: none repeat scroll 0 0 silver;margin-left: 6px;width: 252px;float: left;border-bottom: solid 1px white;padding-bottom: 10px;}   
+ tr.even td{color: black;}
+ tr.odd td{background-color: steelBlue;}
+ .noresultatall{display: block; text-align: center; color: white; text-decoration: underline; border: 1px solid silver; height: 50px; vertical-align: bottom;padding-top:27px;background:gray}
+.card-info-bar{height:35px;border-bottom:solid 1px steelblue;padding-bottom:4px;border-bottom:solid 1px #C9D7F1;}
+.card-info{ list-style:none;padding-left:8px; margin:0;}
+.card-info li{ float:left; height:33px; padding:0 8px;}
+.card-info .btn{border:solid 1px steelblue;background-color:steelblue; cursor:pointer;}
+.ac_results{width: 400px;cursor: pointer;border: solid 1px silver;}
+.ac_results ul{list-style: none;margin: 0;padding: 0;}
+.ac_results ul li{padding-left: 7px;}
+.ac_results ul li.ac_even{background-color: silver;}
+.ac_results ul li.ac_over{background-color: #7B6F6F;}
+.messagelist{}
+.MessageListTitle button{font-size: 13px;float: right;position: relative;top: -13px;}
+.main-back{padding:10px 12px;margin:9px 0;right;background: url("../icons-2/fugue/bonus/icons-24/arrow-180.png") no-repeat scroll 3px -1px beige;}
+button[name=search]{padding:10px 12px;margin:9px 0;background: url("../icons-2/fugue/bonus/icons-24/magnifier-left.png") no-repeat scroll 3px -1px beige;}
+.messagelist th{border: solid 1px #BBBBBB;}
+.messagelist td{vertical-align: top;}
+.messagelist tr{cursor: pointer}
+.messagelist tr:hover, .messagelist tr.odd:hover{background: gray}
+.messagelist tr.odd{background: #F3F3F3}
+.MessageListTitle{ background: url(title.png) repeat scroll 0 0 #dbdba7;padding: 10px;margin: 0}
+.thumbnails ul{list-style: none;}
+.thumbnails ul li{float: left;margin: 5px;background-color: gray;padding: 5px;}
+.thumbnails ul li img{width: 50px;height: 50px;margin: 0;padding: 0;}
+.accountinfo fieldset h5{margin:5px;color: black}
+.accountinfo{background: none repeat scroll 0 0 #DBDBA7}
+.accountinfo fieldset textarea{margin:5px;height: 50px;width: 350px}
+.accountinfo fieldset input{margin:5px;width: 350px}
+.accountinfo fieldset select{margin:5px}
+.ui-warning{position: absolute;top: 3px;right: 10px;width: 340px;z-index: 3000;}
+.ui-warning span{float: left;margin-right: 0.3em;}
+.ui-warning div{padding: 0pt 0.7em;margin-top: 20px;}
+.actions div{background-repeat: no-repeat; height: 31px; border: 1px solid silver; background-position: 4px 2px; width: 24px; cursor: pointer; float: left; margin: 2px;}
+.explorer .small-icon{width:48px;height:48px;background:url("../castafiore/resource?spec=classpath:org/castafiore/resource/icons/large/folder.gif") no-repeat scroll 0 50% transparent}
+.explorer td{vertical-align:middle}
+.explorer .open td{vertical-align:top}
+a.small-add{background-image:url("../icons/delete.png");background-repeat:no-repeat;color:sienna;font-weight:bold;padding-left:18px;margin-right:18px;}
+.EXMallForm input.error{border:dotted 2px red;}
+.EXMallForm textarea.error{border:dotted 2px red;background: none;}
+.store-head th{background-color: transparent;border: solid 1px silver;}
+.store-head h5{margin: 0}
+#playnav-channel-name {float:left;}
+.outer-box-color, .outer-box-bg-color, .outer-box {color:#606060;}
+.playnav-item .selector, .outer-box-bg-color, .outer-box {background-color:#D6D6D6;}
+.outer-box-color-as-border-color {border-color:#606060;}
+.channel-thumb-holder {float:left;padding:4px;}
+.user-thumb-semismall {border:1px solid inherit;}
+.user-thumb-semismall {height:36px;width:36px;}
+.user-thumb-xlarge, .user-thumb-large, .user-thumb-medium, .user-thumb-semismall {background-color:#FFFFFF;border:3px double #999999;display:block;overflow:hidden;}						
+#channel_title {float:left;}
+.channel-title {font-size:16px;font-weight:bold;}
+#playnav-chevron {border-color:transparent #D6D6D6;border-style:solid;border-width:29px 0 23px 23px;float:left;font-size:0;height:0;line-height:0;width:0;}
+a[name=logout]{position: absolute;right: 45px;top: 25px;}
+div[name=toolBar] button{float: right;background-position: 3px 0px;height: 27px;background-repeat: no-repeat;}
+div[name=toolBar] div{width: 40px; float: right; text-align: center; border: 1px solid silver; padding: 4px 10px 3px 7px; margin: 0.7em 0.5em 0.7em 0pt;}
+button[name="previousPage"] {background-image: url("../icons-2/fugue/bonus/icons-24/arrow-180.png");padding-left: 17px;}
+button[name=nextPage]{background-image:url("../icons-2/fugue/bonus/icons-24/arrow.png");padding-right: 17px;background-position: 4px 0px;}
+.btnCtn button{float: left;}
+.MessageListTitle img{width: 64px;height: 64px;background-color: white;padding: 0 10px;border: double;cursor: pointer;}
+.EXSubCategory{border-bottom: 1px dotted;color: #1D1559;cursor: pointer;font-weight: bold;padding: 2px 0 0 11px;}
+.EXSubCategory:hover{background-color: beige;}
+.icon-button{background: url("../icons/align_center_16.png") repeat scroll 0 0 transparent;height: 18px;width: 18px;float: left;margin: 2px;}
+.des-toolbar{border: solid 1px silver;height: 22px;background: wheat;}
+.add-button{background: url("../icons-2/fugue/bonus/icons-24/plus.png") repeat scroll 0 0 transparent;height: 26px;width: 26px;margin: 2px;}
+.date-type-filter{position: relative; text-align: left !important; width: 157px !important; height: 126px !important; padding: 10px !important;}
+.date-type-filter select{width: 150px;}
+.worksheet .head div {height: 50px;border-style:solid;border-width : 1px 1px 2px 1px;border-color: #C4D2E4;cursor: pointer;	margin: 0;background-color: #EBF3FF;padding: 3px;font-weight: bold;text-align: center;}	
+.sp-row div[name=cell], .sp-row div[name=left-margin],.sp-row div[name=right-margin] {border-style:solid;border-width : 1px 1px 1px 1px;border-color: #C4D2E4;cursor: pointer;margin: 0;height: 15px;padding: 3px;}
+.sp-row div input{height: 15px;border: none;margin: 0px;padding: 0px;font-size: 12px;color: saddleBrown;}
+sp-row div.selected{border-color: #F0C79D;}
+.sp-row div.empty{border-left-width: 1px;}
+.sp-row div.empty, .spreadsheet .sp-row div.first-col{background-color: #DCE6F2;text-align: center;font-weight: bold;}
+.invoice{margin: 10px 0;color: black;}
+.invoice .shopdetails{width: 764px;  float: left;}
+.invoice .shopdetails .left{float: left}
+.invoice .shopdetails .logo{width: 224px; height: 64px; background-image:url("humy/logo.png"); }
+.invoice .shopdetails .contactdetails{float:right; width: 400px;}
+.invoice .shopdetails .contactdetails .addressArea{float:left; width: 200px; padding-right: 10px;}
+.invoice .shopdetails .contactdetails .otherContact{float: right; width: 150px}
+.invoice .shopdetails .businessdetails{margin-top: 10px}
+.invoice table{border:solid blue 2px; clear: both; margin-bottom: 0;}
+.invoice .delivery{padding: 10px; background:#8C1300; font-weight: bold; color: #FFE4CF; height:270px;}
+.shopProducts{width: 510px; float: left;}
+.shopProducts .header{background: url("topback.png") no-repeat scroll 0 0 transparent; float: left; font-family: arial; width: 509px; padding: 5px; height: 100%;margin-top:3px}
+.shopProducts .header .title{font-size: 20px; font-weight: bold; float: left}
+.shopProducts .header .search{float: right; font-size: 14px}
+.shopProducts .header .search div{float:right; margin-right: 5px}
+.shopProducts .products{width: 142px; padding: 10px; font-family: arial; background-color: #dcddde; float: left; -moz-border-radius: 9px; -webkit-border-radius: 9px; border: solid thin #7a7d80; margin: 3px;}
+.shopProducts .products .photo{text-align: center; font-size: 12px; margin-bottom: 5px}
+.shopProducts .products .photo img{width: 145px; height: 81px; margin-bottom: 5px;}
+.shopProducts .products .photo .price{font-size: 13px; font-weight: bold; color: red;}
+.shopProducts .products .photo .buttonArea{margin-top: 5px;}
+.shopProducts .products .photo .buttonArea button{float: left; padding: 5px; margin: 3px}
+.shopProducts .search{height:  30px}
+.shopProducts .search label{position: relative;top: 6px}
+.shopProducts .search button{margin-top:3px}
+.malladvlist .field-div label{float: left;margin-top: 7px;}
+.malladvlist .field-div input{float: right;margin-right: 22px;}
+.malladvlist .field-div button{float: right;margin-right: 22px;}
+.cart-widget{padding:0;float: left;width: 258px;margin: 0 !important}
+.cart-widget h4{background: url("hl.png") repeat scroll 0 0 #703211;color: white;font-weight: bold;margin: 0 0 0 0.5em;padding: 5px 10px;border: none;}
+.cart-widget .ui-widget-content{width: 258px;border: none;margin: 0 0 10px 7px !important;width: 241px;background: none repeat scroll 0 0 silver}
+
+

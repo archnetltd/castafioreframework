@@ -1,0 +1,116 @@
+<div>
+	<div name="message"></div>
+<fieldset style="margin: 0.5em 7px">
+	<legend>Choose username and password</legend>
+	<ul class="form-list">
+		<li class="fields">
+           	<div class="customer-name">
+ 				<div class="field name-firstname">
+     				<label class="required" for="user.firstname"><em>*</em>Username</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="First Name" value="" name="billing.username">
+		        </div>
+ 				</div>
+		    <div class="field name-lastname" style="float: left;">
+		        <label class="required" for="billing.lastname"><em>*</em>Password</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="Last Name" value="" name="billing.password">
+		        </div>
+		    </div>
+		</div>
+	</li>
+	</ul>
+</fieldset>
+
+<fieldset style="margin: 0.5em 7px">
+	<ul class="form-list">
+		<li class="fields">
+           	<div class="customer-name">
+ 				<div class="field name-firstname">
+     				<label class="required" for="billing.firstname"><em>*</em>First Name</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="First Name" value="" name="billing.firstname">
+		        </div>
+ 				</div>
+		    <div class="field name-lastname" style="float: left;">
+		        <label class="required" for="billing.lastname"><em>*</em>Last Name</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="Last Name" value="" name="billing.lastname">
+		        </div>
+		    </div>
+		</div>
+	</li>
+             <li class="fields">
+            	<div class="field left-field">
+        			<label for="billing.company">Company</label>
+                     <div class="input-box">
+                         <input type="text" class="input-text" title="Company" value="" name="billing.company">
+                     </div>
+                 </div>
+      			<div class="field">
+                     <label class="required" for="billing.email"><em>*</em>Email Address</label>
+                     <div class="input-box">
+                         <input type="text" class="input-text" title="Email Address"  name="billing.email">
+                     </div>
+                 </div>
+      		</li>
+             <li class="self-wide">
+                 <label class="required" for="user:street1"><em>*</em>Address</label>
+                 <div class="input-box" style="left: -2px;">
+                     <input type="text" class="input-text required-entry" value="" id="user:street1" name="billing.addressline1" title="Street Address">
+                 </div>
+             </li>
+  			<li class="self-wide">
+                 <div class="input-box" style="left: -2px;">
+                     <input type="text" class="input-text" value="" id="user:street2" name="billing.addressline2" title="Street Address 2">
+                 </div>
+             </li>
+			<li class="fields">
+              <div class="field left-field">
+                  <label class="required" for="user:city"><em>*</em>City</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value="" name="billing.city" title="City">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="required" for="user:postcode" id="">Zip/Postal Code</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value=""  name="billing.postcode" title="Zip/Postal Code">
+                  </div>
+              </div>
+       		</li>
+       		
+       		<li class="fields">
+              <div class="field left-field">
+                  <label class="required" for="user:country"><em>*</em>Country</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value="" name="billing.country" title="City">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="required" for="user:mobile" id="">Mobile Phone</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value=""  name="billing.mobile" title="Zip/Postal Code">
+                  </div>
+              </div>
+       		</li>
+             
+		    <li class="fields">
+		         <div class="field left-field">
+		             <label class="required" for="user:telephone"><em>*</em>Telephone</label>
+		             <div class="input-box">
+		                 <input type="text"  class="input-text" title="Telephone" value="" name="billing.telephone">
+		             </div>
+		         </div>
+		         <div class="field">
+		             <label for="user:fax">Fax</label>
+		             <div class="input-box">
+		                 <input type="text" id="user:fax" class="input-text" title="Fax" value="" name="billing.fax">
+		             </div>
+		         </div>
+		     </li>	
+	</ul>
+	<button name="registerUser"></button>
+	<button name="cancel"></button>
+</fieldset>
+</div>

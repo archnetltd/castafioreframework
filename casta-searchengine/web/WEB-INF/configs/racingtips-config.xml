@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	
+	<bean id="racingtips" class="org.racingtips.ui.EXRacingTips" scope="session"></bean>
+	<bean id="racingtipsadmin" class="org.racingtips.ui.EXRacingTipsAdmin" scope="session"></bean>
+	
+	<bean class="org.castafiore.persistence.AnnotatedClass">
+		<property name="annotatedClasses">
+			<util:list>
+				<value>org.racingtips.mtc.Meeting</value>
+				<value>org.racingtips.mtc.Race</value>
+				<value>org.racingtips.mtc.RaceCardItem</value>
+				<value>org.racingtips.mtc.RaceResult</value>
+				<value>org.racingtips.mtc.RaceResultCardItem</value>
+				<value>org.racingtips.mtc.Nomination</value>
+				<value>org.racingtips.mtc.NominationRace</value>
+				<value>org.racingtips.mtc.horse.Stable</value>
+				<value>org.racingtips.mtc.horse.Performance</value>
+				<value>org.racingtips.mtc.horse.Horse</value>
+				<value>org.racingtips.mtc.horse.TrackWork</value>
+				<value>org.racingtips.mtc.horse.Form</value>
+				<value>org.racingtips.tips.FirstChoice</value>
+				<value>org.racingtips.tips.Outsiders</value>
+				<value>org.racingtips.tips.Places</value>
+				<value>org.racingtips.tips.BankerOne</value>
+				<value>org.racingtips.tips.BankerTwo</value>
+				<value>org.racingtips.tips.SelectionOne</value>
+				<value>org.racingtips.tips.SelectionTwo</value>
+				<value>org.racingtips.tips.SelectionThree</value>
+				<value>org.racingtips.tips.SelectionFour</value>
+				<value>org.racingtips.tips.AbstractTips</value>
+				<value>org.racingtips.tips.Tips</value>
+				<value>org.racingtips.tips.Trifecta</value>
+				<value>org.racingtips.tips.LastMinuteTips</value>
+				<value>org.racingtips.tips.Banker</value>
+				
+			</util:list>
+		</property>
+	</bean>
+	
+
+</beans>

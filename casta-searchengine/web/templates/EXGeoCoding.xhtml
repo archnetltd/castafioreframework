@@ -1,0 +1,108 @@
+<div>
+
+    <script>
+   		var geocoder;
+      	var map;
+      	var marker;
+	var searchBox;
+      	function initialize() {
+        	geocoder = new google.maps.Geocoder();
+        	var latlng = new google.maps.LatLng(-34.397, 150.644);
+        	var mapOptions = {
+          		zoom: 8,
+          		center: latlng,
+          		mapTypeId: google.maps.MapTypeId.ROADMAP
+        	};
+        	
+        	map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+	 		marker = new google.maps.Marker({
+            	position: latlng,
+            	map: map
+          	});
+
+        	google.maps.event.addListener(map, 'click', function(event) {
+            	addMarker(event.latLng);
+          	});
+
+		google.maps.event.addListener(map, 'zoom_changed', function(event) {
+			saveMap();
+		});
+
+
+		createSearchBox();
+	  
+      	}
+
+	function createSearchBox(){
+		$("#searchBox").autocomplete({
+      //This bit uses the geocoder to fetch address values
+		      source: function(request, response) {
+			geocoder.geocode( {'address': request.term }, function(results, status) {
+			  response($.map(results, function(item) {
+			    return {
+			      label:  item.formatted_address,
+			      value: item.formatted_address,
+			      latitude: item.geometry.location.lat(),
+			      longitude: item.geometry.location.lng()
+			    }
+			  }));
+			})
+		      },
+		      //This bit is executed upon selection of an address
+		      select: function(event, ui) {
+			
+			var location = new google.maps.LatLng(ui.item.latitude, ui.item.longitude);
+			addMarker(location);
+			map.setCenter(location);
+		      }
+		    });
+
+	}
+
+      	function addMarker(location) {
+
+			if(marker.getMap() == null)
+				marker.setMap(map);
+			
+	  		marker.setPosition(location);
+	 		saveMap();
+			
+       	}
+
+      	function saveMap(){
+          	$('.ZoomLevel').val(map.getZoom());
+          	$('.Location').val(marker.getPosition());
+      	}
+      
+      
+
+     	initialize();
+        
+    </script>
+	<div>
+		<table class="ui-widget-content EXFieldSet">
+			<thead class="ui-widget-header">
+				<tr><td colspan="4"><span class="EXFieldSetCaption"><span class="ui-icon" style="float:left"></span>Google Map GeoCoding</span></td></tr>
+			</thead>
+			<tbody>
+				<tr class="even">
+					<td class="EXLabel"><label>Search Location :</label></td>
+					<td><input id="searchBox"></input>  </td>
+				</tr>
+				<tr class="even">
+					
+					<td colspan="2" style="text-align:center">
+						<input name="zoomLevel"/>
+
+						<input name="location"/>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+    </div>
+    <div style="height:300px;width:700px;float:left">
+    	<div id="map_canvas" style="height:100%"></div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<fieldset>
+	<button name="sameAsBillingInfo">Same as billing info</button>
+	<ul class="form-list" style="clear: both;">
+		<li class="fields">
+           	<div class="customer-name">
+ 				<div class="field name-firstname">
+     				<label class="required" for="shipping.firstname"><em>*</em>First Name</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="First Name" value="" name="shipping.firstname">
+		        </div>
+ 				</div>
+		    <div class="field name-lastname" style="float: left;">
+		        <label class="required" for="shipping.lastname"><em>*</em>Last Name</label>
+		        <div class="input-box">
+		            <input type="text" class="input-text" title="Last Name" value="" name="shipping.lastname">
+		        </div>
+		    </div>
+		</div>
+	</li>
+             <li class="fields">
+            	<div class="field left-field">
+        			<label for="shipping.company">Company</label>
+                     <div class="input-box">
+                         <input type="text" class="input-text" title="Company" value="" name="shipping.company">
+                     </div>
+                 </div>
+      			<div class="field">
+                     <label class="required" for="shipping.email"><em>*</em>Email Address</label>
+                     <div class="input-box">
+                         <input type="text" class="input-text" title="Email Address"  name="shipping.email">
+                     </div>
+                 </div>
+      		</li>
+             <li class="self-wide">
+                 <label class="required" for="billing:street1"><em>*</em>Address</label>
+                 <div class="input-box">
+                     <input type="text" class="input-text required-entry" value="" id="billing:street1" name="shipping.addressline1" title="Street Address">
+                 </div>
+             </li>
+  			<li class="self-wide">
+                 <div class="input-box">
+                     <input type="text" class="input-text" value="" id="billing:street2" name="shipping.addressline2" title="Street Address 2">
+                 </div>
+             </li>
+			<li class="fields">
+              <div class="field left-field">
+                  <label class="required" for="billing:city"><em>*</em>City</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value="" name="shipping.city" title="City">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="required" for="billing:postcode" id="">Zip/Postal Code</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value=""  name="shipping.postcode" title="Zip/Postal Code">
+                  </div>
+              </div>
+       	</li>
+       	
+       	<li class="fields">
+              <div class="field left-field">
+                  <label class="required" for="shipping:country"><em>*</em>Country</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value="" name="shipping.country" title="City">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="required" for="shipping:mobile" id="">Mobile Phone</label>
+                  <div class="input-box">
+                      <input type="text" class="input-text" value=""  name="shipping.mobile" title="Zip/Postal Code">
+                  </div>
+              </div>
+       		</li>
+             
+	    <li class="fields">
+	         <div class="field left-field">
+	             <label class="required" for="billing:telephone"><em>*</em>Telephone</label>
+	             <div class="input-box">
+	                 <input type="text"  class="input-text" title="Telephone" value="" name="shipping.telephone">
+	             </div>
+	         </div>
+	         <div class="field">
+	             <label for="billing:fax">Fax</label>
+	             <div class="input-box">
+	                 <input type="text" id="billing:fax" class="input-text" title="Fax" value="" name="shipping.fax">
+	             </div>
+	         </div>
+	     </li>	
+	</ul>
+	<button name="back"></button>
+	<button name="continue"></button>
+</fieldset>

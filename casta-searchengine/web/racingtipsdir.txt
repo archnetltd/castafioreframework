@@ -1,0 +1,10 @@
+home
+	slider
+		youtube channel
+	
+	tabs
+		headlines
+		fullschedule
+		appearances
+	
+	latest topics

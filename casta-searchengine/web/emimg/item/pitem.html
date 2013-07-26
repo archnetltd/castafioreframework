@@ -1,0 +1,451 @@
+<html>
+<head>
+<title>Untitled-1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+
+<style>
+body{background: white !important}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
+body {line-height:1.5;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;}
+table, td, th {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:"";}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+html {font-size:100.01%;}
+body {font-size:75%;color:#222;background:url("bodybg.png") repeat-x scroll left top transparent;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2em;margin-bottom:0.75em;}
+h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1.2em;line-height:1.25;margin-bottom:1.25em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {margin:0 0 1.5em;}
+p img.left {float:left;margin:1.5em 1.5em 1.5em 0;padding:0;}
+p img.right {float:right;margin:1.5em 0 1.5em 1.5em;}
+a:focus, a:hover {color:#000;}
+a {color:#009;text-decoration:underline;}
+blockquote {margin:1.5em;color:#666;font-style:italic;}
+strong {font-weight:bold;}
+em, dfn {font-style:italic;}
+dfn {font-weight:bold;}
+sup, sub {line-height:0;}
+abbr, acronym {border-bottom:1px dotted #666;}
+address {margin:0 0 1.5em;font-style:italic;}
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+li ul, li ol {margin:0;}
+ul, ol {margin:0 1.5em 1.5em 0;padding-left:3.333em;}
+ul {list-style-type:disc;}
+ol {list-style-type:decimal;}
+dl {margin:0 0 1.5em 0;}
+dl dt {font-weight:bold;}
+dd {margin-left:1.5em;}
+table {margin-bottom:1.4em;width:100%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+label {font-weight:bold;}
+fieldset {padding:1.4em;margin:0 0 1.5em 0;border:1px solid #ccc;}
+legend {font-weight:bold;font-size:1.2em;}
+input[type=text], input[type=password], input.text, input.title, textarea, select {background-color:#fff;border:1px solid #bbb;}
+input[type=text]:focus, input[type=password]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus {border-color:#666;}
+input[type=text], input[type=password], input.text, input.title, textarea, select {margin:0.5em 0;}
+input.text, input.title {width:300px;padding:5px;}
+input.title {font-size:1.5em;}
+textarea {width:390px;height:250px;padding:5px;}
+input[type=checkbox], input[type=radio], input.checkbox, input.radio {position:relative;top:.25em;}
+
+.pitem{width: 234px;height: 279px;}
+.pitem .tl{height: 71px;background: url("images/tl.png") no-repeat;}
+.pitem .tr{height: 71px;background: url("images/tr.png") no-repeat 100%;}
+.pitem .tc{background-image: url("images/tc.png");background-repeat: repeat-x;height: 71px;margin-left: 11px;margin-right: 14px;}
+.pitem .mc{height: 180px;width: 100%;background-color: #f8f8f8}
+.pitem .bl{height: 31px;width:100%;background: url("images/bl.png") no-repeat;}
+.pitem .br{height: 31px;width:100%;background: url("images/br.png") no-repeat 100%;}
+.pitem .bc{background-image: url("images/bc.png");background-repeat: repeat-x;height: 31px;margin-left: 11px;margin-right: 14px;}
+.pitem span.title{color: white;font-family: sans-serif;font-size: 18px;font-weight: bold;padding-left: 6px;position: relative;top: 35px}
+.pitem .tb{padding: 2px 15px;float: left;}
+.pitem .tb label{color: white;font-weight: bold;}
+.pitem a{border: none;}
+.pitem img{border: none;}
+.pitem.yellow .tl{height: 71px;background: url("images/tly.png") no-repeat;}
+.pitem.yellow .tr{height: 71px;background: url("images/try.png") no-repeat 100%;}
+.pitem.yellow .tc{background-image: url("images/tcy.png");background-repeat: repeat-x;height: 71px;margin-left: 11px;margin-right: 14px;}
+.mall .head{float: left;}
+.mall .logo{width: 221px;height: 164px;background-image: url("images/logo.png")}
+.mall .logo .signIn{padding-top: 140px;padding-left: 35px;}
+.mall .logo .signIn a{text-decoration: none;color: #5a76a3;font-weight: bold;}
+.mall .head .left{float: left;}
+.mall .head .center{float: left;}
+.mall .head .center .banner{width: 737px;height: 129px;background-image: url("images/banner.png");}
+.mall .head .center .search{width: 734px;height: 30px;border-color: white;border: solid 3px white;border-left: none;background: url("images/search-bg.png") repeat;}
+.mall .head .center .search img{margin: 3px 8px 0px 10px;cursor: pointer;}
+.mall .head .center .search input{background: url("images/search-input.png") repeat scroll 0 0 white; border: medium none;height: 21px;position: relative;top: -7px;width: 164px;padding-left: 8px;padding-right: 18px}
+.mall .head .right{float: left;width: 244px;height: 165px;background: white;}
+.mall .body{float: left;margin-top: 5px}
+.mall .body .left{float: left;width: 221px}
+.mall .body .center{float: left;width: 737px;height: 540px;overflow: auto;}
+.mall .body .right{float:left;width:244px;margin-left: 5px}
+.mall .body .left .menu{border: solid 1px #d8d8d8;width: 185px;margin-left: 25px;border-bottom: none;}
+.mall .body .left .menu dt{background: url("images/menu-item-bg.png") repeat;width: 185px;height:26px;border-bottom: solid 1px #d8d8d8;}
+.mall .body .left .menu dt a{float: left;color: #6faedc;font-weight: bold;font-size: 11px;text-decoration: none;margin: 5px 17px;}
+.mall .body .left .menu dt img{float: right;margin: 7px}
+.home .top{background-color: #F6F6F6;height: 217px;padding: 20px 15px 10px;width: 705px;}
+.home .top p{color: #4a4a4a;width: 350px;}
+.home .bottom .pitem{float: left;margin: 5px 5px}
+.mall .body .right .add{width: 225px;height: 250px;background: url("images/add.png") repeat;margin: 4px 0px;}
+.mall .facebook{border: solid 1px #d8d8d8;width: 185px;margin-left: 25px;border-bottom: none;margin-top: 15px;}
+.mall .facebook .fb-head{height: 30px;background: url("images/fb-h.png");}
+.mall .facebook .fb-head label{color: white;padding-left: 12px;line-height: 25px;}
+.mall .facebook .fb-body{height: 200px;border-bottom:solid 1px #d8d8d8; }
+.mall .login{width: 227px;height: 132px;margin-top: 12px;float: left;}
+.mall .login .tl{height: 10px;background: url("images/login/tl.png") no-repeat;}
+.mall .login .tr{height: 10px;background: url("images/login/tr.png") no-repeat 100%;}
+.mall .login .tc{height: 10px;background: url("images/login/c.png") repeat-x;margin: 0px 10px}
+.mall .login .bl{height: 10px;background: url("images/login/bl.png") no-repeat;}
+.mall .login .br{height: 10px;background: url("images/login/br.png") no-repeat 100%;}
+.mall .login .bc{height: 10px;background: url("images/login/c.png") repeat-x 0px 100%;margin: 0px 10px}
+.mall .login .mc{background: url("images/login/m.png") repeat-y;width: 100%;height: 100%}
+.mall .login .tab{background-image: url("images/login/login-tab.png");float: left;height: 30px;margin: -4px 0 0 10px;width: 69px;position: absolute;}
+.mall .login .tab-inactive{background-image: url("images/login/login-tab-inactive.png");float: left;height: 30px;margin: -4px 0 0 78px;width: 69px;position: absolute;}
+.mall .login .tc label{color: white;text-align: center;line-height: 30px;margin-left:12px}
+.mall .login-frm label{color: #9a978c;padding: 0 5px;display: block;font-size: 9px;}
+.mall .login-frm input{margin: 0px;padding: 0 5px;background: url('images/login/login-input.png');width: 136px;height: 24px;border: none;}
+.mall .login-btn-ctn{float: left; margin: 14px 0pt 0pt 3px;}
+.mall .login-btn-ctn a{float: left;}
+
+.mall .login-frm-right a{display: block; height: 0px; float: left; margin: 4px 0px 5px 76px;}
+</style>
+<!--[if lt IE 9]>
+<style>
+.mall .search{width:737px;height:32px}
+.mall .search input{top: -6px;}
+.home .top{width: 732px;height: 225px;}
+
+.mall .login-btn-ctn{float: left; margin: 0;}
+.mall .login .bl{background-position:0 0;}
+.mall .login .br{background-position:100% 0px;}
+.mall .login .bc{background-position:0px 6px;}
+.mall .login .mc{height:100px}
+</style>
+<![endif]-->
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div class="mall">
+	<div class="head">
+		<div class="left">
+			<div class="logo">
+				<div class="signIn">
+					<a href="#">Sign In</a> <span>|</span> <a href="#">Login</a>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<div class="banner"></div>
+			<div class="search">
+				<img src="images/search.png" name="search"></img>
+				<input name="searchInput"></input>
+			</div>
+		</div>
+		<div class="right">
+			<div class="login">
+				<div class="tl">
+					<div class="tr">
+						<div class="tc">
+							<div class="tab"><label>Login</label></div>
+							<div class="tab-inactive" ><label>My Cart</label></div>
+						</div>
+					</div>
+				</div>
+				
+						<div class="mc">
+							<div class="login-frm" style="padding-top: 16px">
+								<div class="login-frm-left" style="float: left;width: 80px"><img src="images/login/login-fig.png" style="margin-left:25px"></img></div>
+								<div class="login-frm-right" style="float: left;width: 138px;height: 85px">
+									<label>Username :</label>
+									<input type="text"></input>
+									<label>Password :</label>
+									<input type="password"></input>
+									<a  href="#"><img src="images/login/login-btn.png"></a>
+								</div>
+							</div>
+							<div class="login-btn-ctn" >
+								<a href="#"><img src="images/login/nu.png"></img></a>
+								<a href="#"><img src="images/login/nr.png"></img></a>
+							</div>
+						</div>
+					
+				<div class="bl">
+					<div class="br">
+						<div class="bc">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="body">
+		<div class="left">
+			<dl class="menu" id="slider1">
+				<dt class="item"><a href="#">All Categories</a><img src="images/ar.png"></img></dt>
+				<dd>
+					<ul>
+						<li>asdas</li>
+						<li>asdas</li>
+						<li>asdas</li>
+						<li>asdas</li>
+						<li>asdas</li>
+					</ul>
+				</dd>
+				<dt class="item"><a href="#">Alimentaires</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Bricollages</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Detentes</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Voyages</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Textiles</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Enfants</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Produits Mauricienne</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+				<dt class="item"><a href="#">Categories</a><img src="images/ar.png"></img></dt>
+				<dd></dd>
+			</dl>
+			
+			
+			<div class="facebook">
+				<div class="fb-head"><label>Facebook Box</label></div>
+				<div class="fb-body"></div>
+			</div>
+		</div>
+		<div class="center">
+			<div class="home">
+				<div class="top">
+					<p class="description">Bienvenu sur le site emall vent en ligne et livrer a travers nos pick up points dans toute l'ile. Riche terre, Caudan, Flacq, Trianon, etc...</p>
+					<div class="images">
+						<img alt="" src="images/slide.png">
+					</div>
+				</div>
+			
+				<div class="bottom">
+					<div class="pitem yellow">
+						<div class="tl">
+							<div class="tr">
+								<div class="tc"><span class="title">Most viewed</span></div>
+							</div>
+						</div>
+						<div class="ml">
+							<div class="mr">
+								<div class="mc">
+									<div style="float: left;">
+										<label class="ptitle" style="float: right;color: #c6485c">Cadie ration :</label>
+										<p>
+											<img alt="" src="images/pimage.png" style="float: left;">
+										</p>
+									
+									</div>
+								
+								</div>
+							</div>
+						</div>
+						<div class="bl">
+							<div class="br">
+								<div class="bc">
+									<div style="margin: 6px 0px 0px 27px;float: left;font-weight: bold;color: white;">
+										<a href="#" title="Increase amount"><img src="images/plus.png"></img></a>
+										<label>1</label>
+										<a href="#" title="Decrease amount"><img src="images/minus.png"></img></a>
+									</div>
+									<div style="margin: 2px 0px 0px 27px;float: left;">
+										<a href="#" title="Show basket"><img src="images/basket.png"></img></a>
+										
+									</div>
+									<div style="float: left; margin-top: 3px; margin-left: 5px; font-weight: bold;color: white;">
+										<label>Add to cart</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pitem">
+						<div class="tl">
+							<div class="tr">
+								<div class="tc"><span class="title">Most viewed</span></div>
+							</div>
+						</div>
+						<div class="ml">
+							<div class="mr">
+								<div class="mc">
+									<div style="float: left;">
+										<label class="ptitle" style="float: right;color: #c6485c">Cadie ration :</label>
+										<p>
+											<img alt="" src="images/pimage.png" style="float: left;">
+										</p>
+									
+									</div>
+								
+								</div>
+							</div>
+						</div>
+						<div class="bl">
+							<div class="br">
+								<div class="bc">
+									<div style="margin: 6px 0px 0px 27px;float: left;font-weight: bold;color: white;">
+										<a href="#" title="Increase amount"><img src="images/plus.png"></img></a>
+										<label>1</label>
+										<a href="#" title="Decrease amount"><img src="images/minus.png"></img></a>
+									</div>
+									<div style="margin: 2px 0px 0px 27px;float: left;">
+										<a href="#" title="Show basket"><img src="images/basket.png"></img></a>
+										
+									</div>
+									<div style="float: left; margin-top: 3px; margin-left: 5px; font-weight: bold;color: white;">
+										<label>Add to cart</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="pitem">
+						<div class="tl">
+							<div class="tr">
+								<div class="tc"><span class="title">Most viewed</span></div>
+							</div>
+						</div>
+						<div class="ml">
+							<div class="mr">
+								<div class="mc">
+									<div style="float: left;">
+										<label class="ptitle" style="float: right;color: #c6485c">Cadie ration :</label>
+										<p>
+											<img alt="" src="images/pimage.png" style="float: left;">
+										</p>
+									
+									</div>
+								
+								</div>
+							</div>
+						</div>
+						<div class="bl">
+							<div class="br">
+								<div class="bc">
+									<div style="margin: 6px 0px 0px 27px;float: left;font-weight: bold;color: white;">
+										<a href="#" title="Increase amount"><img src="images/plus.png"></img></a>
+										<label>1</label>
+										<a href="#" title="Decrease amount"><img src="images/minus.png"></img></a>
+									</div>
+									<div style="margin: 2px 0px 0px 27px;float: left;">
+										<a href="#" title="Show basket"><img src="images/basket.png"></img></a>
+										
+									</div>
+									<div style="float: left; margin-top: 3px; margin-left: 5px; font-weight: bold;color: white;">
+										<label>Add to cart</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="pitem yellow" style="width: 225px">
+				<div class="tl">
+					<div class="tr">
+						<div class="tc"><span class="title">Most viewed</span></div>
+					</div>
+				</div>
+				<div class="ml">
+					<div class="mr">
+						<div class="mc">
+							<div style="float: left;">
+								<label class="ptitle" style="float: right;color: #c6485c">Cadie ration :</label>
+								<p>
+									<img alt="" src="images/pimage.png" style="float: left;">
+								</p>
+							
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="bl">
+					<div class="br">
+						<div class="bc">
+							<div style="margin: 6px 0px 0px 27px;float: left;font-weight: bold;color: white;">
+								<a href="#" title="Increase amount"><img src="images/plus.png"></img></a>
+								<label>1</label>
+								<a href="#" title="Decrease amount"><img src="images/minus.png"></img></a>
+							</div>
+							<div style="margin: 2px 0px 0px 27px;float: left;">
+								<a href="#" title="Show basket"><img src="images/basket.png"></img></a>
+								
+							</div>
+							<div style="float: left; margin-top: 3px; margin-left: 5px; font-weight: bold;color: white;">
+								<label>Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="pitem" style="width: 225px">
+				<div class="tl">
+					<div class="tr">
+						<div class="tc"><span class="title">Most viewed</span></div>
+					</div>
+				</div>
+				<div class="ml">
+					<div class="mr">
+						<div class="mc">
+							<div style="float: left;">
+								<label class="ptitle" style="float: right;color: #c6485c">Cadie ration :</label>
+								<p>
+									<img alt="" src="images/pimage.png" style="float: left;">
+								</p>
+							
+							</div>
+						
+						</div>
+					</div>
+				</div>
+				<div class="bl">
+					<div class="br">
+						<div class="bc">
+							<div style="margin: 6px 0px 0px 27px;float: left;font-weight: bold;color: white;">
+								<a href="#" title="Increase amount"><img src="images/plus.png"></img></a>
+								<label>1</label>
+								<a href="#" title="Decrease amount"><img src="images/minus.png"></img></a>
+							</div>
+							<div style="margin: 2px 0px 0px 27px;float: left;">
+								<a href="#" title="Show basket"><img src="images/basket.png"></img></a>
+								
+							</div>
+							<div style="float: left; margin-top: 3px; margin-left: 5px; font-weight: bold;color: white;">
+								<label>Add to cart</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

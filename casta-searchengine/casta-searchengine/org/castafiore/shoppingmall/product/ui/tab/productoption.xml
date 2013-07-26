@@ -1,0 +1,38 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer"
+	layoutData="">
+	<casta:attribute name="name"><![CDATA[Portal]]></casta:attribute>
+	<casta:attribute name="__oid"><![CDATA[13140738]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]>
+	</casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[/root/users/archnetltd/ddd.ptl]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:style name="width" value="500px"></casta:style>
+	<casta:style name="margin-top" value="0px"></casta:style>
+	<casta:style name="margin-right" value="0px"></casta:style>
+	<casta:style name="margin-bottom" value="0px"></casta:style>
+	<casta:style name="margin-left" value="0px"></casta:style>
+	<casta:style name="padding-top" value="0px"></casta:style>
+	<casta:style name="padding-right" value="0px"></casta:style>
+	<casta:style name="padding-bottom" value="0px"></casta:style>
+	<casta:style name="padding-left" value="0px"></casta:style>
+	<casta:designable name="ProductOptions" uniqueId="core:dynaform"
+		layoutData="Dynamic form">
+		<casta:attribute name="name"><![CDATA[Dynamic form]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ui-dialog ui-widget ui-corner-all des ui-widget-header]]></casta:attribute>
+		<casta:attribute name="title"><![CDATA[Product Options]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[3455951]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[Dynamic form]]></casta:attribute>
+		<casta:attribute name="skin"><![CDATA[WARP]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="visibility" value="hidden"></casta:style>
+		<casta:style name="z-index" value="1000"></casta:style>
+		<casta:style name="position" value="static"></casta:style>
+		<casta:style name="top" value="10%"></casta:style>
+		<casta:style name="left" value="10%"></casta:style>
+		<casta:style name="padding" value="0"></casta:style>
+		<casta:style name="background-position" value="0 0"></casta:style>
+		<casta:style name="width" value="500px"></casta:style>
+	</casta:designable>
+</casta:designable>

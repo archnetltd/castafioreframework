@@ -1,0 +1,43 @@
+<div >
+	<div class="cart-widget">
+		<h4 class="ui-widget-header ui-corner-top">Shopping Cart</h4>
+		<fieldset class="ui-widget-content">
+			<table name="details"></table>
+			<button class="ui-state-default ui-corner-all fg-button" style="float: left;" name="continueShopping" name="continueShopping">Continue shopping</button>
+			<button class="ui-state-default ui-corner-all fg-button" name="checkout">Proceed to checkout</button>     
+		</fieldset>
+	</div>
+	<style>
+		.footertotal td{
+			text-align: right;
+			padding-right: 10px;
+		}
+	</style>
+	<table class="EXGrid footertotal cart-widget ui-widget-content">
+	    <tfoot>
+	        <tr>
+			    <td>
+			        <strong>Total Excl. VAT</strong>
+			    </td>
+			    <td >
+			        <strong><span name="ttsubTotal">MURs3,475</span></strong>
+			    </td>
+			</tr>
+			 <tr >
+			    <td>
+			 		<div>VAT</div>
+			   	</td>
+			    <td ><span name="ttvat">MURs521</span></td>
+			</tr>
+			<tr>
+			    <td>
+			        <strong>Grand Total Incl. VAT</strong>
+			    </td>
+			    <td>
+			        <strong><span name="tttotal">MURs3,996</span></strong>
+			    </td>
+			</tr>
+		</tfoot>
+	</table>
+	                     
+</div>

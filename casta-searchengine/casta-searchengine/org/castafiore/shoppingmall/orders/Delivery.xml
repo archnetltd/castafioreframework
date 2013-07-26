@@ -1,0 +1,3 @@
+<action>
+	<method>org.castafiore.shoppingmall.orders.OrdersUtil.delivery</method>
+</action>

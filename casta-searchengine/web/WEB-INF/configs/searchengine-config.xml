@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	
+	<bean id="searchengine" class="org.castafiore.searchengine.EXSearchEngineApplication" scope="session"></bean>
+
+	<bean id="topBar" class="org.castafiore.searchengine.top.EXTopBar" init-method="init" scope="session">
+		<property name="categories">
+			<util:list>
+				<value>All</value>
+				<value>Goods</value>
+				<value>Services</value>
+				<value>Events</value>
+				<value>News</value>
+				<value>Cinema</value>
+				<value>Books</value>
+			</util:list>
+		</property>
+	</bean>
+	
+	<bean id="org.castafiore.shoppingmall.ui.MallForm" class="org.castafiore.shoppingmall.ui.MallFormInterceptor"></bean>
+	
+	
+	<bean  class="org.castafiore.designable.EXEcommerceDesignableFactory" scope="session"></bean>
+	
+	<bean class="org.castafiore.designable.EXCatalogueDesignableFactory" scope="session"></bean>
+	
+	<bean class="org.castafiore.designable.EXMiniCartDesignableFactory" scope="session"></bean>
+
+</beans>
