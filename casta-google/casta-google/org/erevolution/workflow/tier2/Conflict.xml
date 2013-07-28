@@ -1,0 +1,40 @@
+<action>
+	<form title="Reason for conflicting">
+		<input name="reason" type="textarea"></input>
+		<btn name="save">
+			<action>
+				<status>18</status>
+				<display>
+					<![CDATA[
+						<p>
+						Correctly changed status to conflict.
+						</p>
+						]]>
+				</display>
+				<mails>
+					<mail>
+						<subject>New order has been set to conflicting: No. ${input.code}</subject>
+						<from>sales@erevolution.com</from>
+						<to>${input.billingInformation.email}</to>
+						<content>
+							<![CDATA[
+								Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+								<p>
+								Your order below has been set to conflicting<br><br>
+								
+								The reason :<br>
+								${reason}
+								
+								${html}
+								<br>
+								Kind regards,<br>
+								Sales team<br>
+								eRevolution Group<br>
+							]]>
+						</content>
+					</mail>
+				</mails>
+			</action>
+		</btn>
+	</form>
+</action>

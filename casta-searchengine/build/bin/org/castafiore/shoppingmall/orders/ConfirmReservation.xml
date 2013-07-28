@@ -1,0 +1,45 @@
+
+<action>
+
+<status>17</status>
+
+<mails>
+
+<mail>
+	<subject>New invoice from emallofmauritius.com No. ${input.code}</subject>
+	<from>sales@emallofmauritius.com</from>
+	<to>${input.billingInformation.email}</to>
+	<content>
+<![CDATA[
+Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+Thank you for using emallofmauritius.com<br>
+
+<p>
+Your order below has been sent to the merchant.<br><br>
+The merchant $merchant does not offer online payment options. So you cannot buy it online. But only make a reservation.<br>
+Please note that this is not an order. You can print it and use it as a proof of reservation towards the merchant.<br>
+You are required to purchase and collect the product at the merchant. <br>
+
+${html}
+
+<br>
+
+
+Kind regards,<br>
+Sales team<br>
+ArchNet ltd<br>
+]]>
+</content>
+</mail>
+
+</mails>
+
+	<display>
+	<![CDATA[
+		<p>
+		The merchant $merchant does not offer online payment and delivery. However the merchant has been informed of your reservation.
+A mail has been sent to you. You can print it and use it as a proof of reservation.<br> You can purchase the product by contacting the merchant personally.
+</p>
+]]>
+	</display>
+</action>

@@ -1,0 +1,48 @@
+<action>
+
+<status>11</status>
+
+<mails>
+
+
+
+<mail>
+	<subject>Approved invoice buy mobuyonline.com No. ${input.code}</subject>
+	<from>sales@mobuyonline.com</from>
+	<to>${input.billingInformation.email}</to>
+	<content>
+<![CDATA[
+Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+Thank you for using mobuyonline.com<br>
+
+<p>
+Your order has been reviewed in our panel and has been approved.<br>
+A mail will be sent to you once the order is ready to be delivered.<br>
+</p>
+
+
+${html}
+
+<br>
+
+
+Kind regards,<br>
+Sales team<br>
+ArchNet ltd<br>
+]]>
+</content>
+</mail>
+
+
+
+
+</mails>
+
+<display>
+	<![CDATA[
+		<p>
+Done!!
+</p>
+]]>
+	</display>
+</action>

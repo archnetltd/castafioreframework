@@ -1,0 +1,7 @@
+<casta:designable name="Workflow" uniqueId="workflow:workflow" layoutData="">
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[castafiore/resource?spec=ecm:${path}]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[Workflow]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+</casta:designable>

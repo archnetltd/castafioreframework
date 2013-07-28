@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<!-- 
+	<bean id="textExtractorFactory" class="org.castafiore.wfs.search.SimpleExtractorFactory"></bean>
+	 -->
+	 
+	 <bean id="textExtractorFactory" class="org.castafiore.wfs.search.MapConfigurableExtractorFactory">
+	 	<property name="config">
+	 		<util:map>
+	 			<entry key="org.castafiore.wfs.types.File" >
+	 				<bean class="org.castafiore.wfs.search.textextractors.FileTextExtractor"></bean>
+	 			</entry>
+	 			<entry key="org.castafiore.wfs.types.BinaryFile">
+	 				<bean class="org.castafiore.wfs.search.textextractors.BinaryFileTextExtractor"></bean>
+	 			</entry>
+	 			<entry key="org.castafiore.wfs.types.Document">
+	 				<bean class="org.castafiore.wfs.search.textextractors.DocumentTextExtractor"></bean>
+	 			</entry>
+	 		</util:map>
+	 	</property>
+	 </bean>
+
+	<bean id="documentIndexer" class="org.castafiore.wfs.search.CastafioreDocumentIndexer">
+		<property name="textExtractorFactory" ref="textExtractorFactory"></property>
+	
+	</bean>
+
+
+
+	
+	
+	
+	
+</beans>

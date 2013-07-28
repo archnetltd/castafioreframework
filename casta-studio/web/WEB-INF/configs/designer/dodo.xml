@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean id="beanInfoService" class="org.castafiore.beans.info.BeanInfoServiceImpl"></bean>
+	<bean id="beanInfo" class="org.castafiore.beans.ui.BeanInfoApp" scope="session"></bean>
+
+	<bean id="org.castafiore.designable.DesignableFactory" class="org.castafiore.designer.DesignableFactoryInterceptor"></bean>
+	
+	<bean id="designableService" class="org.castafiore.designer.service.DesignerServiceImpl">
+		<property name="beanInfoService" ref="beanInfoService"></property>
+	</bean>
+	
+	
+	
+	<bean class="org.castafiore.designer.dataenvironment.DatasourceFactoryServiceImpl">
+		<property name="beanInfoService" ref="beanInfoService"></property>
+	</bean>
+	
+	<bean id ="layoutGeneratorInterceptor" class="org.castafiore.designer.wizard.layout.LayoutGeneratorInterceptor"></bean>
+	<aop:config>
+   		<aop:advisor pointcut="execution(* org.castafiore.designable.DesignableFactory.getInstance())"  advice-ref="layoutGeneratorInterceptor"/>
+	</aop:config>
+	
+	<bean class="org.castafiore.designer.DesignableCategoryComparator" lazy-init="true">
+		<property name="categories">
+			<util:list>
+				<value>Text components</value>
+				<value>Form controls</value>
+				<value>Primitive Layout</value>
+				<value>Layout</value>
+				<value>Data</value>
+				<value>Portal</value>
+			</util:list>
+		</property>
+	</bean>
+	
+	<bean id="org.castafiore.ui.Container" class="org.castafiore.designer.marshalling.EvaluatorInterceptor"></bean>
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="LI"></property>
+		<property name="tagName" value="li"></property>
+	</bean>
+	<!--  
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="UL"></property>
+		<property name="tagName" value="ul"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="OL"></property>
+		<property name="tagName" value="ol"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="LI"></property>
+		<property name="tagName" value="li"></property>
+	</bean>
+		<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="Table row"></property>
+		<property name="tagName" value="tr"></property>
+		
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory">
+		<property name="text" value="Table cell"></property>
+		<property name="tagName" value="td"></property>
+		<property name="defaultText" value="Table cell"></property>
+	</bean>
+		<bean class="org.castafiore.designer.designable.EXVerticalLayoutDesignableFactory">
+		<property name="text" value="Vertical layout"></property>
+	</bean>
+	
+	<bean class="org.castafiore.designer.designable.EXHorizontalLayoutDesignableFactory"></bean>
+	
+	<bean class="org.castafiore.designer.explorer.EXFileSelectorDesignableFactory"></bean>
+	<bean class="org.castafiore.designer.designable.EXJericoContainerDesignableFactory"></bean>
+	
+		
+	
+	<bean class="org.castafiore.designer.designable.EXBorderLayoutDesignableFactory"></bean>
+	 -->
+	 
+	 <bean class="org.castafiore.designer.designable.EXAccordeonDesignableFactory" lazy-init="true">
+	 	<property name="icon" value="icons/designer-icons/ui-accordion.png"></property>
+	 </bean>
+	 <bean class="org.castafiore.designer.designable.EXTabPanelDesignableFactory" lazy-init="true">
+	 	<property name="icon" value="icons/designer-icons/ui-tab-content.png"></property>
+	 </bean>
+	 <bean class="org.castafiore.designer.designable.datarepeater.EXPlugableItemDesignableFactory" lazy-init="true">
+	 	<property name="icon" value="icons/plugin.png"></property>
+	 </bean>
+	 <bean class="org.castafiore.designer.portalmenu.EXContentFlowDesignableFactory" lazy-init="true">
+	 	<property name="icon" value="icons/designer-icons/ui-flow.png"></property>
+	 </bean>
+	 <bean class="org.castafiore.designer.designable.EXXYLayoutDesignableFactory" lazy-init="true"></bean>
+	 
+	 <bean class="org.castafiore.designer.designable.EXUnorderedListDesignableFactory" lazy-init="true">
+	 	<property name="icon" value="icons/unorderedlist16.png"></property>
+	 </bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="Span"></property>
+		<property name="tagName" value="span"></property>
+		<property name="defaultText" value="Span"></property>
+		<property name="icon" value="icons/label.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="Paragraph"></property>
+		<property name="tagName" value="p"></property>
+		<property name="defaultText" value="Paragraph"></property>
+		<property name="icon" value="icons/paragraph.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="Label"></property>
+		<property name="tagName" value="label"></property>
+		<property name="defaultText" value="Label"></property>
+		<property name="icon" value="icons/label.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H1"></property>
+		<property name="tagName" value="h1"></property>
+		<property name="defaultText" value="Header 1"></property>
+		<property name="icon" value="icons/text_heading_1.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H2"></property>
+		<property name="tagName" value="h2"></property>
+		<property name="defaultText" value="Header 2"></property>
+		<property name="icon" value="icons/text_heading_2.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H3"></property>
+		<property name="tagName" value="h3"></property>
+		<property name="defaultText" value="Header 3"></property>
+		<property name="icon" value="icons/text_heading_3.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H4"></property>
+		<property name="tagName" value="h4"></property>
+		<property name="defaultText" value="Header 4"></property>
+		<property name="icon" value="icons/text_heading_4.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H5"></property>
+		<property name="tagName" value="h5"></property>
+		<property name="defaultText" value="Header 5"></property>
+		<property name="icon" value="icons/text_heading_5.png"></property>
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXTextTagDesignableFactory" lazy-init="true">
+		<property name="text" value="H6"></property>
+		<property name="tagName" value="h6"></property>
+		<property name="defaultText" value="Header 6"></property>
+		<property name="icon" value="icons/text_heading_6.png"></property>
+	</bean>
+	
+	<bean class="org.castafiore.designer.designable.EXImageDesignableFactory" lazy-init="true">
+		<property name="icon" value="icons/picture.png"></property>
+		
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory" lazy-init="true"> 
+		<property name="text" value="Div"></property>
+		<property name="tagName" value="div"></property>
+		<property name="icon" value="icons/newpage.png"></property>
+		
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory" lazy-init="true" >
+		<property name="text" value="Link"></property>
+		<property name="tagName" value="a"></property>
+		<property name="defaultText" value="http://www.google.com"></property>
+		<property name="icon" value="icons/link.png"></property>
+		
+	</bean>
+	
+	
+	<bean  class="org.castafiore.designer.designable.EXPrimitiveLayoutDesignableFactory" lazy-init="true">
+		<property name="text" value="Table tag"></property>
+		<property name="tagName" value="table"></property>
+		<property name="icon" value="icons/table.png"></property>
+		
+		
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXDynaformDesignableFactory" lazy-init="true">
+		<property name="icon" value="icons/application_form.png"></property>
+		
+	</bean>
+	
+	<bean  class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Text box"></property>
+		<property name="type" value="textbox"></property>
+		<property name="icon" value="icons/textfield.png"></property>
+		
+	</bean>
+	<bean  class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Password"></property>
+		<property name="type" value="password"></property>
+		<property name="icon" value="icons/password.gif"></property>
+		
+	</bean>
+	
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Text Area"></property>
+		<property name="type" value="textarea"></property>
+		<property name="icon" value="icons/textarea.png"></property>
+		
+	</bean>
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Rich Text Area"></property>
+		<property name="type" value="richtextarea"></property>
+		<property name="icon" value="icons/application_osx.png"></property>
+		
+	</bean>
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Radio button"></property>
+		<property name="type" value="radio"></property>
+		<property name="icon" value="icons/radio.png"></property>
+		
+	</bean>
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Color picker"></property>
+		<property name="type" value="colorpicker"></property>
+		<property name="icon" value="icons/color_wheel.png"></property>
+		
+	</bean>
+	<bean  class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Date picker"></property>
+		<property name="type" value="datepicker"></property>
+		<property name="icon" value="icons/calendar.png"></property>
+		
+		
+	</bean>
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Checkbox"></property>
+		<property name="type" value="checkbox"></property>
+		<property name="icon" value="icons/checkbox.gif"></property>
+		
+	</bean>
+
+	<bean class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Select"></property>
+		<property name="type" value="select"></property>
+		<property name="icon" value="icons/select2.png"></property>
+		
+	</bean>
+	<bean  class="org.castafiore.designer.designable.EXFormControlDesignableFactory" lazy-init="true">
+		<property name="text" value="Button"></property>
+		<property name="type" value="button"></property>
+		<property name="icon" value="icons/tab.png"></property>
+		
+	</bean>
+
+	
+	
+	<bean class="org.castafiore.designer.designable.EXTemplateDesignableFactory" lazy-init="true">
+		<property name="type" value="groovy"></property>
+		<property name="icon" value="icons/script_code.png"></property>
+		
+	</bean>
+	
+	<bean class="org.castafiore.designer.designable.EXTemplateDesignableFactory" lazy-init="true">
+		<property name="type" value="xhtml"></property>
+		<property name="icon" value="icons/xhtml.png"></property>
+		
+	</bean>
+	
+	
+	<bean class="org.castafiore.designer.designable.EXPortalMenuDesignableFactory" lazy-init="true">
+		<property name="icon" value="icons/Menu.png"></property>
+		
+	</bean>
+	
+	<bean class="org.castafiore.designer.designable.EXTemplateMenuDesignableFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.designable.EXWidgetDesignableFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.designable.table.EXTableDesignableFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.designable.datarepeater.EXDateRepeaterDesignableFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.portal.EXPageContainerDesignableFactory" lazy-init="true">
+		<property name="icon" value="icons/layers.png"></property>
+		
+	</bean>
+	
+	<bean class="org.castafiore.designer.portal.EXPortalContainerDesignableFactory" lazy-init="true">
+		
+	</bean>
+	
+	<bean class="org.castafiore.designer.portal.EXPageComponentDesignableFactory" lazy-init="true"></bean>
+	 
+	
+	<bean class="org.castafiore.designer.designable.datarepeater.EXDataContainerDesignableFactory" lazy-init="true">
+		<property name="icon" value="icons/database_connect.png"></property>
+	</bean>
+	
+	
+	
+
+	
+	
+	<bean class="org.castafiore.designer.model.ArticleListRenderer" lazy-init="true">
+		<property name="expectedSize" value="5"></property>
+	</bean>
+	
+	<bean class="org.castafiore.designer.model.NavListRenderer" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.model.NewsListRenderer" lazy-init="true">
+		<property name="expectedSize" value="2"></property>
+	</bean>
+	
+	<bean class="org.castafiore.designer.dataenvironment.EasyConfigFileIteratorDatasourceFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.dataenvironment.invocation.MethodInvocationDatasourceFactory" lazy-init="true"></bean>
+	
+	<bean class="org.castafiore.designer.dataenvironment.excel.ExcelDatasourceFactory" lazy-init="true"></bean>
+	
+</beans>

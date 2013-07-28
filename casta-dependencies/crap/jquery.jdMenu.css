@@ -1,0 +1,90 @@
+ul.jd_menu, 
+ul.jd_menu_vertical {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+ul.jd_menu ul,
+ul.jd_menu_vertical ul {
+	display: none;
+}
+ul.jd_menu li {
+	float: left;
+}
+ul.jd_menu_vertical {
+	width: 200px;
+}
+ul.jd_menu_vertical li {
+	float: none;
+}
+
+/* -- Sub-Menus -- */
+ul.jd_menu ul,
+ul.jd_menu_vertical ul {
+	position: absolute;
+	display: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	z-index: 10000;
+}
+ul.jd_menu ul li,
+ul.jd_menu_vertical ul li {
+	float: none;
+	margin: 0px;
+}
+
+
+ul.jd_menu,
+ul.jd_menu ul,
+ul.jd_menu_vertical,
+ul.jd_menu_vertical ul {
+	border-width:1px;
+	
+	height: 25px;
+}
+ul.jd_menu_vertical {
+	height: auto;
+}
+ul.jd_menu ul {
+	height: auto;
+}
+* html ul.jd_menu ul {
+	width: 1%;
+}
+ul.jd_menu li {
+	font-family: sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	line-height: 14px;
+	margin-top: 2px;
+	padding: 4px 7px 3px 7px;
+	height: 13px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+ul.jd_menu li li {
+	width: auto;
+	min-width: 150px;
+}
+ul.jd_menu li a {
+	
+	line-height: 16px;
+	padding-bottom: 3px ;
+	white-space: nowrap;
+	text-decoration: none;
+	color: #222;
+	-moz-outline: 0 none;
+	outline: 0 none;
+	cursor: pointer;
+	position: relative;
+	
+}
+
+ul.jd_menu li.jdm_hover,
+ul.jd_menu li.jdm_active {
+	background: #ebf3fd url(castafiore/resource?spec=classpath:org/castafiore/resource/extjs/images/menu/item-over.gif) repeat-x
+		left bottom;
+	
+	
+}

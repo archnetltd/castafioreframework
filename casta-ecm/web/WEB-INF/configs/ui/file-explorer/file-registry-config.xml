@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<!-- configuration map for classType and editor implementation -->
+	<util:map id="fileEditorConfigMap" scope="prototype">
+		<entry key="org.castafiore.wfs.types.BinaryFile" value="org.castafiore.ecm.ui.fileexplorer.views.EXBinaryFileViewer"></entry>
+		<entry key="org.castafiore.wfs.types.Article" value="org.castafiore.ecm.ui.fileexplorer.views.article.EXArticleEditor"></entry>
+		<entry key="org.castafiore.contact.Contact" value="org.castafiore.contact.ui.EXContactEditor"></entry>
+		<entry key="org.castafiore.catalogue.Product" value="org.castafiore.catalogue.ui.EXProductEditor"></entry>
+		<entry key="org.castafiore.blog.BlogPost" value="org.castafiore.blog.ui.EXBlogEditor"></entry>
+		<entry key="org.castafiore.wfs.types.Value" value="org.castafiore.ecm.ui.fileexplorer.views.EXValueEditor"></entry>
+		<entry key="org.castafiore.wfs.types.Shortcut" value="org.castafiore.ecm.ui.fileexplorer.views.EXShortcutEditor"></entry>
+		<!-- 
+		<entry key="org.castafiore.security.Group"><bean class="org.castafiore.security.ui.openners.GroupFileOpenner" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.security.User"><bean class="org.castafiore.security.ui.openners.UserFileOpenner" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.security.UserSecurity"><bean class="org.castafiore.security.ui.openners.UserSecurityFileOpenner" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.security.Role"><bean class="org.castafiore.security.ui.openners.RoleFileOpenner" scope="prototype"></bean></entry>
+		
+		<entry key="bd.mu.timesheet.TimesheetEntry"><bean class="bd.mu.timesheet.web.TimesheetEntryOpenner" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.portal.NavNode"><bean class="org.castafiore.portal.ui.editor.NavNodeEditor" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.portal.Page"><bean class="org.castafiore.portal.ui.editor.PageFileEditor" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.portal.Portal"><bean class="org.castafiore.portal.ui.editor.PortalFileEditor" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.portal.Portlet"><bean class="org.castafiore.portal.ui.editor.PortletFileEditor" scope="prototype"></bean></entry>
+		<entry key="org.castafiore.portal.Layout"><bean class="org.castafiore.portal.ui.editor.LayoutFileEditor" scope="prototype"></bean></entry>
+		 -->
+	</util:map>
+	
+	<!-- this is the factory that finds the correct configured editor and initializes it to be used in the fileExplorer  -->
+	<bean id="fileEditorFactory" class="org.castafiore.ecm.ui.fileexplorer.DefaultFileEditorFactory"></bean>
+
+
+	<bean id="iconImageProvider" class="org.castafiore.ecm.ui.fileexplorer.icon.DefaultIconImageProvider">
+		<property name="icons">
+			<util:map >
+				<entry key="org.castafiore.wfs.types.Document" value="file.gif"></entry>
+				<entry key="org.castafiore.wfs.types.Shortcut" value="file.gif"></entry>
+				<entry key="org.castafiore.wfs.types.Executable" value="exe.gif"></entry>
+				<entry key="org.castafiore.wfs.types.Directory" value="folder.gif"></entry>
+				<entry key="org.castafiore.wfs.types.Drive" value="Drive.gif"></entry>
+			</util:map>
+		</property>
+	</bean>
+</beans>

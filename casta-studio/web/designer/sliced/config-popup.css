@@ -1,0 +1,101 @@
+.genPopup {
+	width: 245px;
+	background-color: rgb(121, 121, 121);
+	height: 250px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	position: absolute;
+	-moz-box-shadow: 5px 5px 5px #333;
+	box-shadow: 5px 5px 5px #333;
+	-webkit-box-shadow: 5px 5px 5px #333;
+	
+}
+
+.genPopup .popup-header {
+	height: 27px;
+	background-color: #403F3F;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: 10px;
+}
+
+.genPopup .popup-header .title {
+	font-size: 8px;
+	color: white;
+	padding-top: 10px;
+	padding-left: 15px;
+	float: left;
+}
+
+.genPopup .button-container {
+	width: 152px;
+	height: 23px;
+	border: solid 1px #999898;
+	float: left;
+	margin: 1px 0px 0px 8px;
+}
+
+.genPopup .button-container .btn-save {
+	background-image: url(images/popup/config.png);
+	height: 20px;
+	margin-left: 5px;
+	margin-top: 2px;
+	width: 20px;
+	float: right;
+}
+
+.genPopup .button-container .btn-cancel {
+	background-image: url(images/popup/config.png);
+	height: 20px;
+	margin-left: 5px;
+	margin-top: 2px;
+	width: 20px;
+	float: right;
+}
+
+.genPopup .popup-content {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.genPopup .popup-content .dimension-content {
+	
+}
+
+.genPopup .popup-content .dimension-content .content-row {
+	margin: 5px;
+	clear: both;
+}
+
+.genPopup .popup-content .dimension-content .content-row .col1 {
+	float: left;
+	width: 44%;
+	margin: 5px 5px;
+}
+
+.genPopup .popup-content .dimension-content .content-row .col2 {
+	float: left;
+	width: 44%;
+	margin: 5px 5px;
+}
+
+.genPopup .popup-content .dimension-content .content-row div {
+	color: white;
+	float: left;
+	font-size: 10px;
+}
+
+.genPopup .popup-content .dimension-content .content-row input {
+	width: 15px;
+	height: 10px;
+	border: solid 1px #E7CF62;
+	padding: 0;
+	margin: 0;
+	float: right;
+	font-size: 8px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}

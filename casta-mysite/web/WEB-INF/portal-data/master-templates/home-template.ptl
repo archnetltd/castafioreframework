@@ -1,0 +1,74 @@
+<casta:designable name="home" uniqueId="core:xylayout"
+	layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${username}/portal-data/portal-template.ptl/pages/home]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[ CASTA_PAGE]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:attribute name="name"><![CDATA[home]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:style name="display" value="block"></casta:style>
+	<casta:style name="margin" value="0"></casta:style>
+	<casta:style name="padding" value="0"></casta:style>
+	<casta:style name="min-height" value="500px"></casta:style>
+	<casta:style name="width" value="100%"></casta:style>
+	<casta:designable name="top Article" uniqueId="data:datacontainer"
+		layoutData="Data container">
+		<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[]]>
+		</casta:attribute>
+		<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/article.html]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[Data container]]></casta:attribute>
+		<casta:attribute name="datasource"><![CDATA[{"value":"/root/users/${username}/home/mainarticle","type":"Path","entitytype":"org.castafiore.wfs.types.Document"}]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+	</casta:designable>
+	<casta:designable name="bottom left" uniqueId="data:datacontainer" layoutData="Data container">
+		<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[sidebar]]></casta:attribute>
+		<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/columnArticle.html]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[Data container]]></casta:attribute>
+		<casta:attribute name="datasource"><![CDATA[{"value":"/root/users/${username}/home/columnarticle","type":"Path","entitytype":"org.castafiore.wfs.types.Document"}]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="padding-left" value="0"></casta:style>
+		<casta:style name="padding-right" value="0"></casta:style>
+		<casta:style name="padding-top" value="0"></casta:style>
+		<casta:style name="margin-right" value="0"></casta:style>
+		<casta:style name="height" value=""></casta:style>
+		<casta:style name="width" value="40%"></casta:style>
+		<casta:style name="margin-left" value="0"></casta:style>
+		<casta:style name="margin-bottom" value="0"></casta:style>
+		<casta:style name="margin-top" value="0"></casta:style>
+		<casta:style name="padding-bottom" value="0"></casta:style>
+		<casta:style name="float" value="left"></casta:style>
+		<casta:style name="top" value=""></casta:style>
+	</casta:designable>
+	<casta:designable name="bottomr right list" uniqueId="core:verticallayout"
+		layoutData="EXColumnLayoutContainer">
+		<casta:attribute name="class"><![CDATA[sidebar]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[EXColumnLayoutContainer]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[EXColumnLayoutContainer]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="list-style-position" value="outside"></casta:style>
+		<casta:style name="height" value=""></casta:style>
+		<casta:style name="float" value="right"></casta:style>
+		<casta:style name="list-style-image" value="none"></casta:style>
+		<casta:style name="width" value="49%"></casta:style>
+		<casta:designable name="bottom right" uniqueId="data:datacontainer"
+			layoutData="0">
+			<casta:attribute name="class"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/columnList.html]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="height" value=""></casta:style>
+			<casta:style name="float" value="right"></casta:style>
+			<casta:style name="top" value=""></casta:style>
+			<casta:style name="width" value="100%"></casta:style>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

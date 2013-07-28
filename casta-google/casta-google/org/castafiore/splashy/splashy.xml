@@ -1,0 +1,67 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="class"><![CDATA[ui-widget-content  ui-corner-all]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[/root/users/${username}/site.ptl]]></casta:attribute>
+	<casta:style name="width" value="970px"></casta:style>
+	<casta:style name="margin" value="30px auto"></casta:style>
+	<casta:style name="border" value="none"></casta:style>
+	<casta:style name="-moz-box-shadow" value="5px 5px 5px #333"></casta:style>
+	<casta:style name="-webkit-box-shadow" value="5px 5px 5px #333"></casta:style>
+	<casta:style name="box-shadow" value="5px 5px 5px #333"></casta:style>
+	<casta:designable name="Header" uniqueId="core:div" layoutData="">
+		<casta:designable name="Banner" uniqueId="core:div" layoutData="Banner">
+			<casta:attribute name="class"><![CDATA[ui-widget-content ui-corner-top]]></casta:attribute>
+			<casta:style name="min-height" value="120px"></casta:style>
+			<casta:designable name="logo" uniqueId="core:image" layoutData="logo">
+				<casta:attribute name="src"><![CDATA[webos/gs/logos/logo042.png]]></casta:attribute>
+				<casta:style name="width" value="100px"></casta:style>
+				<casta:style name="height" value="100px"></casta:style>
+				<casta:style name="margin-top" value="8px"></casta:style>
+				<casta:style name="margin-left" value="12px"></casta:style>
+				<casta:style name="float" value="left"></casta:style>
+			</casta:designable>
+			<casta:designable name="companyName" uniqueId="core:h2" layoutData="companyName">
+				<casta:attribute name="text"><![CDATA[Company Name goes here]]></casta:attribute>
+				<casta:style name="float" value="left"></casta:style>
+				<casta:style name="margin-top" value="23px"></casta:style>
+				<casta:style name="margin-left" value="18px"></casta:style>
+				<casta:style name="font-family" value="fantasy"></casta:style>
+				<casta:style name="font-weight" value="bold"></casta:style>
+				<casta:style name="color" value="#666"></casta:style>
+				<casta:style name="text-shadow" value="3px 3px 5px gray"></casta:style>
+			</casta:designable>
+			<casta:designable name="slogan" uniqueId="core:h3" layoutData="slogan">
+				<casta:attribute name="text"><![CDATA[Company slogan or tag line]]></casta:attribute>
+				<casta:style name="text-align" value="left"></casta:style>
+				<casta:style name="float" value="left"></casta:style>
+				<casta:style name="clear" value="right"></casta:style>
+				<casta:style name="margin-top" value="58px"></casta:style>
+				<casta:style name="margin-left" value="-173px"></casta:style>
+				<casta:style name="font-style" value="italic"></casta:style>
+				<casta:style name="font-family" value="Times New Roman"></casta:style>
+				<casta:style name="text-decoration" value="none"></casta:style>
+				<casta:style name="font-size" value="18px"></casta:style>
+				<casta:style name="font-weight" value="bold"></casta:style>
+				<casta:style name="text-shadow" value="4px 4px 4px"></casta:style>
+				<casta:style name="color" value="#666"></casta:style>
+			</casta:designable>
+		</casta:designable>
+	</casta:designable>
+	<casta:designable name="wrapper" uniqueId="core:div" layoutData="wrapper">
+		<casta:style name="width" value="970px"></casta:style>
+		<casta:designable name="pageContainer" uniqueId="portal:pagecontainer" layoutData="pageContainer">
+			<casta:style name="width" value="970px"></casta:style>
+			<casta:style name="min-height" value="500px"></casta:style>
+			<casta:style name="float" value="left"></casta:style>
+		</casta:designable>
+	</casta:designable>
+	<casta:designable name="footer" uniqueId="core:div" layoutData="footer">
+		<casta:style name="clear" value="both"></casta:style>
+		<casta:style name="width" value="970px"></casta:style>
+		<casta:style name="min-height" value="100px"></casta:style>
+		<casta:designable name="Copyright" uniqueId="data:datacontainer" layoutData="">
+			<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/site_files/templates/Copyright.xhtml]]></casta:attribute>
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/site_files/templates/Copyright.xhtml]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

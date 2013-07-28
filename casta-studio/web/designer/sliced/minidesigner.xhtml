@@ -1,0 +1,164 @@
+<div style="display: none;">
+
+	<link rel="stylesheet" href="designer/sliced/designer-1.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/config-popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script> 
+	<script type="text/javascript" src="designer/designer.js"></script>
+	  
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).ready(function() {
+			$('.designer').designer();
+			
+		});
+	});
+	</script>
+	
+	<style>
+		.ui-designer-close{
+		float: right;width: 16px;height: 16px;background-color: silver;margin:5px;cursor:pointer;
+		}
+		.item li {
+  display: block !important;
+  margin: 10px !important;
+}
+		
+		.colorpicker_transparent {
+			background:url(colorpicker/images/NoColor.png) repeat scroll center top transparent;
+			height:15px;
+			left:296px;
+			overflow:hidden;
+			position:absolute;
+			top:146px;
+			width:17px;
+		}
+		
+		.np{
+			padding: 0;
+			margin: 0;
+			vertical-align: top;
+		}
+		.designer-left-menu .toolbar-center{
+			min-height: 260px !important;
+		}
+		.designer-left-menu{
+			min-height: 300px !important;
+		}
+		
+		.designer-top-toolbar .designer-toolbar-section .icon{
+			margin: 5px !important;
+			width: 16px;
+			height: 16px;
+			float: left;
+		}
+		.designer-toolbar-section select{
+			margin: 3px !important;
+		}
+		
+	</style>
+	
+	<div id="thedesigner" class="designer">
+	
+
+		<div id="selector" style="position: absolute; background-color: yellow; z-index: 2;opacity:0.5">
+			<div style="background-color: steelBlue; z-index: 2;" id="innerselector"></div>
+		</div>
+		<div class="slider-value"  style="position: absolute; background-color: white;"></div>
+		<div id="slider-vertical" style="position: absolute; z-index: 3"></div>
+		<div class="colorpickerholder"></div>
+		<div name="popupContainer"></div>
+		<div class="ui-widget-header" style="height: 26px;">
+			
+			<div class="designer-sub-menu-top-center"  style="height: 26px">
+				<div class="designer-top-toolbar">
+					
+					
+					<div class="designer-toolbar-section" >
+						<div class="dtb icon uts" style="background-image: url('icons/designer-icons/edit.png');" stname="inner-text" explorer="true">
+						</div>
+						<select style="margin-top: 10px;float:left" stname="font-family" class="text-style-select"><option value="Arial">Arial</option><option value="Comic Sans MS">Comic Sans MS</option><option value="Times New Roman">Georgia</option><option value="Georgia">Tahoma</option><option value="Verdana">Verdana</option><option value="Times New Roman">Times New Roman</option><option value="Trebuchet MS">Trebuchet MS</option><option value="Lucida Grande">Lucida Grande</option><option value="Helvetica">Helvetica</option><option value="serif">serif</option><option value="sans-serif">sans-serif</option><option value="cursive">cursive</option><option value="fantasy">fantasy</option><option value="monospace">monospace</option></select>
+						<div class="dtb icon uts" style="background-image: url('icons/designer-icons/edit-size.png');" stname="font-size" slider="true" stmax="64" stmin="8">
+						
+						</div>
+						
+						<div class="dtb icon uts" style="background-image: url('icons/text_bold.png');" stname="font-weight" stvalue="bold" stoff="normal"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_italic.png');" stname="font-style" stvalue="italic" stoff="normal"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_underline.png');" stname="text-decoration" stvalue="underline" stoff="none"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_strikethrough.png');" stname="text-decoration" stvalue="line-through" stoff="none"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_align_left.png');" stname="text-align" stvalue="left"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_align_right.png');" stname="text-align" stvalue="right"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_align_center.png');" stname="text-align" stvalue="center"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_align_justify.png');" stname="text-align" stvalue="justify"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_allcaps.png');" stname="text-transform" stvalue="uppercase" stoff="none"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_smallcaps.png');" stname="text-transform" stvalue="lowercase" stoff="none"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_indent.png');" stname="text-indent" slider="true" stmax="200" stmin="0"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/text_letterspacing.png');" stname="letter-spacing" stvalue="10px" slider="true" stmax="100" stmin="0"></div> 
+						<div class="dtb icon uts" style="background-image: url('icons/text_linespacing.png');" stname="line-height" stvalue="10px" slider="true" stmax="100" stmin="0"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/designer-icons/edit-color.png');" stname="color" colorpicker="true"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/background-color.png');" stname="background-color" colorpicker="true"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/background-image.png');" stname="background-image" explorer="true"></div>
+						<div class="dtb icon uts" style="background-image: url('icons/designer-icons/application-resize-actual.png');" stname="info-panel" explorer="true"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<table style="padding: 0;margin: 0;" cellpadding="0" cellspacing="0">
+			<tr class="np">
+				<td valign="top" style="width: 58px;vertical-align: top;" class="np" rowspan="2">
+					<div class="designer-left-menu">
+						<div class="toolbar-top"></div>
+						<div class="toolbar-center">
+							<div class="designer-left-toolbar">
+								
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/form.png')"></div>
+									<div class="designer-toolbar-section" style="display: block;">
+										<div id="core:label" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/label.png')" title="Label component"></a></div>
+										<div id="core:textbox" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/textfield.png')"></a></div>
+										<div id="core:checkbox" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/checkbox.gif')"></a></div>
+										<div id="core:select" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-combo-box.png')"></a></div>
+										<div id="core:textarea" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-text-area.png')"></a></div>
+										<div id="core:radio" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-radio-button.png')"></a></div>
+										<div id="core:datepicker" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/calendar.png')"></a></div>
+										<div id="core:colorpicker" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/color_wheel.png')"></a></div>
+															
+									</div>
+								</div>
+							</div>
+						
+						</div>
+						<div class="toolbar-bottom"></div>
+					</div>
+				</td>
+				<td  class="np" rowspan="2" valign="top">
+					<div class="designer-workspace" style="background: none;border: none;margin: 0;padding: 0;width: 517px;min-height: 10px">
+						<table cellpadding="0" cellspacing="0"  class="np">
+							<tr class="np"> 
+								<td name="EXBorderLayoutContainercenter" valign="top" class="np"></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td name="EXBorderLayoutContainerleft" valign="top" class="np"></td>
+				
+			</tr>
+			<tr>
+				<td>
+					<table class="np" style="position: relative;left: -20px;" name="miniConfigs">
+						<tr>
+							<td class="np" style="text-align:right; "><label>name :</label></td>
+							<td class="np"><input type="text" style="margin: 0;padding: 0"></input></td>
+						</tr>
+						<tr>
+							<td class="np" style="text-align:right;"><label>label :</label></td>
+							<td class="np"><input type="text" style="margin: 0;padding: 0"></input></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table> 
+	</div>
+</div>

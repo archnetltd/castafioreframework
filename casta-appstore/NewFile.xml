@@ -1,0 +1,22 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="__oid"><![CDATA[21922196]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[/root/users/minerva/ecommerce.ptl]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	
+	<casta:designable name="XHTML fragment" uniqueId="core:xhtml" layoutData="XHTML fragment">
+		<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:/root/users/minerva/minerva_files/templates/wrapper.xhtml]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[22509495]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[XHTML fragment]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:designable name="MinervaPageContainer" uniqueId="portal:pagecontainer" layoutData="EXXYLayoutContainer">
+			<casta:attribute name="__oid"><![CDATA[14854991]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

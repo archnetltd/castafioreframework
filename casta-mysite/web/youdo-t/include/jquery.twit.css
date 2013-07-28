@@ -1,0 +1,150 @@
+/** Twitter **/
+
+#twitable {
+	background-image:url(../plugin-images/btn_twit2.gif);
+	cursor:pointer;
+	height:151px;
+	left:0;
+	margin-left:-5px; 
+	overflow:hidden;
+	position:fixed;
+	text-indent:-100000px;
+	top:50%;
+	width:53px;
+	z-index:10;
+	display:none;
+}
+*html #twitable {
+	position:absolute;top:expression((-0 - twitable.offsetHeight+(document.documentElement.clientHeight ? document.documentElement.clientHeight/2:document.body.clientHeight/2)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop))+'px');
+}
+
+#twitform {
+	left:0;
+	margin-left:-512px;
+	margin-top:-136px;
+	padding-top:17px;
+	position:fixed;
+	top:51%;
+	width:510px;
+	z-index:99;
+}
+
+*html #twitform {
+	position:absolute;top:expression((-0 - twitform.offsetHeight+(document.documentElement.clientHeight ? document.documentElement.clientHeight/2:document.body.clientHeight/2)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop))+'px');
+
+}
+
+.follow_b
+{
+	border:#dedede solid 2px;
+	background-color:#f5f5f5;
+	color:#000;
+	font-size:12px;
+	font-weight:bold;
+	padding-right:4px ;
+	padding-right:4px ;
+	-moz-border-radius: 6px; -webkit-border-radius: 6px; 
+}
+.newsWrap { padding:0px 19px; height:100%; overflow:hidden;  }
+.newsWrap p { font-family:"Trebuchet MS", Georgia, "times New Roman", arial; margin:0; padding:13px 18px; }
+.newsWrap h3 { font-family:"Trebuchet MS", Georgia, "times New Roman", arial; font-size:18px; text-transform:uppercase; height:100%; overflow:hidden; padding-top:22px; border-bottom:solid 2px #BCBCBC; margin-bottom:4px;}
+.newsWrap h3 img { float:left; margin:-14px 6px 6px 0; }
+.newsWrap .odd {font-size:13px; font-family:"Trebuchet MS", Georgia, "times New Roman", arial; background-color:#EAECEE; }
+.newsWrap .even { font-size:13px; font-family:"Trebuchet MS", Georgia, "times New Roman", arial; background-color:#fff; }	
+.newsWrap a {font-family:"Trebuchet MS", Georgia, "times New Roman", arial; text-decoration:underline; color:#000; outline:none; }
+.newsWrap a:hover { text-decoration:none; }
+
+
+.twitContainer {
+	width:512px;
+	margin:65px auto 40px auto;
+	position:relative;
+	/*background:#FDFDFD url(../plugin-images/form-bg.gif) repeat-x 0 100%;*/
+	font:normal 14px/17px "Trebuchet MS", Georgia, "times New Roman", arial;
+	}
+.gradient { background:#FDFDFD url(../plugin-images/form-bg.gif) repeat-x 0 100%; }	
+.twitContainer .close { position:absolute; right:0px; top:-8px; z-index:200000; }
+.twitContainer .feedBtn { position:absolute; right:-36px; top:30%; z-index:200000; }
+.topCrv {
+	background:url(../plugin-images/crv-top.png) no-repeat 0 0;
+	position:absolute; top:0;
+	width:512px; height:17px;
+	}
+*html .topCrv {
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='plugin-images/crv-top.png', sizingMethod=crop);
+	}	
+.botCrv {
+	background:url(../plugin-images/crv-bot.png) no-repeat 0 0;
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:17px; font-size:0px; line-height:0;
+	}
+*html .botCrv {
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='plugin-images/crv-bot.png', sizingMethod=crop);
+	}
+	
+.flLeft { float:left; margin-left:-16px; }
+.flRight { float:right; margin-right:-16px; }
+.flLeftbot { float:left; margin-left:-16px; }
+.flRightbot { float:right; margin-right:-16px;}	
+.leftHand {
+	padding-bottom:17px;
+	}
+.leftHand div.leftshad {
+	background:url(../plugin-images/shd-l.png) repeat-y 0 0; padding-left:6px;
+	}	
+*html .leftHand div.leftshad {
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='plugin-images/shd-l.png', sizingMethod=crop);
+	}
+.rightHand {
+	background:url(../plugin-images/shd-r.png) repeat-y 100% 0;
+	height:100%; overflow:hidden;padding:0px 6px 0px 0;
+	}
+*html .rightHand {
+	background:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='plugin-images/shd-r.png', sizingMethod=scale);
+	}
+.rightHand div.rightshad {
+	background-color:#FDFDFD;
+	padding-top:0px;
+	}
+.twitContainer form {
+	padding:16px 21px;
+	height:100%; overflow:hidden;
+	}	
+.twitContainer label {
+	display:block;
+	padding:4px 0;
+	margin:0;
+	}
+.twitContainer label input, .twitContainer label textarea {
+	font:normal 14px/15px "Trebuchet MS", Georgia, "times New Roman", arial;
+	width:438px;
+	height:26px;
+	border:solid 1px #DDDDDD;
+	padding:15px 0 0 10px;
+	color:#4D4D4D; overflow:auto;
+	}
+.twitContainer label span {
+	width:280px;
+	padding-left:14px;
+	float:left;
+	}	
+.twitContainer label textarea {
+	height:96px;
+	}
+.twitContainer label input.btn {
+	background:#333333 url(../plugin-images/input-bg.gif) repeat-x;
+	border:solid 1px #5F5F5F;
+	width:115px;
+	height:41px;
+	padding:0;
+	color:#fff;
+	font-size:18px;
+	float:left;
+	cursor:pointer;
+	}

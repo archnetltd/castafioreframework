@@ -1,0 +1,60 @@
+.TabMenuC{
+	margin:0;
+	padding:0;
+	font:bold 11px 1.5em Verdana;
+}
+.TabMenuC h2{
+	font:bold 14px Verdana Arial Helvetica sans-serif;
+	color:rgb(0, 0, 0);
+	margin:0px;
+	padding:0px 0px 0px 15px;
+}
+.TabMenuC .tabsC{
+	float:left;
+	width:100%;
+	background:rgb(237, 247, 231);
+	font-size:93%;
+	line-height:normal;
+}
+.TabMenuC .tabsC ul{
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+}
+.TabMenuC .tabsC li{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+.TabMenuC .tabsC a{
+	float:left;
+	background:url(tableftC.gif) no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+}
+.TabMenuC .tabsC a span{
+	float:left;
+	display:block;
+	background:url(tabrightC.gif) no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:rgb(70, 78, 66);
+}
+.TabMenuC .tabsC a span{
+	float:none;
+}
+.TabMenuC .tabsC a:hover span{
+	color:rgb(255, 255, 255);
+}
+.TabMenuC .tabsC a:hover{
+	background-position:0% -42px;
+}
+.TabMenuC .tabsC a:hover span{
+	background-position:100% -42px;
+}
+.TabMenuC .tabsC .current a{
+	background-position:0% -42px;
+}
+.TabMenuC .tabsC .current a span{
+	background-position:100% -42px;
+}

@@ -1,0 +1,104 @@
+<div style="display: none;">
+
+	<link rel="stylesheet" href="designer/sliced/designer.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/config-popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script> 
+	<script type="text/javascript" src="designer/designer.js"></script>
+	 
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).ready(function() {
+			$('.designer').designer();
+			
+		});
+	});
+	</script>
+	
+	<style>
+		.ui-designer-close{
+		float: right;width: 16px;height: 16px;background-color: silver;margin:5px;cursor:pointer;
+		}
+		
+		.colorpicker_transparent {
+			background:url(colorpicker/images/NoColor.png) repeat scroll center top transparent;
+			height:15px;
+			left:296px;
+			overflow:hidden;
+			position:absolute;
+			top:146px;
+			width:17px;
+		}
+		
+		.np{
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+	
+	<div id="thedesigner" class="designer">
+	
+
+		<div id="selector" style="position: absolute; background-color: yellow; z-index: 2;opacity:0.5">
+			<div style="background-color: steelBlue; z-index: 2;" id="innerselector"></div>
+		</div>
+		<div class="slider-value"  style="position: absolute; background-color: white;"></div>
+		<div id="slider-vertical" style="position: absolute; z-index: 3"></div>
+		<div class="colorpickerholder"></div>
+		<div name="popupContainer"></div>
+		<table style="width: 100%;padding: 0;margin: 0;" cellpadding="0" cellspacing="0">
+			<tr class="np">
+				<td colspan="3" class="np">
+					<div class="designer-menu">
+						<ul style="padding-left: 40px;">
+							<li>
+								<h2>Workflow</h2>
+								<ul class="designer-menu-level2">
+									<li><a href="#" class="menuitem" menuitem="new portal" confmsg="All changes in the current workflow will be lost. Do you want to continue?">New Workflow</a></li>
+									<li><a href="#" class="menuitem" menuitem="open portal" confmsg="All changes in the current workflow will be lost. Do you want to continue?">Open Workflow</a></li>
+									<li><a href="#" class="menuitem" menuitem="save portal">Save Workflow</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul><li><h2>Help</h2></li></ul>
+						<span name="close" class="ui-icon ui-icon-close ui-corner-all"  ></span>
+					</div>
+					
+				</td>
+			</tr>
+			<tr class="np">
+				<td valign="top" style="width: 58px;vertical-align: top;" class="np">
+					<div class="designer-left-menu">
+						<div class="toolbar-top"></div>
+						<div class="toolbar-center">
+							<div class="designer-left-toolbar">
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/text.png')"></div>
+									<div class="designer-toolbar-section open">
+										<div id="workflow:state" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons-2/fugue/icons/blog-blue.png')" title="Add a state to workflow"></a></div>
+										<div id="workflow:action" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons-2/fugue/icons/compile.png')" title="Add an action to state"></a></div>
+										<div id="workflow:actor" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons-2/fugue/icons/user.png')" title="Add an actor to action"></a></div>
+									</div>
+								</div>
+							</div>
+						
+						</div>
+						<div class="toolbar-bottom"></div>
+					</div>
+				</td>
+				
+				<td style="width: 970px" class="np">
+					<div class="designer-workspace" style="width: 970px;background-color: #eeeeee">
+						<table cellpadding="0" cellspacing="0" width="100%" height="100%" class="np">
+							<tr class="np">
+								<td name="EXBorderLayoutContainercenter" valign="top" class="np"></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td name="EXBorderLayoutContainerleft" valign="top" class="np"></td>
+			</tr>
+		</table>
+	</div>
+</div>

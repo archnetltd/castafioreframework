@@ -1,0 +1,32 @@
+.Circle .container{
+	width:500px;
+	padding:15px;
+	margin:3px 0 20px 0;
+	border:1px solid rgb(204, 204, 204);
+	background:rgb(255, 255, 255);
+}
+.Circle .navCircle{
+	margin:0;
+	padding:0 0 20px 10px;
+	border-bottom:1px solid rgb(159, 177, 188);
+}
+.Circle .navCircle li{
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style-type:none;
+}
+.Circle .navCircle a:link , .Circle .navCircle a:visited{
+	float:left;
+	font-size:10px;
+	line-height:14px;
+	font-weight:bold;
+	padding:0 12px 6px 12px;
+	text-decoration:none;
+	color:rgb(112, 132, 145);
+}
+.Circle .navCircle a:link.active , .Circle .navCircle a:visited.active , .Circle .navCircle a:hover{
+	padding-bottom:6px;
+	color:rgb(0, 0, 0);
+	background:url(circle.gif) no-repeat bottom center;
+}

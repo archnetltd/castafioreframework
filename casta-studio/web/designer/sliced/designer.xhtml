@@ -1,0 +1,276 @@
+<div style="display: none;">
+
+	<link rel="stylesheet" href="designer/sliced/designer.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/config-popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="designer/sliced/popup.css" type="text/css" media="screen, projection"></link>
+	<link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script> 
+	<script type="text/javascript" src="designer/designer.js"></script>
+	 
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(document).ready(function() {
+			$('.designer').designer();
+			
+		});
+	});
+	</script>
+	
+	<style>
+		.ui-designer-close{
+		float: right;width: 16px;height: 16px;background-color: silver;margin:5px;cursor:pointer;
+		}
+		
+		.colorpicker_transparent {
+			background:url(colorpicker/images/NoColor.png) repeat scroll center top transparent;
+			height:15px;
+			left:296px;
+			overflow:hidden;
+			position:absolute;
+			top:146px;
+			width:17px;
+		}
+		
+		.np{
+			padding: 0;
+			margin: 0;
+			vertical-align:top;
+		}
+	</style>
+	
+	<div id="thedesigner" class="designer">
+	
+ 
+		
+		<div class="slider-value"  style="position: absolute; background-color: white;"></div>
+		<div id="slider-vertical" style="position: absolute; z-index: 3"></div>
+		<div class="colorpickerholder"></div>
+		<div name="popupContainer"></div>
+		<table style="width: 100%;padding: 0;margin: 0;" cellpadding="0" cellspacing="0">
+			<tr class="np">
+				<td colspan="3" class="np">
+					<div class="designer-menu">
+						<ul style="padding-left: 40px;">
+							<li>
+								<h2>Project</h2>
+								<ul class="designer-menu-level2">
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/globe--plus.png)" menuitem="new portal" confmsg="All changes in the current site will be lost. Do you want to continue?">New Project</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/globe--pencil.png)" menuitem="open portal" confmsg="All changes in the current site will be lost. Do you want to continue?">Open Project</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/globe.png)" menuitem="save portal">Save Project</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons/script.png)" menuitem="preview portal">Embed script</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/script-text.png)"menuitem="css editor">Style Sheets</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/script-text.png)"menuitem="javascript editor">Javascript</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons/script.png)" menuitem="script editor">Server Scripts</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/minus-white.png)"  menuitem="close designer" confmsg="All changes in the current site will be lost. Do you want to continue?">Close</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<h2>Pages</h2>
+								<ul class="designer-menu-level2">
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/document-attribute-p.png)" menuitem="new page">New page</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/document-attribute-t.png)" menuitem="new page from template">New page from template</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/folder-open-document-text.png)" menuitem="open page">Open page</a></li>
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/drive-globe.png)" menuitem="save page">Save page</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul><li><h2>Navigation</h2></li></ul>
+						<ul>
+							<li>
+								<h2>Data environment</h2>
+								<ul class="designer-menu-level2">
+									<li><a href="#" class="menuitem" style="background-image: url(icons-2/fugue/icons/databases-relation.png)" menuitem="dataenvironment">Open data environment</a></li>
+									
+								</ul>
+							</li>
+						</ul>
+						<ul><li><h2>Security</h2></li></ul>
+						<ul><li><h2>Windows</h2></li></ul>
+						<ul><li><h2>Help</h2></li></ul>
+						
+						<span name="close" class="ui-icon ui-icon-close ui-corner-all"  ></span>
+					</div>
+					
+				</td>
+			</tr>
+			<tr class="np">
+				<td colspan="3" class="np">
+					<div class="designer-sub-menu">
+						<div class="designer-sub-menu-top-left"></div>
+						<div class="designer-sub-menu-top-center">
+							<div class="designer-top-toolbar">
+								<div class="designer-toolbar-section">
+									<span class="dtb">Properties</span>
+								</div>
+								<div class="designer-toolbar-section-separator"></div>
+								<div class="designer-toolbar-section" style="background: url('designer/sliced/images/subtopcenter.gif');">
+									<div class="dtb icon uts" style="background-image: url('icons-2/fugue/icons/gear--arrow.png');" stname="inner-text" explorer="true" title="Open Configuration Panel">
+									</div>
+									<select style="margin-top: 10px;float:left" stname="font-family" class="text-style-select"><option value="Arial">Arial</option><option value="Comic Sans MS">Comic Sans MS</option><option value="Times New Roman">Georgia</option><option value="Georgia">Tahoma</option><option value="Verdana">Verdana</option><option value="Times New Roman">Times New Roman</option><option value="Trebuchet MS">Trebuchet MS</option><option value="Lucida Grande">Lucida Grande</option><option value="Helvetica">Helvetica</option><option value="serif">serif</option><option value="sans-serif">sans-serif</option><option value="cursive">cursive</option><option value="fantasy">fantasy</option><option value="monospace">monospace</option></select>
+									<div class="dtb icon uts" style="background-image: url('icons/designer-icons/edit-size.png');" stname="font-size" slider="true" stmax="64" stmin="8">
+									
+									</div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_bold.png');" stname="font-weight" stvalue="bold" stoff="normal"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_italic.png');" stname="font-style" stvalue="italic" stoff="normal"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_underline.png');" stname="text-decoration" stvalue="underline" stoff="none"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_strikethrough.png');" stname="text-decoration" stvalue="line-through" stoff="none"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_align_left.png');" stname="text-align" stvalue="left"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_align_right.png');" stname="text-align" stvalue="right"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_align_center.png');" stname="text-align" stvalue="center"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_align_justify.png');" stname="text-align" stvalue="justify"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_allcaps.png');" stname="text-transform" stvalue="uppercase" stoff="none"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_smallcaps.png');" stname="text-transform" stvalue="lowercase" stoff="none"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_indent.png');" stname="text-indent" slider="true" stmax="200" stmin="0"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/text_letterspacing.png');" stname="letter-spacing" stvalue="10px" slider="true" stmax="100" stmin="0"></div> 
+									<div class="dtb icon uts" style="background-image: url('icons/text_linespacing.png');" stname="line-height" stvalue="10px" slider="true" stmax="100" stmin="0"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/designer-icons/edit-color.png');" stname="color" colorpicker="true"></div>
+								</div>
+				
+								<div class="designer-toolbar-section-separator" style="background-repeat: "></div>
+								<div class="designer-toolbar-section">
+									
+									<div class="dtb icon uts" style="background-image: url('icons/background-color.png');" stname="background-color" colorpicker="true"></div>
+									<div class="dtb icon uts" style="background-image: url('icons/background-image.png');" stname="background-image" explorer="true"></div>
+									<span class="dtb" style="float: left;">Repeat</span>
+									<select style="margin-top: 10px;float:left" class="text-style-select" stname="background-repeat"><option value="repeat">both</option><option value="repeat-x">horizontal</option><option value="repeat-y">vertical</option><option value="no-repeat">no repeat</option></select>
+								</div>
+								<div class="designer-toolbar-section-separator"></div>
+								<div class="designer-toolbar-section">
+									<span class="dtb" style="float: left;">Float</span>
+									<select style="margin-top: 10px;float:left" class="text-style-select" stname="float"><option value="none">none</option>	<option value="left">Left</option><option value="right">Right</option></select>
+									<span class="dtb" style="float: left;">Clear</span>
+									<select style="margin-top: 10px;float:left" class="text-style-select" stname="clear"><option value="none">none</option><option value="none">left</option><option value="left">right</option><option value="right">both</option></select>
+								</div>
+								<div class="designer-toolbar-section-separator"></div>
+								<div class="designer-toolbar-section">
+									<div class="dtb icon uts" style="background-image: url('icons/designer-icons/application-resize-actual.png');" stname="info-panel" explorer="true"></div>
+									<div class="dtb icon help" style="background-image: url('icons/information.png');"></div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</td>
+			</tr>
+			<tr class="np">
+				<td valign="top" style="width: 58px;vertical-align: top;background: #979797;" class="np">
+					<div class="designer-left-menu">
+						<div class="toolbar-top"></div>
+						<div class="toolbar-center">
+							<div class="designer-left-toolbar">
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/text.png')"></div>
+									<div class="designer-toolbar-section open">
+										<div id="core:label" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/label.png')" title="Label component"></a></div>
+										<div id="core:p" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/paragraph.png')" title="A paragraph component"></a></div>
+										<div id="core:h1" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_1.png')" title="Heading 1"></a></div>
+										<div id="core:h2" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_2.png')" title="Heading 2"></a></div>
+										<div id="core:h3" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_3.png')" title="Heading 3"></a></div>
+										<div id="core:h4" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_4.png')" title="Heading 4"></a></div>
+										<div id="core:h5" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_5.png')" title="Heading 5"></a></div>
+										<div id="core:h6" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/text_heading_6.png')" title="Heading 6"></a></div>
+										<div id="core:hr" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-separator.png')" title="Horizontal rule"></a></div>
+										<div id="core:a" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/link.png')" title="Link component"></a></div>
+										<div id="core:image" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/picture.png')" title="Image component"></a></div>
+										<div id="core:ul" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/unorderedlist16.png')" title="Unordered list"></a></div>
+									</div>
+								</div>
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/form.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										<div id="core:dynaform" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/application_form.png')" title="Dynamic Form"></a></div>
+										<div id="core:textbox" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/textfield.png')" title="Text field"></a></div>
+										<div id="core:password" class="dtb icon  components"><a class="ui-icon" style="background-image: url('icons/password.gif')" title="Password field"></a></div>
+										<div id="core:checkbox" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/checkbox.gif')" title="Check Box"></a></div>
+										<div id="core:select" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-combo-box.png')" title="Drop down"></a></div>
+										<div id="core:textarea" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-text-area.png')" title="Text Area"></a></div>
+										<div id="core:richtextarea" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/application_osx.png')" title="Rich Text area"></a></div>
+										<div id="core:radio" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-radio-button.png')" title="Radio Button"></a></div>
+										<div id="core:datepicker" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/calendar.png')" title="Date Picker"></a></div>
+										<div id="core:colorpicker" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/color_wheel.png')" title="Color Picker"></a></div>
+										<div id="core:button" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-button.png')" title="Button"></a></div>
+									</div>
+									
+								</div>
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/layout.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										<div id="portal:pagecontainer" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/layers.png')" title="Page Container"></a></div>
+										<div id="core:div" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-panel.png')" title="Simple Division"></a></div>
+										<div id="core:tabs" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-tab-content.png')" title="Tabs"></a></div>
+										<div id="core:accordeon" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-accordion.png')" title="Accordeon"></a></div>
+										<div id="ecommerce:slider" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/designer-icons/ui-flow.png')" title="Coverflow"></a></div>
+										<div id="core:pluggablecomponent" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/plugin.png')" title="Pluggable component"></a></div>
+										<div id="core:xhtml" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" title="XHTML Template"></a></div>
+										<div id="core:groovy" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/script_code.png')" title="Dynamic Script template"></a></div>
+									</div>
+								</div>
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/navigation.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										<div id="portal:simple-menu" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/Menu.png')" title="Simple Menu"></a></div>
+										<div id="navigation:slideshow" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/slideshow.png')" title="Slide show"></a></div>
+										
+									</div>
+								</div>
+								<div >
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/corporate.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										<div id="community:user" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/user.png')" title="Register User application"></a></div>
+										<div id="community:community" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/chart_organisation.png')" title="Organization Management application"></a></div>
+										<div id="ecommerce/cart" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/cart.png')" title="Shopping Cart"></a></div>
+										<div id="ecommerce/shop" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/catalogue.png')" title="Ecommerce application"></a></div>
+										<div id="ecommerce/catalogue" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/report.png')" title="Catalogue"></a></div>
+										
+										<div id="ecommerce:EXRecentProducts" title="List of recent products" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXSearchProductBar" title="Search product bar" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXShopDepartments" title="List of departments" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXMiniCart" title="Small shopping cart" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXCartDetail" title="Complete shopping cart" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXProductRotator" title="Product rotator" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXProduct" title="Product detail" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+										<div id="ecommerce:EXProductItem" title="Thumbnail info of product" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/xhtml.png')" ></a></div>
+									</div>
+								</div>
+								<div style="display: none;">
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/ecommerce.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										
+										
+									</div>
+								</div>
+								<div>
+									<div class="designer-toolbar-section-header" style="background-image: url('designer/sliced/images/categories/developer.png')"></div>
+									<div class="designer-toolbar-section" style="display: none;">
+										<div id="data:table" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/table.png')" title="Table"></a></div>
+										<div id="data:datacontainer" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/database_connect.png')" title="Data Container"></a></div>
+										<div id="data:datarepeater" class="dtb icon components"><a class="ui-icon" style="background-image: url('icons/database_table.png')" title="Component Repeater"></a></div>
+									</div>
+									
+								</div>
+							</div>
+						
+						</div>
+						<div class="toolbar-bottom"></div>
+					</div>
+				</td>
+				
+				<td style="background: #979797;" class="np">
+					<div id="selector" style="position: absolute; background-color: yellow; z-index: 2;opacity:0.5;border:solid 2px silver; border-right:double 3px; border-bottom:double 3px;">
+			
+		</div>
+					<div class="designer-workspace" style="overflow:hidden;background-color: #eeeeee">
+						<table cellpadding="0" cellspacing="0" width="100%" height="100%" class="np">
+							<tr class="np">
+								<td name="EXBorderLayoutContainercenter" valign="top" class="np"></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+				<td name="EXBorderLayoutContainerleft" valign="top" class="np"></td>
+			</tr>
+		</table>
+	</div>
+</div>

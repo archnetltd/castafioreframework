@@ -1,0 +1,17 @@
+.TabbedPanelsContent {background-color: #FFFFFF;border-color: #C4C4C4;border-left: 1px solid #C4C4C4;border-style: solid;border-width: 1px;clear: both;float: left;}
+.monthblank {float: left;height: 59px;margin: 0;padding: 0;width: 682px;}
+#previ {float: left;height: 31px;margin: 0;padding: 28px 0 0 23px;width: 88px;}
+.previ {color: #827D7F;font-family: "Trebuchet MS";font-size: 12px;text-decoration: underline;}
+.month {color: #C1272D;float: left;font-family: "Trebuchet MS";font-size: 12px;height: 31px;margin: 0;padding: 28px 0 0;text-align: center;width: 500px;}
+.nextlink {color: #827D7F;float: left;font-family: "Trebuchet MS";font-size: 12px;height: 31px;margin: 0;padding: 28px 0 0;width: 70px;}
+.next {color: #827D7F;font-family: "Trebuchet MS";font-size: 12px;text-decoration: underline;}
+.timerow {border-bottom: 1px solid #C1C1C1;border-top: 1px solid #C1C1C1;float: left;height: 34px;margin: 0;padding: 0;width: 683px;}
+.time {background-color: #E6E6E6;border-right: 1px solid #C1C1C1;float: left;height: 34px;margin: 0;padding: 0;width: 110px;}
+.timetxt {color: #C1272D;float: left;font-family: "Trebuchet MS";font-size: 10px;height: 22px;margin: 0;padding: 12px 0 0 35px;width: 75px;}
+.timerowalt {border-bottom: 1px solid #C1C1C1;float: left;height: 34px;margin: 0;padding: 0;width: 683px;}
+.timealt {border-right: 1px solid #C1C1C1;float: left;height: 34px;margin: 0;padding: 0;width: 110px;}
+.timerowbot {float: left;height: 34px;margin: 0;padding: 0;width: 683px;}
+.agendacal .ui-datepicker-inline{border:none};
+.agendacal .ui-datepicker-header{display: none;}
+.agendacal .ui-datepicker-calendar th{background: transparent;padding: 0 0.3em}
+.agendacal .ui-datepicker-calendar th a{}

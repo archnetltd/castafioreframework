@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="casta-appstore"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/casta-beans"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/casta-catalogue"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/casta-ecm"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/casta-searchengine"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/acegi-security-1.0.7.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/backport-util-concurrent-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/beanlib-5.0.3beta.jar" sourcepath="C:/Users/kureem/Desktop/beanlib-5.0.3beta-bundle/beanlib-5.0.3beta-sources.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/beanlib-hibernate-5.0.3beta.jar" sourcepath="C:/Users/kureem/Desktop/beanlib-5.0.3beta/beanlib-5.0.3beta/beanlib-hibernate-5.0.3beta-sources.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-fileupload-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-jxpath-1.3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-pool.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/commons-vfs-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/connector.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/cssparser-0.9.5.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/ehcache-1.4.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/Filters.jar" sourcepath="C:/java/Filters.zip"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-analytics-2.1.jar" sourcepath="C:/Users/kureem/gdata.java-1.41.3/gdata/java/src"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-analytics-meta-2.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-appsforyourdomain-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-appsforyourdomain-meta-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-base-1.0.jar" sourcepath="C:/Users/kureem/gdata.java-1.41.3/gdata/java/src"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-blogger-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-blogger-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-books-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-books-meta-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-calendar-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-calendar-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-client-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-client-meta-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-codesearch-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-codesearch-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-contacts-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-contacts-meta-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-core-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-docs-3.0.jar" sourcepath="C:/Users/kureem/gdata.java-1.41.3/gdata/java/src"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-docs-meta-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-finance-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-finance-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-gtt-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-gtt-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-health-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-health-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-maps-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-maps-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-media-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-photos-2.0.jar" sourcepath="C:/Users/kureem/gdata.java-1.41.3/gdata/java/src"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-photos-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-projecthosting-2.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-projecthosting-meta-2.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-sidewiki-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-sidewiki-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-sites-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-sites-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-spreadsheet-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-spreadsheet-meta-3.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-webmastertools-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-webmastertools-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-youtube-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/gdata-youtube-meta-2.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/google-collect-1.0-rc1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-annotations.jar" sourcepath="C:/Users/acer/.m2/repository/org/hibernate/hibernate-annotations/3.4.0.GA/hibernate-annotations-3.4.0.GA-sources.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-core.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-entitymanager.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/hibernate-search.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/javassist-3.12.0.GA.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jericho-html-3.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jmimemagic-0.1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jms.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jodd.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/json.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jsr107cache-1.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jsr305.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/lucene-core.jar" sourcepath="C:/Users/acer/.m2/repository/org/apache/lucene/lucene-core/2.4.0/lucene-core-2.4.0-sources.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/mail.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/mysql-connector-java-5.1.12-bin.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.aop-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.asm-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.aspects-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.beans-3.0.0.RELEASE.jar" sourcepath="C:/Users/kureem/Downloads/spring-framework-3.0.0.RELEASE/spring-framework-3.0.0.RELEASE/src/org.springframework.beans-sources-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.context-3.0.0.RELEASE.jar" sourcepath="C:/Users/kureem/Downloads/spring-framework-3.0.0.RELEASE/spring-framework-3.0.0.RELEASE/src/org.springframework.context-sources-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.context.support-3.0.0.RELEASE.jar" sourcepath="/casta-dependencies/src/org.springframework.context.support-sources-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.core-3.0.0.RELEASE.jar" sourcepath="C:/Users/kureem/Downloads/spring-framework-3.0.0.RELEASE/spring-framework-3.0.0.RELEASE/src/org.springframework.core-sources-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.expression-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.instrument-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.instrument.tomcat-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.jdbc-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.jms-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.orm-3.0.0.RELEASE.jar" sourcepath="C:/Users/kureem/Downloads/spring-framework-3.0.0.RELEASE/spring-framework-3.0.0.RELEASE/src/org.springframework.orm-sources-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.oxm-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.test-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.transaction-3.0.0.RELEASE.jar" sourcepath="/casta-dependencies/src/org.springframework.transaction-sources-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.web-3.0.0.RELEASE.jar" sourcepath="/casta-dependencies/src/org.springframework.web.servlet-sources-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.web.portlet-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.web.servlet-3.0.0.RELEASE.jar" sourcepath="/casta-dependencies/src/org.springframework.web.servlet-sources-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/org.springframework.web.struts-3.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/poi-3.8-beta3-20110606.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/postgresql-8.2-504.jdbc3.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/quartz-all-1.6.1-RC1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/rhino-1.6R7.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/serp-1.13.1.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/slf4j-log4j12-1.5.0.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/smsj-20051126.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/smslib-3.4.5.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/smsserver-3.4.5.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/spring-aspects.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/spring-inteceptor.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="/casta-dependencies/lib/ycompresson.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/casta-ui"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

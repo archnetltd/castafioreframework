@@ -1,0 +1,42 @@
+body{
+	background:#FFFFFF url(webos/img//main-bg.gif) repeat scroll 0 0
+}
+
+.myDoc a, .myDoc a:visited { 
+	outline: none 
+}
+.myDoc img {
+	border: none;
+}
+/* dock2 - bottom */
+.myDoc {
+	width: 100%;
+	bottom: 50px;
+	position: absolute;
+	left: 0px;
+}
+.dock-container2 {
+	position: absolute;
+	height: 50px;
+	background: url(webos/img/dock-bg.gif);
+	padding-left: 20px;
+}
+a.dock-item2 {
+	display: block; 
+	font: bold 12px Arial, Helvetica, sans-serif;
+	width: 40px; 
+	color: #000; 
+	bottom: 0px; 
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+}
+.dock-item2 span {
+	display: none;
+	padding-left: 20px;
+}
+.dock-item2 img {
+	border: none; 
+	margin: 5px 10px 0px; 
+	width: 100%; 
+}

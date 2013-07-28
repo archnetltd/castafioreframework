@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="root_file_creator" class="org.castafiore.wfs.types.config.AbstractFileConfig" abstract="true" >
+		<property name="repositoryService" ref="repositoryService"></property>
+	</bean>
+	<!-- creation system directories and drives -->
+	<!-- 
+	<bean class="org.castafiore.wfs.types.config.DriveConfig" parent="root_file_creator">
+		<property name="name" value="root"/>
+		<property name="readPermissions" value="*:users"></property>
+	</bean>
+	 -->
+	
+	<bean class="org.castafiore.wfs.types.config.DriveConfig" parent="root_file_creator">
+		<property name="name" value="users"/>
+		<property name="parentDir" value="/root"></property>
+		<property name="readPermissions" value="*:users"></property>
+	</bean>
+	
+	
+</beans>

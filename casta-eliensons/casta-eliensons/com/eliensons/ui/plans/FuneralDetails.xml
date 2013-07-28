@@ -1,0 +1,12 @@
+<action>
+	<form title="Enter Funeral Cost details">
+		<input name="costOfFuneral" type="text" label="Cost of Funeral :"></input>
+		<input name="dateTerminated" type="date" label="Date of Funeral :"></input>
+		<input name="commentsOnFuneral" type="textarea" label="Comments :"></input>
+		<btn name="save" label="Save">
+			<action>
+				<status>21</status>
+			</action>
+		</btn>
+	</form>
+</action>

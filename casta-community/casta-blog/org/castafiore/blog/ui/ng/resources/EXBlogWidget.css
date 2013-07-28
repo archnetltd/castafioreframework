@@ -1,0 +1,366 @@
+.blog .addPost {
+	color: saddleBrown;
+	cursor: pointer;
+	display: block;
+	font-weight: bolder;
+	left: 405px;
+	position: relative;
+	top: -22px;
+	width: 100px;
+}
+
+.blog .page {
+	overflow: auto;
+	margin-left: 10%
+}
+
+.blog .wrapper {
+	margin: auto;
+	height: 100%;
+}
+
+.blog .dbx-box {
+	border: medium none;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	line-height: 160%;
+}
+
+.blog .dbx-handle {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/sidep-handle.png)
+		no-repeat scroll 0 0;
+	margin: 0;
+	padding: 16px 24px 7px 10px;
+	position: relative;
+	cursor: move;
+}
+
+.blog a.dbx-toggle,.blog a.dbx-toggle:visited {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/sidep-toggle.png)
+		no-repeat scroll 0 0;
+	display: block;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	right: 3px;
+	text-decoration: none;
+	text-indent: -50px;
+	top: 12px;
+	width: 20px;
+}
+
+.blog .dbx-content {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/sidep-bottom.png)
+		scroll 0 100%;
+	margin: 0;
+	overflow: hidden;
+	padding: 5px 10px 9px;
+}
+
+.blog .dbx-content ul {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.blog .dbx-content ul li {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/bullet-orange.gif)
+		no-repeat scroll 0 0;
+	padding-left: 18px;
+}
+
+.blog .dbx-content span {
+	color: #000000;
+	cursor: pointer;
+}
+
+.blog .date {
+	-x-system-font: none;
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/calendar.gif)
+		no-repeat scroll 0 0;
+	color: #666666;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 50px;
+	line-height: 100%;
+	padding: 0 2px 0 0;
+	text-align: center;
+	width: 45px;
+}
+
+.blog .date span {
+	-x-system-font: none;
+	color: #FFFFFF;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	height: 16px;
+	line-height: normal;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.blog .post {
+	padding: 25px;
+}
+
+.blog .post .title {
+	float: left;
+	margin-left: 10px;
+	width: 438px;
+}
+
+.blog h2 {
+	-x-system-font: none;
+	border-bottom: 1px dotted #CCCCCC;
+	color: #333333;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	font-size: 150%;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 100%;
+	margin: 3px 0 2px;
+	padding-bottom: 4px;
+}
+
+.blog h2 a,.blog h2 a:visited {
+	color: #333333;
+	text-decoration: none;
+}
+
+.blog .postdata {
+	color: #999999;
+	font-size: 90%;
+}
+
+.blog .postdata .category {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/mini-category.gif)
+		no-repeat scroll 0 0;
+	float: left;
+	padding-left: 18px;
+}
+
+.blog .postdata a,.postdata a:visited {
+	color: #999999;
+	text-decoration: none;
+}
+
+.blog .postdata .comments {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/mini-comment.gif)
+		no-repeat scroll 0 0;
+	float: right;
+	padding-left: 18px;
+}
+
+.blog .entry {
+	clear: both;
+	padding: 10px 0 5px 5px;
+	border: solid 1px silver;
+}
+
+.blog .content {
+	background: #FFFFFF none repeat scroll 0 0;
+	clear: both;
+	overflow: hidden;
+	width: 545px;
+	min-height: 500px;
+}
+
+.blog .nav {
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/content-top-bg.png)
+		no-repeat scroll left top;
+	height: 26px;
+	width: 100%
+}
+
+.blog .nav ul {
+	-x-system-font: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	line-height: 100%;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0 0 0 25px;
+	padding: 0;
+}
+
+.blog .nav ul li {
+	background: transparent none repeat scroll 0 0;
+	float: left;
+	margin: 0 1px 0 0;
+	padding: 0;
+}
+
+.blog .nav li a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+
+.blog .nav ul li a {
+	color: #000000;
+	display: block;
+	padding: 5px 7px 6px;
+	text-decoration: none;
+}
+
+.blog .column {
+	float: left;
+	padding: 5px;
+}
+
+.blog .commentTitle {
+	-x-system-font: none;
+	background: transparent
+		url(http://www.noulakaz.net/weblog/wp-content/themes/i3theme-1-6-classic/images/comments.gif)
+		no-repeat scroll 0 0;
+	clear: both;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 140%;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 120%;
+	padding-left: 22px;
+}
+
+.blog .commentlist {
+	line-height: 130%;
+	margin: 10px 0;
+	padding-left: 45px;
+}
+
+.blog .commentlist li {
+	padding: 5px 10px;
+}
+
+.blog .commentlist cite {
+	color: #669900;
+	font-size: 110%;
+	font-style: normal;
+	font-weight: bold;
+}
+
+.blog .commentlist cite a,.commentlist cite a:visited {
+	color: #669900;
+}
+
+.blog .commentlist small {
+	display: block;
+	font-size: 87%;
+	margin-bottom: 5px;
+}
+
+.blog .commentlist small a,.commentlist small a:visited {
+	color: #999999;
+}
+
+.blog .dbx-content .fieldset {
+	padding-top: 5px;
+}
+
+.blog .dbx-content .fieldset .input {
+	background-color: #DDD;
+	border: solid 1px silver;
+	padding-left: 3px;
+	margin-top: 4px;
+	width: 180px;
+}
+
+.blog .dbx-content .fieldset .label {
+	padding-bottom: 5px;
+}
+
+.blog .dbx-content .fieldsetButton {
+	margin-top: 7px;
+	width: 100%;
+}
+
+.blog .dbx-content .fieldsetButton .button {
+	float: right;
+	margin-right: 5px
+}
+
+.blog .commentForm {
+	border: 1px solid silver;
+	width: 300px;
+	top: 10px;
+	left: 10px;
+	position: relative;
+	height: 193px;
+	background-color: silver;
+}
+
+.blog .commentForm .postComment {
+	margin: 0pt 23px;
+	padding: 0pt 16px;
+	float: left;
+}
+
+.blog .commentList {
+	border: 1px solid saddleBrown;
+	padding: 5px 0pt 0pt 5px;
+	display: block;
+}
+
+.blog .des-accordeon{
+	
+	max-width: 150px;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	width: 200px
+}
+
+.blog .des-accordeon .group{
+	background-color: #A6DEEE;
+	padding: 2px;
+}
+
+.blog .des-accordeon .group .header{
+	background-color: #6D94E1;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.blog .des-accordeon .group .body{
+	background-color: #63C2DD;
+	padding: 3px;
+}
+
+.blog .des-accordeon .group .body .item{
+	background-color: #61E3A8;
+	margin: 3px;
+	padding-left: 4px;
+}

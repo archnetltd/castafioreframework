@@ -1,0 +1,15 @@
+<casta:designable name="products" uniqueId="core:div" layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${user}/portal-data/portal-template.ptl/pages/products]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[home]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+
+	<casta:designable name="Product1" uniqueId="ecm:productcontainer" layoutData="">
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${user}/portal-data/templates/Products.xhtml]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Product1]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+	</casta:designable>
+	
+</casta:designable>

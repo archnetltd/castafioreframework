@@ -1,0 +1,86 @@
+<project name="casta-ecm"   basedir=".">
+	
+	
+	<property name="tomcat.home" value="c:/apache-tomcat-6.0.18"></property>
+	<property name="context.name" value="casta-ui"></property>
+	
+	<path id="dependencies">
+			<fileset dir="${basedir}/../casta-dependencies/lib">
+		    	<include name="*.jar"/>
+		   	</fileset>
+			<fileset dir="${basedir}/../casta-dependencies/dist/ui">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="${basedir}/../casta-dependencies/dist/beans">
+				<include name="*.jar"/>
+			</fileset>
+	</path>
+	
+	<property name="module.name" value="ecm"></property>
+	<property name="module.version" value="0.1"></property>
+	<property name="tomcat" value="${tomcat.home}/webapps/${context.name}/WEB-INF"></property>
+	<target name="clean">
+		<delete dir="${basedir}/build"></delete>
+		<delete dir="${basedir}/../casta-dependencies/dist/ecm"></delete>
+	</target>
+	
+	<target name="install">
+		
+		<mkdir dir="${basedir}/build"/>
+		<mkdir dir="${basedir}/build/bin"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist/ecm"/>
+		
+		<javac fork="true"  destdir="${basedir}/build/bin" debug="true" debuglevel="lines,vars,source" nowarn="true"  compiler="modern">
+			<classpath><path refid="dependencies"/></classpath>
+			<src path="${basedir}/casta-persistence"></src>
+			<src path="${basedir}/casta-ecm"></src>
+			<src path="${basedir}/casta-wfs"></src>
+			<src path="${basedir}/casta-spring"></src>
+			<src path="${basedir}/casta-security"></src>
+			<src path="${basedir}/casta-community"></src>
+		</javac>
+		
+		
+		<copydir src="${basedir}/casta-persistence" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		<copydir src="${basedir}/casta-ecm" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		<copydir src="${basedir}/casta-wfs" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		<copydir src="${basedir}/casta-security" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		<copydir src="${basedir}/casta-spring" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		
+		<jar destfile="${basedir}/../casta-dependencies/dist/ecm/casta-ecm-${module.version}.jar">
+			<zipfileset dir="${basedir}/build/bin">
+	        	<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
+			</zipfileset>
+		</jar>
+	</target>
+	
+	
+	
+	<target name="deploy.tomcat" depends="install">
+		<copy file="${basedir}/../casta-dependencies/dist/${module.name}/casta-${module.name}-${module.version}.jar" todir="${tomcat}/lib"></copy>
+		<copy  todir="${tomcat.home}/webapps/${context.name}" overwrite="true">
+			<fileset dir="${basedir}/web"></fileset>
+		</copy>
+		<copy file="${basedir}/web/WEB-INF/web.xml" todir="${tomcat}" failonerror="false" overwrite="true"/>
+	</target>
+	
+	<target name="del.work">
+		<delete dir="${tomcat.home}/work"></delete>
+	</target>
+	
+	
+	
+	
+</project>

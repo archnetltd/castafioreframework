@@ -1,0 +1,31 @@
+.Square .container{
+	width:500px;
+	padding:15px;
+	margin:3px 0 20px 0;
+	border:1px solid rgb(204, 204, 204);
+	background:rgb(255, 255, 255);
+}
+.Square .navPyra{
+	margin:0;
+	padding:0 0 20px 10px;
+	border-bottom:1px solid rgb(159, 177, 188);
+}
+.Square .navPyra li{
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style-type:none;
+}
+.Square .navPyra a:link , .Square .navPyra a:visited{
+	float:left;
+	font-size:10px;
+	line-height:14px;
+	font-weight:bold;
+	padding:0 12px 6px 12px;
+	text-decoration:none;
+	color:rgb(112, 132, 145);
+}
+.Square .navPyra a:link.active , .Square .navPyra a:visited.active , .Square .navPyra a:hover{
+	color:rgb(0, 0, 0);
+	background:url(Square.gif) no-repeat bottom center;
+}

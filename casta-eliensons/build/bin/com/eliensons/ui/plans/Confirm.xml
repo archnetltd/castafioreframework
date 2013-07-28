@@ -1,0 +1,54 @@
+<action>
+	<status>11</status>
+	<display>
+	<![CDATA[
+		<p>
+		Correctly changed status to Confirm.
+		</p>
+	]]>
+	</display>
+
+	<mails>
+		<mail>
+			<subject>Cancel of Plan $invoicenumber</subject>
+			<from>${merchant.mail}</from>
+			<to>${customer.mail}</to>
+			<content>
+				<![CDATA[
+				Dear $customer<br>
+				
+				
+				<p>
+				We would like to inform you that the order as shown below has been confirmed.<br>
+				If you think this is an error or you have any queries, please don't hesitate to contact us
+				</p>
+				
+			
+				
+				$order
+				
+				<br>
+				
+				
+				Kind regards,<br>
+				Sales team<br>
+				Elie and Son<br>
+				]]>
+			</content>
+		</mail>
+		<mail>
+			<subject>Cancel of Plan $invoicenumber</subject>
+			<from>${merchant.mail}</from>
+			<to>${merchant.mail}</to>
+			<content>
+				<![CDATA[
+				This order has been confirmed by Elie and Sons
+				
+				
+				$order
+				
+				]]>
+			</content>
+		</mail>
+	</mails>
+</action>

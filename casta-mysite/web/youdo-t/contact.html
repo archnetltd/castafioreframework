@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interactive full website by TemplateWorld.com!</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/easySlider1.5.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){	
+			$("#slider").easySlider({
+				auto: true,
+				continuous: true 
+			});
+		});	
+	</script>
+<!--Contact starts here -->
+<script type="text/javascript" src="include/jquery.twit.min.js"></script>
+<script type="text/javascript" src="include/jquery.twit.js"></script>
+<link href="include/jquery.twit.css" type="text/css" rel="stylesheet" />
+<!--Contact ends here -->
+
+<!--Twitter start here -->
+<script type="text/javascript" src="include/jquery.example.js"></script>
+<script type="text/javascript" src="include/jquery.validate.pack.js"></script>
+<script type="text/javascript" src="include/jquery.contactable.js"></script>
+<link rel="stylesheet" href="include/contactable.css" type="text/css" />
+<!--Twitter ends here -->
+
+<link href="include/ad.css" type="text/css" rel="stylesheet" /><!--ad css here -->
+
+
+<script type="text/javascript">
+//Contact starts here	
+	$(function(){
+		$('#contactAt').contactable({
+	 		recipient: 'email@companyname.com',
+	 		subject: 'The Quick Message'
+	 	});
+	});
+	
+//Contact Ends here
+
+		
+$(document).ready(function(){
+
+//Twit start here
+		twitShowStatus = 1;
+		function twitShow() {
+				$('div#twitable').animate({"marginLeft": "-=5px"}, "fast"); 
+				$('#twitform').animate({"marginLeft": "-=0px"}, "fast");
+				$('div#twitable').animate({"marginLeft": "+=523px"}, "slow"); 
+				$('#twitform').animate({"marginLeft": "+=520px"}, "slow");
+				$('.twitContainer .close').css({right: '-4px'});
+				twitShowStatus = 0;
+			}
+		function twitHide() {
+				$('#twitform').animate({"marginLeft": "-=520px"}, "slow");
+				$('div#twitable').animate({"marginLeft": "-=523px"}, "slow").animate({"marginLeft": "+=5px"}, "fast"); 
+				$('.twitContainer .close').css({right: '0px'});
+				twitShowStatus =1;
+			}
+		
+			$('div#twitable').click(
+				function() {
+				if(twitShowStatus==1)
+					twitShow();
+				else
+					twitHide();
+			
+			});
+		
+		username = 'templateworldIN';// twitter User name
+		$('#twitform').twit(username);
+		$('#twitform').twit(username, {
+		limit: 5,
+		label: 'Twitter',
+		title: 'My tweets'
+		});
+		
+//Twitter ends here	
+
+//Ad starts	here	
+//-HeaderAd starts
+		$('div#headerBt').click(
+		function() {
+			$('#headerContent').animate({"marginTop": "-=60px"}, "slow");
+			$(this).animate({"marginTop": "-=60px"}, "slow").animate({"marginTop": "+=5px"}, "fast"); 
+			
+			$('#TotalBodyId').animate({"marginTop": "-=60px"}, "slow");
+			$('#TotalBodyId').css({backgroundPosition: "0 0"});
+			
+		});
+
+//-FooterAd starts
+		$('div#footerBt').click(
+		function() {
+			$('#footerContent').animate({"marginBottom": "-=45px"}, "slow");
+			$(this).animate({"marginBottom": "-=45px"}, "slow").animate({"marginBottom": "+=5px"}, "fast"); 
+			$('#fotplug').hide('slow');
+		});
+		
+//Ad ends here
+							
+});	
+	
+</script>
+<!--foot support-->
+<style type="text/css" media="all">
+#fotplug{
+	width:100%;
+	height:40px;
+	float:left;
+}
+</style>
+<script src="js/index.js" type="text/javascript"></script> 
+</head>
+
+<body><!--Contact starts here -->
+<div id="contactAt">
+</div>
+<!--Contact ends here -->
+
+<!--Twitter starts here -->
+<div id="twitContent">
+	<div id="twitable"></div>
+	<div id="twitform" class="twitContainer lastNode">
+	</div>
+</div>
+<!--Twitter ends here -->
+	<div id="wraper">
+    	<div id="headerblank">
+        	<div id="header">
+            	<p class="callus">Call Us: +1 234 567 8910<span>|</span>E-mail: mail@yoursitename.com</p>
+<div id="headelogobg">
+                	<h1><a href="index.html"><img src="images/logo.png" alt="" /></a></h1><em class="ttip">tw design</em><input name="" type="text" value="Enter your search here..." onfocus="if(this.value=='Enter your search here...')this.value=''" onblur="if(this.value=='')this.value='Enter your search here...'" /><input type="button" value="SUBMIT" />
+        </div>
+        	<ul id="navigation">
+            	<li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="usefullinks.html">Useful Links</a></li>
+                <li><a href="contact.html">Contact</a></li>            
+            </ul>
+        	</div>
+        </div>
+		<div id="bodycontentblank">
+        	<div id="bodycontent">
+           	  <div id="bodyleftcontent">
+           	    <div class="welcomecontent">
+           	      <h4>Contact</h4>
+                  	<p class="contactaddress"><strong>Marketing</strong><br />
+1090 25th Place<br />
+Bradenton, FL 34203<br />
+United States</p>
+<p class="contactaddress"><strong>Marketing</strong><br />
+1090 25th Place<br />
+Bradenton, FL 34203<br />
+United States</p>
+           	    </div>
+           	    <div class="welcomecontent">
+           	      <h4>Location Map</h4>
+           	      <p class="normalcontent"><img src="images/googlemap.png" alt="" /></p>
+                  <a target="_blank" style="text-decoration:none; font-size:11px; font-family:Arial; color: #2A4956; margin:15px 0 0 0; float:left; width:498px; text-align:left" href="http://www.social-bookmark-script.com/">Social Bookmarking</a><span style="border-top-style:solid; border-top-width: 1px; border-top-color: #2A4956; float: left; width:498px; margin:5px 0 0 0; padding:0 0 25px 0">
+		<a rel="nofollow" style="text-decoration:none;" href="http://digg.com/" onclick="window.open('http://digg.com/submit?phase=2&amp;url='+encodeURIComponent(location.href)+'&amp;bodytext=&amp;tags=&amp;title='+encodeURIComponent(document.title));return false;" title="Bookmark to: Digg"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/digg_trans.gif" alt="Bookmark to: Digg" name="Digg" border="0" id="Digg"/> </a>
+		<a rel="nofollow" style="text-decoration:none;" href="http://del.icio.us/" onclick="window.open('http://del.icio.us/post?v=2&amp;url='+encodeURIComponent(location.href)+'&amp;notes=&amp;tags=&amp;title='+encodeURIComponent(document.title));return false;" title="Bookmark to: Del.icio.us"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/del_trans.gif" alt="Bookmark to: Del.icio.us" name="Delicious" border="0" id="Delicious"/> </a>
+		<a rel="nofollow" style="text-decoration:none;" href="http://www.facebook.com/" onclick="window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(location.href)+'&amp;t='+encodeURIComponent(document.title));return false;" title="Bookmark to: Facebook"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/facebook_trans.gif" alt="Bookmark to: Facebook" name="Facebook" border="0" id="Facebook"/> </a>
+		<a rel="nofollow" style="text-decoration:none;" href="http://reddit.com/" onclick="window.open('http://reddit.com/submit?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title));return false;" title="Bookmark to: Reddit"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/reddit_trans.gif" alt="Bookmark to: Reddit" name="Reddit" border="0" id="Reddit"/> </a>
+		<a rel="nofollow" style="text-decoration:none;" href="http://www.stumbleupon.com/" onclick="window.open('http://www.stumbleupon.com/submit?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title));return false;" title="Bookmark to: StumbleUpon"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/stumbleupon_trans.gif" alt="Bookmark to: StumbleUpon" name="StumbleUpon" border="0" id="StumbleUpon"/> </a>
+		<a rel="nofollow" style="text-decoration:none;" href="http://www.google.com/" onclick="window.open('http://www.google.com/bookmarks/mark?op=add&amp;hl=de&amp;bkmk='+encodeURIComponent(location.href)+'&amp;annotation=&amp;labels=&amp;title='+encodeURIComponent(document.title));return false;" title="Bookmark to: Google"> <img style="padding-bottom:1px;" src="http://www.social-bookmark-script.de/img/bookmarks/google_trans.gif" alt="Bookmark to: Google" name="Google" border="0" id="Google"/> </a></span>
+                </div>
+              </div>
+                	<div id="bodyrightcontent">
+                   	  <div id="emailaddress">
+                        	<h5>Email Newsletter</h5>
+                           	  <label>Subscribe to get updates &amp; latest news.</label>
+                        		<input name="" type="text" value="Please enter your email here..." onfocus="if(this.value=='Please enter your email here...')this.value=''" onblur="if(this.value=='')this.value='Please enter your email here...'" /><a href="#">Subscribe</a>
+                        </div>
+                        	<div id="whatclientsays">
+                            	<h5>What client says</h5>
+                                	<blockquote><img src="images/testmonialsicon.png" alt="" />“Nullam rhoncus feugit qeniibh feentud  vestibulum eleifend, magn iaculis risus, quis volutpat turpis quam in torto ororbi euismod nulla aliquet felis. Sed nisi neque, fermentum risus duionec mattis.”<span>- Leslie Anne M.</span></blockquote>                            
+                            </div>
+                            	<div id="whychooseus">
+                                	<h5>Why choose us?</h5>
+                                		<ul>
+                                        	<li><a href="more.html">Proin id purus at bla rndit rhoncus</a></li>
+                                            <li><a href="more.html">Integer uurna vitaepen rutrtesque</a></li>
+                                            <li><a href="more.html">Nunc posuere posuee diam rutrum</a></li>
+                                            <li><a href="more.html">Cras convallis nunc etmi rutrum</a></li>
+                                            <li><a href="more.html">Nam placerat bibe rutrum num lectus</a></li>
+                                        	<li><a href="more.html">Donec at lorem sed nibh euismod</a></li>
+                                        </ul>
+                                
+                                </div>                    
+                    </div>
+            
+            </div>
+        </div>
+        	<div id="footerblank">
+            	<div id="footer">
+                	<p>&copy; Your Copyright Info Here. Designed by: <a href="http://www.templateworld.com" target="_blank">Template World</a></p>
+                    	<ul>
+                        	<li><a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></li>
+                            <li><span>|</span></li>
+                            <li><a href="http://validator.w3.org/check?uri=referer">XHTML</a></li>
+                            <li><span>|</span></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                            <li><span>|</span></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li><span>|</span></li>
+                            <li><a href="#">RSS Feed</a></li>
+                        </ul>
+                </div>
+            
+            </div>  
+    </div>
+</body>
+</html>

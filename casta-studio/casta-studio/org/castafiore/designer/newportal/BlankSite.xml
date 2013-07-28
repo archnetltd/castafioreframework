@@ -1,0 +1,9 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[castafiore/resource?spec=ecm:${dir}/portal-data/default.ptl]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[Portal]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+	<casta:style name="width" value="970px"></casta:style>
+	<casta:style name="margin" value="auto"></casta:style>
+</casta:designable>

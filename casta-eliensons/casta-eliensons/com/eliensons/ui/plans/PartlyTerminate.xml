@@ -1,0 +1,3 @@
+<action>
+	<method>com.eliensons.reminders.ReminderUtil.partlyTerminate</method>
+</action>

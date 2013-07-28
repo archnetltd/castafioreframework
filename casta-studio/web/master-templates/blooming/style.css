@@ -1,0 +1,292 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+
+.blooming {
+	margin: 0;
+	padding: 0;
+	background: #666767 url(images/img01.jpg);
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #CCCCCC;
+}
+
+.blooming form {
+	margin: 0;
+	padding: 0;
+}
+
+.blooming fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.blooming input, .blooming textarea {
+	font: bold 1em "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.blooming h1, .blooming h2, .blooming h3 {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.blooming h1 {
+	letter-spacing: -1px;
+	font-size: 2.6em;
+}
+
+.blooming h2 {
+	font-size: 1.8em;
+}
+
+.blooming h3 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.blooming p, .blooming ul, .blooming ol {
+	margin-bottom: 1.6em;
+	line-height: 180%;
+}
+
+.blooming .logo p {
+	font-size: 1.8em;
+	line-height: 0;
+	margin: 5px;
+}
+
+.blooming p {
+}
+
+.blooming blockquote {
+	font-style: italic;
+}
+
+.blooming ul {
+}
+
+.blooming ol {
+}
+
+.blooming a {
+	color: #FFFFFF;
+}
+
+.blooming a:hover {
+	text-decoration: none;
+}
+
+.blooming small {
+}
+
+.blooming hr {
+	display: none;
+}
+
+.blooming img {
+	border: none;
+}
+
+.blooming img.left {
+	float: left;
+	margin: 0 15px 0 0;
+}
+
+.blooming img.right {
+	float: left;
+	margin: 0 0 0 15px;
+}
+
+/* Header */
+
+.blooming .header {
+	width: 730px;
+	height: 230px;
+	margin: 0 auto;
+	background: url(images/img02.jpg) no-repeat;
+}
+
+.blooming .header h1 {
+	padding: 110px 0 0 50px;
+}
+
+.blooming .header h2 {
+	padding: 0 0 0 50px;
+}
+
+.blooming .header p {
+	font-size: 1.8em;
+	padding: 0 0 0 50px;
+}
+
+.blooming .header a {
+	text-decoration: none;
+}
+
+/* Search */
+
+.blooming .search {
+	float: right;
+	width: 200px;
+	padding: 150px 0 0 0;
+}
+
+.blooming .search legend {
+	display: none;
+}
+
+.blooming .search-text {
+	width: 140px;
+}
+
+.blooming .search-submit {
+	display: none;
+}
+
+/* Menu */
+
+.menu {
+	float: right;
+	width: 620px;
+}
+
+.menu ul {
+	float: right;
+	margin: 0;
+	padding: 50px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+.menu li {
+	display: block;
+	float: left;
+	border-right: 1px solid #AFD147;
+}
+
+.menu a {
+	display: block;
+	float: left;
+	padding: 0px 20px 0px 20px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: capitalize;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.menu a:hover { 
+	text-decoration: none; 
+}
+
+.menu .current_page_item a {
+}
+
+.menu .last {
+	border-right: none;
+}
+
+/* Page */
+
+.blooming .page {
+	width: 700px;
+	margin: 0 auto;
+	background: #666767 url(images/img03.jpg);
+}
+
+/* Content */
+
+.blooming .content {
+	float: left;
+	width: 400px;
+}
+
+.blooming .post {
+	padding: 30px 20px 30px 40px;	
+}
+
+.blooming .post .title {
+	margin: 0;
+	padding-left: 30px;
+	background: url(images/img06.gif) no-repeat left center;
+	font-size: 2em;
+}
+
+.blooming .post .meta {
+	margin: 0 0 15px 0;
+	padding-top: 5px;
+	background: url(images/img05.gif) repeat-x;
+	line-height: normal;
+}
+
+.blooming .post .entry {
+}
+
+/* Sidebar */
+
+.blooming .sidebar {
+	float: right;
+	width: 300px;
+}
+
+.blooming .sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.blooming .sidebar li {
+	margin-bottom: 20px;
+	padding: 34px 20px 20px 20px;
+}
+
+.blooming .sidebar li ul {
+	line-height: 2em;
+}
+
+.blooming .sidebar li li {
+	margin: 0;
+	padding: 0;
+}
+
+.blooming .sidebar h2 {
+	margin-bottom: 14px;
+	letter-spacing: -1px;
+}
+
+.blooming .sidebar a {
+	border: none;
+}
+
+
+
+/* Footer */
+
+.blooming .footer {
+	clear: both;
+	width: 730px;
+	height: 80px;
+	margin: 0 auto;
+	padding-top: 30px;
+	background: #130D0F url(images/img04.jpg);
+	color: #666767;
+}
+
+.blooming .footer p {
+	margin: 0;
+	text-align: center;
+	line-height: normal;
+	font-size: .9em;
+}
+
+.blooming .footer a {
+	color: #666767;
+}

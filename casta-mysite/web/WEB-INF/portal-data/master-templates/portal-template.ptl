@@ -1,0 +1,66 @@
+<casta:designable name="${name}" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="name"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:designable name="root" uniqueId="core:xhtml" layoutData="">
+		<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/${name}/portal.html]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[XHTML fragment]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:designable name="logo" uniqueId="data:datacontainer" layoutData="">
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/logo.html]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="search" uniqueId="core:xhtml"
+			layoutData="">
+			<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/searchForm.html]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[XHTML fragment]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="menu" uniqueId="portal:simple-menu"
+			layoutData="">
+			<casta:attribute name="class"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="navigation"><![CDATA[{"name":"root","children":[{"name":"home","children":[],"label":"home","pageReference":"home","uri":"home"},{"name":"blog","children":[],"label":"blog","pageReference":"blog","uri":"blog"},{"name":"catalog","children":[],"label":"Catalog","pageReference":"catalog","uri":"catalog"},{"name":"about us","children":[],"label":"about us","pageReference":"about us","uri":"about us"}],"label":"root","pageReference":"root","uri":"root"}]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[bulletproof]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="pageContainer" uniqueId="portal:pagecontainer"
+			layoutData="">
+			<casta:attribute name="name"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="sideBar" uniqueId="core:verticallayout"
+			layoutData="">
+			<casta:attribute name="name"><![CDATA[EXColumnLayoutContainer]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:designable name="columnArticle" uniqueId="data:datacontainer"
+				layoutData="0">
+				<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/columnArticle.html]]></casta:attribute>
+				<casta:attribute name="layoutdata"><![CDATA[0]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[]]>
+				</casta:attribute>
+			</casta:designable>
+			<casta:designable name="columnList" uniqueId="data:datacontainer" layoutData="1">
+				<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/columnList.html]]></casta:attribute>
+				<casta:attribute name="layoutdata"><![CDATA[1]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[]]>
+				</casta:attribute>
+			</casta:designable>
+		</casta:designable>
+		<casta:designable name="footer" uniqueId="data:datacontainer" layoutData="">
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/footer.html]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Data container]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

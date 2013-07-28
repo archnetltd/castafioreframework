@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean id="eliensonsadmin" class="com.eliensons.ui.EXElienSonsAdmin" scope="session"></bean>
+	
+	<bean id="osManager" class="org.castafiore.searchengine.back.OSManagerImpl"></bean>
+	
+	<bean id="osApplicationRegistry" class="com.eliensons.ui.ElienSonsApplicationRegistry"></bean>
+	
+	<bean class="org.castafiore.shoppingmall.checkout.EXOrderApplication" id="orders" scope="session">  </bean>
+	
+	<bean class="com.eliensons.ui.sales.fontend.EXFrontEnd" id="fontend" scope="session">  </bean>
+	
+	
+	<util:list id="pos">
+		<value>Curepipe</value>
+		<value>Phoenix</value>
+		<value>Roche Brunes</value>
+		<value>Other</value>
+	</util:list>
+	
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="ShopSetting"></property>
+	<property name="icon" value="osicons/settings.png"></property>
+	<property name="title" value="Shop Settings"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Inventory"></property>
+	<property name="icon" value="osicons/inventory.png"></property>
+	<property name="title" value="Plans Manager"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="PlanSales"></property>
+	<property name="icon" value="osicons/sales-report.png"></property>
+	<property name="title" value="Plan sales"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator;member:officeoperator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="crm"></property>
+	<property name="icon" value="osicons/newsletter.png"></property>
+	<property name="title" value="Subscribers and newsletters"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator;member:officeoperator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Invoices"></property>
+	<property name="icon" value="osicons/sales.png"></property>
+	<property name="title" value="Sales and Invoices"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Accounting"></property>
+	<property name="icon" value="osicons/accounting.png"></property>
+	<property name="title" value="Accounting"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="FileExplorer"></property>
+	<property name="icon" value="osicons/explorer.png"></property>
+	<property name="title" value="File Explorer"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator;member:officeoperator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Organization"></property>
+	<property name="icon" value="osicons/organization.png"></property>
+	<property name="title" value="Organization Management system"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator"></property>
+</bean>
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Reports"></property>
+	<property name="icon" value="osicons/reports.png"></property>
+	<property name="title" value="Reports"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Reconciliation"></property>
+	<property name="icon" value="osicons/statement.png"></property>
+	<property name="title" value="Bank Reconciliation Statement"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+
+<bean class="org.castafiore.searchengine.back.OSBarItem" scope="session">
+	<property name="appName" value="Backup"></property>
+	<property name="icon" value="osicons/backup-restore-icon.png"></property>
+	<property name="title" value="Backup and restore Application"></property>
+	<property name="osApplicationRegistry" ref="osApplicationRegistry"></property>
+	<property name="permission" value="member:administrator;member:mainoperator"></property>
+</bean>
+
+<bean class="com.eliensons.ui.plans.PlansManager"></bean>
+
+<bean class="org.castafiore.persistence.AnnotatedClass">
+		<property name="annotatedClasses">
+			<util:list>
+				
+				<value>org.castafiore.shoppingmall.merchant.Merchant</value>
+				<value>org.castafiore.shoppingmall.merchant.CreditRedeem</value>
+				<value>org.castafiore.shoppingmall.employee.Employee</value>
+				<value>org.castafiore.shoppingmall.merchant.MerchantSubscription</value>
+				<value>org.castafiore.shoppingmall.crm.newsletter.Newsletter</value>
+				<value>org.castafiore.shoppingmall.checkout.Order</value>
+				<value>org.castafiore.shoppingmall.checkout.SalesOrderEntry</value>
+				<value>org.castafiore.shoppingmall.checkout.OrderEntry</value>
+				<value>org.castafiore.shoppingmall.checkout.BookEntry</value>
+				<value>org.castafiore.shoppingmall.delivery.Delivery</value>
+				<value>org.castafiore.inventory.orders.SalesOrder</value>
+				<value>org.castafiore.inventory.orders.VatSalesOrder</value>
+				<value>org.castafiore.inventory.orders.NonVatSalesOrder</value>
+				
+				<value>org.castafiore.inventory.customers.Customer</value>
+				<value>org.castafiore.inventory.suppliers.Supplier</value>
+				<value>org.castafiore.accounting.CashBookEntry</value>
+				<value>org.castafiore.accounting.Account</value>
+				<value>org.castafiore.accounting.CashBook</value>
+				<value>org.castafiore.shoppingmall.checkout.ShippingInformation</value>
+				<value>org.castafiore.shoppingmall.checkout.BillingInformation</value>
+				<value>org.castafiore.shoppingmall.checkout.DeliveryOptions</value>
+			</util:list>
+		</property>
+	</bean>
+
+
+
+
+	<bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="vroom.mu"></property>
+		<property name="username" value="www@vroom.mu"></property>
+		<property name="password" value="a28n12l10"></property>
+	</bean>
+	
+	
+	<bean class="org.castafiore.shoppingmall.imports.Importer" scope="prototype">
+		<property name="importerTemplate">
+			<bean class="org.castafiore.shoppingmall.imports.OrderImporterTemplate">
+				<property name="batchSize" value="10"></property>
+				<property name="firstRow" value="2"></property>
+				<property name="sheet" value="clients"></property>
+				<property name="merchant" value="elieandsons"></property>
+				<property name="excelFile">
+					<bean class="org.springframework.core.io.FileSystemResource">
+						<constructor-arg value="c://java//elie//notcreated.xls"></constructor-arg>
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="orderscontroller" class="org.castafiore.shoppingmall.frontend.ThickController"></bean>
+	
+
+</beans>

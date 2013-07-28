@@ -1,0 +1,36 @@
+Bean Manager --> Schedular manager
+Consolidate DMS
+audit
+checkin checkout
+Mail service
+Log service
+Security service
+Rest manager
+Portal framework
+consolidate Organization
+consolidate security policy JAAS, acegie etc
+JCRBrowser
+ECM
+Workflow
+Address book
+calendar
+events
+Groovy 
+Integrate spring 3
+consolidate search
+Mail client
+Ftp client
+RSS client
+Newsletter scheduling
+Inventory software
+Accounting software
+Reporting, charts
+OSGI
+Mobile
+More components
+
+package releases
+make showcase framework
+make a few image components
+borderlayout component
+refactoring

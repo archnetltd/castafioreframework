@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean id="castafioreApplicationRegisty" class="org.castafiore.ui.SessionLessApplicationRegistry"></bean>
+	
+    <bean id="castafioreInterceptorRegistry" class="org.castafiore.ui.interceptors.SpringInterceptorRegistry"></bean>
+    
+    <util:map id="templateCache"></util:map>
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+		<property name="scopes">
+			<map>
+				<entry key="casta-app">
+					<bean class="org.castafiore.ui.engine.context.CastafioreApplicationScope" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean class="org.castafiore.ui.engine.context.RequestContextLoaderFilter"></bean>
+	
+	<util:map id="casta_session"></util:map>
+	
+
+	<util:map id="uploadprops">
+		<entry key="upload.dir" value="C:/apache-tomcat-6.0.18/files"></entry>
+		<entry key="repository.dir" value="C:/Intel"></entry>
+	</util:map>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="s155.eatj.com" ></property>
+		<property name="username" value="kureem"></property>
+		<property name="password" value="blahblah"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,43 @@
+<action>
+
+<status>20</status>
+
+<mails>
+
+<mail>
+	<subject>Rejected invoice No. ${input.code}</subject>
+	<from>sales@mobuyonline.com</from>
+	<to>${input.billingInformation.email}</to>
+	<content>
+<![CDATA[
+Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+<p>
+We are sorry to inform you that your order could not be approved for the reason below.
+
+
+<br>
+
+mobuyonline.com is really sorry for this inconvenience.
+<br>
+</p>
+
+
+<br>
+
+
+Kind regards,<br>
+Sales team<br>
+ArchNet ltd<br>
+]]>
+</content>
+</mail>
+
+</mails>
+		<display>
+	<![CDATA[
+		<p>
+		Correctly changed status to rejected by archnet.
+</p>
+]]>
+	</display>
+</action>

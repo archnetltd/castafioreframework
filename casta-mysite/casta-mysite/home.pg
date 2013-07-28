@@ -1,0 +1,15 @@
+<casta:designable name="home" uniqueId="core:div" layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${user}/portal-data/portal-template.ptl/pages/home]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[home]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+
+	<casta:designable name="Article" uniqueId="data:datacontainer" layoutData="">
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${user}/portal-data/templates/Article.xhtml]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Menu]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+	</casta:designable>
+	
+</casta:designable>

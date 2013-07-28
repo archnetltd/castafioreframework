@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE textPath SYSTEM "svg11-flat-20110816.dtd" >
+
+<svg>
+<circle r="200" cursor="pointer">
+	<animate attributeName="r" attributeType="XML" from="30" to="60" dur="30s" repeatCount="infinite" fill="remove"></animate>
+</circle>
+</svg>

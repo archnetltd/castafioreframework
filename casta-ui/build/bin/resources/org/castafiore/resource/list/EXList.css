@@ -1,0 +1,31 @@
+.casta-combo-list {
+	background: #DDECFE none repeat scroll 0%;
+	border: 1px solid #98C0F4;
+	overflow: hidden;
+}
+
+.casta-combo-list-inner {
+	background: white none repeat scroll 0%;
+	position: relative;
+}
+
+.casta-combo-list-item {
+	border: 1px solid #FFFFFF;
+	font-family: tahoma, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+	overflow: hidden;
+	padding: 2px;
+	white-space: nowrap;
+}
+
+.casta-combo-list-item:hover {
+	background: #DFE8F6 none repeat scroll 0%;
+	border: 1px dotted #A3BAE9 !important;
+	cursor: pointer;
+}

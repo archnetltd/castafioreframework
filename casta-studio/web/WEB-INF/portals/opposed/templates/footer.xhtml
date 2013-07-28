@@ -1,0 +1,23 @@
+<%
+	def datas = component.getData();
+	if(datas.size() > 0){
+		def data = datas.get(0);
+%>
+		<div>
+			<div id="footer">
+				${data.summary}
+			</div>
+		</div>
+<%
+		
+	}else{
+	
+%>
+		<div>
+			<div id="footer">
+				<p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.Powered by castafiore</p>
+			</div>
+		</div>
+<%
+	}
+%>

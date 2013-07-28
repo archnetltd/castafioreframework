@@ -1,0 +1,76 @@
+<div>
+	<script type="text/javascript">
+	
+	
+	
+	function slideSwitch() {
+	    var jQueryactive = jQuery('#slideshow IMG.active');
+	
+	    if ( jQueryactive.length == 0 ) jQueryactive = jQuery('#slideshow IMG:last');
+	    var jQuerynext =  jQueryactive.next().length ? jQueryactive.next()
+	        : jQuery('#slideshow IMG:first');
+	
+	    jQueryactive.addClass('last-active');
+	
+	    jQuerynext.css({opacity: 0.0})
+	        .addClass('active')
+	        .animate({opacity: 1.0}, 1000, function() {
+	            jQueryactive.removeClass('active last-active');
+	        });
+	}
+	
+	jQuery(function() {
+	    setInterval( "slideSwitch()", 5000 );
+	});
+	
+	</script>
+	
+	<style type="text/css">
+	#slideshow {
+	    position:relative;
+	    height:350px;
+	}
+	
+	#slideshow IMG {
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    z-index:8;
+	    opacity:0.0;
+	}
+	
+	#slideshow IMG.active {
+	    z-index:10;
+	    opacity:1.0;
+	}
+	
+	#slideshow IMG.last-active {
+	    z-index:9;
+	}
+	
+	</style>
+	<div id="slideshow">
+	<%
+		import org.castafiore.utils.ResourceUtil;
+		def data = component.getData();
+		if(data.size() > 0){
+			for(bf in data){
+	%>
+				<img src="<%=ResourceUtil.getDownloadURL("ecm", bf.getAbsolutePath())%>" alt="Slideshow Image 2" />
+	<%
+			}
+		}else{
+	%>
+		
+		<img src="<%=ResourceUtil.getDownloadURL("ecm", "/root/demo/images/image1.jpg")%>" alt="Slideshow Image 1" class="active" />
+	    <img src="<%=ResourceUtil.getDownloadURL("ecm", "/root/demo/images/image2.jpg")%>" alt="Slideshow Image 1" class="active" />
+	    <img src="<%=ResourceUtil.getDownloadURL("ecm", "/root/demo/images/image3.jpg")%>" alt="Slideshow Image 1" class="active" />
+	    <img src="<%=ResourceUtil.getDownloadURL("ecm", "/root/demo/images/image4.jpg")%>" alt="Slideshow Image 1" class="active" />
+			
+	<%
+		}
+	%>
+	
+	    
+	</div>
+</div>

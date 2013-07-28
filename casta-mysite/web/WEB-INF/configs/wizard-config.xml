@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	<bean id="Web-Wizard" class="org.castafiore.webwizard.WebWizardApp" scope="session"></bean>
+	
+	<bean id="webos" class="org.castafiore.webos.WebOS" scope="session"></bean>
+
+<!-- 
+	<bean class="org.castafiore.wfs.types.config.DirectoryImporter">
+		<property name="startDir" value="${tomcat.home}/webapps/casta-ui/WEB-INF/portal-data"></property>
+		<property name="repositoryService" ref="repositoryService"></property>
+		<property name="dao" ref="dao"></property>
+	</bean>
+ -->
+	
+	<bean class="org.castafiore.webwizard.WebWizardServiceImpl">
+		<property name="repositoryService" ref="repositoryService"></property>
+		<property name="workflowDir" value="C:\castafioera\casta-google\casta-google\org\erevolution\workflow\tier1"></property>
+		<property name="templateUsername" value="elieandsons"></property>
+	</bean>
+	
+	<bean id="smsService" class="org.castafiore.sms.SMSServiceImpl"></bean>
+	
+	<bean class="org.castafiore.sms.SendSMSShedularImpl">
+		<property name="dao" ref="dao"></property>
+		<property name="securityService" ref="securityService"></property>
+		<property name="SMSService" ref="smsService"></property>
+		<property name="userProfileService" ref="userProfileService"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.UserCreator">
+		<property name="email" value="anonymous@castafiore.com"></property>
+		<property name="accountNonExpired" value="true"></property>
+		<property name="accountNonLocked" value="true"></property>
+		<property name="credentialsNonExpired" value="true"></property>
+		<property name="enabled"  value="true"></property>
+		<property name="firstName" value="anonymous"></property>
+		<property name="lastName" value="anonymous"></property>
+		<property name="password" value="anonymous"></property>
+		<property name="username" value="anonymous"></property>
+		<property name="permissions" value="member:users"></property>
+	</bean>
+	
+	<bean class="org.castafiore.persistence.AnnotatedClass">
+		<property name="annotatedClasses">
+			<util:list>
+				<value>org.castafiore.sms.SMSInstance</value>
+				<value>org.castafiore.sms.SMSRecipient</value>
+			</util:list>
+		</property>
+	</bean>
+	
+	
+	<bean id="confirmation" class="org.springframework.mail.SimpleMailMessage">
+	  <property name="from" value="kureem@gmail.com"/>
+	 
+	  <property name="subject" value="Your castafiore password"/>
+	</bean>
+	
+	
+</beans>

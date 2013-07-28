@@ -1,0 +1,10 @@
+.item {
+	padding: 5px;
+	background-color: #EEEEEE;
+	border: solid 0.5px #AAAAAA;
+	cursor: pointer;
+}
+
+.item:hover {
+	background-color: #AAAAAA;
+}

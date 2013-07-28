@@ -1,0 +1,39 @@
+<action>
+	<form title="Reason for conflicting">
+		<input name="reason" type="textarea"></input>
+		<btn name="save">
+			<action>
+				<status>17</status>
+				<display>
+					<![CDATA[
+						<p>
+						Correctly changed status to cancel.
+						</p>
+						]]>
+				</display>
+				<mails>
+					<mail>
+						<subject>New order has been canceled: No. ${input.code}</subject>
+						<to>sales@erevolution.com</to>
+						<from>${input.billingInformation.email}</from>
+						<content>
+							<![CDATA[
+								
+								Your order below has been canceled by ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br><br>
+								
+								The reason :<br>
+								${reason}
+								
+								${html}
+								<br>
+								Kind regards,<br>
+								Sales team<br>
+								eRevolution Group<br>
+							]]>
+						</content>
+					</mail>
+				</mails>
+			</action>
+		</btn>
+	</form>
+</action>

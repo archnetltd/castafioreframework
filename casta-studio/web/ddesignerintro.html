@@ -1,0 +1,20 @@
+<div>
+		<script type="text/javascript">
+		var width = (($(document).width() - 980)/2) + 'px';
+		//$(".designerIntro").parent().appendTo('body');
+		$(".designerIntro").parent().css('width', '980px').css('top', '20px').css('position', 'absolute').css('left', width).css('z-index', 99999999);
+		$("<div class='myHelpMask'></div>").css({'width': '100%' ,'height' : '100%', 'opacity' : 0.75, 'background-color' : '#000000', 'position' : 'fixed', 'top' : '0', 'left' : '0', 'z-index' : 99999998}).appendTo('body');
+		
+	</script>
+	<div class="designerIntro" style="width: 980px">
+		<div>
+			<object width="980" height="765"><param name="movie" value="http://www.youtube.com/v/e-GfPQ134I4&hl=en_US&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/e-GfPQ134I4&hl=en_US&fs=1&rel=0&color1=0x3a3a3a&color2=0x999999&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="980" height="765"></embed></object>
+		</div>
+		<div style="padding: 10px;">
+			<a name="skip" style="height: 12px; float: right;" class="ui-widget fg-button ui-corner-all ui-state-default" >
+				<div>Close Intro X</div>
+			</a>
+			<input type="checkbox" name="showAgain"><span style="color: white;font-weight: bold;">Don't show this again</span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,194 @@
+<categories>
+	<category name="Books">
+		<category name="Arts and Culture"></category>
+		<category name="Kitchen"></category>
+		<category name="Tourism"></category>
+		<category name="Sports and Leisure"></category>
+		<category name="Nature"></category>
+		<category name="Health"></category>
+		<category name="History, News and Politics"></category>
+		<category name="Literature"></category>
+		<category name="Languages"></category>
+		<category name="Scholar Books"></category>
+		<category name="Novels"></category>
+		<category name="Humour"></category>
+	</category>
+	
+	<category name="Antiques |apm| Collectibles">
+		<category name="Ship Models"></category>
+		<category name="Decorative Objects"></category>
+		<category name="Furniture"></category>
+		<category name="Paintings"></category>
+		<category name="Pottery"></category>
+		<category name="Ceramics"></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+	</category>
+
+	<category name="Autos |apm| Vehicles">
+		<category name="2-wheeled"></category>
+		<category name="5 seats"></category>
+		<category name="more than 5 seats"></category>
+		<category name="Vans"></category>
+		<category name="Buses"></category>
+		<category name="Spare Parts"></category>
+		<category name="Cleaning"></category>
+		<category name="Gadgets |apm| Accessories"></category>
+		<category name="Nautics"></category>
+		<category name="Lorries"></category>
+		<category name="Industrial plants |apm| Machinery"></category>
+		<category name="Tools |apm| Equipment"></category>
+	</category>
+
+	<category name="Beauty Products">
+		<category name="Soaps |apm| Shampoos"></category>
+		<category name="Make-up"></category>
+		<category name="Facial"></category>
+		<category name="Body Care"></category>
+		<category name="Spa Products"></category>
+		<category name="Purfumes"></category>
+		<category name="Hair-Care"></category>
+		<category name="Manicure"></category>
+		<category name="Pedicure"></category>
+		<category name="Magazines"></category>
+		<category name="Electrical Appliances"></category>
+		<category name=""></category>
+	</category>
+
+
+	<category name="Babies |apm| Children">
+		<category name="School items"></category>
+		<category name="Clothing"></category>
+		<category name="Food"></category>
+		<category name="Toys |apm| Games"></category>
+		<category name="Books"></category>
+		<category name="Baby Skin |apm| Body Care"></category>
+		<category name="Furniture"></category>
+		<category name="Accessories"></category>
+		<category name="Toilet |apm| Nappies"></category>
+		<category name="Security"></category>
+		<category name="Medicines"></category>
+		<category name="Bags"></category>
+	</category>
+
+
+	<category name="Clothing |apm| Accessories">
+		<category name="Fashionable"></category>
+		<category name="Casual"></category>
+		<category name="Smart"></category>
+		<category name="Beach Wear"></category>
+		<category name="Winter Clothing"></category>
+		<category name="Traditional"></category>
+		<category name="Wedding"></category>
+		<category name="Underwear |apm| Lingerie"></category>
+		<category name="Footwear"></category>
+		<category name="Jewellery |apm| Watches"></category>
+		<category name="Hair Accessories"></category>
+		<category name="Bags |apm| Purses"></category>
+	</category>
+
+
+	<category name="Consumer |apm| Electronics">
+		<category name="Kitchen Appliances"></category>
+		<category name="Televisions"></category>
+		<category name="Household"></category>
+		<category name="Phones"></category>
+		<category name="Cameras"></category>
+		<category name="Music"></category>
+		<category name="Games"></category>
+		<category name="Sound Systems and Acoustics"></category>
+		<category name="Air-Conditioning"></category>
+		<category name="Security Systems"></category>
+		<category name="Software"></category>
+		<category name="Games"></category>
+	</category>
+
+
+	<category name="Household">
+		<category name="Furniture"></category>
+		<category name="Kitchen items"></category>
+		<category name="Toilet |apm| Bathroom"></category>
+		<category name="Gardening"></category>
+		<category name="Cleaning |apm| Laundry"></category>
+		<category name="Decoration"></category>
+		<category name="Electrical Appliances"></category>
+		<category name="Openings"></category>
+		<category name="Lighting"></category>
+		<category name="Air-Conditioning"></category>
+		<category name="Plumbing Fixtures |apm| Tools"></category>
+		<category name="Bedroom"></category>
+	</category>
+
+
+	<category name="Gifts">
+		<category name="Cards"></category>
+		<category name="Souvenirs"></category>
+		<category name="For Children"></category>
+		<category name="For Wedding"></category>
+		<category name="Decorative Objects"></category>
+		<category name="Purfumes"></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+	</category>
+
+
+	<category name="Office Products">
+		<category name="Stationary"></category>
+		<category name="Furniture"></category>
+		<category name="Electrical Appliances"></category>
+		<category name="Phones |apm| Phone-Devices"></category>
+		<category name="Computers |apm| Accessories"></category>
+		<category name="Printers |apm| Photocopy machines"></category>
+		<category name="Decoration"></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+	</category>
+
+
+	<category name="Sports">
+		<category name="Equipment"></category>
+		<category name="Clothing"></category>
+		<category name="Accessories"></category>
+		<category name="Footwear"></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+		<category name=""></category>
+	</category>
+
+
+	<category name="Music |apm| Entertainment">
+		<category name="Video Games |apm| Consoles"></category>
+		<category name="Audio CD/DVDs"></category>
+		<category name="TVs"></category>
+		<category name="Home Theatres"></category>
+		<category name="Audio Sets"></category>
+		<category name="Games"></category>
+		<category name="Computers |apm| Accessories"></category>
+		<category name="Music Instruments"></category>
+		<category name="Phones |apm| Phone Devices"></category>
+		<category name="Films"></category>
+		<category name="DVD Players"></category>
+		<category name=""></category>
+	</category>
+
+
+
+	
+	
+</categories>

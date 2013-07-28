@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+
+<!-- creation users system and arkureem -->
+	<bean class="org.castafiore.security.configs.UserCreator" >
+		
+		<property name="username" value="system"></property>
+		<property name="password" value="admin"></property>
+		<property name="email" value="system@castafiore.org"></property>
+		<property name="firstName" value="system"></property>
+		<property name="lastName" value="admin"></property>
+		<property name="permissions" value="*"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.UserCreator">
+		<property name="username" value="arkureem"></property>
+		<property name="password" value="admin"></property>
+		<property name="email" value="arkureem@castafiore.org"></property>
+		<property name="firstName" value="Kureem"></property>
+		<property name="lastName" value="Rossaye"></property>
+		<property name="permissions" value="member:users"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.UserCreator">
+		<property name="username" value="john"></property>
+		<property name="password" value="demo"></property>
+		<property name="email" value="john@castafiore.org"></property>
+		<property name="firstName" value="Graham"></property>
+		<property name="lastName" value="John"></property>
+		<property name="permissions" value="member:users;member:administrators"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.UserCreator">
+		<property name="username" value="mary"></property>
+		<property name="password" value="demo"></property>
+		<property name="email" value="mary@castafiore.org"></property>
+		<property name="firstName" value="Milhouse"></property>
+		<property name="lastName" value="Mary"></property>
+		<property name="permissions" value="moderator:users;member:users;member:administrators"></property>
+	</bean>
+	
+</beans>

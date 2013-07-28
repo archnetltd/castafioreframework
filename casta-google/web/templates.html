@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   	<title>WebSplashy.com | Free HTML5 Web Sites at your finger tip</title>
+  	<meta charset="utf-8">
+    <meta name="description" content="Web splashy is a vital website which provides beautiful, professional websitge for free. Hosting is provided for free.">
+    <meta name="keywords" content="Free Website builder HTML5 CSS3 Document Management system Point of Sales Enterprise resource planning">
+    <meta name="author" content="ArchNet ltd">
+    <link rel="stylesheet" href="http://livedemo00.template-help.com/wt_40020/css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,300' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="http://livedemo00.template-help.com/wt_40020/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="http://livedemo00.template-help.com/wt_40020/js/script.js"></script>
+    <script type="text/javascript" src="ckeditor/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="js1/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="js1/jquery-ui-1.8.21.js"></script>
+		<script type="text/javascript" src="js1/jquery.plugin.js"></script>
+		<script type="text/javascript" src="js1/ext.js"></script>
+		<script type="text/javascript" src="js1/jquery.maskedinput-1.3.js"></script>
+		<script type="text/javascript" src="js1/jquery.rightClick.js"></script> 
+		<script type="text/javascript" src="js1/jquery.blockUI.js"></script>
+    <style type="text/css">
+    	header h1 a {background: url("img/logosplashy.png") no-repeat scroll left top transparent;color: #E3E3E3;display: inline-block; padding: 15px 0 40px 395px;}
+    	#pro_form1 input[type="password"] {background: none repeat scroll 0 0 #FFFFFF;border: 1px solid #DDDDDD;border-radius: 3px 3px 3px 3px;color: #000000;font-family: Arial,Helvetica,sans-serif;font-size: 13px;font-weight: normal;margin: 0;outline: medium none;overflow: hidden;padding: 7px;vertical-align: middle;width: 180px;}
+    	.EXGrid {
+    border: 1px solid #B7B7B7;
+    border-collapse: collapse;
+    padding-left: 1px;
+}
+.EXGrid thead {
+    border: 1px solid #B7B7B7;
+}
+.EXGrid th {
+    background: url("castafiore/resource?spec=classpath:org/castafiore/resource/table/ThGridRepeatBg1x19.jpg") repeat-x scroll 0 center #D2DDF1;
+    border: 1px solid #B7B7B7;
+    font-weight: normal;
+    line-height: 17px;
+    padding: 4px 0 0 7px;
+}
+.EXGrid tbody {
+    padding-bottom: 1px;
+}
+.EXGrid td {
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid white;
+    height: 24px;
+    padding: 6px 0 0 10px;
+}
+.EXGrid .ViewIcon {
+    background: url("../icons/LightBulbOn.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+.EXGrid .DeleteIcon {
+    background: url("../icons/DustBin.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+.EXGrid .EditInfoIcon {
+    background: url("../icons/EditIcon.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+.EXGrid .OddRow {
+    background: none repeat scroll 0 center #F0F0F0;
+}
+.EXGrid .EvenRow {
+    background: none repeat scroll 0 center #F5F5F5;
+}
+.EXPageIterator {
+    margin: 3px auto 0;
+    width: 99%;
+    float: left;
+}
+.EXPageIterator .PageIteratorContainer {
+    line-height: 22px;
+    overflow: hidden;
+    float: left;
+}
+.EXPageIterator .PageIteratorContainer .LeftPageIteratorBlock {
+    float: right;
+    margin-right: 15px;
+}
+.EXPageIterator .PageIteratorContainer .RightPageIteratorBlock {
+    float: right;
+}
+.EXPageIterator .Icon {
+    float: left;
+    height: 17px;
+    margin: 3px 3px 0 0;
+    width: 18px;
+}
+.EXPageIterator .TotalPages {
+    float: left;
+    line-height: 19px;
+    vertical-align: middle;
+}
+.EXPageIterator .PagesTotalNumber {
+    color: #0183F1;
+    float: left;
+    line-height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.EXPageIterator .LastTopPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -17px transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.EXPageIterator .NextTopPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -51px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .LastPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -119px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .NextPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -85px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .DisableLastTopPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left top transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.EXPageIterator .DisableNextTopPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -34px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .DisableLastPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -102px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .DisableNextPageIcon {
+    background: url("../castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif") no-repeat scroll left -68px transparent;
+    cursor: pointer;
+}
+.EXPageIterator .Number {
+    float: left;
+    margin: 0 6px 0 3px;
+    padding: 0 4px;
+}
+.EXPageIterator .Number a.PageSelected {
+    border: 1px solid #DFDFDF;
+    color: #F16701;
+    font-weight: bold;
+    padding: 0 5px 1px;
+}
+.EXPageIterator .paginator_p {
+    background: none repeat scroll 0 center white;
+    border: 1px solid #DFDFDF;
+    color: #333333;
+    padding: 0 5px 1px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.EXPageIterator .paginator_p.selected {
+    background: gray;
+        color: white;
+
+}
+.EXPageIterator .Number a:hover {
+    border: 1px solid #B6B6B6;
+    color: #058EE6;
+}
+    </style>
+<!--[if lt IE 8]>
+   <div style=' clear: both; text-align:center; position: relative;'>
+     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+       <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+    </a>
+  </div>
+<![endif]-->
+<!--[if lt IE 9]>
+	<script src="http://livedemo00.template-help.com/wt_40020/js/html5.js"></script>
+	<link rel="stylesheet" href="http://livedemo00.template-help.com/wt_40020/css/ie.css"> 
+<![endif]-->
+</head>
+<body>
+
+	<div class="loader" style="background-image: url(img/loading.gif);width: 64px;height: 64px;position: absolute;z-index: 3000"></div>
+<!-- Header -->
+<header>
+	<div class="main2 margin-bot">
+        <div class="">
+            <h1><a href="home.html">&nbsp;</a></h1>
+            <ul class="list-1">
+            	<li><a href="templates.html?fromLogin=true"><img src="http://livedemo00.template-help.com/wt_40020/images/icon1.png" alt="">User Login</a></li>
+            	<li><a href="contact.html"><img src="http://livedemo00.template-help.com/wt_40020/images/icon2.png" alt="">24/7 Support</a></li>
+            	<li><a href="#"><img src="http://livedemo00.template-help.com/wt_40020/images/icon3.png" alt="">Register</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="main">
+        <nav>
+            <ul class="menu">
+                <li><a href="home.html">Web Hosting</a></li>				
+                <li><a href="products.html">Features</a>
+                	<ul>
+                		<li><a href="products.html#ws">Web Sites</a></li>
+                		<li><a href="products.html#wse">Web Site Editor</a></li>
+                		<li><a href="products.html#dm">Document Management</a></li>
+                        <li><a href="products.html#cc">Catalog Creator</a></li>
+                        <li><a href="products.html#sc">Shopping Cart</a></li>
+                        <li><a href="products.html#cos">Check Out System</a></li>
+                        <li><a href="products.html#cr">Customer Relationship</a></li>
+                        <li><a href="products.html#n">Newsletters</a></li>
+                        <li><a href="products.html#st">Sales Tracking</a></li>
+                        <li><a href="products.html#om">Organization Management</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="how.html">How it works </a></li>
+                <li><a href="#" class="active">Free Templates</a></li>
+                <li class="active"><a href="contact.html">Contacts</a></li>
+                <li><a href="faq.html">F.A.Q</a></li>
+            </ul>			
+        </nav>
+        <div class="clear"></div>
+    </div>
+</header>
+<!-- Content -->
+<section id="content">
+		<div id="splashytemplates"></div>
+		<script>
+			$(document).ready(function(){
+				$('#splashytemplates').castafiore('splashytemplates');
+			});
+		</script>
+</section>
+<!-- Aside -->
+<aside>
+	<div class="container_12">
+    	<div class="">
+       	  <article class="grid_3">
+            	<h6>WEB SITE</h6>
+                <ul class="list-4 margin-bot1">
+                    <li><span><a href="products.html#ws">Web Hosting</a></span></li>
+                    <li><span><a href="products.html#wse">Web site Editor</a></span></li>
+                    <li><span><a href="products.html#dm">Document Management System</a></span></li>
+                    <li><span><a href="company.html#press">Press releases</a></span></li>
+                    
+                </ul>
+            </article>
+            
+            <article class="grid_3">
+                <h6>ECOMMERCE</h6>
+                <ul class="list-4 margin-bot1">
+                    <li><span><a href="products.html#cc">Product Catalogue</a></span></li>
+                    <li><span><a href="products.html#sc">Shopping Cart</a></span></li>
+                    <li><span><a href="products.html#cos">Check Out System</a></span></li>
+                    <li><span><a href="products.html#cr">Customer Relationship</a></span></li>
+                   
+                    
+                </ul>
+            </article>
+            <article class="grid_3">
+            	
+            	<h6>ENTERPRISE</h6>
+                <ul class="list-4">
+ 					<li><span><a href="products.html#cr">CRM</a></span></li>
+                    <li><span><a href="products.html#cr">Accounting Tool</a></span></li>
+                    <li><span><a href="products.html#cr">Workflow Management</a></span></li>
+                   	<li><span><a href="products.html#st">Sales Tracking</a></span></li>
+                </ul>
+            </article>
+            <article class="grid_3">
+            	<h6>SUPPORT</h6>
+                <ul class="list-4">
+                    <li><span><a href="knowledge.html">Knowledgebase</a></span></li>
+                    <li><span><a href="http://www.youtube.com/user/archnetltd">Video Tutorials</a></span></li>
+                    <li><span><a href="contact.html">Contacts</a></span></li>
+                    <li><span><a href="company.html#team">Team Leaders</a></span></li>
+                    
+                </ul>
+            </article>
+            
+        	<div class="clear"></div>
+        </div>
+    </div>
+</aside>
+<!-- Footer -->
+<footer>
+	<div class="main">
+    	<div class="">
+        	<div class="fleft">
+            	cloudhosting &copy; 2012 | &nbsp;<a href="index-6.html">Privacy Policy</a>
+                <div><!--{%FOOTER_LINK} --></div>
+            </div>
+            <ul class="soc_list">
+            	<li><a href="more.html"><img src="http://livedemo00.template-help.com/wt_40020/images/soc_1.png" alt=""></a></li>
+            	<li><a href="more.html"><img src="http://livedemo00.template-help.com/wt_40020/images/soc_2.png" alt=""></a></li>
+            	<li><a href="more.html"><img src="http://livedemo00.template-help.com/wt_40020/images/soc_3.png" alt=""></a></li>
+            	<li><a href="more.html"><img src="http://livedemo00.template-help.com/wt_40020/images/soc_4.png" alt=""></a></li>
+            </ul>
+        	<div class="clear"></div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

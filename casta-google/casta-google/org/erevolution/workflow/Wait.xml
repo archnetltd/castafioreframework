@@ -1,0 +1,42 @@
+<action>
+	<form title="Enter waiting comment">
+		<input name="comments" type="textarea" label="Comments :"></input>
+		<btn name="save" label="Save">
+			<action>
+			
+				<mails>
+
+					<mail>
+						<subject>Approvisioning of order ${input.code} approved</subject>
+						<from>sales@erevolution.com</from>
+						<to>${input.billingInformation.email}</to>
+						<content>
+						<![CDATA[
+						Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+						
+						
+						<p>
+						Your order has been approved. However due to low stock level, we need to re-approvisionate from our supplier.<br>
+						You will be contacted as soon as the stock is available
+						
+						Please find below the order in question :<br>
+						
+						${html}
+						
+						<br>
+						
+						
+						Kind regards,<br>
+						Sales team<br>
+						eRevolution Group<br>
+						]]>
+						</content>
+					</mail>
+		
+		</mails>
+			
+				<status>13</status>
+			</action>
+		</btn>
+	</form>
+</action>

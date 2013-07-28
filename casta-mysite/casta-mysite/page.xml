@@ -1,0 +1,18 @@
+<casta:designable name="home" uniqueId="core:div" layoutData="">
+	<casta:attribute name="name"><![CDATA[home]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[ CASTA_PAGE]]></casta:attribute>
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${username}/ecommerce.ptl/pages/home]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="text" value="" />
+	<casta:style name="display" value="block"></casta:style>
+	<casta:designable name="myShop" uniqueId="ecommerce/shop" layoutData="myShop">
+		<casta:attribute name="name"><![CDATA[myShop]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[myShop]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="text" value="" />
+		<casta:style name="width" value="970px"></casta:style>
+		<casta:style name="margin" value="30px auto"></casta:style>
+		<casta:style name="margin-top" value="5px"></casta:style>
+	</casta:designable>
+</casta:designable>

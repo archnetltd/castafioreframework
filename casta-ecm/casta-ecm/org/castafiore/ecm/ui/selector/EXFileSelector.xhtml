@@ -1,0 +1,118 @@
+<div>
+	<style type="text/css">
+	.EXMiniFileExplorer {
+		width: 100%;
+		margin: auto;
+	}
+	
+	.EXMiniExplorerView {
+		width: 100%;
+		height: 300px;
+		margin: auto;
+		overflow: hidden;
+	}
+	
+	.EXMiniExplorerTree {
+		width: 180px;
+		height: 327px;
+		margin: auto;
+	}
+	
+	.EXMiniFileExplorerBar {
+		width: 97%;
+		height: 22px;
+		margin: 5px auto;
+	}
+	
+	.EXMinifFileExplorerTBarItem {
+		float: left;
+	}
+	
+	.EXMiniFileExplorerButton {
+		width: 16px;
+		height: 16px;
+		margin: 3px 3px;
+		cursor: pointer;
+	}
+	
+	.EXMiniExplorerFileList {
+		height: 260px;
+		width: 97%;
+		overflow: auto;
+		margin: 5px auto;
+	}
+	
+	.EXMiniExplorerFileListHeader {
+		font-size: 12px;
+		margin: 3px auto;
+		border-collapse: separate;
+		height: 20px;
+	}
+	
+	.YText {
+		padding-left: 2px;
+	}
+	
+	.YInput {
+		border: medium none;
+		font-size: 12px;
+		margin-top: 3px;
+	}
+	
+	.EXMiniExplorerFileListBody {
+		height: 206px;
+		width: 97%;
+		margin: auto;
+		overflow-y: scroll;
+	}
+	</style>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			$(".EXMiniExplorerTree").resizable( {
+				maxWidth : 350,
+				helper : 'ui-state-highlight',
+				maxHeight : 327,
+				minHeight : 327,
+				handles : 'e'
+			});
+
+			$(".EXMiniFileExplorerButton").live("mouseover",function(){
+					$(this).addClass("ui-state-hover");
+				}
+			);
+
+			$(".EXMiniFileExplorerButton").live("mouseout",function(){
+				$(this).removeClass("ui-state-hover");
+			}
+		);
+		});
+	</script>
+	<div class="EXMiniFileExplorer ui-corner-all">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+		
+			<tr>
+				<td style="padding-right: 3px" >
+					<div class="EXMiniExplorerTree ui-widget-content ui-corner-all">
+						<div name="tree"></div>
+					</div>
+				</td>
+				<td width="100%">
+					<div class="EXMiniExplorerView ui-widget-content ui-corner-all">
+						<div name="mainToolbar"></div>
+						<div name="EXFileSelectorSecondaryToolbar">	</div>
+						<div name="EXFileSelectorTable"></div>
+						
+					</div>
+					<div class="ui-widget-content ui-corner-all" style="margin:3px 0;padding: 3px 0;height: 19px;">
+						<button style="padding: 0px 0 1px 0; float: right; height: 19px; width: 60px;margin: 0 3px" class="ui-widget fg-button ui-corner-all ui-state-default" name="cancelButton">Cancel</button>
+						<button style="padding: 0px 0 1px 0; float: right; height: 19px; width: 60px;margin: 0 3px" class="ui-widget fg-button ui-corner-all ui-state-default" name="okButton">Ok</button>
+						<input  type="text" name="input" style="float: right;"/>
+						<div style="float: right;"><span name="inputLabel">Name :</span></div>
+					</div>
+				</td>
+			</tr>
+		
+		</table>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+
+<action>
+
+<status>11</status>
+
+<mails>
+
+<mail>
+	<subject>New invoice from emallofmauritius.com No. ${input.code}</subject>
+	<from>sales@emallofmauritius.com</from>
+	<to>${input.billingInformation.email}</to>
+	<content>
+<![CDATA[
+Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+Thank you for using emallofmauritius.com<br>
+
+<p>
+Your order as shown below has been registered. emallofmauritius.com will review the order and approve or reject it.<br><br>
+
+
+
+${html}
+
+<br>
+
+
+Kind regards,<br>
+Sales team<br>
+ArchNet ltd<br>
+]]>
+</content>
+</mail>
+
+
+<mail>
+	<subject>New invoice from emallofmauritius.com No. ${input.code}</subject>
+	<from>sales@emallofmauritius.com</from>
+	<to>kureem@gmail.com</to>
+	<content>
+<![CDATA[
+Dear ArchNet ltd.<br>
+click here to approve or reject the order<br>
+
+]]>
+</content>
+</mail>
+
+</mails>
+
+	<display>
+	<![CDATA[
+		<p>
+Your order as shown below has been saved into our system. emallofmauritius.com will review the order and approve or reject it.<br>
+
+${input.total} has been deducted from your account.
+</p>
+]]>
+	</display>
+</action>

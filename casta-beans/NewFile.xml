@@ -1,0 +1,178 @@
+<casta:designable name="body" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="class"><![CDATA[des body]]></casta:attribute>
+	<casta:designable name="wrapper" uniqueId="core:div" layoutData="">
+		<casta:attribute name="class"><![CDATA[des wrapper]]></casta:attribute>
+		<casta:designable name="header-wrapper" uniqueId="core:div" layoutData="">
+			<casta:attribute name="class"><![CDATA[des header-wrapper]]></casta:attribute>
+			<casta:designable name="header" uniqueId="core:div" layoutData="">
+				<casta:attribute name="class"><![CDATA[des header]]></casta:attribute>
+				<casta:designable name="logo" uniqueId="core:div" layoutData="">
+					<casta:attribute name="class"><![CDATA[des logo]]></casta:attribute>
+					<casta:designable name="h1" uniqueId="core:h1" layoutData="">
+						<casta:attribute name="class"><![CDATA[des h1]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[<a href="#">Temperate</a]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="p" uniqueId="core:p" layoutData="">
+						<casta:attribute name="class"><![CDATA[des p]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[Template Design by <a href="http://www.freecsstemplates.org">FCT</a]]></casta:attribute>
+					</casta:designable>
+				</casta:designable>
+				<casta:designable name="menu" uniqueId="core:div" layoutData="">
+					<casta:attribute name="class"><![CDATA[des menu]]></casta:attribute>
+					<casta:designable name="ul" uniqueId="core:ul" layoutData="">
+						<casta:attribute name="class"><![CDATA[des ul]]></casta:attribute>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="accesskey"><![CDATA[1]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Homepage]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="accesskey"><![CDATA[2]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Our Clients]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="accesskey"><![CDATA[3]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[About Us]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="accesskey"><![CDATA[4]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Careers]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="accesskey"><![CDATA[5]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Contact Us]]></casta:attribute>
+						</casta:designable>
+					</casta:designable>
+				</casta:designable>
+			</casta:designable>
+		</casta:designable>
+		<casta:designable name="banner" uniqueId="core:div" layoutData="">
+			<casta:attribute name="class"><![CDATA[des banner]]></casta:attribute>
+			<casta:designable name="img" uniqueId="core:image" layoutData="">
+				<casta:attribute name="src"><![CDATA[images/header-img.jpg]]></casta:attribute>
+				<casta:attribute name="class"><![CDATA[des img]]></casta:attribute>
+				<casta:attribute name="width"><![CDATA[1120]]></casta:attribute>
+				<casta:attribute name="height"><![CDATA[500]]></casta:attribute>
+			</casta:designable>
+		</casta:designable>
+		<casta:designable name="page-wrapper" uniqueId="core:div" layoutData="">
+			<casta:attribute name="class"><![CDATA[des page-wrapper]]></casta:attribute>
+			<casta:designable name="page" uniqueId="portal:pagecontainer" layoutData="">
+				<casta:attribute name="class"><![CDATA[des page]]></casta:attribute>
+			</casta:designable>
+		</casta:designable>
+		<casta:designable name="footer-wrapper" uniqueId="core:div" layoutData="">
+			<casta:attribute name="class"><![CDATA[des footer-wrapper]]></casta:attribute>
+			<casta:designable name="footer-content" uniqueId="core:div" layoutData="">
+				<casta:attribute name="class"><![CDATA[des footer-content]]></casta:attribute>
+				<casta:designable name="fbox1" uniqueId="core:div" layoutData="">
+					<casta:attribute name="class"><![CDATA[des fbox1]]></casta:attribute>
+					<casta:designable name="h2" uniqueId="core:h2" layoutData="">
+						<casta:attribute name="class"><![CDATA[des h2]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[Aenean facilisi]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="ul" uniqueId="core:ul" layoutData="">
+						<casta:attribute name="class"><![CDATA[des style2]]></casta:attribute>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Maecenas luctus lectus at sapien]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Donec dictum metus in sapien]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Integer gravida nibh quis urna]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Etiam posuere augue sit amet nisl]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Mauris vulputate dolor sit amet nibh]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="a" uniqueId="core:a" layoutData="">
+							<casta:attribute name="class"><![CDATA[des a]]></casta:attribute>
+							<casta:attribute name="href"><![CDATA[#]]></casta:attribute>
+							<casta:attribute name="text"><![CDATA[Praesent scelerisque scelerisque erat]]></casta:attribute>
+						</casta:designable>
+					</casta:designable>
+					<casta:designable name="p" uniqueId="core:p" layoutData="">
+						<casta:attribute name="class"><![CDATA[des button-style]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[<a href="#">More Details</a]]></casta:attribute>
+					</casta:designable>
+				</casta:designable>
+				<casta:designable name="fbox2" uniqueId="core:div" layoutData="">
+					<casta:attribute name="class"><![CDATA[des fbox2]]></casta:attribute>
+					<casta:designable name="h2" uniqueId="core:h2" layoutData="">
+						<casta:attribute name="class"><![CDATA[des h2]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[Fusce ultrices fringilla]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="p" uniqueId="core:p" layoutData="">
+						<casta:attribute name="class"><![CDATA[des p]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="p" uniqueId="core:p" layoutData="">
+						<casta:attribute name="class"><![CDATA[des p]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[<img src="images/img05.jpg" width="500" height="200" alt="" /]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="p" uniqueId="core:p" layoutData="">
+						<casta:attribute name="class"><![CDATA[des button-style]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[<a href="#">More Details</a]]></casta:attribute>
+					</casta:designable>
+				</casta:designable>
+				<casta:designable name="fbox3" uniqueId="core:div" layoutData="">
+					<casta:attribute name="class"><![CDATA[des fbox3]]></casta:attribute>
+					<casta:designable name="h2" uniqueId="core:h2" layoutData="">
+						<casta:attribute name="class"><![CDATA[des h2]]></casta:attribute>
+						<casta:attribute name="text"><![CDATA[Maecenas lectu]]></casta:attribute>
+					</casta:designable>
+					<casta:designable name="ul" uniqueId="core:ul" layoutData="">
+						<casta:attribute name="class"><![CDATA[des style3]]></casta:attribute>
+						<casta:designable name="img" uniqueId="core:image" layoutData="">
+							<casta:attribute name="src"><![CDATA[images/img02.jpg]]></casta:attribute>
+							<casta:attribute name="class"><![CDATA[des img]]></casta:attribute>
+							<casta:attribute name="width"><![CDATA[78]]></casta:attribute>
+							<casta:attribute name="height"><![CDATA[78]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="img" uniqueId="core:image" layoutData="">
+							<casta:attribute name="src"><![CDATA[images/img03.jpg]]></casta:attribute>
+							<casta:attribute name="class"><![CDATA[des img]]></casta:attribute>
+							<casta:attribute name="width"><![CDATA[78]]></casta:attribute>
+							<casta:attribute name="height"><![CDATA[78]]></casta:attribute>
+						</casta:designable>
+						<casta:designable name="img" uniqueId="core:image" layoutData="">
+							<casta:attribute name="src"><![CDATA[images/img04.jpg]]></casta:attribute>
+							<casta:attribute name="class"><![CDATA[des img]]></casta:attribute>
+							<casta:attribute name="width"><![CDATA[78]]></casta:attribute>
+							<casta:attribute name="height"><![CDATA[78]]></casta:attribute>
+						</casta:designable>
+					</casta:designable>
+				</casta:designable>
+			</casta:designable>
+		</casta:designable>
+	</casta:designable>
+	<casta:designable name="footer" uniqueId="core:div" layoutData="">
+		<casta:attribute name="class"><![CDATA[des footer]]></casta:attribute>
+		<casta:designable name="p" uniqueId="core:p" layoutData="">
+			<casta:attribute name="class"><![CDATA[des p]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[Copyright (c) 2012 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org">FCT</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>]]></casta:attribute>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<bean id="credential" class="org.castafiore.wfs.security.Credential" scope="session"></bean>
+
+	<!-- main security service -->
+    <bean id="securityService" class="org.castafiore.security.hibernate.SecurityServiceImpl" >
+    	<description>Default security service implementation</description>
+    	<property name="dao" ref="dao"></property>
+    	<property name="superUser" value="system"></property>
+    </bean>
+    <bean id="userProfileService" class="org.castafiore.security.hibernate.UserProfileServiceImpl">
+    	<description>Default user profile service</description>
+    	<property name="repositoryService" ref="repositoryService"></property>
+    </bean>
+    
+    <bean id="createUserDirectoriesInterceptor" class="org.castafiore.security.hibernate.CreateUserDirectoriesInterceptor">
+    	<property name="repositoryService" ref="repositoryService"></property>
+    </bean>
+   
+    <!-- main security manager service -->
+    <bean id="securityManager" class="org.castafiore.wfs.security.SecurityManagerImpl" >
+    	<description>Default security manager implementation</description>
+    	<property name="securityService"  ref="securityService"></property>
+    </bean>
+    
+    <bean id="relationshipManager" class="org.castafiore.security.hibernate.RelationshipManagerImpl">
+    	<description>Default relationship manager implementation</description>
+    	<property name="dao" ref="dao"></property>
+    </bean>
+    <bean id="org.castafiore.security.ui.SecurityAble" class="org.castafiore.security.ui.interceptor.SecurityInterceptor"></bean>
+    
+    <bean id="creatorHelper" class="org.castafiore.security.configs.CreatorHelper" init-method="init" lazy-init="true">
+    	<property name="dao" ref="dao"></property>
+    </bean>
+    
+    <bean class="org.castafiore.persistence.AnnotatedClass">
+		<property name="annotatedClasses">
+			<util:list>
+				<value>org.castafiore.security.User</value>
+				<value>org.castafiore.security.Role</value>
+				<value>org.castafiore.security.Group</value>
+				<value>org.castafiore.security.UserSecurity</value>
+				<value>org.castafiore.security.Address</value>
+				<value>org.castafiore.security.logs.Log</value>
+				<value>org.castafiore.community.ui.timetable.TimeTable</value>
+				<value>org.castafiore.security.Relationship</value>
+			</util:list>
+		</property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,23 @@
+<%
+def datas = component.getData();
+def data = null;
+if(datas.size() > 0){
+	data = datas.get(0);
+}
+
+if(data != null){
+%>
+<div>
+	<h2>${data.title}</h2>
+	${data.summary}
+</div>
+<%}else{%>
+
+<div>
+	<h2>Lorem ipsum dolore</h2>
+	<p>
+		Welcome to the castafiore platform.
+		A new generation platform created by Mauritians for mauritians.
+	</p>
+</div>
+<%}%>

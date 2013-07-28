@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang" xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<bean id="addressToolBarModel" class="org.castafiore.ecm.ui.fileexplorer.toolbar.AddressToolbarModel" scope="prototype"></bean>
+	
+	<bean id="addressToolBar" class="org.castafiore.ui.ex.toolbar.EXToolBar" scope="prototype">
+		<constructor-arg><value type="java.lang.String">addressToolBar</value></constructor-arg>
+		<constructor-arg><ref bean="addressToolBarModel"></ref></constructor-arg>
+	</bean>
+	
+	<bean id="fileExplorer" class="org.castafiore.ecm.ui.fileexplorer.EXFileExplorer" scope="prototype">
+		<constructor-arg><value type="java.lang.String">fileExplorer</value></constructor-arg>
+		<property name="addressToolBar"><ref bean="addressToolBar"/></property>
+		<property name="repositoryService" ref="repositoryService"></property>
+		<property name="pathViewConfig" ref="pathViewConfig"></property>
+		<property name="fileEditorFactory" ref="fileEditorFactory"></property>
+	</bean>
+	
+	<bean id="thumbnailview" class="org.castafiore.ecm.ui.fileexplorer.views.ThumbnailView" scope="prototype"></bean>
+	
+	<bean id="listview" class="org.castafiore.ecm.ui.fileexplorer.views.ListView" scope="prototype"></bean>
+	
+	<util:map id="pathViewConfigData">
+		<entry key="/root"> <ref bean="thumbnailview"/></entry>
+		<entry key="/root/users/oceancall"> <ref bean="thumbnailview"/></entry>
+	</util:map>
+	
+	<bean id="pathViewConfig" class="org.castafiore.ecm.ui.config.PathViewConfigImpl" init-method="init">
+		<property name="configs" ref="pathViewConfigData"></property>
+		<property name="pathMatcher"><bean class="org.castafiore.ecm.ui.config.SimplePathMatcher"></bean> </property>
+	</bean>
+	<!-- 
+	<bean id="fileExplorerApp" class="org.castafiore.ecm.FileExplorerApplication" scope="session" init-method="init"></bean>
+	-->
+	
+	
+	
+</beans>

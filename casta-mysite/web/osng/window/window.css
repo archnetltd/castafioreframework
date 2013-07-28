@@ -1,0 +1,192 @@
+.ui-os{
+	width: 1120px;
+	height: 870px;
+	background-color: #FFFFFF;
+	margin: auto;
+	padding: 15px 40px;
+}
+
+
+
+
+
+.ui-os .ui-os-wall{
+	width: 100%;
+	height: 460px;
+	background-color: #FFFFFF;
+}
+
+.ui-os .ui-os-table{
+	height: 440px;
+	width: 100%;
+	background-color: #F6F6F6
+}
+
+
+.ui-os .ui-os-wall .ui-os-manager{
+	width: 294px;
+	height: 103px;
+	background-color: #E3E3E3;
+	 -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+	 float: left; 
+}
+
+.ui-os .ui-os-wall .ui-os-manager .ui-display-image{
+	width: 83px;
+	height: 83px;
+	margin: 10px;
+	background-color: silver;
+	float: left;
+}
+
+.ui-os .ui-os-wall .ui-os-manager .ui-information-box{
+	float: left;
+	height: 83px;
+	margin:10px 10px 10px 3px
+}
+
+.ui-os .ui-os-wall .ui-os-manager .ui-information-box .ui-comp-info{
+	margin-left: 8px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#949393;
+}
+
+
+.ui-os .ui-os-wall .ui-os-manager .ui-information-box .app-title{
+	font-size: 18px;
+	font-weight:bold;
+	color:#C5815F;
+
+}
+
+
+
+.ui-os .ui-os-wall .ui-os-toolbar{
+	
+}
+
+.ui-os .ui-os-wall .ui-os-toolbar .tb1{
+	padding: 7px 0px 1px 0px;
+}
+.ui-os .ui-os-wall .ui-os-toolbar .tb2{
+	padding: 0
+}
+.ui-os .ui-os-wall .ui-os-toolbar .tb3{
+	padding:1px 0px 5px 0px;
+}
+.ui-os-wall-header, .ui-os-wall-header table, .ui-os-wall-header td, .ui-os-wall-header tr{
+	padding: 0; 
+	margin: 0;
+}
+.ui-os .ui-os-wall .ui-os-toolbar .ui-toolbar-items{
+	background-color: silver;
+	height: 25px;
+}
+
+
+.ui-os .ui-os-wall  .ui-os-toolbar .ui-toolbar-handle{
+	width: 23px;
+	height: 29px;
+	background-color: #6F6F6F;
+}
+
+.window h1 {
+	color: white;
+
+}
+
+.window h2 {
+
+	color: white;
+
+}
+
+.window h3 {
+
+	color: white;
+}
+.window h4{
+	color: white;
+}
+.window h5{
+	color: white;
+}
+.window h6{
+	color: white;
+}
+
+.window label{
+	color: white;
+}
+
+.window p{
+	color: white;
+}
+
+
+
+
+.window td,.window tr,.window div,.window table {
+	padding: 0;
+	margin: 0;
+}
+
+
+.window-small {
+	font-size: 8px;
+}
+.window-small {
+	width: 524px;
+	height: 265px;
+}
+
+.window-small .top {
+	width: 524px;
+	height: 27px;
+	background-image: url(images/window-top.png);
+	float: left;
+}
+
+.window-small .top .title{
+	padding-left: 25px;
+	float: left;
+	margin-top: 12px;
+}
+
+.window-small .top .ui-input{
+	float: left;
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 118px;
+	height: 15px;
+	background-color: #EAE9E9;
+	color: #9C9595;
+	margin-top: 12px;
+}
+.window-small .top .search{
+	margin-left: 31px;
+	
+}
+
+.window-small .left {
+	width: 123px;
+	height: 238px;
+	background-image: url(images/window-left.png);
+	float: left;
+}
+
+.window-small .right {
+	width: 401px;
+	height: 238px;
+	background-image: url(images/window-right.png);
+	float: left;
+}
+
+.window-small .right .workspace {
+	width: 390px;
+	height: 220px;
+	background-color: #CCCCCC;
+	margin-top:7px
+}

@@ -1,0 +1,9 @@
+<casta:designable name="${name}" uniqueId="core:div" layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[${portalPath}pages/home]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[${name}]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+	<casta:style name="width"><![CDATA[${x}]]></casta:style>
+	<casta:style name="height"><![CDATA[${y}]]></casta:style>
+</casta:designable>

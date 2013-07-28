@@ -1,0 +1,35 @@
+<casta:designable name="${name}" uniqueId="core:div" layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[${portalPath}pages/home]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[${name}]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+	<casta:style name="width"><![CDATA[${x}]]></casta:style>
+	<casta:style name="height"><![CDATA[${y}]]></casta:style>
+	
+	
+	
+	<casta:designable name="Col1" uniqueId="core:div" layoutData="">
+		<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[Col1]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:style name="width"><![CDATA[${x/2}]]></casta:style>
+		<casta:style name="height"><![CDATA[${y}]]></casta:style>
+		<casta:style name="float"><![CDATA[left]]></casta:style>
+		<casta:style name="border"><![CDATA[solid 1px black]]></casta:style>
+	</casta:designable>
+	
+	
+	<casta:designable name="Col2" uniqueId="core:div" layoutData="">
+		<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[Col2]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:style name="width"><![CDATA[${x/2}]]></casta:style>
+		<casta:style name="height"><![CDATA[${y}]]></casta:style>
+		<casta:style name="float"><![CDATA[left]]></casta:style>
+		<casta:style name="border"><![CDATA[solid 1px black]]></casta:style>
+	</casta:designable>
+	
+</casta:designable>

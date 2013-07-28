@@ -1,0 +1,62 @@
+<table style="display: table;">
+	<thead >
+		<tr>
+			<th  colspan="6">
+				<div>
+					<table style="font-size: 11px; margin: 0pt; padding: 20px;width: 100%">
+						<tbody>
+							
+							<tr>
+								<td colspan="2" style="font-weight: normal; text-align: right; border: 1px solid; padding: 13px;">
+									<b><u>Billing Address :</u></b><br></br>
+									$bfirstName<br></br>
+									$blastName<br></br>
+									$baddline1<br></br>
+									$baddline2<br></br>
+									$bphone/$bmobile<br></br>
+									$bemail<br></br>
+									
+									$bzipcode
+								</td>
+								
+							</tr>
+							
+							<tr>
+								<td style="font-weight: normal; text-align: left; border: 1px solid; padding: 10px; width: 50%;">
+									<b><u>Quotation No :</u></b><br></br>
+									$invoicenumber<br></br>
+								</td>
+								<td style="font-weight: normal; text-align: right; border: 1px solid; padding: 13px; width: 50%;">
+									<b><u>Date :</u></b><br></br>
+									$date<br></br>
+								</td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</th>
+		</tr>
+		<tr style="background: steelBlue">
+			<th style="width: 300px;text-align: left;">Title</th>
+		</tr>
+	</thead>
+	<tbody>
+		$orderlines
+	</tbody>
+	<tfoot>
+		<tr>
+			<td style="text-align: right;" colspan="4">Sub total :</td>
+			<td style="text-align: right;">$subtotal</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;" colspan="4">Tax :</td>
+			<td style="text-align: right;">$tax</td>
+		</tr>
+		<tr>
+			<td style="text-align: right;" colspan="4">Total :</td>
+			<td style="text-align: right;">$total</td>
+		</tr>
+	</tfoot>
+</table>

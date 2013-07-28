@@ -1,0 +1,48 @@
+<action>
+
+<status>12</status>
+<mails>
+
+<mail>
+	<subject>Your order No. ${input.code} confirmed for delivery</subject>
+	<from>sales@emallofmauritius.com</from>
+	<to>${input.billingInformation.email}</to>
+	<content>
+<![CDATA[
+Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+Thank you for visiting our website<br>
+
+<p>
+Your order is ready for delivery.<br>
+It will be shipped to you to the shipping address stated in the order as shown below.
+</p>
+
+
+${html}
+
+<br>
+
+
+Kind regards,<br>
+Sales team<br>
+]]>
+</content>
+</mail>
+
+
+
+</mails>
+
+	<display>
+	<![CDATA[
+		<p>
+The Customer ${input.billingInformation.firstName}  ${input.billingInformation.lastName} has been notified by mail<br>
+
+
+
+</p>
+]]>
+	</display>
+	
+	<method>org.castafiore.shoppingmall.orders.OrdersUtil.sendDelivery</method>
+</action>

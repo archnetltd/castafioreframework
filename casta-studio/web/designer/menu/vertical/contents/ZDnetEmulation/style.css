@@ -1,0 +1,77 @@
+.ZDnetEmulation .navcontainer{
+	background:rgb(51, 102, 153);
+	border-top:1px solid rgb(153, 204, 204);
+	font:normal normal 11px Verdana Geneva Arial Helvetica sans-serif;
+}
+.ZDnetEmulation .navlist{
+	list-style:none outside none;
+	margin:0;
+	padding:0;
+}
+.ZDnetEmulation .navlist li{
+	bottom:11px;
+	display:inline;
+	line-height:1.2em;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+.ZDnetEmulation > body .navlist li{
+	background:rgb(0, 0, 0);
+	margin:0 3px 0 0;
+	padding:4px 0px 4px 0;
+}
+.ZDnetEmulation .navlist a , .ZDnetEmulation .navlist a:link , .ZDnetEmulation .navlist a:visited{
+	background:rgb(153, 0, 0);
+	border:1px solid rgb(255, 255, 255);
+	bottom:2px;
+	color:rgb(255, 255, 255);
+	cursor:pointer;
+	display:inline;
+	height:1em;
+	margin:0;
+	padding:3px 5px 3px 5px;
+	position:relative;
+	right:2px;
+	text-decoration:none;
+}
+.ZDnetEmulation .navlist a:hover{
+	background:rgb(204, 0, 0);
+	bottom:1px;
+	color:rgb(255, 255, 255);
+	position:relative;
+	right:1px;
+}
+.ZDnetEmulation .navlist a:active{
+	background:rgb(153, 153, 153);
+	bottom:0px;
+	color:rgb(255, 255, 255);
+	position:relative;
+	right:0px;
+}
+.ZDnetEmulation .navlist li.active{
+	background:rgb(51, 102, 153);
+	bottom:13px;
+	display:inline;
+	margin:0 3px 0 0;
+	padding:0;
+	position:relative;
+}
+.ZDnetEmulation > body .navlist li.active{
+	background:rgb(0, 0, 0);
+	margin:0 4px 0 4px;
+}
+.ZDnetEmulation .navlist .active a , .ZDnetEmulation .navlist .active a:link , .ZDnetEmulation .navlist .active a:visited , .ZDnetEmulation .navlist .active a:hover{
+	background:rgb(51, 102, 153);
+	border-bottom:none;
+	border-left:1px solid rgb(153, 204, 204);
+	border-right:1px solid rgb(153, 204, 204);
+	border-top:1px solid rgb(153, 204, 204);
+	bottom:0;
+	color:rgb(255, 255, 255);
+	cursor:text;
+	margin:0;
+	padding:2px 5px 0 5px;
+	position:relative;
+	right:0;
+}

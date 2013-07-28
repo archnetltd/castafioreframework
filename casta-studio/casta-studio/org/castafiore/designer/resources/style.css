@@ -1,0 +1,131 @@
+.item{
+	line-height: 240%;
+}
+
+.item li {
+	border: 1px solid black;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+	text-align: center;
+	background-color: beige;
+	position: relative;
+	list-style-image: none;
+	list-style: none;
+}
+
+.item li:hover {
+	border: 1px solid black;
+	margin: 10px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+	text-align: center;
+	background-color: silver;
+	position: relative;
+	list-style-image: none;
+	list-style: none;
+}
+
+.evt-textarea {
+	width: 433px;
+	height: 200px;
+	border: none;
+}
+
+.evt-combo {
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 433px;
+	height: 15px;
+}
+
+.evt {
+	width: 435px;
+	border: solid 1px silver;
+}
+
+.evt-alternate {
+	width: 435px;
+	border: solid 1px silver;
+	border-top: none;
+}
+
+.label {
+	width: 100px;
+	float: left;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	border-left: 1px silver solid;
+	border-top: 1px silver solid;
+	border-bottom: 1px silver solid;
+	padding-right: 2px;
+	background-color: #deecfd;
+	text-align: right;
+	margin: 0px;
+	height: 13px;
+}
+
+select.input {
+	width: 204px !important;
+	height: 15px !important;
+}
+
+input.input,select.input {
+	float: left;
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 200px;
+	height: 13px;
+}
+
+.unit-combo{
+	float: left;
+	border: 1px silver solid;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-left: 2px;
+	width: 50px;
+	height: 15px;
+}
+
+.menuBar {
+	background-color: beige;
+	width: 100px;
+	font: bold 11px tahoma, arial, helvetica, sans-serif;
+	text-align: center;
+	padding: 3px;
+	border: solid 1px silver;
+	margin: auto;
+	color: steelBlue;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.menuBar:hover {
+	background-color: maroon;
+	width: 100px;
+	font: bold 11px tahoma, arial, helvetica, sans-serif;
+	text-align: center;
+	padding: 3px;
+	border: solid 1px silver;
+	margin: auto;
+	color: white;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.menu-x {
+	background-color:#7EADD9;
+	left:17px;
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:74px;
+	width:125px;
+}

@@ -1,0 +1,22 @@
+<ehcache>
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache 
+    	maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="120"
+        memoryStoreEvictionPolicy="LRU"
+     />
+        
+    <cache name="org.castafiore.wfs.types.FileImpl"
+        maxElementsInMemory="10000"
+        eternal="false"
+    overflowToDisk="true"
+        />
+
+</ehcache>

@@ -1,0 +1,315 @@
+
+<div>
+	<script type="text/javascript">
+		$(".helpPortlet").parent().appendTo('body');
+		$(".helpPortlet").parent().css('width', '960px').css('top', '20px').css('left', '0px').css('z-index', 99999999).draggable({'handle':'#helpHandle', 'containment': 'body'});
+		$("<div class='myHelpMask'></div>").css({'width': '100%' ,'height' : '100%', 'opacity' : 0.75, 'background-color' : '#000000', 'position' : 'fixed', 'top' : '0', 'left' : '0', 'z-index' : 99999998}).appendTo('body');
+		
+	</script>
+
+	<style type="text/css">
+		.casta-doc{
+			padding:10px;
+			border-bottom: solid 1px;
+		}
+	
+		.casta-doc label{
+			font-weight:bold;
+			font-size:12px;
+		}
+	
+		.casta-doc .description{
+			
+		}
+	
+		.casta-doc .example{
+			
+		}
+		.casta-doc p{
+			padding :5px;
+		}
+		
+		.helpPortlet{
+			
+			border: solid 1px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 98%;
+			height: 500px;
+			
+			
+			
+		}
+		
+		.helpCloseButton{
+			float: right;
+			cursor: pointer;
+			
+			
+		}
+		
+		.helpHandle{
+			height: 18px;
+			cursor: move;
+			padding: 3px;
+		}
+		
+		.helpContent{
+			height: 500px;
+			overflow: auto;
+		}
+		.helpToc{
+			line-height: 15px;
+			
+		}
+		
+		.help{
+			border-top:0px !important;
+			border-right: 0px !important; 
+			border-left: 0px !important; 
+		}
+		.help p{
+			padding-left: 20px;
+		}
+		
+		.help h4{
+			padding-left: 10px;
+		}
+		
+		.help i{
+			padding-left: 20px;
+		}
+		
+		.cloeButton{
+			background-position: -80px -128px !important; 
+			display: block;
+		}
+	</style>
+
+
+
+	<div class="helpPortlet ui-widget ui-corner-all ui-state-active">
+		<div id="helpHandle" class="helpHandle ui-widget-header ui-corner-top">
+			<div class="helpCloseButton ui-state-default ui-corner-all">
+				<span name="closeButton" class="ui-icon closeButton"></span>
+			</div>
+			<span style="float: left;padding-left:10px;padding-top:1px">Help</span>
+		</div>
+		<div class="helpContent">
+			<div style="float:left;width:20%">
+				<h3 style="padding-left: 10px;">Using the Designer studio</h3>
+				<ul class="helpToc">
+					<li><a href="#">Overview</a></li>
+					<li>
+						<a href="#startMenu">The Start menu</a>
+						<ul>
+							<li><a href="#startMenu">Save the portal</a></li>
+							<li><a href="#newpage">Create new page</a></li>
+							<li><a href="#savepage">Save a page</a></li>
+							<li><a href="#openpage">Open a page</a></li>
+							<li><a href="#execute">Execute your portal</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Component Toolbar</a></li>
+					<li><a href="#">Using components</a></li>
+					<li><a href="#">Using Layout</a></li>
+					<li><a href="#">Changing name and styles</a></li>
+					<li><a href="#">Add Script</a></li>
+					<li><a href="#scripting">Scripting reference</a></li>
+				</ul>
+			</div>
+			
+			
+			<div style="float:left;width:79%;height:474px;overflow: auto;border-left: solid 1px silver;">
+				<div class="help ui-widget-content" id="startMenu">
+					<h4>Save the portal</h4>
+					<p>
+						Select start -> save portal<br></br>
+						<i>Note: only the portal will be saved</i><br></br>
+						<i>Note: in the developer version, you will not be able to create new portals.</i><br></br>
+					</p>
+				</div>
+				
+				<div class="help ui-widget-content" id="newpage">
+					<h4>Create new page</h4>
+					<p>
+						<ol>
+							<li>Select start ->New Page</li>
+							<li>Enter the page name</li>
+							<li>The page will be opened automatically ready to add components and save</li>
+						</ol>
+						<i>
+							Note :Each page can be considered as an applications for developers. <br></br>For web master will be considered as normal web pages. But the concept is essentially the same.
+						</i>
+					</p>
+				</div>
+				
+				<div class="help ui-widget-content" id="savepage">
+					<h4>Save a page</h4>
+					<p>
+						<ol>
+							<li>To save a page select Start->save page</li>
+							<li>Enter the page name</li>
+							<li>The page will be opened automatically ready to add components and save</li>
+						</ol>
+						<i>
+							Note: Only the page will be saved not the whole portal
+						</i>
+					</p>
+				</div>
+				
+				<div class="help ui-widget-content" id="openpage">
+					<h4>Open a page</h4>
+					<p>
+						<ol>
+							<li>Select start -> open page</li>
+							<li>From the mini file selector, select the page you want to open</li>
+						</ol>
+					</p>
+				</div>
+				<div class="help ui-widget-content" id="execute">
+					<h4>Execute your portal</h4>
+					<p>
+						 Your portal will be accessible via<br> 
+						 http://kureem.s215.eatj.com/casta-ui/portal.jsp?username=<username>
+					</p>
+				</div>
+				
+				
+		<div class="casta-doc" id="scripting">
+			<label>Container getText()</label> 	
+			<p class="description">Sets the inner text of a component</p>
+			<label>Parameters:</label>
+			<label>Returns:</label>
+			<p class="returns">The text of the component</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">String text =component.getText();</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container setText(String text)</label> 	
+			<p class="description">Sets the inner text of a component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>text : The text to set into the component</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The current Component</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">component.setText("hello world")</p>
+		</div>
+		<div class="casta-doc">
+			<label>String getStyle(String styleName)</label> 	
+			<p class="description">Retrieves a style of a component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>styleName : The name of the style to get</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">Style of the components</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">String bgColor = component.getStyle("background-color");</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container setStyle(String styleName, String styleValue)</label> 	
+			<p class="description">apply a style on a component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>styleName : The name of the style to set</li>
+				<li>styleValue : The value of the style to set</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				component.setStyle("background-color", "red");<br>
+				component.setStyle("width", "300px");
+			</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container getAttribute(String attrName)</label> 	
+			<p class="description">Retrieves an attribute of a component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>attrName : The name of the attribute to get</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The value of the attribute</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				String id = component.getAttribute("id");
+			</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container setAttribute(String attrName, String attrValue)</label> 	
+			<p class="description">Change the value of an attribute of a component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>attrName : The name of the attribute to set</li>
+				<li>styleAttr : The value of the attribute to set</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				component.setAttribute("tabindex", "5");<br>
+			</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container addClass(String className)</label> 	
+			<p class="description">Adds a style class to the component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>className : The style class to add on the component</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				component.addClass("ui-state-error");<br>
+			</p>
+		</div>
+		<div class="casta-doc">
+			<label>Container removeClass(String className)</label> 	
+			<p class="description">Removes a style class to the component</p>
+			<label>Parameters:</label>
+			<ol>
+				<li>className : The style class to remove from the component</li>
+			</ol>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				component.removeClass("ui-state-error");<br>
+			</p>
+		</div>
+		
+		
+		<div class="casta-doc">
+			<label>Object getValue()</label> 	
+			<p class="description">Returns the value of a field component<br><br><i><b>This method applies only in field components</b></i></p>
+			<label>Parameters:</label>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				Object val = component.getValue();<br>
+			</p>
+		</div>
+		
+		<div class="casta-doc">
+			<label>Container setValue(Object value)</label> 	
+			<p class="description">Sets the value of a field component<br><br><i><b>This method applies only in field components</b></i></p>
+			<label>Parameters:</label>
+			<label>Returns:</label>
+			<p class="returns">The current container</p>
+			<label class="exampleLabel">example:</p>
+			<p class="example  ui-widget-content">
+				component.setValue(val);<br>
+			</p>
+		</div>
+			</div>
+		</div>
+	</div>
+</div>
+

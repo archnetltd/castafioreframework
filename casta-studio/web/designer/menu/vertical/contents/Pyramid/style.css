@@ -1,0 +1,31 @@
+.Pyramid .container{
+	width:500px;
+	padding:15px;
+	margin:3px 0 20px 0;
+	border:1px solid rgb(204, 204, 204);
+	background:rgb(255, 255, 255);
+}
+.Pyramid .navPyra{
+	margin:0;
+	padding:0 0 20px 10px;
+	border-bottom:1px solid rgb(159, 177, 188);
+}
+.Pyramid .navPyra li{
+	margin:0;
+	padding:0;
+	display:inline;
+	list-style-type:none;
+}
+.Pyramid .navPyra a:link , .Pyramid .navPyra a:visited{
+	float:left;
+	font-size:10px;
+	line-height:14px;
+	font-weight:bold;
+	padding:0 12px 6px 12px;
+	text-decoration:none;
+	color:rgb(112, 132, 145);
+}
+.Pyramid .navPyra a:link.active , .Pyramid .navPyra a:visited.active , .Pyramid .navPyra a:hover{
+	color:rgb(0, 0, 0);
+	background:url(Pyramid.gif) no-repeat bottom center;
+}

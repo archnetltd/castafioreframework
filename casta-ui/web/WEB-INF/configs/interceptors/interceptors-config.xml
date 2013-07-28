@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="org.castafiore.ui.Draggable" class="org.castafiore.ui.interceptors.DraggableInterceptor"></bean>
+	<bean id="org.castafiore.ui.Droppable" class="org.castafiore.ui.interceptors.DroppableInterceptor"></bean>
+	<bean id="org.castafiore.ui.ex.contextmenu.ContextMenuAble" class="org.castafiore.ui.ex.contextmenu.ContextMenuAbleInterceptor"></bean>
+	<bean id="org.castafiore.ui.ex.contextmenu.lazy.LazyContextMenuAble" class="org.castafiore.ui.ex.contextmenu.lazy.LazyContextMenuAbleInterceptor"></bean>
+	<bean id="org.castafiore.ui.RefreshSentive" class="org.castafiore.ui.interceptors.RefreshSensitiveInterceptor"></bean>
+	<bean id="org.castafiore.ui.ex.selectable.Selectable" class="org.castafiore.ui.interceptors.SelectableInterceptor"></bean>
+	<bean id="org.castafiore.ui.Asynchronous" class="org.castafiore.ui.interceptors.AsynchronousInterceptor"></bean>
+	<!-- 
+	<bean id="org.castafiore.ui.ex.panel.EXPanel" class="org.castafiore.ui.ex.panel.PanelMetamorphoser"></bean>
+	 -->
+	<bean id="org.castafiore.ui.Scrollable" class="org.castafiore.ui.interceptors.ScrollableInterceptor"></bean>
+	
+
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"> 
+	<servlet>
+		<servlet-name>castafiore</servlet-name>
+		<servlet-class>org.castafiore.web.servlet.CastafioreServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>resource</servlet-name>
+		<servlet-class>org.castafiore.web.servlet.CastafioreResourceServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>methods</servlet-name>
+		<servlet-class>org.castafiore.web.servlet.CastafioreMethodServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>castafiore</servlet-name>
+		<url-pattern>/castafiore/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>resource</servlet-name>
+		<url-pattern>/castafiore/resource/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>methods</servlet-name>
+		<url-pattern>/castafiore/methods/*</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+</web-app>

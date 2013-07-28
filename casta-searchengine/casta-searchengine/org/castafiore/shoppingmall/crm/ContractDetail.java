@@ -27,6 +27,8 @@ public class ContractDetail {
 	
 	private Date effectiveDate;
 	
+	private Date transactionDate;
+	
 	private String contactFirstName;
 	
 	private String contactLastName;
@@ -64,7 +66,6 @@ public class ContractDetail {
 	private String spouseNIC;
 	
 	
-	
 	private String bankName;
 	
 	private String accountNumber;
@@ -75,6 +76,14 @@ public class ContractDetail {
 
 	
 	
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
 	public String getFsCode() {
 		return fsCode;
 	}

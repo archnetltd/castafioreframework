@@ -1,0 +1,46 @@
+<action>
+	<form title="Enter payment detail">
+		<input name="transferCode" type="text" label="Enter transfer code :"></input>
+		
+		<input name="comments" type="textarea" label="Comments :"></input>
+		<btn name="save" label="Save">
+			<action>
+			
+				<mails>
+
+					<mail>
+						<subject>Payment of order ${input.code} confirmed</subject>
+						<from>sales@erevolution.com</from>
+						<to>${input.billingInformation.email}</to>
+						<content>
+						<![CDATA[
+						Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+						
+						
+						<p>
+						The payment for your order has been approved. Your order is under preparation<br><br>
+						We will contact you as soon as it is ready for delivery<br>
+						Please find below the order in question :<br>
+						
+						${html}
+						
+						<br>
+						
+						
+						Kind regards,<br>
+						Sales team<br>
+						eRevolution Group<br>
+						]]>
+						</content>
+					</mail>
+		
+				</mails>
+				<script>
+					
+					Studio.addCashBookEntry("SALES", "Sales to " + input.getBillingInformation().getFirstName() + " " + input.getBillingInformation().getLastName(),input.getTotal());
+				</script>
+				<status>11</status>
+			</action>
+		</btn>
+	</form>
+</action>

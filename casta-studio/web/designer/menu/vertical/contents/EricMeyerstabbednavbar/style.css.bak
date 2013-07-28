@@ -1,0 +1,34 @@
+.EricMeyerstabbednavbar .navlist{
+	padding:3px 0;
+	margin-left:0;
+	border-bottom:1px solid rgb(119, 119, 136);
+	font:bold 12px Verdana sans-serif;
+}
+.EricMeyerstabbednavbar .navlist li{
+	list-style:none;
+	margin:0;
+	display:inline;
+}
+.EricMeyerstabbednavbar .navlist li a{
+	padding:3px 0.5em;
+	margin-left:3px;
+	border:1px solid rgb(119, 119, 136);
+	border-bottom:none;
+	background:rgb(221, 221, 238);
+	text-decoration:none;
+}
+.EricMeyerstabbednavbar .navlist li a:link{
+	color:rgb(68, 68, 136);
+}
+.EricMeyerstabbednavbar .navlist li a:visited{
+	color:rgb(102, 102, 119);
+}
+.EricMeyerstabbednavbar .navlist li a:hover{
+	color:rgb(0, 0, 0);
+	background:rgb(170, 170, 238);
+	border-color:rgb(34, 34, 119);
+}
+.EricMeyerstabbednavbar .navlist li a.current{
+	background:white;
+	border-bottom:1px solid white;
+}

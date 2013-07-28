@@ -1,0 +1,101 @@
+<casta:designable name="My Portal" uniqueId="portal:portalcontainer"
+	layoutData="">
+	<casta:attribute name="Text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:attribute name="class"><![CDATA[ui-widget-content]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[/root/users/${username}/portal-data/portal-template.ptl]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:style name="position" value="relative"></casta:style>
+	<casta:style name="height" value=""></casta:style>
+	<casta:style name="width" value="960px"></casta:style>
+	<casta:designable name="Root Layout" uniqueId="layout:borderlayout"
+		layoutData="Border Layout">
+		<casta:attribute name="class"><![CDATA[]]>
+		</casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[Border Layout]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[Border Layout]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="width" value="960px"></casta:style>
+		<casta:designable name="header" uniqueId="core:div"
+			layoutData="0">
+			<casta:attribute name="class"><![CDATA[ui-widget-header ui-corner-all]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[div]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="margin-right" value="5px"></casta:style>
+			<casta:style name="height" value="50px"></casta:style>
+			<casta:style name="max-width" value=""></casta:style>
+			<casta:style name="width" value=""></casta:style>
+			<casta:style name="margin-left" value="5px"></casta:style>
+			<casta:style name="margin-bottom" value="5px"></casta:style>
+			<casta:style name="margin-top" value="5px"></casta:style>
+			<casta:designable name="h1" uniqueId="core:h1"
+				layoutData="h1">
+				<casta:attribute name="text"><![CDATA[Welcome to My Portal]]></casta:attribute>
+				<casta:attribute name="layoutdata"><![CDATA[h1]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[h1]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[Welcome to My Portal]]></casta:attribute>
+				<casta:style name="margin-left" value="30px"></casta:style>
+				<casta:style name="margin-bottom" value=""></casta:style>
+				<casta:style name="margin-right" value=""></casta:style>
+				<casta:style name="margin-top" value="5px"></casta:style>
+			</casta:designable>
+		</casta:designable>
+		<casta:designable name="switchboard" uniqueId="core:div"
+			layoutData="1">
+			<casta:attribute name="class"><![CDATA[ui-corner-all ui-state-default]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[1]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[div]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="margin-right" value="5px"></casta:style>
+			<casta:style name="height" value="800px"></casta:style>
+			<casta:style name="background-attachment" value="scroll"></casta:style>
+			<casta:style name="max-width" value=""></casta:style>
+			<casta:style name="width" value="160px"></casta:style>
+			<casta:style name="background-color" value="#D5E8FC"></casta:style>
+			<casta:style name="margin-left" value="8px"></casta:style>
+			<casta:style name="margin-bottom" value="5px"></casta:style>
+			<casta:style name="margin-top" value="5px"></casta:style>
+			<casta:style name="background-position" value=""></casta:style>
+			<casta:style name="background-repeat" value="repeat"></casta:style>
+		</casta:designable>
+		<casta:designable name="pageContainer" uniqueId="portal:pagecontainer"
+			layoutData="2">
+			<casta:attribute name="Text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="class"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[2]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="position" value="relative"></casta:style>
+			<casta:style name="margin-right" value=""></casta:style>
+			<casta:style name="height" value=""></casta:style>
+			<casta:style name="width" value="780px"></casta:style>
+			<casta:style name="margin-left" value=""></casta:style>
+			<casta:style name="margin-bottom" value=""></casta:style>
+			<casta:style name="margin-top" value=""></casta:style>
+		</casta:designable>
+		<casta:designable name="footer" uniqueId="core:div"
+			layoutData="4">
+			<casta:attribute name="class"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[4]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[div]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

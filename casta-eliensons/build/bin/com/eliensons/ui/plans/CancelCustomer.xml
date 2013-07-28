@@ -1,0 +1,11 @@
+<action>
+	<status>14</status>
+		<display>
+	<![CDATA[
+		<p>
+		Correctly changed status to canceled by customer.
+</p>
+]]>
+	</display>
+	<method>com.eliensons.reminders.ReminderUtil.cancel</method>
+</action>

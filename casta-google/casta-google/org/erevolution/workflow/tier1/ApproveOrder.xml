@@ -1,0 +1,42 @@
+<action>
+	<form title="Enter Complementary info">
+		<input name="comments" type="textarea" label="Comments :"></input>
+		<btn name="save" label="Save">
+			<action>
+			
+				<mails>
+
+					<mail>
+						<subject>Order ${input.code} confirmed</subject>
+						<from>sales@erevolution.com</from>
+						<to>${input.billingInformation.email}</to>
+						<content>
+						<![CDATA[
+						Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+						
+						
+						<p>
+						The order has been approved.<br><br>
+						You are requested to make the payment for the order.<br>
+						As soon as payment is made, we will start preparing the order for delivery<br>
+						We will contact you as soon as it is ready for delivery<br>
+						Please find below the details of your order :<br>
+						
+						${html}
+						
+						<br>
+						
+						
+						Kind regards,<br>
+						Sales team<br>
+						eRevolution Group<br>
+						]]>
+						</content>
+					</mail>
+		
+				</mails>
+				<status>10</status>
+			</action>
+		</btn>
+	</form>
+</action>

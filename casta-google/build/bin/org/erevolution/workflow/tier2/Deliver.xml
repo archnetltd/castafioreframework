@@ -1,0 +1,43 @@
+<action>
+	<form title="Enter delivery comment">
+		<input name="comments" type="textarea" label="Comments :"></input>
+		<btn name="save" label="Save">
+			<action>
+			
+				<mails>
+
+					<mail>
+						<subject>Delivery of order ${input.code} approved</subject>
+						<from>sales@erevolution.com</from>
+						<to>${input.billingInformation.email}</to>
+						<content>
+						<![CDATA[
+						Dear ${input.billingInformation.firstName}  ${input.billingInformation.lastName}<br>
+						
+						
+						<p>
+						Your order has been prepared and is ready for delivery.
+						<br><br>
+						We are expecting to make the delivery within 3 working days<br>
+						
+						Please find below the order in question :<br>
+						
+						${html}
+						
+						<br>
+						
+						
+						Kind regards,<br>
+						Sales team<br>
+						eRevolution Group<br>
+						]]>
+						</content>
+					</mail>
+		
+		</mails>
+			
+				<status>10</status>
+			</action>
+		</btn>
+	</form>
+</action>

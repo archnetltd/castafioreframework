@@ -1,0 +1,67 @@
+/* Author: TemplateWorld.com */
+
+/* Header Ad CSS */
+
+#headerBt {
+	cursor:pointer;
+	width:78px;
+}
+#headerContent {
+	background-color:#eeeeee;
+	background:#FDFDFD url(../plugin-images/page-bg.gif) repeat-x 0 100%;
+	left:0;
+	top:0px;
+	width:100%;
+	margin-left:0px;
+	margin-top:0px;
+	overflow:hidden;
+	padding-left:20px;
+	padding-top:0px;
+	position:fixed;
+	z-index:99;
+}
+#headerContent .mastHead {  margin:0 auto; padding:6px 20px 0 0; height:100%; overflow:hidden;  }
+#headerContent .mastHead img { margin:-4px 6px 0 0; float:left; }
+
+#headerContent  a {text-decoration:underline; color:#000; outline:none; }
+#headerContent  a:hover { text-decoration:none; }
+#headerContent div{font-family:"Trebuchet MS", Georgia, "times New Roman", arial; font-size:13px;}
+
+
+*html #headerContent {
+position:absolute;top:expression((-0 +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop))+'px');
+
+}
+
+
+
+/* Footer Ad CSS */
+#footerBt {
+	cursor:pointer;
+	width:78px;
+}
+#footerContent {
+	background:#FDFDFD url(../plugin-images/footer_bg.gif) repeat-x 0 100%;
+	left:0;
+	width:100%;
+	bottom:0;
+	margin-left:0px;
+	margin-bottom:0px;
+	overflow:hidden;
+	padding-left:20px;
+	padding-bottom:0px;
+	position:fixed;
+	z-index:99;
+}
+*html #footerContent {
+	position:absolute;top:expression((-0 - footerContent.offsetHeight+(document.documentElement.clientHeight ? document.documentElement.clientHeight:document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop))+'px');
+
+}
+
+#footerContent  a {font-family:"Trebuchet MS", Georgia, "times New Roman", arial; text-decoration:underline; color:#000; outline:none; }
+#footerContent  a:hover { text-decoration:none; }
+#footerContent div{font-family:"Trebuchet MS", Georgia, "times New Roman", arial; font-size:13px;}
+#footerContent .mastHead {  margin:0 auto; padding:6px 20px 0 0; height:100%; overflow:hidden;  }
+#footerContent .mastHead img { margin:-4px 6px 0 0; float:left; }
+
+

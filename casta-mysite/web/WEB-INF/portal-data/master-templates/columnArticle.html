@@ -1,0 +1,16 @@
+<div>
+	<%
+		def title = "Aliquam tempus";
+		def description = "Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.";
+		try{
+	 		def list = component.getData();
+			def theData = list.get(0);
+			title = theData.getTitle();
+			description = theData.getSummary();
+		}catch(Exception e){
+			
+		}
+	%>
+	<h2 name="title">${title}</h2>
+	<p name="summary">${description}</p>
+</div>

@@ -1,0 +1,104 @@
+.designer td, .designer th{
+	margin: 0;
+	padding: 0;
+	vertical-align: top !important;
+	
+}
+.designer .top .toolbar li span.ui-icon {
+	float: left;
+	margin: 0 2px;
+}
+
+#selector_close{
+	cursor:pointer;color:white;font-size:14px;top: 2px;right: 2px;position:absolute;
+	display: none;
+	
+}
+
+
+
+.designer .top .toolbar li {
+	cursor: pointer;
+	float: left;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	padding: 4px;
+	position: relative;
+	border-left: none;
+	border-right: none;
+}
+  
+
+
+
+
+.designer .right .toolbar li {
+	cursor: pointer;
+	
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	padding: 4px;
+	position: relative;
+	border-left: none;
+	border-right: none;
+}
+
+.designer .center .workspace {
+	width: 800px;
+	height: 600px;
+	overflow: auto;
+	border: solid 2px;
+	background-color: steelblue;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.designer .center .workspace .content-container {
+	
+}
+
+.slider-value {
+	border: 1px solid silver;
+	padding: 1px;
+	position: absolute;
+	background-color: white;
+	display: block;
+	top: 0px;
+	left: 0px;
+	z-index: 5000;
+}
+
+.colorpickerholder {
+	display: none;
+	position: absolute;
+	z-index: 5000;
+}
+
+.designer .left ul{
+	list-style: none;
+	padding-left: 10px;
+	
+}
+
+.designer .left ul li{
+	list-style: none;
+	padding:  7px 3px;
+	margin: 3px 0;
+}
+
+ .designer .left ul li h3{
+	background-image:url(../icons/picture_link.png);
+	background-repeat:no-repeat;
+	cursor:pointer;
+	font-weight:bold;
+	padding-bottom:4px;
+	padding-left:20px;
+	background-position: 2px 3px;
+	padding-top:4px;
+	margin-bottom: 0px;
+	font-size: 11px;
+}

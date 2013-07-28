@@ -1,0 +1,24 @@
+<casta:designable name="catalogue" uniqueId="core:xylayout"
+	layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${username}/portal-data/portal-template.ptl/pages/catalogue]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:attribute name="class"><![CDATA[ CASTA_PAGE]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[EXXYLayoutContainer]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:style name="display" value="block"></casta:style>
+	<casta:style name="margin" value="0"></casta:style>
+	<casta:style name="padding" value="0"></casta:style>
+	<casta:style name="min-height" value="500px"></casta:style>
+	<casta:style name="width" value="100%"></casta:style>
+	<casta:designable name="product container" uniqueId="ecm:productcontainer"
+		layoutData="product container">
+		<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:/root/users/${username}/portal-data/templates/product.html]]></casta:attribute>
+		<casta:attribute name="datasource"><![CDATA[{"value":"/root/users/${username}/demo/products","type":"Folders","entitytype":"org.castafiore.catalogue.Product"}]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[product container]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[product container]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+	</casta:designable>
+</casta:designable>

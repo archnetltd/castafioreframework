@@ -1,0 +1,94 @@
+<project name="casta-ui"   basedir=".">
+	
+	<property name="tomcat.home" value="c:/apache-tomcat-6.0.18"></property>
+	<property name="tomcat" value="${tomcat.home}/webapps/casta-ui/WEB-INF"></property>
+	<property name="module.name" value="ui"></property>
+	<property name="module.version" value="0.1"></property>
+	
+	<property name="webapp.dir" value="${tomcat.home}/webapps/casta-${module.name}"></property>
+	
+	<path id="dependencies">
+			<fileset dir="${basedir}/../casta-dependencies/lib">
+		    	<include name="*.jar"/>
+		   	</fileset>
+	</path>
+	
+	
+	<target name="clean">
+		<delete dir="${basedir}/build"></delete>
+		<delete dir="${basedir}/../casta-dependencies/dist/ui"></delete>
+		<delete dir="${basedir}/../casta-dependencies/dist/resources"></delete>
+	</target>
+	
+	
+	<target name="install">
+		
+		<mkdir dir="${basedir}/build"/>
+		<mkdir dir="${basedir}/build/bin"/>
+		<mkdir dir="${basedir}/build/bin/ui"/>
+		<mkdir dir="${basedir}/build/bin/resources"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist/ui"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist/resources"/>
+		
+		<javac fork="true"  destdir="${basedir}/build/bin/ui" debug="true" debuglevel="lines,vars,source" nowarn="true" target="1.5" >
+			<classpath><path refid="dependencies"/></classpath>
+			<src path="${basedir}/src"></src>
+		</javac>
+		
+		
+		<copydir src="${basedir}/src-resources" dest="${basedir}/build/bin/resources">
+			<exclude name="**/*.java"/>
+		</copydir>
+		
+		<copydir src="${basedir}/src" dest="${basedir}/build/bin/ui">
+			<exclude name="**/*.java"/>
+		</copydir>
+		
+		<jar destfile="${basedir}/../casta-dependencies/dist/ui/casta-ui-${module.version}.jar">
+			<zipfileset dir="${basedir}/build/bin/ui">
+	        	<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
+			</zipfileset>
+		</jar>
+		
+		<jar destfile="${basedir}/../casta-dependencies/dist/resources/casta-resources-${module.version}.jar">
+			<zipfileset dir="${basedir}/build/bin/resources">
+	        	<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
+			</zipfileset>
+		</jar>
+	</target>
+	
+	<target name="deploy.tomcat" depends="install">
+		<copy file="${basedir}/../casta-dependencies/dist/ui/casta-${module.name}-${module.version}.jar" todir="${tomcat}/lib"></copy>
+		<copy file="${basedir}/../casta-dependencies/dist/resources/casta-resources-${module.version}.jar" todir="${tomcat}/lib"></copy>
+		
+		<copydir src="${basedir}/../casta-dependencies/lib" dest="${tomcat}/lib">
+			<exclude name="*.java"/>
+			<exclude name="servlet-api.jar"/>
+			<exclude name="jsp-api.jar"/>
+		</copydir>
+		
+		<copydir src="${basedir}/web" dest="${tomcat}/../">
+			<exclude name="*.java"/>
+			<exclude name="**/classes/**"/>
+		</copydir>
+	</target>
+	<target name="del.work">
+		<delete dir="${tomcat.home}/work"></delete>
+	</target>
+	<target name="undeploy.war" depends="del.work">
+		<delete dir="${webapp.dir}"></delete>
+	</target>
+	
+	
+	<target name="war">
+		<war destfile="C:\apache-tomcat-6.0.18\upstage.war" >
+			<fileset dir="C:\apache-tomcat-6.0.18\webapps\casta-ui"></fileset>
+		</war>
+	</target>
+	
+	
+	    	
+</project>

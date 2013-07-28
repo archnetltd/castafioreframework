@@ -1,0 +1,220 @@
+
+#jac_container {
+    display:none;
+    position:absolute;
+    z-index:700;
+}
+
+.jac-skin-vistagadget,
+.jac-skin-vistagadget table,
+.jac-skin-vistagadget td {
+    border:0;
+    margin:0;
+    padding:0;
+    border-collapse:collapse;
+}
+
+.jac-skin-vistagadget {
+    width:137px;
+}
+
+.jac-skin-vistagadget .body {
+    width:126px;
+    height:138px;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/date-body.gif');
+    background-repeat:no-repeat;
+}
+
+.jac-skin-vistagadget .close,
+.jac-skin-vistagadget .overclose,
+.jac-skin-vistagadget .downclose {
+    position:absolute;
+    margin:0px 0px 0px 126px;
+    width:11px;
+    height:15px;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/close.gif');
+    background-repeat:no-repeat;
+    cursor:default;
+    display:none;
+}
+
+.jac-skin-vistagadget .overclose {
+    background-position:-11px 0px;
+}
+
+.jac-skin-vistagadget .downclose {
+    background-position:-22px 0px;
+}
+
+.jac-skin-vistagadget .title {
+    position:relative;
+    top:20px;
+    left:4px;
+    height:16px;
+}
+
+.jac-skin-vistagadget .left,
+.jac-skin-vistagadget .overleft,
+.jac-skin-vistagadget .downleft {
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/pointers.gif');
+    background-repeat:no-repeat;
+}
+
+.jac-skin-vistagadget .overleft {
+    background-position:0px -16px;
+}
+
+.jac-skin-vistagadget .downleft {
+    background-position:0px -32px;
+}
+
+.jac-skin-vistagadget .month {
+    text-align:center;
+    font-family:'Arial';
+    font-size:10px;
+    width:85px;
+    margin-top:-1px;
+}
+
+.jac-skin-vistagadget .right,
+.jac-skin-vistagadget .overright,
+.jac-skin-vistagadget .downright {
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/pointers.gif');
+    background-repeat:no-repeat;
+    background-position:-16px 0px;
+}
+
+.jac-skin-vistagadget .overright {
+    background-position:-16px -16px;
+}
+
+.jac-skin-vistagadget .downright {
+    background-position:-16px -32px;
+}
+
+.jac-skin-vistagadget .week {
+    position:relative;
+    top:22px;
+    left:2px;
+}
+
+.jac-skin-vistagadget .week td {
+    font-family:'Arial';
+    text-align:center;
+    font-weight:bold;
+    font-size:10px;
+    color:#888;
+    width:17px;
+}
+
+body:first-of-type .jac-skin-vistagadget .week td { /** for win.safari */ font-weight:normal; }
+
+.jac-skin-vistagadget td.selected-day {
+    color:rgb(255,100,0);
+}
+
+.jac-skin-vistagadget .days {
+    position:relative;
+    left:2px;
+    top:24px;
+    cursor:default;
+}
+
+.jac-skin-vistagadget .days td {
+    font-family:'Arial';
+    text-align:center;
+    font-size:10px;
+    width:17px;
+    line-height:12px;
+}
+
+.jac-skin-vistagadget .other-month {
+    color:#888;
+}
+
+.jac-skin-vistagadget .over-active {
+    color:rgb(255,100,0);
+}
+
+.jac-skin-vistagadget .selected {
+    background-color:rgb(255,100,0);
+    color:#fff;
+}
+
+.jac-skin-vistagadget .time {
+    position:relative;
+    top:2px;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/time-body.gif');
+    background-repeat:no-repeat;
+    height:125px;
+    height:55px;
+}
+
+.jac-skin-vistagadget .time table{
+    position:relative;
+    top:20px;
+    left:23px;
+}
+
+.jac-skin-vistagadget .time td {
+    font-family:'Arial';
+    text-align:center;
+    font-size:20px;
+    width:17px;
+}
+
+.jac-skin-vistagadget .delimiter {
+    position:relative;
+    top:-1px;
+}
+
+.jac-skin-vistagadget td.hours-up,
+.jac-skin-vistagadget td.minutes-up,
+.jac-skin-vistagadget td.hours-down,
+.jac-skin-vistagadget td.hours-up {
+    width:10px;
+}
+
+.jac-skin-vistagadget .hours-up div,
+.jac-skin-vistagadget .hours-down div,
+.jac-skin-vistagadget .minutes-up div,
+.jac-skin-vistagadget .minutes-down div {
+    position:absolute;
+    margin:6px 0px 0px 2px !important;
+    margin:0px 0px 0px -2px;
+    width:6px;
+    height:4px;
+    background-image:url('castafiore/resource?spec=classpath:/org/castafiore/resource/calendar/time-pointers.gif');
+    background-repeat:no-repeat;
+    overflow:hidden;
+}
+
+.jac-skin-vistagadget .hours-down,
+.jac-skin-vistagadget .minutes-down {
+    vertical-align:bottom;
+}
+
+.jac-skin-vistagadget .hours-down div,
+.jac-skin-vistagadget .minutes-down div {
+    margin:-8px 0px 0px 2px !important;
+    margin:-8px 0px 0px -2px;
+    background-position:0px -4px;
+}
+
+.jac-skin-vistagadget .minutes-down div {
+    margin-left:-6px;
+}
+
+.jac-skin-vistagadget div.u-mover {
+    background-position:-6px 0px;
+}
+
+.jac-skin-vistagadget div.d-mover {
+    background-position:-6px -4px;
+}

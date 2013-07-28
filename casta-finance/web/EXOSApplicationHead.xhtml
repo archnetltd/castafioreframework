@@ -1,0 +1,19 @@
+<div class="span-24 application-head push-1">
+
+
+<script>
+
+$(document).ready(function(){
+$('.worksheet .sp-row div').live('click',function(){
+		var me = $(this);
+		if(!me.hasClass('selected')){
+			$('.worksheet .sp-row div.selected').removeClass('selected');
+			me.addClass('selected');
+		}
+	});
+});
+</script>
+	<div class="span-5 left-col"><h1 style="color:#5F5E5E;padding: 12px 15px;font-family: fantasy;font-size: 25px;font-weight: bold">Files</h1></div>
+	<div class="span-14 center-col"></div>
+	<div class="span-5 right-col"><h1 style="color:#5F5E5E;padding: 12px 15px;font-family: fantasy;font-size: 25px;font-weight: bold;float:right">Filters</h1></div>
+</div>

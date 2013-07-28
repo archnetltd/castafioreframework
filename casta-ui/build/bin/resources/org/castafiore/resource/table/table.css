@@ -1,0 +1,176 @@
+.EXGrid {
+	border: 1px solid #B7B7B7;
+	border-collapse: collapse;
+	padding-left: 1px;
+}
+
+.EXGrid thead {
+
+}
+
+.EXGrid th {
+	line-height: 17px;
+	padding: 4px 0px 0px 7px;
+}
+
+.EXGrid tbody {
+	padding-bottom: 1px;
+}
+
+.EXGrid td {
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-top: 1px solid white;
+	height: 24px;
+	padding: 6px 0px 0px 10px;
+}
+
+.EXGrid .ViewIcon {
+  width: 16px ;  height: 16px ;
+  background: url('../icons/LightBulbOn.gif') no-repeat ;
+  margin:auto;
+}
+
+.EXGrid .DeleteIcon {
+  width: 16px ;  height: 16px ;
+  background: url('../icons/DustBin.gif') no-repeat ;
+  margin:auto;
+}
+
+.EXGrid .EditInfoIcon {
+  width: 16px ;  height: 16px ;
+  background: url('../icons/EditIcon.gif') no-repeat ;
+  margin:auto;
+}
+
+.EXGrid .OddRow {
+	background: #F0F0F0 none repeat scroll 0%;
+}
+
+.EXGrid .EvenRow {
+	background: #F5F5F5 none repeat scroll 0%;
+}
+
+.EXPageIterator {
+	margin: 3px auto 0px;
+	width: 99%;
+}
+
+.EXPageIterator .PageIteratorContainer {
+	
+	line-height: 22px;
+	overflow: hidden;
+}
+
+.EXPageIterator .PageIteratorContainer .LeftPageIteratorBlock {
+	float: right;
+	margin-right: 15px;
+}
+
+.EXPageIterator .PageIteratorContainer .RightPageIteratorBlock {
+	float: right;
+}
+
+.EXPageIterator .Icon {
+	float: left;
+	height: 17px;
+	margin: 3px 3px 0px 0px;
+	width: 18px;
+}
+
+.EXPageIterator .TotalPages {
+	float: left;
+	line-height: 19px;
+	vertical-align: middle;
+}
+
+.EXPageIterator .PagesTotalNumber {
+	color: #0183F1;
+	float: left;
+	line-height: 20px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+
+.EXPageIterator .LastTopPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -17px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.EXPageIterator .NextTopPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -51px;
+	cursor: pointer;
+}
+
+.EXPageIterator .LastPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -119px;
+	cursor: pointer;
+}
+
+.EXPageIterator .NextPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -85px;
+	cursor: pointer;
+}
+
+.EXPageIterator .DisableLastTopPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left top;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.EXPageIterator .DisableNextTopPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -34px;
+	cursor: pointer;
+}
+
+.EXPageIterator .DisableLastPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -102px;
+	cursor: pointer;
+}
+
+.EXPageIterator .DisableNextPageIcon {
+	background: transparent
+		url(castafiore/resource?spec=classpath:org/castafiore/resource/table/ArrowPageIterator.gif)
+		no-repeat scroll left -68px;
+	cursor: pointer;
+}
+
+.EXPageIterator .Number {
+	float: left;
+	margin: 0px 6px 0px 3px;
+	padding: 0px 4px;
+}
+
+.EXPageIterator .Number a.PageSelected {
+	border: 1px solid #DFDFDF;
+	color: #F16701;
+	font-weight: bold;
+	padding: 0px 5px 1px;
+}
+
+.EXPageIterator .Number a {
+	background: white none repeat scroll 0%;
+	border: 1px solid #DFDFDF;
+	color: #333333;
+	padding: 0px 5px 1px;
+}
+
+.EXPageIterator .Number a:hover {
+	border: 1px solid #B6B6B6;
+	color: #058EE6;
+}

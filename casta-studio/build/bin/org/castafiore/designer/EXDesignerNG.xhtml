@@ -1,0 +1,226 @@
+<div>
+<div id="myDesigner">
+	<link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="designer/designer.css" type="text/css" media="screen, projection">
+	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
+	<script type="text/javascript" src="designer/designer.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#myDesigner').designer();	
+	});
+	</script>
+	<div id="selector" style="position: absolute;background-color: #222222">
+		<div id="selector_close" style="">X</div>
+	</div>
+	<div class="slider-value" style="position: absolute;background-color: white;"></div>
+	<div id="slider-vertical" style="position: absolute;z-index:5000"></div>
+	<div class="colorpickerholder"></div>
+	<div name="popupContainer"></div>
+	
+	
+	<table width="100%" class="designer" cellpadding="0" cellspacing="0" >
+		<tr>
+			<td colspan="3">
+				<table width="100%" cellpadding="0" cellspacing="0">
+					<tr valign="top" style="height: 1px;">
+						<td name="EXBorderLayoutContainertop" valign="top"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="top" colspan="3" width="100%" >
+			
+				<ul class="ui-widget-header toolbar">
+					<li title="Create new portal"><span class="ui-icon" style="background-image: url('icons/world_add.png');"></span></li>
+					<li title="Open portal"><span class="ui-icon" style="background-image: url('icons/world_edit.png');"></span></li>
+					<li title="Run portal"><span class="ui-icon" style="background-image: url('icons/world_go.png');"></span></li>
+					<li title="Create new page"><span class="ui-icon" style="background-image: url('icons/page_add.png');"></span></li>
+					<li title="Open page"><span class="ui-icon" style="background-image: url('icons/page_edit.png');"></span></li>
+					<li title="Save portal"><span class="ui-icon" style="background-image: url('icons/disk.png');"></span></li>
+					<li title="Save page"><span class="ui-icon" style="background-image: url('icons/page_save.png');"></span></li>
+					<li title="Configure/edit groovy scripts"><span class="ui-icon" style="background-image: url('icons/script.png');"></span></li>
+					<li title="Configure/edit css"><span class="ui-icon" style="background-image: url('icons/css.png');"></span></li>
+					<li title="Configure navigation"><span class="ui-icon" style="background-image: url('icons/sitemap.png');"></span></li>
+					<li title="Show/hide grid"><span class="ui-icon tgl-grid" style="background-image: url('icons/map_go.png');"></span></li>
+				</ul>
+				<ul class="ui-widget-header toolbar">
+					<li title="Bold"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_bold.png');" stname="font-weight"  stvalue="bold" stoff="normal"></span></li>
+					<li title="Italic"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_italic.png');" stname="font-style"  stvalue="italic" stoff="normal"></span></li> 
+					<li title="Underline"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_underline.png');" stname="text-decoration" stvalue="underline" stoff="none"></span></li>
+					<li title="Strike through"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_strikethrough.png');" stname="text-decoration" stvalue="line-through" stoff="none"></span></li>
+					<li title="Text indent"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_indent.png');" stname="text-indent"  slider="true" stmax="200" stmin="0"></span></li>
+					<li title="Align left"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_align_left.png');" stname="text-align" stvalue="left"></span></li>
+					<li title="Align right"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_align_right.png');" stname="text-align" stvalue="right"></span></li>
+					<li title="Centered"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_align_center.png');" stname="text-align" stvalue="center"></span></li>
+					<li title="Justify"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_align_justify.png');" stname="text-align" stvalue="justify"></span></li>
+					<li title="All capitalize"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_allcaps.png'); " stname="text-transform" stvalue="uppercase" stoff="none"></span></li>
+					<li title="All small caps"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_smallcaps.png');" stname="text-transform" stvalue="lowercase" stoff="none"></span></li>
+					<li title="Letter spacing"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_letterspacing.png');" stname="letter-spacing" stvalue="10px" slider="true" stmax="100" stmin="0"></span></li>
+					<li title="Line height"><span class="ui-icon ui-text-style" style="background-image: url('icons/text_linespacing.png');li" stname="line-height" stvalue="10px" slider="true" stmax="100" stmin="0"></span></li>
+					<li title="Text color"><span class="ui-icon ui-text-style" style="background-image: url('http://www.york-professionals.co.uk/admin/images/icon_textcolor.gif');" stname="color"  colorpicker="true"></span></li>
+					<li title="Background color"><span class="ui-icon ui-text-style" style="background-image: url('http://plan-b-for-openoffice.org/ooo-help/r2.1/res/commandimagelist/sc_backcolor.png');" stname="background-color"  colorpicker="true"></span></li>
+					<li title="Font size"><span class="ui-icon ui-text-style" style="background-image: url('icons/font.png');" stname="font-size" slider="true" stmax="64" stmin="8"></span></li>
+					<li title="Width"><span class="ui-icon ui-text-style" style="background-image: url('http://www.formlogix.com/Images/Manager/ManagerImages/ToolBars/SameWidth.gif');" stname="width" slider="true" stmax="950" stmin="0" ></span></li>
+					<li title="Height"><span class="ui-icon ui-text-style" style="background-image: url('http://www.formlogix.com/Images/Manager/ManagerImages/ToolBars/SameHeight.gif');" stname="height" slider="true" stmax="950" stmin="0" ></span></li>			
+				</ul>
+				
+				<ul class="ui-widget-header toolbar">
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/text_padding_top.png');" stname="padding-top" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/text_padding_right.png');" stname="padding-right" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/text_padding_bottom.png');" stname="padding-bottom" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/text_padding_left.png');" stname="padding-left" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/text_padding_left.png');" stname="padding-left" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/arrow_up.png');" stname="margin-top" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/arrow_right.png');" stname="margin-right" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/arrow_down.png');" stname="margin-bottom" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+					<li><span class="ui-icon ui-text-style" style="background-image: url('icons/arrow_left.png');" stname="margin-left" stvalue="10px" slider="true" stmax="950" stmin="0"></span></li>
+				</ul>
+				<ul class="ui-widget-header toolbar">
+					<li><span class="ui-icon" style="background-image: url('icons/pilcrow.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_1.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_2.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_3.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_4.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_5.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_heading_6.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/link.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/picture.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/picture_link.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/shape_square.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/tab.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/application_form.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/textfield.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/password.gif');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/checkbox.gif');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/table.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/table_relationship.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_list_bullets.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/text_list_numbers.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/calendar.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/color_wheel.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/xhtml.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/script_code.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/page_white_flash.png');"></span></li>
+					<li><span class="ui-icon" style="background-image: url('icons/database_connect.png');"></span></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>	
+			<td class="left" width="300px" name="EXBorderLayoutContainerleft" valign="top">
+			
+				<div class="SiteStructure">
+					<ul style="padding: 0;margin: 0">
+						<li>
+							<h3 style="background-image: url(icons/xhtml.png);" >Root</h3>
+							<ul>
+								<li><h3 title="Layout 1" style="background-image: url(icons/xhtml.png);">Header</h3></li>
+								<li><h3 title="Layout 1" style="background-image: url(icons/xhtml.png);">Menu</h3></li>
+								<li><h3 title="Layout 1" style="background-image: url(icons/xhtml.png);">LeftBar</h3></li>
+								<li>
+									<h3 title="Layout 2" style="background-image: url(icons/xhtml.png);">PageContainer</h3>
+									
+									<ul>
+										<li>
+											<h3 title="Portal Layout container" style="background-image: url(icons/application_form.png);">Field set</h3>
+											<ul>
+												<li><h3 title="Layout 1" style="background-image: url(icons/textfield.png);">txt_username</h3></li>
+												<li><h3 title="Layout 2" style="background-image: url(http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/password.gif)">txt_password</h3></li>
+												<li><h3 title="Layout 3" style="background-image: url(icons/textfield.png);">txt_firstname</h3></li>
+												<li><h3 title="Layout 1" style="background-image: url(icons/textfield.png);">txt_lastname</h3></li>
+												<li><h3 title="Layout 1" style="background-image: url(http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/checkbox.gif);">chk_married</h3></li>
+												<li><h3 title="Layout 2" style="background-image: url(icons/tab.png);">btn_save</h3></li>
+												<li><h3 title="Layout 3" style="background-image: url(icons/tab.png);">btn_cancel</h3></li>
+											</ul>
+											
+										</li>
+										
+										<li>
+											<h3 title="Portal Layout container" style="background-image: url(icons/application_form.png);">Field set</h3>
+											<ul>
+												<li><h3 title="Layout 1" style="background-image: url(icons/textfield.png);">txt_username</h3></li>
+												<li><h3 title="Layout 2" style="background-image: url(http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/password.gif)">txt_password</h3></li>
+												<li><h3 title="Layout 3" style="background-image: url(icons/textfield.png);">txt_firstname</h3></li>
+												<li><h3 title="Layout 1" style="background-image: url(icons/textfield.png);">txt_lastname</h3></li>
+												<li><h3 title="Layout 1" style="background-image: url(http://co.strafford.nh.us/WorkArea/csslib/ContentDesigner/checkbox.gif);">chk_married</h3></li>
+												<li><h3 title="Layout 2" style="background-image: url(icons/tab.png);">btn_save</h3></li>
+												<li><h3 title="Layout 3" style="background-image: url(icons/tab.png);">btn_cancel</h3></li>
+											</ul>
+										</li>
+									</ul>
+									
+								</li>
+								<li><h3 title="Layout 3" style="background-image: url(icons/xhtml.png);">Layout3</h3></li>
+							</ul>
+							
+						</li>
+							
+					</ul>
+				</div>
+			</td>
+			<td class="center" valign="top">
+				<div class="designer-workspace showgrid">
+					<table cellpadding="0" cellspacing="0" width="100%" height="100%">
+						<tr>
+							<td name="EXBorderLayoutContainercenter" valign="top">
+								<div id="0"  class="des container">
+									<div id="1" class="des span-10 prepend-1 colborder box">
+										<h3 id="2" class="des">Lorem ipsum dolor amet</h3>
+										<p id="3" class="des">
+											<img id="4"  alt="" src="http://www.macresearch.org/files/anonymous.png" class="top pull-0 right des">
+											Lorem ipsum dolor amet Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor amet
+											Lorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor ametLorem ipsum dolor amet
+											Lorem ipsum dolor amet
+										</p>
+										<a id="5" href="#" class="right loud des">See more</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					
+				</div>
+			</td>
+			<td name="EXBorderLayoutContainerright" valign="top"></td>
+		</tr>
+		<tr>	
+			<td colspan="3">
+				<table width="100%" cellpadding="0" cellspacing="0">
+					<tr valign="top" style="height: 1px;">
+						<td name="EXBorderLayoutContainerbottom" valign="top"></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>	
+</div>
+</div>

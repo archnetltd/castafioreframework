@@ -1,0 +1,127 @@
+<casta:designable name="chefprojet" uniqueId="core:div"
+	layoutData="">
+	<casta:attribute name="name"><![CDATA[banquier]]></casta:attribute>
+	<casta:attribute name="__oid"><![CDATA[19424169]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[ CASTA_PAGE]]></casta:attribute>
+	<casta:attribute name="pagepath"><![CDATA[/root/users/upstage/ecommerce.ptl/pages/banquier]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]>
+	</casta:attribute>
+	<casta:style name="height" value=""></casta:style>
+	<casta:style name="width" value="573px"></casta:style>
+	<casta:style name="display" value="block"></casta:style>
+	<casta:style name="float" value="left"></casta:style>
+	<casta:style name="background-color" value="#d5d8d8"></casta:style>
+	<casta:designable name="EXImage" uniqueId="core:image"
+		layoutData="EXImage">
+		<casta:attribute name="name"><![CDATA[EXImage]]></casta:attribute>
+		<casta:attribute name="src"><![CDATA[castafiore/resource?spec=ecm:/root/users/upstage/ecommerce_files/employees/lrgbanquier.png]]></casta:attribute>
+		<casta:attribute name="width"><![CDATA[128px]]></casta:attribute>
+		<casta:attribute name="height"><![CDATA[128px]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[21582335]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[EXImage]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="width" value="535px"></casta:style>
+		<casta:style name="height" value="136px"></casta:style>
+		<casta:style name="margin-top" value="20px"></casta:style>
+		<casta:style name="margin-left" value="19px"></casta:style>
+		<casta:style name="margin-bottom" value="20px"></casta:style>
+		<casta:style name="float" value="left"></casta:style>
+	</casta:designable>
+	<casta:designable name="div" uniqueId="core:div"
+		layoutData="div">
+		<casta:attribute name="name"><![CDATA[div]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[13749233]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[div]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="width" value="263px"></casta:style>
+		<casta:style name="height" value="265px"></casta:style>
+		<casta:style name="float" value="left"></casta:style>
+		<casta:style name="margin-left" value="19px"></casta:style>
+		<casta:style name="margin-right" value="4px"></casta:style>
+		<casta:style name="background-color" value="#e1e3e5"></casta:style>
+		<casta:style name="margin-bottom" value="20px"></casta:style>
+		<casta:designable name="articlepascal" uniqueId="core:xhtml"
+			layoutData="XHTML fragment">
+			<casta:attribute name="name"><![CDATA[XHTML fragment]]></casta:attribute>
+			<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:/root/users/upstage/ecommerce_files/employees/articles/pascal.xhtml]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[467758]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[XHTML fragment]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="margin-left" value="12px"></casta:style>
+			<casta:style name="margin-right" value="12px"></casta:style>
+			<casta:style name="margin-top" value="12px"></casta:style>
+			<casta:style name="margin-bottom" value="12px"></casta:style>
+			<casta:style name="text-align" value="justify"></casta:style>
+			<casta:style name="height" value=""></casta:style>
+			<casta:style name="font-family" value="Arial"></casta:style>
+			<casta:style name="text-indent" value="24px"></casta:style>
+			<casta:style name="line-height" value="15px"></casta:style>
+		</casta:designable>
+	</casta:designable>
+	<casta:designable name="div" uniqueId="core:div"
+		layoutData="div">
+		<casta:attribute name="name"><![CDATA[div]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[5025481]]></casta:attribute>
+		<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[div]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]>
+		</casta:attribute>
+		<casta:style name="float" value="right"></casta:style>
+		<casta:style name="width" value="263px"></casta:style>
+		<casta:style name="height" value="265px"></casta:style>
+		<casta:style name="margin-right" value="19px"></casta:style>
+		<casta:style name="margin-left" value="4px"></casta:style>
+		<casta:style name="margin-bottom" value="20px"></casta:style>
+		<casta:style name="background-color" value="#e1e3e5"></casta:style>
+		<casta:designable name="p" uniqueId="core:p"
+			layoutData="p">
+			<casta:attribute name="name"><![CDATA[p]]></casta:attribute>
+			<casta:attribute name="datasource"><![CDATA[none]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[25198816]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[p]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[Pascal arrive vite la ou le bas blesse, Pascal vous aidera dans l'&eacute;laboration d'un plan financi&egrave;rement viable, et qui apportera des solutions tant imm&eacute;diates qu'a long terme. ]]></casta:attribute>
+			<casta:style name="margin-top" value="12px"></casta:style>
+			<casta:style name="margin-bottom" value="12px"></casta:style>
+			<casta:style name="margin-left" value="12px"></casta:style>
+			<casta:style name="margin-right" value="12px"></casta:style>
+			<casta:style name="text-align" value="justify"></casta:style>
+			<casta:style name="line-height" value="15px"></casta:style>
+			<casta:style name="float" value="left"></casta:style>
+		</casta:designable>
+		<casta:designable name="EXImage" uniqueId="core:image"
+			layoutData="EXImage">
+			<casta:attribute name="name"><![CDATA[EXImage]]></casta:attribute>
+			<casta:attribute name="src"><![CDATA[castafiore/resource?spec=ecm:/root/users/upstage/ecommerce_files/logo.gif]]></casta:attribute>
+			<casta:attribute name="width"><![CDATA[128px]]></casta:attribute>
+			<casta:attribute name="height"><![CDATA[128px]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[4583882]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[EXImage]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="width" value="102px"></casta:style>
+			<casta:style name="height" value="80px"></casta:style>
+			<casta:style name="margin-left" value="12px"></casta:style>
+			<casta:style name="float" value="left"></casta:style>
+			<casta:style name="margin-top" value="70px"></casta:style>
+		</casta:designable>
+		<casta:designable name="p" uniqueId="core:p"
+			layoutData="p">
+			<casta:attribute name="name"><![CDATA[p]]></casta:attribute>
+			<casta:attribute name="datasource"><![CDATA[none]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[24960974]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[p]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[Rue Mgr Leen<br>Eau-Coulee<br><br>admin@upstagemu.com<br><br>Retrouvez sur facebook<br>]]></casta:attribute>
+			<casta:style name="float" value="left"></casta:style>
+			<casta:style name="margin-top" value="70px"></casta:style>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

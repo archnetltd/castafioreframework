@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Castafiore</title>
+
+<link rel="stylesheet" href="css/1.css" type="text/css"></link>
+<link rel="stylesheet" href="css/themes/smoothness/theme.css" type="text/css"></link>
+<link rel="stylesheet" href="css/themes/EXFinder.css" type="text/css"></link>
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+<script type="text/javascript" src="js/1.js"></script>
+<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]--> 
+
+<style type="text/css">
+
+	.container .application
+	{
+		margin-top: -18px;
+	}
+	.container .application-head{
+		margin-bottom: 0px;
+	}
+	.container .application-head .left-col{
+		margin: 0;
+		padding: 0;
+		background:url(query/img/left-app-head.png);
+		height: 65px;
+		
+	}
+
+	.container .application-head .right-col{
+		margin: 0;
+		padding: 0;
+		background:url(query/img/left-app-head.png);
+		height: 65px;
+	}
+
+	.container .application-head .center-col{
+		margin: 0;
+		padding: 0;
+		background:url(query/img/center-app-head.png);
+		height: 65px;
+	}
+	
+	.container .application-body .left-col{
+		margin: 0;
+		padding: 0;
+	}
+
+	.container .application-body .right-col{
+		margin: 0;
+		padding: 0;
+	}
+	.container .application-body .worksheet{
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	
+	
+	
+	.container .application-body .worksheet .head div {
+		
+		height: 50px;
+		border-style:solid;
+		border-width : 1px 1px 2px 1px;
+		border-color: #C4D2E4;
+		cursor: pointer;
+		margin: 0;
+		background-color: #EBF3FF;
+		padding: 3px;
+		font-weight: bold;
+		text-align: center;
+		
+	}
+	
+	.container .application-body .worksheet .sp-row div{
+		border-style:solid;
+		border-width : 1px 1px 1px 1px;
+		border-color: #C4D2E4;
+		cursor: pointer;
+		margin: 0;
+		height: 15px;
+		padding: 3px;
+	}
+	.container .application-body .worksheet .sp-row div input{
+		
+		height: 15px;
+		border: none;
+		margin: 0px;
+		padding: 0px;
+		font-size: 12px;
+		color: saddleBrown;
+	}
+	
+	.container .application-body .worksheet .sp-row div.selected{
+		border-color: #F0C79D;
+	}
+
+	.container .application-body .worksheet .sp-row div.empty{
+		
+		border-left-width: 1px;
+		
+	}
+	
+	 .container .application-body .worksheet .sp-row div.empty, .spreadsheet .sp-row div.first-col{
+	 	background-color: #DCE6F2;
+	 }
+	 .simple-widget{
+	 	margin: 0;
+	 	padding: 0;
+	 }
+	 .simple-widget .simple-widget-header{
+	 	color: white;
+	 	background-color: #88ACBA;
+	 	margin: 0;
+	 	padding: 10px;
+	 	font-size: 12px;
+	 	font-weight: bold;
+	 }
+	  .simple-widget .simple-widget-list{
+	  	padding: 0;
+	  	margin: 0;
+	  }
+	 .simple-widget .simple-widget-list .simple-widget-list-item{
+	 	list-style: none;
+	 	padding: 8px 30px;
+	 	margin: 0px;
+	 	background-color: #F7F7F7;
+	 	border-bottom: solid 1px silver;
+	 	cursor: pointer;
+	 }
+	 
+	 
+	  .simple-widget .simple-widget-list .simple-widget-list-item.selected{
+	 	background:url(query/img/simple-widget-selected.png);
+	 	font-weight: bold;
+	  }
+	 
+	 .simple-widget .simple-widget-list .simple-widget-list-item a{
+	 	text-decoration: none;
+	 	color: #B9B9B9;
+	 	font-size: 10px;
+	 	font-family: sans-serif;
+	 }
+	 
+	 .container .os-header{	
+	 	margin: 0;
+	 	padding: 0;
+	 }
+	 .container .os-header .os-manager{
+	 	margin:0px;
+	 	padding:0px;
+	 	height: 115px;
+	 	background-color: #E1E1E1;
+	 }
+	 
+	 .container .os-header .os-toolbar-container{
+	 	padding: 0;
+	 	margin: 0;
+	 } 
+	 
+	 .os-toolbar{
+	 	 background-color:black;
+	 	 margin: 1px 1px 1px -5px;
+	 	 height: 30px;
+	 	 opacity:0.3;
+	 }
+	 
+	 .explorer-tree{
+	 	list-style-image: url(icons/folder.png);
+	 }
+	 .explorer-tree ul{
+	 	padding-left: 20px;
+	 }
+	 
+	 .explorer{
+	 	background-color: #414141;
+	 }
+	 
+	 .explorer-tree li a{
+	 	text-decoration: none;
+	 	color: #B9B9B9;
+	 	font-size: 10px;
+	 	font-family: sans-serif;
+	 }
+	 
+	 .os-toolbar-button{
+	 	font-weight: bold;
+	 	font-size: 14px;
+	 	cursor: pointer;
+	 	color: white;
+	 	margin: 0px 10px;
+	 	float: left;
+	 }
+	 
+	 .app-hider{
+	 	background-image: url(query/img/down.png);height: 19px;width:20px;background-position: 4px 3px
+	 }
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+	$('.simple-widget .simple-widget-list .simple-widget-list-item').click(function(){
+		var me = $(this);
+		if(!me.hasClass('selected')){
+			$('.simple-widget .simple-widget-list .simple-widget-list-item.selected').removeClass('selected');
+			me.addClass('selected');
+		}
+	})
+	
+	$('.worksheet .sp-row div').click(function(){
+		var me = $(this);
+		if(!me.hasClass('selected')){
+			$('.worksheet .sp-row div.selected').removeClass('selected');
+			me.addClass('selected');
+		}
+	}).dblclick(function(){
+		var me = $(this);
+		var txt = me.text();
+		me.text('');
+		me.append('<input type="text"></input>');
+		me.children().val(txt).blur(function(){
+			var input = $(this);
+			input.parent().text(input.val());
+		}).select();
+		
+		
+	});
+
+	$('.os-toolbar').css('opacity', '0.3');
+	
+	
+});
+
+</script>
+		
+</head>
+<body>
+<div id="root"> 
+
+	<div class="container">
+	
+	
+		<div></div>
+	
+		<div class="os-header span-25" style="margin-top: 15px;">
+			<div class="os-manager span-7 ui-corner-all"></div>
+			<div class="os-toolbar-container span-18">
+				<div class="os-toolbar span-1 ui-corner-right" style="margin-top: 17px">&nbsp;</div>
+			</div>
+			<div class="os-toolbar-container span-18">
+				<div class="os-toolbar span-14 ui-corner-right" >&nbsp;</div>
+			</div>
+			<div class="os-toolbar-container span-18">
+				<div class="os-toolbar span-19 ui-corner-right" >
+					<div class="os-toolbar-button" >File</div>
+					<div class="os-toolbar-button" >Options</div>
+					<div class="os-toolbar-button">Data environment</div>
+					<div class="os-toolbar-button" >Windows</div>
+					<div class="os-toolbar-button">Help</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-icon clear app-hider">&nbsp;</div>
+	
+		<div class="application span-24">
+			<div class="span-24 application-head push-1">
+				<div class="span-5 left-col"><h1 style="color:#5F5E5E;padding: 12px 15px;font-family: fantasy;font-size: 25px;font-weight: bold">Files</h1></div>
+				<div class="span-14 center-col"></div>
+				<div class="span-5 right-col"><h1 style="color:#5F5E5E;padding: 12px 15px;font-family: fantasy;font-size: 25px;font-weight: bold;float:right">Filters</h1></div>
+			</div>
+			<div class="span-24 application-body push-1">
+				<div class="span-5 left-col">
+					<div class="explorer ">
+						<ul class="explorer-tree">
+							<li>
+								<a href="#">Home</a>
+								<ul class="explorer-tree">
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Home</a></li>
+									<li>
+										<a href="#">Home</a>
+										<ul class="explorer-tree">
+											<li>
+												<a href="#">Home</a>
+												<ul class="explorer-tree">
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+													<li><a href="#">Home</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Home</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class=""></div>
+				</div>
+				<div class="span-14 workspace" style="margin: 0;padding: 0">
+					<div class="worksheet span-14">
+						<div class="head">
+							<div class="empty span-1"></div>
+							<div class="span-2">Date</div>
+							<div class="span-2">Account type</div>
+							<div class="span-2">Amount</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+						<div class="sp-row">
+							<div class="empty span-1"></div>
+							<div class="first-col span-2">12/23/45</div>
+							<div class="span-2">Petty Cash</div>
+							<div class="span-2">231 MUR</div>
+							<div class="span-6">Description</div>
+							<div class="empty span-1"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="span-5 right-col">
+					<div class="simple-widget span-5">
+						<h3 class="simple-widget-header">Actions</h3>
+						<ul class="simple-widget-list">
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item selected"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+						</ul>
+					</div>
+					<div class="simple-widget span-5">
+						<h3 class="simple-widget-header">Actions</h3>
+						<ul class="simple-widget-list">
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item selected"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+							<li class="simple-widget-list-item"><a href="#">fvsdfdfs</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

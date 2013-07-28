@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+	<bean id="ecmtest" class="org.castafiore.ecm.TestApplication" scope="session"></bean>
+	<!-- classes to be used as node type in wfs -->
+	<bean class="org.castafiore.persistence.AnnotatedClass">
+		<property name="annotatedClasses">
+			<util:list>
+				<value>org.castafiore.wfs.types.FileImpl</value>
+				<value>org.castafiore.wfs.types.Sequence</value>
+				<value>org.castafiore.wfs.types.Directory</value>
+				<value>org.castafiore.wfs.types.Drive</value>
+				<value>org.castafiore.wfs.types.BinaryFile</value>
+				<value>org.castafiore.wfs.types.Shortcut</value>
+				<value>org.castafiore.wfs.types.Article</value>
+				<value>org.castafiore.wfs.types.Link</value>
+				<value>org.castafiore.wfs.types.Message</value>
+				<value>org.castafiore.wfs.types.Comment</value>
+				<value>org.castafiore.wfs.types.Value</value>
+				<value>org.castafiore.security.UserProfile</value>
+				<value>org.castafiore.wfs.types.Metadata</value>
+				
+			</util:list>
+		</property>
+	</bean>
+
+	<!-- Query executor. helps to execute query -->
+	<bean id="queryExecutor" class="org.castafiore.wfs.service.QueryExecutorImpl" />
+
+	<!-- helper class used to pre-create files into ecm -->
+	<bean id="fileCreator" class="org.castafiore.wfs.config.creator.FileCreatorImpl" init-method="start"></bean>
+
+
+	<!-- repository service -->
+	<bean id="repositoryService" class="org.castafiore.wfs.service.RepositoryServiceImpl">
+		<property name="dao" ref="dao"></property>
+		<property name="superUser" value="system"></property>
+		<property name="queryExecutor" ref="queryExecutor"></property>
+		<property name="fileManipulator">
+			<bean class="org.castafiore.wfs.service.SimpleFileManipulator">
+				
+			</bean> 
+		</property>
+	</bean>
+
+	<!--  interceptor that handles transactions in repository service-->
+	<bean id="transactionInterceptor" class="org.castafiore.wfs.aop.TransactionInterceptor" />
+
+	<!--  interceptor that handles security in repository service -->
+	<bean id="securityInterceptor" class="org.castafiore.wfs.aop.SecurityInterceptor" />
+
+
+	<!-- interceptor that caches permissionSpec for a user -->
+	<bean id="permissionSpecCacheInterceptor" class="org.castafiore.wfs.aop.UserPermissionSpecInterceptor"></bean>
+
+	<aop:config>
+	<!-- 
+		<aop:advisor pointcut="execution(* org.castafiore.wfs.service.RepositoryServiceImpl.*(..))" advice-ref="transactionInterceptor" />
+	
+		
+	
+		<aop:advisor pointcut="execution(* org.castafiore.wfs.service.RepositoryServiceImpl.*(..))" advice-ref="securityInterceptor" />
+		  -->
+		
+		<aop:advisor pointcut="execution(* org.castafiore.security.api.SecurityService.*(..))" advice-ref="permissionSpecCacheInterceptor" />
+		<aop:advisor pointcut="execution(* org.castafiore.security.api.SecurityService.*(..))" 	advice-ref="createUserDirectoriesInterceptor" />
+	</aop:config>
+
+
+
+	<!-- resource locator for downloading files directly from ecm -->
+	<bean id="resourcelocator_ecm" class="org.castafiore.ecm.ECMResourceLocator">
+		<property name="repositoryService" ref="repositoryService"></property>
+	</bean>
+
+	
+	<bean class="org.castafiore.spring.Starter" lazy-init="true"></bean>
+	
+	
+	
+
+	
+	
+	
+	
+
+</beans>

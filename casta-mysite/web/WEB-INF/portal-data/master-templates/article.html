@@ -1,0 +1,27 @@
+<div>
+	<%
+		def title = "Welcome to castafiore";
+		def description = "Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis.";
+		try{
+	 		def list = component.getData();
+			def theData = list.get(0);
+			title = theData.getTitle();
+			description = theData.getSummary();
+		}catch(Exception e){
+			
+		}
+	%>
+	<div class="post">
+		<h2 class="title"><a href="#" name="title">${title}</a></h2>
+		<div class="entry">
+			<div name="summary">
+				${description}
+			</div>
+			<br />
+			<div name="text"></div>
+			<div>
+				<a class="links" href="#" name="viewFullStory">View Full Story</a>
+			</div>
+		</div>
+	</div>
+</div>

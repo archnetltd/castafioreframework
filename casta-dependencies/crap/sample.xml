@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container identifier="">
+	<configs>
+		<config name="name">name1</config>
+		<config name="label">label1</config>
+	</configs>
+	<styles>
+		<style name="background-color">url('dfertere')</style>
+		<style name="background-color">url('dfertere')</style>
+	</styles>
+	<events>
+		<event type="click">system.out.println(wwerwe)
+		</event>
+	</events>
+
+	<children>
+		<container identifier="" layoutData="0">
+			<configs>
+				<config name="name">name1</config>
+				<config name="label">label1</config>
+			</configs>
+			<styles>
+				<style name="background-color">url('dfertere')</style>
+				<style name="background-color">url('dfertere')</style>
+			</styles>
+			<events>
+				<event type="click">system.out.println(wwerwe)
+				</event>
+			</events>
+			<children>
+			</children>
+		</container>
+		
+		<container identifier="" layoutData="1">
+			<configs>
+				<config name="name">name1</config>
+				<config name="label">label1</config>
+			</configs>
+			<styles>
+				<style name="background-color">url('dfertere')</style>
+				<style name="background-color">url('dfertere')</style>
+			</styles>
+			<events>
+				<event type="click">system.out.println(wwerwe)
+				</event>
+			</events>
+			<children>
+			</children>
+		</container>
+	</children>
+</container>
+

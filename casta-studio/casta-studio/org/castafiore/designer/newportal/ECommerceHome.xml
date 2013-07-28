@@ -1,0 +1,14 @@
+<casta:designable name="home" uniqueId="core:div" layoutData="">
+	<casta:attribute name="pagepath"><![CDATA[/root/users/${user}/portal-data/default.ptl/pages/home]]></casta:attribute>
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[home]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+
+	<casta:designable name="ECommerce" uniqueId="ecommerce:catalogue" layoutData="">
+			<casta:attribute name="name"><![CDATA[ECommerce]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+	</casta:designable>
+	
+</casta:designable>

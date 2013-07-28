@@ -1,0 +1,51 @@
+.HorizontalButtons .navcontainer{
+	background:rgb(240, 231, 215);
+	margin:0 auto;
+	padding:1em 0 0 0;
+	font-family:georgia serif;
+	text-transform:lowercase;
+}
+.HorizontalButtons .navcontainer:after{
+	content:".";
+	display:block;
+	line-height:1px;
+	font-size:1px;
+	clear:both;
+}
+.HorizontalButtons ul.navlist{
+	list-style:none;
+	padding:0;
+	margin:0 auto;
+	width:80%;
+	font-size:0.8em;
+}
+.HorizontalButtons ul.navlist li{
+	display:block;
+	float:left;
+	width:15%;
+	margin:0;
+	padding:0;
+}
+.HorizontalButtons ul.navlist li a{
+	display:block;
+	width:100%;
+	padding:0.5em;
+	border-width:1px;
+	border-color:rgb(255, 255, 238) rgb(170, 171, 156) rgb(204, 204, 204) rgb(255, 255, 255);
+	border-style:solid;
+	color:rgb(119, 119, 119);
+	text-decoration:none;
+	background:rgb(247, 242, 234);
+}
+.HorizontalButtons .navcontainer > ul.navlist li a{
+	width:auto;
+}
+.HorizontalButtons ul.navlist li.active a{
+	background:rgb(240, 231, 215);
+	color:rgb(128, 0, 0);
+}
+.HorizontalButtons ul.navlist li a:hover , .HorizontalButtons ul.navlist li.active a:hover{
+	color:rgb(128, 0, 0);
+	background:transparent;
+	border-color:rgb(170, 171, 156) rgb(255, 255, 255) rgb(255, 255, 255) rgb(204, 204, 204);
+}

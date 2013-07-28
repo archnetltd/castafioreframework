@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<util:list id="portalModules">
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Home Page"></property>
+			<property name="description" value="A simple home page with 2 columns displaying articles"></property>
+			<property name="monthlyFee" value="Free"></property>
+			<property name="name" value="Home Page"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Catalogue"></property>
+			<property name="description" value="A simple catalogue, displaying products in thumbnail view with image and description"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="About us"></property>
+			<property name="description" value="A simple about us page with a single column, displaying an article"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Contacts"></property>
+			<property name="description" value="A simple Contact page with a single column, displaying a list of contacts"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Blog"></property>
+			<property name="description" value="A simple blog"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Forum"></property>
+			<property name="description" value="A simple forum (under construction)"></property>
+		</bean>
+		
+		<bean class="org.castafiore.designer.model.Module">
+			<property name="title" value="Newsletter"></property>
+			<property name="description" value="A simple page displaying newsletters (under construction)"></property>
+		</bean>
+	</util:list>
+	
+</beans>

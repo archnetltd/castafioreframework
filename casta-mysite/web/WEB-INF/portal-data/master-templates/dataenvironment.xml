@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataproviders>
+	<dataprovider type="dataprovider:ecm">
+		<property name="folders">root/;root/ecm;</property>
+		<property name="fileTypes">File;Article</property>
+		<property name="filters">File;Article</property>
+	</dataprovider>
+	
+	<dataprovider type="dataprovider:hibernate">
+		<property name="query">select * from File where</property>
+	</dataprovider>
+	
+	<dataprovider type="dataprovider:google">
+		<property name="username">kureem</property>
+		<property name="password">kureem</property>
+	</dataprovider>
+</dataproviders>

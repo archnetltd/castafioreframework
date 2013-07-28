@@ -1,0 +1,379 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+.yosemite {
+	margin: 0;
+	padding: 0;
+	background: #F1F1F1 url(images/img01.gif) repeat-x left top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #787878;
+}
+
+.yosemite h1, .yosemite h2, .yosemite h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: #023848;
+}
+
+.yosemite h1 {
+	font-size: 2em;
+}
+
+.yosemite h2 {
+	font-size: 2.4em;
+}
+
+.yosemite h3 {
+	font-size: 1.6em;
+}
+
+.yosemite p, .yosemite ul, .yosemite ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+.yosemite ul, .yosemite ol {
+}
+
+.yosemite a {
+	text-decoration: none;
+	color: #4486C7;
+}
+
+.yosemite a:hover {
+}
+
+.yosemite .wrapper {
+	width: 980px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* Header */
+
+.yosemite .header {
+	width: 980px;
+	height: 280px;
+	margin: 0 auto;
+	padding: 0px;
+	background: url(images/img06.gif) no-repeat left top;
+}
+
+/* Logo */
+
+.yosemite .logo {
+	float: right;
+	margin: 0;
+	padding: 0;
+	color: #000000;
+}
+
+.yosemite .logo h1, .yosemite .logo p {
+	margin: 0;
+	padding: 0;
+}
+
+.yosemite .logo h1 {
+	float: left;
+	padding-top: 223px;
+	letter-spacing: -1px;
+	text-align: right;
+	text-transform: lowercase;
+	font-size: 3.8em;
+}
+
+.yosemite .logo p {
+	float: left;
+	margin: 0;
+	padding: 250px 0 0 10px;
+	font: normal 14px Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #FFFFFF;
+} 
+
+.yosemite .logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Search */
+
+.yosemite .search {
+	float: right;
+	width: 280px;
+	height: 60px;
+	padding: 20px 0px 0px 0px;
+	background: #E2E2E2;
+	border-bottom: 4px solid #FFFFFF;
+}
+
+.yosemite .search form {
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+.yosemite .search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.yosemite .search-text {
+	width: 170px;
+	padding: 6px 5px 2px 5px;
+	border: 1px solid #DEDEDE;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #5D781D;
+}
+
+.yosemite .search-submit {
+	width: 50px;
+	height: 22px;
+	border: none;
+	background: #B9B9B9;
+	color: #000000;
+}
+
+/* Menu */
+
+.yosemite .menu {
+	width: 980px;
+	height: 90px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.yosemite .menu ul {
+	margin: 0;
+	padding: 50px 0px 0px 0px;
+	list-style: none;
+	line-height: normal;
+}
+
+.yosemite .menu li {
+	float: left;
+}
+
+.yosemite .menu a {
+	display: block;
+	width: 130px;
+	height: 30px;
+	margin-right: 1px;
+	padding: 9px 0px 0px 0px;
+	background: url(images/img02.gif) no-repeat left top;
+	text-decoration: none;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: none;
+}
+
+.yosemite .menu a:hover, .yosemite .menu .current_page_item a {
+	text-decoration: none;
+}
+
+.yosemite .menu .current_page_item a {
+	padding-left: 0;
+}
+
+/* Page */
+
+.yosemite .page {
+	width: 940px;
+	margin: 0 auto;
+	padding: 0px 0px 0px 40px;
+	background: url(images/img03.gif) repeat-y left top;
+}
+
+.yosemite .page-bgtop {
+	padding: 20px 0px;
+}
+
+.yosemite .page-bgbtm {
+}
+
+/* Content */
+
+.yosemite .content {
+	float: left;
+	width: 580px;
+	padding: 30px 0px 0px 0px;
+}
+
+.yosemite .post {
+	background: url(images/img07.gif) no-repeat left 50px;
+	margin-bottom: 15px;
+}
+
+.yosemite .post-bgtop {
+}
+
+.yosemite .post-bgbtm {
+}
+
+.yosemite .post .title {
+	height: 38px;
+	margin-bottom: 10px;
+	padding: 12px 0 0 0px;
+	letter-spacing: -.5px;
+	color: #000000;
+}
+
+.yosemite .post .title a {
+	color: #023848;
+	border: none;
+}
+
+.yosemite .post .meta {
+	margin-bottom: 30px;
+	padding: 5px 0px 15px 0px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.yosemite .post .meta .date {
+	float: left;
+}
+
+.yosemite .post .meta .posted {
+	float: right;
+}
+
+.yosemite .post .meta a {
+}
+
+.yosemite .post .entry {
+	background: url(images/img08.gif) no-repeat left top;
+	padding: 0px 0px 20px 0px;
+	padding-bottom: 20px;
+	text-align: justify;
+}
+
+.yosemite .links {
+	padding-top: 20px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* Sidebar */
+
+.yosemite .sidebar {
+	float: right;
+	width: 280px;
+	margin: 0px;
+	padding: 0px 20px 0px 0px;
+	color: #787878;
+}
+
+.yosemite .sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.yosemite .sidebar li {
+	margin: 0;
+	padding: 0;
+}
+
+.yosemite .sidebar li ul {
+	margin: 0px 0px;
+	padding-bottom: 30px;
+}
+
+.yosemite .sidebar li li {
+	line-height: 35px;
+	border-bottom: 1px dashed #D1D1D1;
+	margin: 0px 30px;
+	border-left: none;
+}
+
+.yosemite .sidebar li li span {
+	display: block;
+	margin-top: -20px;
+	padding: 0;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.yosemite .sidebar h2 {
+	height: 38px;
+	padding-left: 30px;
+	letter-spacing: -.5px;
+	font-size: 1.8em;
+}
+
+.yosemite .sidebar p {
+	margin: 0 0px;
+	padding: 0px 30px 20px 30px;
+	text-align: justify;
+}
+
+.yosemite .sidebar a {
+	border: none;
+}
+
+.yosemite .sidebar a:hover {
+	text-decoration: underline;
+	color: #8A8A8A;
+}
+
+/* Calendar */
+
+.yosemite .calendar {
+}
+
+.yosemite .calendar_wrap {
+	padding: 20px;
+}
+
+.yosemite .calendar table {
+	width: 100%;
+}
+
+.yosemite .calendar tbody td {
+	text-align: center;
+}
+
+.yosemite .calendar .next {
+	text-align: right;
+}
+
+/* Footer */
+
+.yosemite .footer {
+	height: 50px;
+	margin: 0 auto;
+	padding: 0px 0 15px 0;
+	background: #ECECEC;
+	border-top: 1px solid #DEDEDE;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.yosemite .footer p {
+	margin: 0;
+	padding-top: 20px;
+	line-height: normal;
+	font-size: 9px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #A0A0A0;
+}
+
+.yosemite .footer a {
+	color: #8A8A8A;
+}

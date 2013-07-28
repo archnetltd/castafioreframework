@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/1.css" type="text/css"></link>
+<link rel="stylesheet" href="css/themes/smoothness/theme.css" type="text/css"></link>
+<link rel="stylesheet" href="css/themes/EXFinder.css" type="text/css"></link>
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
+<script type="text/javascript" src="js/1.js"></script>
+<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]--> 
+  <style>
+  div { color:blue; }
+  p { color:green; }
+  span { color:red; display:none; }
+  </style>
+
+</head>
+<body>
+	<div id="xx" style="height:100px;width: 400px;overflow: scroll;" myheight="100">
+  	<p>Paragraph -dfgsdfgsdfgsdfg <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	<p>Paragraph - <span>Scroll happened!</span></p>
+  	
+  </div>
+<script>
+
+    $('#xx').scroll(function (event) { 
+
+       var me = $(this);if(me[0].scrollTop < me[0].scrollHeight - me.height())return;
+          
+      $("span").css("display", "inline").fadeOut("slow"); 
+    });
+
+</script>
+
+</body>
+</html>

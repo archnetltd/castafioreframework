@@ -1,0 +1,209 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer"
+	layoutData="">
+	<casta:attribute name="__oid"><![CDATA[13140738]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[
+	]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[/root/users/elieandsons/Applications/e-Shop/Products/draft/1328598469772/productOption]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[
+	]]></casta:attribute>
+	<casta:style name="padding-left" value="0px"></casta:style>
+	<casta:style name="padding-right" value="0px"></casta:style>
+	<casta:style name="padding-top" value="0px"></casta:style>
+	<casta:style name="margin-right" value="0px"></casta:style>
+	<casta:style name="width" value="500px"></casta:style>
+	<casta:style name="margin-left" value="0px"></casta:style>
+	<casta:style name="margin-bottom" value="0px"></casta:style>
+	<casta:style name="margin-top" value="0px"></casta:style>
+	<casta:style name="padding-bottom" value="0px"></casta:style>
+	<casta:designable name="ProductOptions" uniqueId="core:dynaform"
+		layoutData="Dynamic form">
+		<casta:attribute name="class"><![CDATA[ui-dialog ui-widget ui-corner-all des ui-widget-header]]></casta:attribute>
+		<casta:attribute name="title"><![CDATA[Product Options]]></casta:attribute>
+		<casta:attribute name="__oid"><![CDATA[3455951]]></casta:attribute>
+		<casta:attribute name="skin"><![CDATA[WARP]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[Dynamic form]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[
+		]]></casta:attribute>
+		<casta:style name="visibility" value="hidden"></casta:style>
+		<casta:style name="z-index" value="1000"></casta:style>
+		<casta:style name="position" value="static"></casta:style>
+		<casta:style name="top" value="10%"></casta:style>
+		<casta:style name="left" value="10%"></casta:style>
+		<casta:style name="width" value="500px"></casta:style>
+		<casta:style name="padding" value="0"></casta:style>
+		<casta:style name="background-position" value="0 0"></casta:style>
+		<casta:designable name="couverture" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Couverture]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[13378729]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Familiale,Individuel]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:event on="change" type="groovy"><![CDATA[import org.castafiore.ui.Container;
+import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
+import org.castafiore.ui.ex.form.list.DefaultDataModel;
+import org.castafiore.ui.ex.form.list.EXSelect;
+import org.castafiore.utils.StringUtil;
+
+String couv =((EXSelect)me).getValue().toString();
+		
+		EXSelect age = (EXSelect)me.getAncestorOfType(EXDynaformPanel.class).getDescendentByName("age");
+		DefaultDataModel model = new DefaultDataModel();
+		if(couv.equalsIgnoreCase("familiale")){
+			model.addItem("0-65 Ans");
+                        age.setAttribute("options", "0-65 Ans");
+		}else{
+			String [] parts= StringUtil.split("18-24 Ans,25-34 Ans,35-44 Ans,45-54 Ans,55-64 Ans,65-70 Ans,71-74 Ans,75 Ans+", ",");
+			for(s in parts){
+				model.addItem(s);
+			}
+                         age.setAttribute("options", "18-24 Ans,25-34 Ans,35-44 Ans,45-54 Ans,55-64 Ans,65-70 Ans,71-74 Ans,75 Ans+");
+		}
+		
+		age.setModel(model); ]]></casta:event>
+		</casta:designable>
+		<casta:designable name="age" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Age]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[6706377]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[0-65 Ans]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="inscription" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Frais D'inscription]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[10931606]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non,Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="advance" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Honoraires d'avance du mois]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[19025079]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non,Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="optionadditionelles"
+			uniqueId="core:label" layoutData="label">
+			<casta:attribute name="datasource"><![CDATA[none]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[22508510]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[label]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[Options Additionelles]]></casta:attribute>
+			<casta:style name="font-size" value="13px"></casta:style>
+		</casta:designable>
+		<casta:designable name="voiture" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Voiture Familiale]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[3924915]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non, Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="chapiteau" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Chapiteau et Chaises]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[3381525]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non, Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="fleurs" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Fleurs]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[4453623]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non, Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="traiteur" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Service de traiteur]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[12753499]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non, Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="cercueil" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Cercueil plombee pour caveaux]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[29409188]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non,Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="chapelle" uniqueId="core:select"
+			layoutData="select">
+			<casta:attribute name="value"><![CDATA[0]]></casta:attribute>
+			<casta:attribute name="label"><![CDATA[Chapelle ardente]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[8169880]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[select]]></casta:attribute>
+			<casta:attribute name="options"><![CDATA[Non,Oui]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+		</casta:designable>
+		<casta:designable name="note" uniqueId="core:label"
+			layoutData="label">
+			<casta:attribute name="datasource"><![CDATA[none]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[10721621]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[label]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[Veuillez noter que les options additionelles impliques des couts additionels. Merci.]]></casta:attribute>
+			<casta:style name="font-style" value="italic"></casta:style>
+			<casta:style name="font-weight" value="bold"></casta:style>
+		</casta:designable>
+		<casta:designable name="comments" uniqueId="core:textarea"
+			layoutData="text area">
+			<casta:attribute name="label"><![CDATA[Commentaire :]]></casta:attribute>
+			<casta:attribute name="__oid"><![CDATA[6334686]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[ des]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[text area]]></casta:attribute>
+			<casta:attribute name="stf"><![CDATA[true]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]>
+			</casta:attribute>
+			<casta:style name="width" value="159px"></casta:style>
+			<casta:style name="height" value="94px"></casta:style>
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

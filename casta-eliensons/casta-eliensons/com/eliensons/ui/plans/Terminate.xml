@@ -1,0 +1,12 @@
+<action>
+	<status>21</status>
+		<display>
+	<![CDATA[
+		<p>
+		Plan correctly terminated
+</p>
+]]>
+	</display>
+	
+	<method>com.eliensons.reminders.ReminderUtil.teminateOnDeath</method>
+</action>

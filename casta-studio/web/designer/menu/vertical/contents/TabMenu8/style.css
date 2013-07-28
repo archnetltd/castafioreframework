@@ -1,0 +1,64 @@
+.TabMenu8{
+	margin:0;
+	padding:0;
+	font:bold 11px 1.5em Verdana;
+}
+.TabMenu8 h2{
+	font:bold 14px Verdana Arial Helvetica sans-serif;
+	color:rgb(0, 0, 0);
+	margin:0px;
+	padding:0px 0px 0px 15px;
+}
+.TabMenu8 img{
+	border:none;
+}
+.TabMenu8 .tabs8{
+	float:left;
+	width:100%;
+	background:rgb(252, 241, 246);
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid rgb(226, 118, 167);
+}
+.TabMenu8 .tabs8 ul{
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+}
+.TabMenu8 .tabs8 li{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+.TabMenu8 .tabs8 a{
+	float:left;
+	background:url(tableft8.gif) no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+}
+.TabMenu8 .tabs8 a span{
+	float:left;
+	display:block;
+	background:url(tabright8.gif) no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:rgb(51, 51, 51);
+}
+.TabMenu8 .tabs8 a span{
+	float:none;
+}
+.TabMenu8 .tabs8 a:hover span{
+	color:rgb(89, 19, 51);
+}
+.TabMenu8 .tabs8 a:hover{
+	background-position:0% -42px;
+}
+.TabMenu8 .tabs8 a:hover span{
+	background-position:100% -42px;
+}
+.TabMenu8 .tabs8 .current a{
+	background-position:0% -42px;
+}
+.TabMenu8 .tabs8 .current a span{
+	background-position:100% -42px;
+}

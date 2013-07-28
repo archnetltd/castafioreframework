@@ -1,0 +1,142 @@
+<casta:designable name="Portal" uniqueId="portal:portalcontainer" layoutData="">
+	<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+	<casta:attribute name="definitionpath"><![CDATA[castafiore/resource?spec=ecm:${dir}/default.ptl]]></casta:attribute>
+	<casta:attribute name="name"><![CDATA[Portal]]></casta:attribute>
+	<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+	<casta:style name="width" value="970px"></casta:style>
+	<casta:style name="margin" value="auto"></casta:style>
+	<casta:designable name="Header" uniqueId="core:div" layoutData="Header">
+		<casta:attribute name="name"><![CDATA[Header]]></casta:attribute>
+		<casta:designable name="Banner" uniqueId="core:div" layoutData="Banner">
+			<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[Banner]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Banner]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+			<casta:style name="width" value="970px"></casta:style>
+			<casta:style name="min-height" value="120px"></casta:style>
+			<casta:style name="background-image" value="url('${banner}')"></casta:style>
+		</casta:designable>
+		
+		<casta:designable name="Menu" uniqueId="portal:template-menu" layoutData="">
+			<casta:attribute name="class"><![CDATA[]]>
+			</casta:attribute>
+			<casta:attribute name="navigation"><![CDATA[{"name":"root","children":[{"name":"home","children":[],"label":"home","pageReference":"home","uri":"home"},{"name":"products","children":[],"label":"Products","pageReference":"product","uri":"product"},{"name":"about us","children":[],"label":"About","pageReference":"about","uri":"about"}],"label":"root","pageReference":"root","uri":"root"}]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Menu]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+			<casta:attribute name="template"><![CDATA[castafiore/resource?spec=ecm:${dir}/templates/Menu.xhtml]]></casta:attribute>
+		</casta:designable>
+	</casta:designable>
+	
+	<casta:designable name="wrapper" uniqueId="core:div" layoutData="wrapper">
+		<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[wrapper]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[wrapper]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:style name="width" value="970px"></casta:style>
+		
+		<casta:designable name="Left" uniqueId="core:div" layoutData="Left">
+			<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[Left]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Left]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+			<casta:style name="width" value="200px"></casta:style>
+			<casta:style name="min-height" value="500px"></casta:style>
+			<casta:style name="float" value="left"></casta:style>
+			
+			<casta:designable name="TitleWithParagraph" uniqueId="data:datacontainer" layoutData="">
+				<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:${dir}/templates/TitleWithParagraph.xhtml]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[TitleWithParagraph]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+				<casta:designable name="title" uniqueId="core:h3" layoutData="title">
+					<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+					<casta:attribute name="layoutdata"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="name"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="text"><![CDATA[]]>Lorem ipsum dolor amet</casta:attribute>
+					<casta:style name="color" value="#566616"></casta:style>
+					<casta:style name="font-size" value="12px"></casta:style>
+					<casta:style name="font-weight" value="bold"></casta:style>
+					
+				</casta:designable>
+				<casta:designable name="paragraph" uniqueId="core:p" layoutData="paragraph">
+					<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+					<casta:attribute name="layoutdata"><![CDATA[paragraph]]></casta:attribute>
+					<casta:attribute name="name"><![CDATA[paragraph]]></casta:attribute>
+					<casta:attribute name="text"><![CDATA[]]>Lorem ipsum dolor amet Lorem ipsum dolor amet Lorem ipsum dolor amet </casta:attribute>
+				</casta:designable>
+			</casta:designable>
+			
+			<casta:designable name="TitleWithList" uniqueId="data:datacontainer" layoutData="">
+				<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:${dir}/templates/TitleWithList.xhtml]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[TitleWithList]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+				<casta:designable name="title" uniqueId="core:h3" layoutData="title">
+					<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+					<casta:attribute name="layoutdata"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="name"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="text"><![CDATA[]]>Lorem ipsum dolor amet</casta:attribute>
+					<casta:style name="color" value="#566616"></casta:style>
+					<casta:style name="font-size" value="12px"></casta:style>
+					<casta:style name="font-weight" value="bold"></casta:style>
+					
+				</casta:designable>
+			</casta:designable>
+			
+			<casta:designable name="TitleWithImage" uniqueId="data:datacontainer" layoutData="">
+				<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:${dir}/templates/TitleWithImage.xhtml]]></casta:attribute>
+				<casta:attribute name="name"><![CDATA[TitleWithImage]]></casta:attribute>
+				<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+				<casta:designable name="title" uniqueId="core:h3" layoutData="title">
+					<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+					<casta:attribute name="layoutdata"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="name"><![CDATA[title]]></casta:attribute>
+					<casta:attribute name="text"><![CDATA[]]>Lorem ipsum dolor amet</casta:attribute>
+					<casta:style name="color" value="#566616"></casta:style>
+					<casta:style name="font-size" value="12px"></casta:style>
+					<casta:style name="font-weight" value="bold"></casta:style>
+				</casta:designable>
+				<casta:designable name="image" uniqueId="core:image" layoutData="title">
+					<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+					<casta:attribute name="layoutdata"><![CDATA[image]]></casta:attribute>
+					<casta:attribute name="name"><![CDATA[image]]></casta:attribute>
+					<casta:attribute name="src"><![CDATA[]]>castafiore/resource?spec=ecm:${dir}/sample-img.jpg</casta:attribute>
+					<casta:style name="width" value="166px"></casta:style>
+					<casta:style name="height" value="166px"></casta:style>
+				</casta:designable>
+			</casta:designable>
+
+		</casta:designable>
+		
+		<casta:designable name="pageContainer" uniqueId="portal:pagecontainer" layoutData="pageContainer">
+			<casta:attribute name="Text"><![CDATA[]]></casta:attribute>
+			<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+			<casta:attribute name="layoutdata"><![CDATA[pageContainer]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[pageContainer]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+			<casta:style name="width" value="770px"></casta:style>
+			<casta:style name="min-height" value="500px"></casta:style>
+			<casta:style name="float" value="left"></casta:style>
+		</casta:designable>
+	</casta:designable>
+		
+		
+	<casta:designable name="footer" uniqueId="core:div" layoutData="footer">
+		<casta:attribute name="class"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:attribute name="layoutdata"><![CDATA[footer]]></casta:attribute>
+		<casta:attribute name="name"><![CDATA[footer]]></casta:attribute>
+		<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		<casta:style name="clear" value="both"></casta:style>
+		<casta:style name="width" value="970px"></casta:style>
+		<casta:style name="min-height" value="100px"></casta:style>
+		
+		
+		<casta:designable name="Copyright" uniqueId="data:datacontainer" layoutData="">
+			<casta:attribute name="templatelocation"><![CDATA[castafiore/resource?spec=ecm:${dir}/templates/Copyright.xhtml]]></casta:attribute>
+			<casta:attribute name="name"><![CDATA[Copyright]]></casta:attribute>
+			<casta:attribute name="text"><![CDATA[]]></casta:attribute>
+		</casta:designable>
+		
+	</casta:designable>
+	
+</casta:designable>

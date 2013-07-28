@@ -1,0 +1,68 @@
+<project name="casta-clientcentric"   basedir=".">
+	
+	
+	<property name="tomcat.home" value="c:/apache-tomcat-6.0.18"></property>
+	<property name="context.name" value="casta-ui"></property>
+	
+	<path id="dependencies">
+			<fileset dir="${basedir}/../casta-dependencies/lib">
+		    	<include name="*.jar"/>
+		   	</fileset>
+			<fileset dir="${basedir}/../casta-dependencies/dist/ui">
+				<include name="*.jar"/>
+			</fileset>
+	</path>
+	
+	
+	<property name="module.name" value="clientcentric"></property>
+	<property name="module.version" value="0.1"></property>
+	<property name="tomcat" value="${tomcat.home}/webapps/${context.name}/WEB-INF"></property>
+	
+	<target name="clean">
+		<delete dir="${basedir}/build"></delete>
+		<delete dir="${basedir}/../casta-dependencies/dist/${module.name}"></delete>
+	</target>
+	
+	
+	
+	<target name="install" >
+		<mkdir dir="${basedir}/build"/>
+		<mkdir dir="${basedir}/build/bin"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist"/>
+		<mkdir dir="${basedir}/../casta-dependencies/dist/${module.name}"/>
+		
+		<javac fork="true"  destdir="${basedir}/build/bin" debug="true" debuglevel="lines,vars,source" nowarn="true"  >
+			<classpath><path refid="dependencies"/></classpath>
+			<src path="${basedir}/casta-${module.name}"></src>
+		</javac>
+		
+		
+		<copydir src="${basedir}/casta-${module.name}" dest="${basedir}/build/bin">
+			<exclude name="*.java"/>
+		</copydir>
+		
+		
+		
+		<jar destfile="${basedir}/../casta-dependencies/dist/${module.name}/casta-${module.name}-${module.version}.jar">
+			<zipfileset dir="${basedir}/build/bin">
+	        	<include name="**/*.*"/>
+				<exclude name="**/*.jar"/>
+			</zipfileset>
+		</jar>
+	</target>
+	
+	<target name="deploy.tomcat" depends="clean,install">
+		<copy file="${basedir}/../casta-dependencies/dist/${module.name}/casta-${module.name}-${module.version}.jar" todir="${tomcat}/lib"></copy>
+		<copy  todir="${tomcat.home}/webapps/${context.name}" overwrite="true">
+			<fileset dir="${basedir}/web"></fileset>
+		</copy>
+		
+	</target>
+	
+	<target name="del.work">
+		<delete dir="${tomcat.home}/work"></delete>
+	</target>
+	
+
+	
+</project>

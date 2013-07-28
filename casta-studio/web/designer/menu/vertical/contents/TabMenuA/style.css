@@ -1,0 +1,60 @@
+.TabMenuA{
+	margin:0;
+	padding:0;
+	font:bold 11px 1.5em Verdana;
+}
+.TabMenuA h2{
+	font:bold 14px Verdana Arial Helvetica sans-serif;
+	color:rgb(0, 0, 0);
+	margin:0px;
+	padding:0px 0px 0px 15px;
+}
+.TabMenuA .tabs{
+	float:left;
+	width:100%;
+	background:rgb(187, 217, 238);
+	font-size:93%;
+	line-height:normal;
+}
+.TabMenuA .tabs ul{
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+}
+.TabMenuA .tabs li{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+.TabMenuA .tabs a{
+	float:left;
+	background:url(tableft.gif) no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+}
+.TabMenuA .tabs a span{
+	float:left;
+	display:block;
+	background:url(tabright.gif) no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:rgb(102, 102, 102);
+}
+.TabMenuA .tabs a span{
+	float:none;
+}
+.TabMenuA .tabs a:hover span{
+	color:rgb(255, 152, 52);
+}
+.TabMenuA .tabs a:hover{
+	background-position:0% -42px;
+}
+.TabMenuA .tabs a:hover span{
+	background-position:100% -42px;
+}
+.TabMenuA .tabs .current a{
+	background-position:0% -42px;
+}
+.TabMenuA .tabs .current a span{
+	background-position:100% -42px;
+}

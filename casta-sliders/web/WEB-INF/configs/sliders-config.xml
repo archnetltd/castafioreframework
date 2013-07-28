@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean class="org.castafiore.notifications.NotificationManagerImpl"></bean>
+	
+	<bean class="org.castafiore.notifications.SMSNotificationAgent"></bean>
+	
+	<bean class="org.castafiore.notifications.EmailNotificationAgent">
+		<property name="mailSender">
+			<bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+				<property name="host" value="smtp.gmail.com"></property>
+				<property name="username" value="kureem@gmail.com"></property>
+				<property name="password" value="18072008hummykur"></property>
+				<property name="javaMailProperties">
+				    <props>
+				        <prop key="mail.smtp.starttls.enable">true</prop>
+				    </props>
+			    </property>
+
+				
+			</bean>
+		</property>
+	</bean>
+	
+	<bean class="org.castafiore.notifications.MessagingNotificationAgent"></bean>
+</beans>

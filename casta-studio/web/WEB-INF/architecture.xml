@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- wrapper container -->
+<casta:designable name="wrapper" uniqueId="core:div" layoutData="">
+	<casta:attribute name="class" value="wrapper" />
+
+	<!--header-->
+	<casta:designable name="header" uniqueId="core:div" layoutData="0">
+		<casta:attribute name="class" value="header" />
+		<casta:style name="height" value="152px" />
+	</casta:designable>
+
+	<!--left-->
+	<casta:designable name="left" uniqueId="core:div" layoutData="1">
+		<casta:attribute name="class" value="left" />
+
+		<!--logo-->
+		<casta:designable name="logo" uniqueId="core:div" layoutData="0">
+			<casta:attribute name="class" value="logo" />
+
+			<casta:designable name="h1" uniqueId="core:h1" layoutData="0">
+				<casta:attribute name="text" value="Architecture Bureau" />
+			</casta:designable>
+
+			<casta:designable name="p" uniqueId="core:p" layoutData="1">
+				<casta:attribute name="text" value="Its all possible" />
+			</casta:designable>
+		</casta:designable>
+
+		<!-- menu -->
+		<casta:designable name="nav" uniqueId="core:div" layoutData="1">
+			<casta:attribute name="class" value="nav" />
+			
+			<casta:designable name="right" uniqueId="core:verticallayout" layoutData="0">
+				<casta:attribute name="list-renderer" value="arch:menu" />
+				<casta:style name="background-color" value="#2A2A2A" />
+			</casta:designable>
+		</casta:designable>
+
+		<!-- news -->
+		<casta:designable name="news" uniqueId="core:xhtml" layoutData="1">
+			<casta:attribute name="class" value="news" />
+			<casta:attribute name="template" value="/architecture2/templates/news.xhtml" />
+
+			<casta:designable name="listNews" uniqueId="core:verticallayout" layoutData="listNews">
+				<casta:attribute name="list-renderer" value="arch:news" />
+				<casta:style name="background-color" value="transparent" />
+			</casta:designable>
+		</casta:designable>
+
+		<!-- support -->
+		<casta:designable name="support" uniqueId="core:xhtml" layoutData="1">
+			<casta:attribute name="class" value="support" />
+			<casta:attribute name="template" value="/architecture2/templates/support.xhtml" />
+		</casta:designable>
+
+	</casta:designable>
+
+	<!--right-->
+	<casta:designable name="right" uniqueId="core:div" layoutData="2">
+		<casta:attribute name="class" value="right" />
+		<casta:style name="padding-top" value="160px" />
+		
+		<!-- list articles -->
+		<casta:designable name="right" uniqueId="core:verticallayout" layoutData="0">
+			<casta:attribute name="list-renderer" value="arch:article" />
+			<casta:style name="background-color" value="transparent" />
+		</casta:designable>
+	</casta:designable>
+	
+	<!--clear-->
+	<casta:designable name="clear" uniqueId="core:div" layoutData="3">
+		<casta:attribute name="class" value="clear" />
+	</casta:designable>
+
+	<!--spacer-->
+	<casta:designable name="spacer" uniqueId="core:div" layoutData="4">
+		<casta:attribute name="class" value="spacer" />
+	</casta:designable>
+
+
+	<!--footer-->
+	<casta:designable name="footer" uniqueId="core:div" layoutData="5">
+		<casta:attribute name="class" value="footer" />
+		<casta:designable name="footer-t" uniqueId="core:xhtml" layoutData="1">
+			<casta:attribute name="template" value="/architecture2/templates/footer.xhtml" />
+		</casta:designable>
+	</casta:designable>
+</casta:designable>

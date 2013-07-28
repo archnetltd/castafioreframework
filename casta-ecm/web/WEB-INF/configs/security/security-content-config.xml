@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.1.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.1.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+
+	<!-- creation sample groups (user, admin) -->
+	<bean class="org.castafiore.security.configs.GroupCreator" >
+		<property name="name" value="users"></property>
+		<property name="description" value="A normal user belongs to this group"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.GroupCreator" >
+		<property name="name" value="administrators"></property>
+		<property name="description" value="An administrator belongs to this group"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.GroupCreator" >
+		<property name="name" value="merchants"></property>
+		<property name="description" value="A merchant belongs to this group"></property>
+	</bean>
+	
+	<!-- creation sample role (member, moderator) -->
+	<bean class="org.castafiore.security.configs.RoleCreator" >
+		<property name="name" value="member"></property>
+		<property name="description" value="by default a user role member when added to a group"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.RoleCreator" >
+		<property name="name" value="moderator"></property>
+		<property name="description" value="A user when made moderator of a group can perform more advanced operationss"></property>
+	</bean>
+	
+	
+	<bean class="org.castafiore.security.configs.RoleCreator" >
+		<property name="name" value="editor"></property>
+		<property name="description" value="A user when made moderator of a group can perform more advanced operationss"></property>
+	</bean>
+	
+	<bean class="org.castafiore.security.configs.RoleCreator" >
+		<property name="name" value="administrator"></property>
+		<property name="description" value="A user when made administrator of a group can be granted full access"></property>
+	</bean>
+	
+</beans>
