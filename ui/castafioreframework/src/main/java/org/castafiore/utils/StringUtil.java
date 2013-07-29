@@ -34,7 +34,7 @@ import org.springframework.util.Assert;
 public final class StringUtil {
 	public static final String EMPTY = "";
 	private final static int REC_SIZE = 3;
-	
+	public static final String[] EMPTY_STRING_ARRAY = new String[0];
 	
 	
 	private static final char[] symbols = new char[36];
@@ -526,7 +526,7 @@ public final class StringUtil {
         int len = str.length();
 
         if (len == 0) {
-            return ArrayUtils.EMPTY_STRING_ARRAY;
+            return EMPTY_STRING_ARRAY;
         }
 
         if ((separator == null) || (EMPTY.equals(separator))) {
@@ -536,7 +536,7 @@ public final class StringUtil {
 
         int separatorLength = separator.length();
 
-        ArrayList substrings = new ArrayList();
+        List<String> substrings = new ArrayList<String>();
         int numberOfSubstrings = 0;
         int beg = 0;
         int end = 0;
@@ -583,39 +583,7 @@ public final class StringUtil {
         return (String[]) substrings.toArray(new String[substrings.size()]);
     }
 	
-    private static String[] splitWorker(String str, char separatorChar, boolean preserveAllTokens) {
-        // Performance tuned for 2.0 (JDK1.4)
-
-        if (str == null) {
-            return null;
-        }
-        int len = str.length();
-        if (len == 0) {
-            return ArrayUtils.EMPTY_STRING_ARRAY;
-        }
-        List list = new ArrayList();
-        int i = 0, start = 0;
-        boolean match = false;
-        boolean lastMatch = false;
-        while (i < len) {
-            if (str.charAt(i) == separatorChar) {
-                if (match || preserveAllTokens) {
-                    list.add(str.substring(start, i));
-                    match = false;
-                    lastMatch = true;
-                }
-                start = ++i;
-                continue;
-            }
-            lastMatch = false;
-            match = true;
-            i++;
-        }
-        if (match || (preserveAllTokens && lastMatch)) {
-            list.add(str.substring(start, i));
-        }
-        return (String[]) list.toArray(new String[list.size()]);
-    }
+    
     
     private static String[] splitWorker(String str, String separatorChars, int max, boolean preserveAllTokens) {
         // Performance tuned for 2.0 (JDK1.4)
@@ -627,9 +595,9 @@ public final class StringUtil {
         }
         int len = str.length();
         if (len == 0) {
-            return ArrayUtils.EMPTY_STRING_ARRAY;
+            return EMPTY_STRING_ARRAY;
         }
-        List list = new ArrayList();
+        List<String> list = new ArrayList<String>();
         int sizePlus1 = 1;
         int i = 0, start = 0;
         boolean match = false;

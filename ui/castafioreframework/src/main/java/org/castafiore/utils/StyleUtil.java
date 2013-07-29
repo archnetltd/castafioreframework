@@ -23,7 +23,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 /**
  * 
  * 
@@ -35,7 +34,7 @@ public class StyleUtil {
 	
 	private static List<String> styles = null;
 	
-	private static Random rand = new Random();
+	//private static Random rand = new Random();
 	
 	static{
 
@@ -70,13 +69,5 @@ public class StyleUtil {
 	}
 	
 	
-	public static String getRandomColor(){
-		Integer red=  rand.nextInt(255);
-		Integer blie = rand.nextInt(255);
-		Integer yellow = rand.nextInt(255);
-		
-		String color = "#" +red.toHexString(red) + blie.toHexString(blie) + yellow.toHexString(yellow);
-		return color;
-	}
 
 }

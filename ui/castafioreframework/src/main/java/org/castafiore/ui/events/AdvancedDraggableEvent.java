@@ -34,6 +34,10 @@ import org.castafiore.ui.js.JMap;
  */
 public class AdvancedDraggableEvent implements Event {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Draggable draggable;
 
 	public AdvancedDraggableEvent(Draggable draggable) {

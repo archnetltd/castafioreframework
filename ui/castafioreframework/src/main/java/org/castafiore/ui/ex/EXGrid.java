@@ -33,6 +33,10 @@ import org.castafiore.ui.Container;
  */
 public class EXGrid extends EXContainer{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int columns;
 	protected int rows;
 	
@@ -218,6 +222,12 @@ public class EXGrid extends EXContainer{
 	}
 	
 	public class EXRow extends EXContainer{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 
 		public EXRow(String name) {
 			super(name, "tr");

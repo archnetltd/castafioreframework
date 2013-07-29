@@ -13,6 +13,11 @@ import org.castafiore.ui.events.Event;
 
 public class ScrollableInterceptor implements Interceptor, Event{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public Interceptor next() {
 		return null;

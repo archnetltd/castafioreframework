@@ -16,9 +16,6 @@
  */
 package org.castafiore.utils;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.castafiore.web.servlet.Castafiore;
 import org.springframework.context.ApplicationContext;
 
@@ -32,22 +29,24 @@ public class BaseSpringUtil {
 
 	public static <T extends Object> T getBeanOfType(Class<T> clazz) {
 
-		if (containerBuffer.containsKey(clazz)) {
-			return (T) getApplicationContext().getBean(
-					containerBuffer.get(clazz));
-		}
-		String[] names = getApplicationContext().getBeanNamesForType(clazz);
-
-		if (names != null && names.length > 0) {
-			containerBuffer.put(clazz, names[0]);
-			return (T) getApplicationContext().getBean(names[0]);
-		}
-		throw new RuntimeException("cannot find bean of type "
-				+ clazz.getName() + " configured in any application context");
+//		if (containerBuffer.containsKey(clazz)) {
+//			return (T) getApplicationContext().getBean(
+//					containerBuffer.get(clazz));
+//		}
+//		String[] names = getApplicationContext().getBeanNamesForType(clazz);
+//
+//		if (names != null && names.length > 0) {
+//			containerBuffer.put(clazz, names[0]);
+//			return (T) getApplicationContext().getBean(names[0]);
+//		}
+		
+		return getApplicationContext().getBean(clazz);
+		
 	}
 
-	private static Map<Class<?>, String> containerBuffer = new HashMap<Class<?>, String>();
+	//private static Map<Class<?>, String> containerBuffer = new HashMap<Class<?>, String>();
 
+	@SuppressWarnings("unchecked")
 	public static <T> T getBean(String beanId) {
 
 		return (T) getApplicationContext().getBean(beanId);

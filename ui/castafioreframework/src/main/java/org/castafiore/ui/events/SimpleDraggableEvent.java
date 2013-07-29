@@ -32,6 +32,10 @@ import org.castafiore.ui.js.JMap;
  */
 public class SimpleDraggableEvent implements Event {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JMap options = null;
 	
 	public SimpleDraggableEvent() {
@@ -55,13 +59,11 @@ public class SimpleDraggableEvent implements Event {
 
 	public boolean ServerAction(Container component,
 			Map<String, String> requestParameters) throws UIException {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 
 	public void Success(ClientProxy component, Map<String, String> requestParameters) throws UIException {
-		// TODO Auto-generated method stub
 		
 	}
 

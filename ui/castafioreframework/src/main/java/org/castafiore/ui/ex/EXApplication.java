@@ -42,6 +42,11 @@ import org.springframework.context.ApplicationContextAware;
  */
 public   class EXApplication extends EXContainer implements Application , ApplicationContextAware{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Map<String, Object> configs = new LinkedHashMap<String, Object>();
 	
 	private Set<String> resources = new LinkedHashSet<String>();

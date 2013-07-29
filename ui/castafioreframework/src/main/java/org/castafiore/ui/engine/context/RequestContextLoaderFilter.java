@@ -26,6 +26,10 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 public class RequestContextLoaderFilter implements CastafioreFilter{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final String REQUEST_ATTRIBUTES_ATTRIBUTE = 	RequestContextLoaderFilter.class.getName() + ".REQUEST_ATTRIBUTES";
 	
 	public void doEnd(HttpServletRequest request) throws Exception {
@@ -55,7 +59,6 @@ public class RequestContextLoaderFilter implements CastafioreFilter{
 	}
 
 	public void onException(HttpServletRequest request, Exception e) {
-		// TODO Auto-generated method stub
 		
 	}
 	

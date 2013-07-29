@@ -28,7 +28,6 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.dynaform.EXDynaformPanel;
 
 
 /**
@@ -132,10 +131,16 @@ event.type.21=ready
 	}
 	
 	
-	public static Event getEvent(final String methodName, final Class ancestor, final Class ancestorToMask){
+	public static Event getEvent(final String methodName, final Class<? extends Container> ancestor, final Class<? extends Container> ancestorToMask){
 		Event event = new Event(){
 
 			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+
 			public void ClientAction(ClientProxy container) {
 				if(ancestorToMask != null){
 					container.mask(container.getAncestorOfType(ancestorToMask));
@@ -159,7 +164,7 @@ event.type.21=ready
 						method = panel.getClass().getMethod(methodName, Container.class);
 						method.invoke(panel, container);
 					}catch(NoSuchMethodException nse){
-						panel.getClass().getMethod(methodName, null).invoke(panel, null);
+						panel.getClass().getMethod(methodName, (Class<?>[])null).invoke(panel, (Object[])null);
 					}
 					
 				}catch(Exception e){
@@ -184,6 +189,11 @@ event.type.21=ready
 		
 		
 
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
 		public void ClientAction(ClientProxy container) {
 			container.mask();
 			container.makeServerRequest(this);
@@ -196,14 +206,14 @@ event.type.21=ready
 			try{
 				String methodName = container.getAttribute("method");
 				String clazz = container.getAttribute("ancestor");
-				Class<Container> cls = (Class<Container>) Thread.currentThread().getContextClassLoader().loadClass(clazz);
+				Class<Container> cls = extracted(clazz);
 				Object panel = container.getAncestorOfType(cls);
 				Method method = null;
 				try{
 					method = panel.getClass().getMethod(methodName, Container.class);
 					method.invoke(panel, container);
 				}catch(NoSuchMethodException nse){
-					panel.getClass().getMethod(methodName, null).invoke(panel, null);
+					panel.getClass().getMethod(methodName, (Class<?>[])null).invoke(panel, (Object[])null);
 				}
 				
 			}catch(Exception e){
@@ -211,6 +221,12 @@ event.type.21=ready
 			}
 			
 			return true;
+		}
+
+		@SuppressWarnings("unchecked")
+		private Class<Container> extracted(String clazz)
+				throws ClassNotFoundException {
+			return (Class<Container>) Thread.currentThread().getContextClassLoader().loadClass(clazz);
 		}
 
 		public void Success(ClientProxy container, Map<String, String> request)

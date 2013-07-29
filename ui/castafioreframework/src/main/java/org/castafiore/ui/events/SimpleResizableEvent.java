@@ -15,62 +15,48 @@
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
 
-package org.castafiore.ui.engine;
+package org.castafiore.ui.events;
+
+import java.util.Map;
+
+import org.castafiore.ui.Container;
+import org.castafiore.ui.UIException;
+import org.castafiore.ui.engine.ClientProxy;
+import org.castafiore.ui.js.JMap;
 
 /**
  * 
+ * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * June 27 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
+public class SimpleResizableEvent implements Event {
 
-public class SimpleKeyValuePair implements KeyValuePair,Comparable<SimpleKeyValuePair> {
-	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -550647585055640132L;
+	private static final long serialVersionUID = 1L;
+	private JMap options = null;
 
-	private String key;
-	
-	private String value;
-	
-	public SimpleKeyValuePair()
-	{
-		
-	}
-	
-	public SimpleKeyValuePair(String key, String value) {
+	public SimpleResizableEvent(JMap options) {
 		super();
-		this.key = key;
-		this.value = value;
+		this.options = options;
 	}
 
-	public String getKey() {
-		return key;
+	public void ClientAction(ClientProxy application) {
+
+		application.resizeable(options);
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public boolean ServerAction(Container component,
+			Map<String, String> requestParameters) throws UIException {
+
+		return false;
 	}
 
-	public String getValue() {
-		return value;
-	}
+	public void Success(ClientProxy component,
+			Map<String, String> requestParameters) throws UIException {
 
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	
-	@Override
-	public String toString()
-	{
-		return value;
-	}
-
-	public int compareTo(SimpleKeyValuePair o) {
-		return this.key.compareToIgnoreCase(o.getKey());
 	}
 
 }

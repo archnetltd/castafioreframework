@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.utils;
+package org.castafiore.utils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -31,271 +31,268 @@ import org.castafiore.ui.Application;
 import org.castafiore.ui.CastafioreController;
 import org.castafiore.ui.Container;
 
-
-
-
 public class ResourceUtil {
-	
-	
+
 	private static String ICONS_REPO = "org/castafiore/resource/icons";
-	
+
 	private static String JS_REPOSITORY = "org/castafiore/resource/js";
-	
-	
+
 	private static java.util.Properties castaProp = new java.util.Properties();
-	
+
 	private static java.util.Properties MIMETYPES_EXTENSION = new java.util.Properties();
-	
+
 	private static java.util.Properties EXTENSION_MIMETYPES = new java.util.Properties();
-	
-	
-	
-	
-	
-	static{
-		try{
-			castaProp.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("castafiore.properties"));
-			MIMETYPES_EXTENSION.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("mimetype.properties"));
-			EXTENSION_MIMETYPES.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("extensions.properties"));
-			
-		}catch(Exception e){
+
+	static {
+		try {
+			castaProp.load(Thread.currentThread().getContextClassLoader()
+					.getResourceAsStream("castafiore.properties"));
+			MIMETYPES_EXTENSION.load(Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("mimetype.properties"));
+			EXTENSION_MIMETYPES.load(Thread.currentThread()
+					.getContextClassLoader()
+					.getResourceAsStream("extensions.properties"));
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
-	
-		
-	public static String getDownloadURL(String type, String path)
-	{
-		if(path.startsWith("/"))
-			return "castafiore/resource/"+type+"" + path;
+
+	public static String getDownloadURL(String type, String path) {
+		if (path.startsWith("/"))
+			return "castafiore/resource/" + type + "" + path;
 		else
-			return "castafiore/resource/"+type+"/" + path;
+			return "castafiore/resource/" + type + "/" + path;
 	}
-	
-	
-	public static boolean isTextType(String mimetype){
-		if(mimetype != null)
+
+	public static boolean isTextType(String mimetype) {
+		if (mimetype != null)
 			return mimetype.startsWith("text");
 		return false;
 	}
-	public static String getExtensionFromFileName(String name){
-		try{
-			if(name != null){
+
+	public static String getExtensionFromFileName(String name) {
+		try {
+			if (name != null) {
 				String[] as = StringUtil.split(name, ".");
-				if(as != null && as.length > 1){
-					return as[as.length-1];
+				if (as != null && as.length > 1) {
+					return as[as.length - 1];
 				}
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			return "";
 		}
-		//System.out.println("did not find extension from :" + name);
 		return "";
 	}
-	
-	public static String getParentPath(String filePath){
-		try{
+
+	public static String getParentPath(String filePath) {
+		try {
 			String[] as = StringUtil.split(filePath, "/");
-			String res = filePath.substring(0, filePath.length() - as[as.length-1].length()-1);
-			if(res.length() == 0){
+			String res = filePath.substring(0, filePath.length()
+					- as[as.length - 1].length() - 1);
+			if (res.length() == 0) {
 				return "/root";
-			}else{
+			} else {
 				return res;
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			return "/root";
 		}
 	}
-	
-	
-	public static String getNameFromPath(String path){
+
+	public static String getNameFromPath(String path) {
 		return StringUtil.getFileNameFromPath(path);
 	}
-	
-	public static String getMimeFromExtension(String extension){
-		
+
+	public static String getMimeFromExtension(String extension) {
+
 		return EXTENSION_MIMETYPES.getProperty(extension, "");
 	}
-	
-	public static String getIconUrl(String imageName, String size)
-	{
-		return ResourceUtil.getDownloadURL("classpath", ICONS_REPO + "/" + size + "/" +imageName);
+
+	public static String getIconUrl(String imageName, String size) {
+		return ResourceUtil.getDownloadURL("classpath", ICONS_REPO + "/" + size
+				+ "/" + imageName);
 	}
-	
-	public static String getMethodUrl(Container c, String methodName, String paramName, String parameter){
+
+	public static String getMethodUrl(Container c, String methodName,
+			String paramName, String parameter) {
 		String componentid = c.getId();
 		Application app = c.getRoot();
-		
+
 		String applicationid = app.getName();
-		return "castafiore/methods/" + applicationid + "/" + componentid + "?method=" + methodName + "&"+paramName+"=" + parameter +"&paramName=" +  paramName;
+		return "castafiore/methods/" + applicationid + "/" + componentid
+				+ "?method=" + methodName + "&" + paramName + "=" + parameter
+				+ "&paramName=" + paramName;
 	}
-	
-	public static String getMethodUrl(Container c, String methodName, String paramName){
+
+	public static String getMethodUrl(Container c, String methodName,
+			String paramName) {
 		String componentid = c.getId();
 		Application app = c.getRoot();
-		
+
 		String applicationid = app.getName();
-		return "castafiore/methods/" + applicationid + "/" + componentid + "?method=" + methodName + "&paramName=" + paramName;
+		return "castafiore/methods/" + applicationid + "/" + componentid
+				+ "?method=" + methodName + "&paramName=" + paramName;
 	}
-	
-	public static String getMethodUrl(CastafioreController c){
+
+	public static String getMethodUrl(CastafioreController c) {
 		String componentid = c.getId();
 		Application app = c.getRoot();
-		
+
 		String applicationid = app.getName();
 		return "castafiore/methods/" + applicationid + "/" + componentid;
 	}
-	
-	public static String getJavascriptURL(String path)
-	{
-		return ResourceUtil.getDownloadURL("classpath", JS_REPOSITORY + "/" +path);
+
+	public static String getJavascriptURL(String path) {
+		return ResourceUtil.getDownloadURL("classpath", JS_REPOSITORY + "/"
+				+ path);
 	}
-	
-	public static String getTemplate(String templateLocation, Application app){
-		
+
+	public static String getTemplate(String templateLocation, Application app) {
+
 		String contextPath = app.getContextPath();
 		String serverPort = app.getServerPort();
 		String servaerName = app.getServerName();
-		if("www.3racingtips.com".equalsIgnoreCase(servaerName)){
+		if ("www.3racingtips.com".equalsIgnoreCase(servaerName)) {
 			servaerName = "racingtips.s18.eatj.com";
 		}
-		
-		if(!contextPath.startsWith("/")){
+
+		if (!contextPath.startsWith("/")) {
 			contextPath = "/" + contextPath;
 		}
-		if(contextPath.endsWith("/") && templateLocation.startsWith("/")){
+		if (contextPath.endsWith("/") && templateLocation.startsWith("/")) {
 			templateLocation = templateLocation.substring(1);
 		}
-		if(!contextPath.endsWith("/") && ! templateLocation.startsWith("/")){
+		if (!contextPath.endsWith("/") && !templateLocation.startsWith("/")) {
 			templateLocation = "/" + templateLocation;
 		}
-		//String url = "";
-		if(!templateLocation.startsWith("http")){
-			templateLocation = "http://" + servaerName + ":" + serverPort  + contextPath + "" + templateLocation;
+		// String url = "";
+		if (!templateLocation.startsWith("http")) {
+			templateLocation = "http://" + servaerName + ":" + serverPort
+					+ contextPath + "" + templateLocation;
 		}
-		
-		try{
-			//URL oUrl = new URL(templateLocation);
-			//InputStream in = oUrl.openStream();
-			
+
+		try {
+
 			String template = readUrl(templateLocation);
-			
-			//throw new Exception("dfs");
+
 			return template;
-		}catch(Exception e){
-			
-			try{
-				String[] asSpec = StringUtil.splitByWholeSeparator(templateLocation , "spec=");
-				if(asSpec != null && asSpec.length == 2){
+		} catch (Exception e) {
+
+			try {
+				String[] asSpec = StringUtil.splitByWholeSeparator(
+						templateLocation, "spec=");
+				if (asSpec != null && asSpec.length == 2) {
 					String spec = asSpec[1];
-					ResourceLocator locator = ResourceLocatorFactory.getResourceLocator(spec);
-					InputStream data = locator.getResource(spec, null).getInputStream();
-					
+					ResourceLocator locator = ResourceLocatorFactory
+							.getResourceLocator(spec);
+					InputStream data = locator.getResource(spec, null)
+							.getInputStream();
+
 					String template = IOUtil.getStreamContentAsString(data);
 					return template;
-				}else{
-					throw new RuntimeException("unable to load template:" + templateLocation, e);
+				} else {
+					throw new RuntimeException("unable to load template:"
+							+ templateLocation, e);
 				}
-			}catch(Exception ex){
-				throw new RuntimeException("unable to load template:" + templateLocation, e);
+			} catch (Exception ex) {
+				throw new RuntimeException("unable to load template:"
+						+ templateLocation, e);
 			}
-			//e.printStackTrace();
 		}
-		
-		
+
 	}
-	public static String extractUrlFromStyle(String style){
+
+	public static String extractUrlFromStyle(String style) {
 		return style.replaceAll(".*url\\(", "").replaceAll("'|\\).*", "");
 	}
-	
-	public static String readUrl(String url)throws Exception{
+
+	public static String readUrl(String url) throws Exception {
 		URL yahoo = new URL(url);
-		BufferedReader in = new BufferedReader(new InputStreamReader(yahoo.openStream()));
+		BufferedReader in = new BufferedReader(new InputStreamReader(
+				yahoo.openStream()));
 
 		String inputLine;
 		StringBuilder b = new StringBuilder();
 		while ((inputLine = in.readLine()) != null)
 			b.append(inputLine).append("\n");
-		    //System.out.println(inputLine);
 
 		in.close();
-		
+
 		return b.toString();
 
 	}
-	
-	
-	public static String getDirToWrite(){
-		return ((Map)BaseSpringUtil.getBean("uploadprops")).get("upload.dir").toString();
-		//return castaProp.getProperty("upload.dir");
+
+	public static String getDirToWrite() {
+		return ((Map<?, ?>) BaseSpringUtil.getBean("uploadprops")).get(
+				"upload.dir").toString();
 	}
-	public static byte[] readUrlBinary(String url)throws Exception{
-		 
 
-		    URL u = new URL(url);
-		    URLConnection uc = u.openConnection();
-		    String contentType = uc.getContentType();
-		    int contentLength = uc.getContentLength();
-		    if (contentType.startsWith("text/") || contentLength == -1) {
-		      throw new IOException("This is not a binary file.");
-		    }
-		    InputStream raw = uc.getInputStream();
-		    InputStream in = new BufferedInputStream(raw);
-		    byte[] data = new byte[contentLength];
-		    int bytesRead = 0;
-		    int offset = 0;
-		    while (offset < contentLength) {
-		      bytesRead = in.read(data, offset, data.length - offset);
-		      if (bytesRead == -1)
-		        break;
-		      offset += bytesRead;
-		    }
-		    in.close();
+	public static byte[] readUrlBinary(String url) throws Exception {
 
-		    if (offset != contentLength) {
-		      throw new IOException("Only read " + offset + " bytes; Expected " + contentLength + " bytes");
-		    }
+		URL u = new URL(url);
+		URLConnection uc = u.openConnection();
+		String contentType = uc.getContentType();
+		int contentLength = uc.getContentLength();
+		if (contentType.startsWith("text/") || contentLength == -1) {
+			throw new IOException("This is not a binary file.");
+		}
+		InputStream raw = uc.getInputStream();
+		InputStream in = new BufferedInputStream(raw);
+		byte[] data = new byte[contentLength];
+		int bytesRead = 0;
+		int offset = 0;
+		while (offset < contentLength) {
+			bytesRead = in.read(data, offset, data.length - offset);
+			if (bytesRead == -1)
+				break;
+			offset += bytesRead;
+		}
+		in.close();
 
-		    return data;
-			  
+		if (offset != contentLength) {
+			throw new IOException("Only read " + offset + " bytes; Expected "
+					+ contentLength + " bytes");
+		}
+
+		return data;
 
 	}
-	
-	public static byte[] read(String url)throws Exception{
-		 
 
-	    URL u = new URL(url);
-	    URLConnection uc = u.openConnection();
-	   // int contentLength = uc.getContentLength();
-	    InputStream raw = uc.getInputStream();
-	    //InputStream in = new BufferedInputStream(raw);
-	    return IOUtil.getStreamContentAsBytes(raw);
-	    
-//	    byte[] data = new byte[contentLength];
-//	    int bytesRead = 0;
-//	    int offset = 0;
-//	    while (offset < contentLength) {
-//	      bytesRead = in.read(data, offset, data.length - offset);
-//	      if (bytesRead == -1)
-//	        break;
-//	      offset += bytesRead;
-//	    }
-//	    in.close();
-//
-//	    if (offset != contentLength) {
-//	      throw new IOException("Only read " + offset + " bytes; Expected " + contentLength + " bytes");
-//	    }
+	public static byte[] read(String url) throws Exception {
 
-	   // return data;
-		  
+		URL u = new URL(url);
+		URLConnection uc = u.openConnection();
+		// int contentLength = uc.getContentLength();
+		InputStream raw = uc.getInputStream();
+		// InputStream in = new BufferedInputStream(raw);
+		return IOUtil.getStreamContentAsBytes(raw);
 
-}
-	
-	public static String getUploadDir(){
-		return  "c:\\data";//((Map)BaseSpringUtil.getBean("uploadprops")).get("upload.dir").toString();
+		// byte[] data = new byte[contentLength];
+		// int bytesRead = 0;
+		// int offset = 0;
+		// while (offset < contentLength) {
+		// bytesRead = in.read(data, offset, data.length - offset);
+		// if (bytesRead == -1)
+		// break;
+		// offset += bytesRead;
+		// }
+		// in.close();
+		//
+		// if (offset != contentLength) {
+		// throw new IOException("Only read " + offset + " bytes; Expected " +
+		// contentLength + " bytes");
+		// }
+
+		// return data;
+
+	}
+
+	public static String getUploadDir() {
+		return "c:\\data";// ((Map)BaseSpringUtil.getBean("uploadprops")).get("upload.dir").toString();
 	}
 
 }

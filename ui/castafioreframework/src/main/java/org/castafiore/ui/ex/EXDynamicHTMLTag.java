@@ -34,6 +34,10 @@ import org.castafiore.ui.events.Event;
  */
 public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTMLTag , Container
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Map<Integer, List<Event>> events = new LinkedHashMap<Integer, List<Event>>();
 
 	public EXDynamicHTMLTag(String name, String tagName) 

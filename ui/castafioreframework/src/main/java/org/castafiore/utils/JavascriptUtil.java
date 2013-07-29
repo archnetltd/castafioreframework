@@ -22,10 +22,8 @@ import java.util.Map;
 
 import org.castafiore.Constant;
 import org.castafiore.ui.engine.ClientProxy;
-import org.castafiore.ui.js.JArray;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.JSObject;
-import org.castafiore.ui.js.Var;
 
 /**
  * 

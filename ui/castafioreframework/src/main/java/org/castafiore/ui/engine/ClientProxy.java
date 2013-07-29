@@ -65,7 +65,7 @@ public final class ClientProxy implements Constant {
 	private Container container_;
 	
 	private List<KeyValuePair> commands;
-	private ListOrderedMap buffer = null;
+	private ListOrderedMap<String, List<KeyValuePair>> buffer = null;
 	
 	private final static String NL = "\n";
 	
@@ -77,12 +77,12 @@ public final class ClientProxy implements Constant {
 	 * Creating a clientProxy using this constructor will not reflect any component in the Java DOM
 	 * @param selector
 	 */
-	public ClientProxy(String selector, ListOrderedMap buffer)
+	public ClientProxy(String selector, ListOrderedMap<String,List<KeyValuePair>> buffer)
 	{
 		
 		this.selector = selector;
 		String idref = getIdRef();
-		this.commands = (List<KeyValuePair>)buffer.get(idref);
+		this.commands = buffer.get(idref);
 		if(commands == null)
 		{
 			commands = new LinkedList<KeyValuePair>();
@@ -95,7 +95,7 @@ public final class ClientProxy implements Constant {
 		
 		this.selector = selector;
 		
-		this.buffer = new ListOrderedMap();
+		this.buffer = new ListOrderedMap<String,List<KeyValuePair>>();
 		
 		commands = new LinkedList<KeyValuePair>();
 		buffer.put(getIdRef(), commands);
@@ -119,11 +119,10 @@ public final class ClientProxy implements Constant {
 	 * Creates an instance of ClientProxy to mirror a Component
 	 * @param container
 	 */
-	@SuppressWarnings("unchecked")
-	public ClientProxy(Container container, ListOrderedMap  buffer)
+	public ClientProxy(Container container, ListOrderedMap<String,List<KeyValuePair>>  buffer)
 	{
 		this.container_ = container;
-		this.commands = (List<KeyValuePair>) buffer.get(getIdRef());
+		this.commands = buffer.get(getIdRef());
 		if(commands == null)
 		{
 			commands = new LinkedList<KeyValuePair>();
@@ -188,10 +187,10 @@ public final class ClientProxy implements Constant {
 	{
 		StringBuilder builder = new StringBuilder();
 		
-		Iterator selectors = buffer.keySet().iterator();
+		Iterator<String> selectors = buffer.keySet().iterator();
 		while(selectors.hasNext())
 		{
-			String selector = selectors.next().toString();
+			String selector = selectors.next();
 			List<KeyValuePair> cmds = (List<KeyValuePair>)buffer.get(selector);
 			
 			builder.append(ClientProxy.getCurrentJQuery_(cmds, selector));
@@ -523,8 +522,8 @@ public final class ClientProxy implements Constant {
 	}
 	
 	
-	@SuppressWarnings("unchecked")
-	public ClientProxy getDescendentOfType(Class type)
+
+	public ClientProxy getDescendentOfType(Class<?> type)
 	{
 		if(container_ != null)
 		{
@@ -1224,8 +1223,8 @@ public final class ClientProxy implements Constant {
 		
 	}
 	
-	@SuppressWarnings("unchecked")
-	public ClientProxy getAncestorOfType(Class classType) 
+
+	public ClientProxy getAncestorOfType(Class<? extends Container> classType) 
 	{
 		
 		Container c = container_.getAncestorOfType(classType);
@@ -1313,7 +1312,7 @@ public final class ClientProxy implements Constant {
 		if(ancestorId == null)
 			ancestorId = root.getId();
 		
-		String ancestor = ID_PREF + ancestorId;
+		//String ancestor = ID_PREF + ancestorId;
 		
 		params.put("casta_applicationid", root.getName());
 		
@@ -1369,7 +1368,7 @@ public final class ClientProxy implements Constant {
 	@Override
 	public ClientProxy clone()
 	{
-		return new ClientProxy(container_, new ListOrderedMap());
+		return new ClientProxy(container_, new ListOrderedMap<String,List<KeyValuePair>>());
 	}
 	
 	

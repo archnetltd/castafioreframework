@@ -187,7 +187,7 @@ public interface Container extends DynamicHTMLTag {
 	 * 
 	 * @return returns the root of the application. The root is always an instance of application
 	 */
-	public <T extends Application> T getRoot();
+	public Application  getRoot();
 
 	/**
 	 * 

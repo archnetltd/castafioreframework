@@ -31,19 +31,19 @@ public class SpringInterceptorRegistry implements InterceptorRegistry , Applicat
 	
 	private ApplicationContext context_ = null;
 	
-	private  Map<Class, Interceptor> registry = null;
+	private  Map<Class<?>, Interceptor> registry = null;
 	
 	private void init()
 	{
 		if(registry == null)
 		{
-			registry = new HashMap<Class, Interceptor>();
-			Map beans = context_.getBeansOfType(Interceptor.class);
+			registry = new HashMap<Class<?>, Interceptor>();
+			Map<String,Interceptor> beans = context_.getBeansOfType(Interceptor.class);
 			
 			//System.out.println(beans);
 			
 			
-			Iterator iter = beans.keySet().iterator();
+			Iterator<String> iter = beans.keySet().iterator();
 			
 			while(iter.hasNext())
 			{
@@ -51,7 +51,7 @@ public class SpringInterceptorRegistry implements InterceptorRegistry , Applicat
 				
 				try
 				{
-					Class c = Thread.currentThread().getContextClassLoader().loadClass(sClass);
+					Class<?> c = Thread.currentThread().getContextClassLoader().loadClass(sClass);
 				
 					registry.put(c, (Interceptor)beans.get(sClass));
 				}
@@ -67,12 +67,12 @@ public class SpringInterceptorRegistry implements InterceptorRegistry , Applicat
 
 	public Interceptor[] getInterceptors(Container container) {
 		init();
-		List<Interceptor> interceptors = new ArrayList<Interceptor>();
-		Iterator<Class> interfaces = registry.keySet().iterator();
+		List<Interceptor> interceptors = new ArrayList<Interceptor>(2);
+		Iterator<Class<?>> interfaces = registry.keySet().iterator();
 		
 		while(interfaces.hasNext())
 		{
-			Class c = interfaces.next();
+			Class<?> c = interfaces.next();
 			
 			if(c.isAssignableFrom(container.getClass()))
 			{

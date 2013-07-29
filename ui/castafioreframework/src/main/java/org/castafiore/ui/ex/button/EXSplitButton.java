@@ -13,7 +13,7 @@ public class EXSplitButton extends EXContainer implements Button{
 		bs.addItem(button);
 		bs.addItem(new EXIconButton("arrow", null, Icons.ICON_TRIANGLE_1_S));
 		addChild(bs);
-		addChild(dropdown.setAttribute("display", "none"));
+		addChild(dropdown.setStyle("display", "none"));
 		
 		
 		
@@ -23,12 +23,15 @@ public class EXSplitButton extends EXContainer implements Button{
 	public void onReady(ClientProxy proxy) {
 		
 		super.onReady(proxy);
-		ClientProxy mm = proxy.clone().getDescendentOfType(EXMenu.class).addMethod("show").addMethod("position", new JMap().put("my", "left top").put("at", "left botton").put("of", proxy.getIdRef()));
-		String js  ="$( document ).one( \"click\", function() {$('"+proxy.getDescendentOfType(EXMenu.class).getIdRef()+"').hide();});";
+		String menuId = proxy.getDescendentOfType(EXMenu.class).getIdRef(); 
+		ClientProxy mm = proxy.clone().getDescendentOfType(EXMenu.class).show(100);
+		mm.appendJSFragment("event.stopPropagation();");
+		String js  ="$( document ).click( function() {$('"+proxy.getDescendentOfType(EXMenu.class).getIdRef()+"').hide();});";
 		
 		proxy.getDescendentByName("arrow").click(mm);
 		proxy.appendJSFragment(js);
-		
+		ClientProxy lis = new ClientProxy(menuId + " li").click(proxy.clone().getDescendentOfType(EXMenu.class).hide(100));
+		proxy.mergeCommand(lis);
 		
 	}
 	

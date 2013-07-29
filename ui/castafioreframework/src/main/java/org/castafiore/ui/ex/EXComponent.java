@@ -17,7 +17,6 @@
 
 package org.castafiore.ui.ex;
 
-import org.castafiore.ui.Component;
 import org.castafiore.ui.Container;
 import org.springframework.util.Assert;
 
@@ -29,6 +28,11 @@ import org.springframework.util.Assert;
  */
 public abstract  class EXComponent implements Container{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String id_ = null;
 	
 	private Container parent_;

@@ -21,7 +21,7 @@ import org.springframework.core.NamedThreadLocal;
 
 public abstract class CastafioreApplicationContextHolder {
 	
-	private static final ThreadLocal castafioreApplicationContextHolderThread = new NamedThreadLocal("CastafioreApplicationContextHolder");
+	private static final ThreadLocal<Application> castafioreApplicationContextHolderThread = new NamedThreadLocal<Application>("CastafioreApplicationContextHolder");
 
 	public static void setApplicationContext(Application application)
 	{

@@ -66,7 +66,6 @@ public class CastafioreApplicationScope implements Scope {
 	}
 
 	public void registerDestructionCallback(String name, Runnable callback) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -88,7 +87,6 @@ public class CastafioreApplicationScope implements Scope {
 
 
 	public Object resolveContextualObject(String arg0) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -3,7 +3,6 @@ package org.castafiore.utils;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.awt.image.BufferedImageOp;
 import java.io.File;
@@ -12,7 +11,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.math.MathContext;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
 
@@ -85,15 +83,8 @@ public class ImageUtil {
 		
 		File[] imgs = dir.listFiles();
 		
-		Random rand = new Random();
-		int r1 = rand.nextInt(255);
-		int r2 = rand.nextInt(255);
-		
-		int g1 = rand.nextInt(255);
-		int g2 = rand.nextInt(255);
-		
-		int b1 = rand.nextInt(255);
-		int b2 = rand.nextInt(255);
+		//Random rand = new Random();
+
 		
 		for(File f : imgs){
 			if(f.isDirectory()){
@@ -113,7 +104,7 @@ public class ImageUtil {
 					int red = c.getRed();
 					int green = c.getGreen();
 					int blue = c.getBlue();
-					int alpha = c.getAlpha();
+					//int alpha = c.getAlpha();
 					
 					if(red > 200 || green > 200 || blue > 200 || red < 25 || green < 25 || blue < 25){
 						

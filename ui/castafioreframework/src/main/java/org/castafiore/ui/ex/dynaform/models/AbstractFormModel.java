@@ -148,15 +148,15 @@ public abstract class AbstractFormModel<T> implements FormModel {
 	private StatefullComponent buildComponent(Field fieldAnnotation)throws Exception
 	{
 		
-		Class inputType = fieldAnnotation.fieldType();
+		Class<?> inputType = fieldAnnotation.fieldType();
 		
 		String name = fieldAnnotation.name();
 		
-		Class listproviderClass = fieldAnnotation.listProvider();
+		Class<?> listproviderClass = fieldAnnotation.listProvider();
 		
 		boolean readonly = fieldAnnotation.readonly();
 		
-		Class[] argumentsTypes = null;
+		Class<?>[] argumentsTypes = null;
 		Object[] params = null;
 		
 		//no list provider, so, constructor with name only
@@ -187,7 +187,7 @@ public abstract class AbstractFormModel<T> implements FormModel {
 			params = new Object[]{name, model};
 		}
 		
-		Constructor c = inputType.getConstructor(argumentsTypes);
+		Constructor<?> c = inputType.getConstructor(argumentsTypes);
 		Object o = c.newInstance(params);
 		StatefullComponent component = (StatefullComponent)o;
 		
