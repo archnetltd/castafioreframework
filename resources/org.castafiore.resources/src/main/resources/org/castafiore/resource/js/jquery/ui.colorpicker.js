@@ -23,11 +23,11 @@
 
 
 // A few configuration settings
-var CROSSHAIRS_LOCATION = '../../colorpicker/crosshairs.png';
-var HUE_SLIDER_LOCATION = '../../colorpicker/h.png';
-var HUE_SLIDER_ARROWS_LOCATION = '../../colorpicker/position.png';
-var SAT_VAL_SQUARE_LOCATION = '../../colorpicker/sv.png';
-var BUTON_CLOSE_LOCATION='../../colorpicker/close.jpg';
+var CROSSHAIRS_LOCATION = 'castafiore/resource/classpath/org/castafiore/resource/colorpicker/crosshairs.png';
+var HUE_SLIDER_LOCATION = 'castafiore/resource/classpath/org/castafiore/resource/colorpicker/h.png';
+var HUE_SLIDER_ARROWS_LOCATION = 'castafiore/resource/classpath/org/castafiore/resource/colorpicker/position.png';
+var SAT_VAL_SQUARE_LOCATION = 'castafiore/resource/classpath/org/castafiore/resource/colorpicker/sv.png';
+var BUTON_CLOSE_LOCATION='castafiore/resource/classpath/org/castafiore/resource/colorpicker/close.jpg';
 var HEIGHT_OF_OBJ=25;//manualy move the the color picker top or botom
 var WIDTH_OF_OBJ=150; //manualy move the color picker left or right
 
