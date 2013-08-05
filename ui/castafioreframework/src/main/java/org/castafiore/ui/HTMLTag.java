@@ -91,8 +91,7 @@ public interface HTMLTag extends Component {
 	
 	
 	/**
-	 * return style names accumulated during the whole life cycle if the tag
-	 * @return
+	 * @return style names accumulated during the whole life cycle if the tag
 	 */
 	public String[] getStyleNames();
 	

@@ -26,6 +26,8 @@ public class ClassPathResourceLocator extends AbstractResourceLocator {
 
 	/**
 	 * Returns the resource from the specified classpath
+	 * @return A {@link FileData} for this resource
+	 * 
 	 */
 	public FileData getResource(String spec, String width) throws Exception {
 		ClasspathFileData file = new ClasspathFileData();

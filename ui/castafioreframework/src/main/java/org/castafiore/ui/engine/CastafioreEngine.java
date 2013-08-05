@@ -65,7 +65,7 @@ public final class CastafioreEngine {
 		}
 	}
 
-	@SuppressWarnings({ "deprecation", "unused" })
+	@SuppressWarnings({ "unused" })
 	public synchronized String getJQuery(Container container, String parentId,
 			Container root,
 			ListOrderedMap<String, List<org.castafiore.KeyValuePair>> buffer) {
@@ -102,11 +102,7 @@ public final class CastafioreEngine {
 				container.addChild(componentId);
 			}
 
-			if (container.getParent() != null
-					&& container.getParent().getLayout() != null)
-				container.getParent().getLayout()
-						.doStyling(container, container.getParent());
-
+		
 			InterceptorRegistry interceptorRegistry = BaseSpringUtil
 					.getBean("castafioreInterceptorRegistry");
 

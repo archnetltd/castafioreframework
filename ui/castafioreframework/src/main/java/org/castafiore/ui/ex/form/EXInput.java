@@ -41,13 +41,11 @@ public class EXInput extends AbstractStatefullComponent  {
 		super(name, "input");
 		setValue(value);
 		setReadOnlyAttribute("type", "text");
-		//getReadonlyAttributes().put("type", "text");
 	}
 	
 	public EXInput(String name) {
 		super(name, "input");
 		setReadOnlyAttribute("type", "text");
-		//getReadonlyAttributes().put("type", "text");
 	}
 
 
@@ -60,7 +58,6 @@ public class EXInput extends AbstractStatefullComponent  {
 		setAttribute("value", value);
 		if(this instanceof EXCheckBox)
 		{
-			//StringUtil.addOrUpdateItem("checked", null, attributes_);
 			super.attributes_.remove("checked");
 			setRendered(false);
 		}
@@ -88,15 +85,5 @@ public class EXInput extends AbstractStatefullComponent  {
 		return true;
 	}
 
-
-	
-	
-	
-	
-
-
-	
-
-	
 
 }

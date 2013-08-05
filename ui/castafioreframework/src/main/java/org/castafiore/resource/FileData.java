@@ -27,41 +27,40 @@ public interface FileData {
 	
 	/**
 	 * 
-	 * @return - The name of the resource
+	 * @return The name of the resource
 	 */
 	public String getName();
 	
 	/**
 	 * Sets the name of the resource
-	 * @param name
+	 * @param name The name of the resource
 	 */
 	public void setName(String name);
 	
 	/**
 	 * 
-	 * @return mimetype of the resource
+	 * @return Mimetype of the resource
 	 */
 	public String getMimeType() ;
 	
 	/**
-	 * Provides an inputstream pointing to the resource
-	 * @return
+	 * Provides an {@link InputStream} pointing to the resource
+	 * @return The {@link InputStream} of this resource
 	 * @throws Exception
 	 */
 	public InputStream getInputStream() throws Exception;
 	
-	//public void write(byte[] bytes)throws Exception;
 	
 	/**
 	 * Overwrite the underlying resource with the specified stream
-	 * @param in
-	 * @throws Exception
+	 * @param in The {@link InputStream} to write from
+	 * @throws Exception Whenever there is any exception
 	 */
 	public void write(InputStream in)throws Exception;
 	
 	/**
 	 * Sets an accessible url for the resource
-	 * @param url
+	 * @param url The url accessible via castafiore framework
 	 */
 	public void setUrl(String url);
 

@@ -37,6 +37,11 @@ import org.springframework.util.Assert;
 public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		Container {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	protected Set<String> changedStyles_ = new LinkedHashSet<String>();
 
 	protected Set<String> changedAttributes_ = new LinkedHashSet<String>();
@@ -57,20 +62,35 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 
 	public abstract void flush(int secretKey);
 
+	/**
+	 * @see Container#setAttribute(String, String)
+	 */
 	public String getAttribute(String name) {
 		return StringUtil.getValue(name, this.attributes_);
 	}
 
+	/**
+	 * @see EXDynamicHTMLTag#getHTML()
+	 */
 	public abstract String getHTML();
 
+	/**
+	 * @see Container#getStyle(String)
+	 */
 	public String getStyle(String name) {
 		return StringUtil.getValue(name, styles_);
 	}
 
+	/**
+	 * @see Container#getTag()
+	 */
 	public String getTag() {
 		return tag_;
 	}
 
+	/**
+	 * @see HTMLTag#setAttribute(String, String)
+	 */
 	public Container setAttribute(String name, Var value) {
 		Assert.notNull(name,
 				"you cannot pass a name as null to set an attribute");
@@ -80,6 +100,9 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		return this;
 	}
 
+	/**
+	 * @see HTMLTag#setAttribute(String, String)
+	 */
 	public Container setAttribute(String name, String value) {
 
 		Assert.notNull(name,
@@ -89,6 +112,9 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		return this;
 	}
 
+	/**
+	 * @see HTMLTag#setStyle(String, String)
+	 */
 	public Container setStyle(String name, String value) {
 		Assert.notNull(name, "you cannot pass a name as null to set a style");
 		styles_.put(name, value);
@@ -96,6 +122,9 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		return this;
 	}
 
+	/**
+	 * @see HTMLTag#setStyle(String, Var)
+	 */
 	public Container setStyle(String name, Var var) {
 		Assert.notNull(name, "you cannot pass a name as null to set a style");
 		String txt = var.getJavascript();
@@ -104,25 +133,40 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 		return this;
 	}
 
+	/**
+	 * @see HTMLTag#getAttributeNames()
+	 */
 	public String[] getAttributeNames() {
 		return this.attributes_.keySet().toArray(
 				new String[attributes_.keySet().size()]);
 	}
 
+	/**
+	 * @see HTMLTag#getStyleNames()
+	 */
 	public String[] getStyleNames() {
 		return this.styles_.keySet().toArray(
 				new String[styles_.keySet().size()]);
 	}
 
+	/**
+	 * @see HTMLTag#getChangedAttributeNames()
+	 */
 	public String[] getChangedAttributeNames() {
 		return changedAttributes_
 				.toArray(new String[changedAttributes_.size()]);
 	}
 
+	/**
+	 * @see HTMLTag#getChangedStyleNames()
+	 */
 	public String[] getChangedStyleNames() {
 		return changedStyles_.toArray(new String[changedStyles_.size()]);
 	}
 
+	/**
+	 * @see HTMLTag#getText(boolean)
+	 */
 	public String getText(boolean escape) {
 		if (text_ == null) {
 			return "";
@@ -134,10 +178,16 @@ public abstract class EXHtmlTag extends EXComponent implements HTMLTag,
 
 	}
 
+	/**
+	 * @see HTMLTag#getText()
+	 */
 	public String getText() {
 		return getText(true);
 	}
 
+	/**
+	 * @see HTMLTag#setText(String)
+	 */
 	public Container setText(String text_) {
 		this.text_ = text_;
 		setRendered(false);

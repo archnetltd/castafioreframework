@@ -37,7 +37,7 @@ public class Dimension {
 	/**
 	 * Constructs a {@link Dimension} for the specified unit and amount.<br>
 	 * <b>Valid units are
-	 * <ul>
+	 * <ol>
 	 * 	<li>px</li>
 	 * <li>%</li>
 	 * <li>cm</li>
@@ -47,7 +47,7 @@ public class Dimension {
 	 * <li>em</li>
 	 * <li>in</li>
 	 * <li>pc</li>
-	 * </ul>
+	 * </ol>
 	 * @param unit The unit
 	 * @param amount The amount in integer
 	 */
@@ -128,7 +128,7 @@ public class Dimension {
 	/**
 	 * Creates a {@link Dimension} based simply on an integer value.<br>
 	 * The default unit is pixel (px)
-	 * @param amount
+	 * @param amount The scalar value of the dimension
 	 */
 	public Dimension(int amount) {
 		super();

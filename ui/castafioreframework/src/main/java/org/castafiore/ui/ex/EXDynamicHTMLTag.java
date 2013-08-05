@@ -24,10 +24,13 @@ import java.util.Map;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.DynamicHTMLTag;
+import org.castafiore.ui.HTMLTag;
 import org.castafiore.ui.events.Event;
 
 /**
+ * Extends {@link HTMLTag} to add DHTML features to it. i.e. Ability to add events
  * 
+ * @see DynamicHTMLTag
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * June 27 2008
@@ -40,12 +43,19 @@ public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTML
 	private static final long serialVersionUID = 1L;
 	private Map<Integer, List<Event>> events = new LinkedHashMap<Integer, List<Event>>();
 
+	/**
+	 * constructs a {@link EXDynamicHTMLTag} with the specified name and tag
+	 * @param name The name of the components
+	 * @param tagName The tag name to use
+	 */
 	public EXDynamicHTMLTag(String name, String tagName) 
 	{
 		super(name, tagName);
 	}
 	
-	
+	/**
+	 * @see HTMLTag#flush(int)
+	 */
 	@Override
 	public void flush(int secretKey) 
 	{
@@ -66,6 +76,9 @@ public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTML
 	 */
 	public abstract String getHTML() ;
 		
+	/**
+	 * @see DynamicHTMLTag#addEvent(Event, int)
+	 */
 	public Container addEvent(Event event, int type) 
 	{
 		
@@ -82,6 +95,9 @@ public abstract  class EXDynamicHTMLTag extends EXHtmlTag implements DynamicHTML
 		return this;
 	}
 
+	/**
+	 * @see DynamicHTMLTag#getEvents()
+	 */
 	public Map<Integer, List<Event>> getEvents() 
 	{
 		return this.events;

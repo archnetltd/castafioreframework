@@ -20,6 +20,7 @@ package org.castafiore.ui.ex;
 import java.util.List;
 
 import org.castafiore.ui.Container;
+
 /**
  * Simple class to create a grid
  * 
@@ -28,10 +29,9 @@ import org.castafiore.ui.Container;
  * 
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
-public class EXGrid extends EXContainer{
+public class EXGrid extends EXContainer {
 
 	/**
 	 * 
@@ -39,12 +39,17 @@ public class EXGrid extends EXContainer{
 	private static final long serialVersionUID = 1L;
 	protected int columns;
 	protected int rows;
-	
+
 	/**
-	 * Contructor to create a grid with specified number of columns and specified number of rows
-	 * @param name	- The name of the grid
-	 * @param cols	- The number of columns in the grid
-	 * @param rows	- The number of rows in the grid
+	 * Contructor to create a grid with specified number of columns and
+	 * specified number of rows
+	 * 
+	 * @param name
+	 *            - The name of the grid
+	 * @param cols
+	 *            - The number of columns in the grid
+	 * @param rows
+	 *            - The number of rows in the grid
 	 */
 	public EXGrid(String name, int cols, int rows) {
 		super(name, "table");
@@ -52,198 +57,170 @@ public class EXGrid extends EXContainer{
 		this.rows = rows;
 		refresh();
 	}
-	
-	
+
 	/**
 	 * Re-renders the grid
 	 */
 	@Override
-	public void refresh()
-	{
+	public void refresh() {
 		this.getChildren().clear();
-		for(int i = 0; i < rows; i ++)
-		{
+		for (int i = 0; i < rows; i++) {
 			EXContainer tr = new EXContainer("", "tr");
-			
-			for(int j = 0; j < columns; j ++)
-			{
+
+			for (int j = 0; j < columns; j++) {
 				EXContainer td = new EXContainer("", "td");
 				tr.addChild(td);
 			}
 			addChild(tr);
 		}
-		
+
 		this.setRendered(false);
-		
+
 	}
-	
-	
-//	public Container addCell(Container c){
-//		Container r = getChildren().get(getChildren().size()-1);
-//		
-//		for(Container cell : r.getChildren()){
-//			if(cell.getChildren().size() == 0){
-//				cell.addChild(c);
-//				return cell;
-//			}
-//		}
-//		
-//		EXRow row =addRow();
-//		//r = getChildren().get(getChildren().size()-1);
-//		row.addInCell(0, c);
-//		return row.getChildByIndex(0);
-//	}
-	
+
 	/**
 	 * add an empty column at the end of the grid
-	 *
+	 * 
 	 */
-	public void addColumn()
-	{
-		for(Container row : this.getChildren())
-		{
+	public void addColumn() {
+		for (Container row : this.getChildren()) {
 			EXContainer col = new EXContainer("", "td");
 			row.addChild(col);
 		}
 		this.columns++;
 	}
-	
+
 	/**
 	 * adds a component in the specifed column and specified row of the grid
-	 * @param col	- The column in which to add the component
-	 * @param row	- The row in which to add the component
-	 * @param component	- The component to add
+	 * 
+	 * @param col
+	 *            - The column in which to add the component
+	 * @param row
+	 *            - The row in which to add the component
+	 * @param component
+	 *            - The component to add
 	 */
-	public void addInCell(int col, int row, Container component)
-	{
+	public void addInCell(int col, int row, Container component) {
 		this.getChildByIndex(row).getChildByIndex(col).addChild(component);
 	}
-	
-	
+
 	/**
 	 * returns all children in a specified cell
-	 * @param col	- The column of the cell
-	 * @param row	- The row of the cell
-	 * @return		- The containers in the cell
+	 * 
+	 * @param col
+	 *            - The column of the cell
+	 * @param row
+	 *            - The row of the cell
+	 * @return - The containers in the cell
 	 */
-	public List<Container> getChildrenInCell(int col, int row)
-	{
+	public List<Container> getChildrenInCell(int col, int row) {
 		return this.getChildByIndex(row).getChildByIndex(col).getChildren();
 	}
-	
+
 	/**
 	 * clear all children in the specified cell
-	 * @param col	- The column of the cell
-	 * @param row	- The row of the cell
+	 * 
+	 * @param col
+	 *            - The column of the cell
+	 * @param row
+	 *            - The row of the cell
 	 */
-	public void clearCell(int col, int row)
-	{
+	public void clearCell(int col, int row) {
 		this.getChildByIndex(row).getChildByIndex(col).getChildren().clear();
 		this.getChildByIndex(row).getChildByIndex(col).setRendered(false);
-		
+
 	}
-	
-	
+
 	/**
 	 * The the cell that meets the specified row and column
-	 * @param col	- The column of the cell
-	 * @param row	- The row of the cell
-	 * @return	The cell
+	 * 
+	 * @param col
+	 *            - The column of the cell
+	 * @param row
+	 *            - The row of the cell
+	 * @return The cell
 	 */
-	public EXContainer getCell(int col, int row)
-	{
-		return (EXContainer)this.getChildByIndex(row).getChildByIndex(col);
+	public EXContainer getCell(int col, int row) {
+		return (EXContainer) this.getChildByIndex(row).getChildByIndex(col);
 	}
-	
+
 	/**
 	 * adds a row at the end of the grid
-	 *
+	 * 
 	 */
-	public EXRow addRow()
-	{
+	public EXRow addRow() {
 		rows++;
-		
+
 		EXRow tr = new EXRow("");
-		
-		for(int j = 0; j < columns; j ++)
-		{
+
+		for (int j = 0; j < columns; j++) {
 			EXContainer td = new EXContainer("", "td");
 			tr.addChild(td);
 		}
 		addChild(tr);
 		return tr;
 	}
-	
+
 	/**
 	 * adds a row at the specified position of the grid
-	 * @param index - The first row should have index 0
+	 * 
+	 * @param index
+	 *            - The first row should have index 0
 	 * @return
 	 */
-	public EXContainer addRowAt(int index)
-	{
-		
+	public EXContainer addRowAt(int index) {
+
 		rows++;
 		EXContainer tr = new EXContainer("", "tr");
-		
-		for(int j = 0; j < columns; j ++)
-		{
+
+		for (int j = 0; j < columns; j++) {
 			EXContainer td = new EXContainer("", "td");
 			tr.addChild(td);
 		}
-		if(index == -1)
-		{
+		if (index == -1) {
 			addChild(tr);
-		}
-		else
-		{
+		} else {
 			addChildAt(tr, index);
 		}
-		
+
 		return tr;
 	}
-	
+
 	/**
-	 * returns  the number of rows in the grid
+	 * returns the number of rows in the grid
+	 * 
 	 * @return
 	 */
-	public int getRows()
-	{
+	public int getRows() {
 		return rows;
 	}
-	
-	
+
 	/**
 	 * returns the number of columns in the grid
+	 * 
 	 * @return
 	 */
-	public int getColumns()
-	{
+	public int getColumns() {
 		return columns;
 	}
-	
-	public class EXRow extends EXContainer{
+
+	public class EXRow extends EXContainer {
 
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 
-
 		public EXRow(String name) {
 			super(name, "tr");
-			
+
 		}
-		
-		
-		public EXRow addInCell( int index, Container c ){
-			//EXContainer td = new EXContainer("", "td");
-			//addCell(td);
-			//td.addChild(c);
-			
+
+		public EXRow addInCell(int index, Container c) {
 			getChildByIndex(index).addChild(c);
 			return this;
 		}
-		
+
 	}
 
 }

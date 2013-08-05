@@ -17,67 +17,73 @@
 
 package org.castafiore.ui;
 
-
 /**
+ * Interface that marks a Form component. All component that wants its value to
+ * be automatically retrieved or set to the browser should implement this
+ * interface. The engine automatically manages the value attribute components
+ * which implements this interface. A valid {@link Encoder} and {@link Decoder}
+ * are required to serialize and deserialize the value attribute to and from the
+ * browser.
+ * The component does not necessary need to an HTML form component. It can be any component actually.
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * June 27 2008
+ *         kureem@gmail.com June 27 2008
  */
 public interface StatefullComponent extends Container {
-	
+
 	/**
-	 * returns the raw value of the component
-	 * the raw value has not been passed through the decoder
-	 * @return
+	 * 
+	 * @return The raw value of the component the raw value has not been passed
+	 *         through the decoder
 	 */
 	public String getRawValue();
-	
+
 	/**
-	 * sets the raw value of the component.
-	 * The raw value has not been passed through the encoder
+	 * sets the raw value of the component. The raw value has not been passed
+	 * through the encoder
+	 * 
 	 * @param rawValue
+	 *            The raw value
 	 */
 	public void setRawValue(String rawValue);
-	
+
 	/**
-	 * returns the value after the raw value has been passed through the encoder
-	 * @return
+	 * @return the value after the raw value has been passed through the encoder
 	 */
 	public Object getValue();
-	
-	
+
 	/**
 	 * sets the raw value by passing the specified value through the decoder
+	 * 
 	 * @param value
+	 *            The value
 	 */
 	public void setValue(Object value);
-	
+
 	/**
-	 * returns the encoder
-	 * @return
+	 * 
+	 * @return The encoder
 	 */
 	public Encoder getEncoder();
-	
+
 	/**
-	 * returns the decoder
-	 * @return
+	 * 
+	 * @return The decoder
 	 */
 	public Decoder getDecoder();
-	
-	
+
 	/**
 	 * sets the encoder
+	 * 
 	 * @param encoder
 	 */
 	public void setEncoder(Encoder encoder);
-	
+
 	/**
 	 * sets the decoder
+	 * 
 	 * @param decoder
 	 */
 	public void setDecoder(Decoder decoder);
-	
-
 
 }

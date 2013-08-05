@@ -3,7 +3,6 @@ package org.castafiore.ui.ex.button;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.navigation.EXMenu;
-import org.castafiore.ui.js.JMap;
 
 public class EXSplitButton extends EXContainer implements Button{
 

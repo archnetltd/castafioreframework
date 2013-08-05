@@ -19,24 +19,28 @@ package org.castafiore.ui;
 
 import org.castafiore.ui.js.JMap;
 
-
 /**
- * If a component implements this interface, the component automatically becomes draggable
+ * If a component implements this interface, the component automatically becomes
+ * draggable
  * 
- * Furthermore, you can use the event types START_DRAG DRAG and ENG_DRAG on this component
+ * Furthermore, you can use the event types START_DRAG DRAG and ENG_DRAG on this
+ * component
  * 
  * @author Kureem Rossaye<br>
- *          kureem@gmail.com
- * Oct 22, 2008
+ *         kureem@gmail.com Oct 22, 2008
  */
 public interface Draggable extends Container {
-	
+
 	/**
 	 * The options to be applied on the draggable component.<br>
-	 * <a href="http://jqueryui.com/">jquery ui</a> has been used to implement the draggable feature under the hood<br>Please
-	 * refer to this <a href="http://api.jqueryui.com/draggable/">http://api.jqueryui.com/draggable/</a> for a list of available options 
+	 * <a href="http://jqueryui.com/">jquery ui</a> has been used to implement
+	 * the draggable feature under the hood<br>
+	 * Please refer to this <a
+	 * href="http://api.jqueryui.com/draggable/">http://api
+	 * .jqueryui.com/draggable/</a> for a list of available options
+	 * 
 	 * @return The options to be applied on this draggable component
 	 */
 	public JMap getDraggableOptions();
-	
+
 }

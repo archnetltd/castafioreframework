@@ -24,28 +24,12 @@ public class EXRichTextArea extends EXTextArea {
 
 	public EXRichTextArea(String name) {
 		super(name);
-		//addStyleSheet("ckeditor/ckeditor/ckeditor.js");
 	}
 	
 	public void onReady(ClientProxy proxy){
 		
-		//proxy.addMethod("smallHtmlBox", new JMap());
 		
 		proxy.appendJSFragment("CKEDITOR.replace( '"+getId()+"' );");
-		
-		
-//		JMap css = new JMap();
-//		String[] styles = getStyleNames();
-//		for(String s : styles){
-//			css.put(s, getStyle(s));
-//		}
-//		
-//		JMap options = new JMap().put("css", css);
-//		
-//		proxy.setTimeout(proxy.clone().addMethod("wysiwyg",options), 1000);
-		
-		
-		//proxy.addMethod("ckeditor");
 		
 	}
 	

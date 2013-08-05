@@ -96,7 +96,6 @@ public class EXEditableLabel extends AbstractStatefullComponent implements Event
 
 
 	public void Success(ClientProxy component, Map<String, String> requestParameters) throws UIException {
-		// TODO Auto-generated method stub
 		
 	}
 	public String getRawValue() {

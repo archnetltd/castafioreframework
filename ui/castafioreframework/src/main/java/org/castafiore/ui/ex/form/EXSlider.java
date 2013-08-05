@@ -32,7 +32,6 @@ public class EXSlider extends EXContainer implements StatefullComponent, Event{
 
 	@Override
 	public void onReady(ClientProxy proxy) {
-		// TODO Auto-generated method stub
 		super.onReady(proxy);
 		
 		String s = "$( '"+proxy.getIdRef()+"' ).slider( 'option', 'value' )";
@@ -40,7 +39,6 @@ public class EXSlider extends EXContainer implements StatefullComponent, Event{
 		
 		JMap par = new JMap().put("origntation", orientation).put("min", min).put("max", max).put("animate", animate).put("step", step).put("value", getAttribute("value"));
 		
-		//String s = "$( '"+proxy.getIdRef()+"' ).slider( 'option', 'value' )";
 		par.put("stop",p, "event", "ui");
 		proxy.addMethod("slider", par);
 	}
@@ -74,13 +72,11 @@ public class EXSlider extends EXContainer implements StatefullComponent, Event{
 
 	@Override
 	public void setDecoder(Decoder decoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void setEncoder(Encoder encoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -162,7 +158,6 @@ public class EXSlider extends EXContainer implements StatefullComponent, Event{
 	@Override
 	public void Success(ClientProxy container, Map<String, String> request)
 			throws UIException {
-		// TODO Auto-generated method stub
 		
 	}
 

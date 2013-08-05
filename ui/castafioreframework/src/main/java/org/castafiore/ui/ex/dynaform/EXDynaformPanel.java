@@ -17,6 +17,11 @@ import org.castafiore.utils.ComponentUtil;
 
 public class EXDynaformPanel extends EXPanel implements DynaForm{
 	
+	/**
+	 * Creates a DynaForm base on an jquery ui EXPanel
+	 * @param name The name of the form
+	 * @param title The title to display on header of form
+	 */
 	public EXDynaformPanel(String name, String title) {
 		super(name, title);
 		Container fieldSet = ComponentUtil.getContainer("fieldSet", "table", null, "dynaform");
@@ -24,6 +29,12 @@ public class EXDynaformPanel extends EXPanel implements DynaForm{
 		setBody(fieldSet);
 	}
 	
+	/**
+	 * Creates a DynaForm base on a jquery ui EXPanel. The content of the form is delegated to a formModel
+	 * @param name The name of the form
+	 * @param title The title to display on the header of the form
+	 * @param model The model managing the content of the form
+	 */
 	public EXDynaformPanel(String name, String title, FormModel model) {
 		this(name,title);
 		
@@ -39,6 +50,9 @@ public class EXDynaformPanel extends EXPanel implements DynaForm{
 		 }
 	}
 
+	/**
+	 * @see DynaForm#addButton
+	 */
 	public DynaForm addButton(Button button) {
 		setShowFooter(true);
 		getFooterContainer().addChild(button);

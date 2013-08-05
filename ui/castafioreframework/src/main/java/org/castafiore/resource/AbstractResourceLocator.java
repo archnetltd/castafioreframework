@@ -20,7 +20,7 @@ import org.castafiore.utils.StringUtil;
 
 /**
  * Abstract convenient class implementing {@link ResourceLocator}<br>
- * @see ClassPathResourceLocator
+ * @see ClassPathResourceLocator#getIdentifier(String)
  * @author Kureem Rossaye
  *
  */
@@ -29,8 +29,8 @@ public abstract class AbstractResourceLocator implements ResourceLocator{
 	
 	/**
 	 * Extracts the identifier of the specification of the resource
-	 * @param spec
-	 * @return
+	 * @param spec The specification applied
+	 * @return The identifier
 	 */
 	public String getIdentifier(String spec)
 	{

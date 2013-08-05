@@ -75,7 +75,7 @@ public final class ClientProxy implements Constant {
 	/**
 	 * creates an instance of clientProxy using a selector.
 	 * Creating a clientProxy using this constructor will not reflect any component in the Java DOM
-	 * @param selector
+	 * @param selector The selector to manage
 	 */
 	public ClientProxy(String selector, ListOrderedMap<String,List<KeyValuePair>> buffer)
 	{
@@ -90,6 +90,10 @@ public final class ClientProxy implements Constant {
 		}
 		this.buffer = buffer;
 	}
+	/**
+	 * Constructs a cl
+	 * @param selector
+	 */
 	public ClientProxy(String selector)
 	{
 		
@@ -1143,7 +1147,6 @@ public final class ClientProxy implements Constant {
 	
 	public ClientProxy resizeable(JMap options)
 	{
-		//container_.addScript(ResourceUtil.getJavascriptURL("jquery/ui.resizable.js"));
 		KeyValuePair kv = makeKeyValuePair("resizable", options);
 		this.commands.add(kv);
 		return this;

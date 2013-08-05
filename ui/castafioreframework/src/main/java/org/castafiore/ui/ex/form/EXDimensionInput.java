@@ -64,17 +64,14 @@ public class EXDimensionInput extends EXContainer implements StatefullComponent 
 	}
 
 	public Decoder getDecoder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public Encoder getEncoder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public String getRawValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -89,17 +86,14 @@ public class EXDimensionInput extends EXContainer implements StatefullComponent 
 	}
 
 	public void setDecoder(Decoder decoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void setEncoder(Encoder encoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void setRawValue(String rawValue) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -110,11 +104,5 @@ public class EXDimensionInput extends EXContainer implements StatefullComponent 
 			getDescendentOfType(EXSelect.class).setValue(((Dimension) value).getUnit());
 		}
 	}
-	
-	
-	
-	
-	
-	
 
 }

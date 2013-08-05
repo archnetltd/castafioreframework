@@ -31,14 +31,12 @@ public class EXRadioButton extends EXInput
 
 	public EXRadioButton(String name) {
 		super(name);
-		//super.getReadonlyAttributes().put("type", "radio");
 		setReadOnlyAttribute("type", "radio");
 	}
 
 	
 	public EXRadioButton(String name, String value) {
 		super(name, value);
-		//super.getReadonlyAttributes().put("type", "radio");
 		setReadOnlyAttribute("type", "radio");
 	}
 	

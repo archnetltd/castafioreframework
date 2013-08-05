@@ -30,6 +30,10 @@ import org.castafiore.ui.ex.EXContainer;
  */
 public class EXContextMenu extends EXContainer {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ContextMenuModel model = null;
 
 	public EXContextMenu(String name, ContextMenuModel model) {
@@ -49,7 +53,6 @@ public class EXContextMenu extends EXContainer {
 		addChild(ul);
 
 		for (int i = 0; i < model.size(); i++) {
-			// <li id="open"><img src="folder.png" /> Open</li>
 
 			EXContainer li = new EXContainer("", "li");
 

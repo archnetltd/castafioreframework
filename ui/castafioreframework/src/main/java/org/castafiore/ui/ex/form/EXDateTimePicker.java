@@ -22,7 +22,6 @@ public class EXDateTimePicker extends AbstractStatefullComponent {
 
 	@Override
 	public void setRawValue(String rawValue) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -36,7 +35,6 @@ public class EXDateTimePicker extends AbstractStatefullComponent {
 		}catch(Exception e){
 			throw new RuntimeException(e);
 		}
-		//return super.getValue();
 	}
 
 	@Override

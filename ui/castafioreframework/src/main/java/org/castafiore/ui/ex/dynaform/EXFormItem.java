@@ -20,13 +20,6 @@ import org.castafiore.ui.Dimension;
 import org.castafiore.ui.StatefullComponent;
 import org.castafiore.ui.ex.EXContainer;
 /**
- * <div class="x-form-item">
-		<label class="x-form-item-label" style="width: 75px;">First Name: </label>
-		<div style="padding-left: 80px;" class="x-form-element">
-			<input type="text" name="first" size="20" class="x-form-text x-form-field" style="width: 202px;" />
-		</div>
-		<div class="x-form-clear-left"></div>
-	</div>
  * @author kureem
  *
  */

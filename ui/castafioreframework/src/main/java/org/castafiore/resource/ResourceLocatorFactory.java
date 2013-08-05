@@ -20,8 +20,19 @@
 import org.castafiore.utils.BaseSpringUtil;
 import org.castafiore.utils.StringUtil;
 
+/**
+ * Class used internally by Castafiore to resolve {@link ResourceLocator} based on the specification<br>
+ * @see ResourceLocator#getResource(String, String)
+ * @author arossaye
+ *
+ */
 public class ResourceLocatorFactory {
 	
+	/**
+	 * Loads {@link ResourceLocator} based on the spec applied
+	 * @param spec The specification
+	 * @return The {@link ResourceLocator} matching this specification
+	 */
 	public static ResourceLocator getResourceLocator(String spec)
 	{
 		String[] parts =StringUtil.split(spec, ":");

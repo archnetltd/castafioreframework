@@ -26,6 +26,11 @@ import org.castafiore.ui.js.JMap;
 
 public class ContextMenuEvent implements Event{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void ClientAction(ClientProxy application) {
 		ClientProxy contextMenu = application.getDescendentOfType(EXContextMenu.class);
 		if(contextMenu == null)
@@ -37,12 +42,10 @@ public class ContextMenuEvent implements Event{
 	}
 
 	public void Success(ClientProxy component, Map<String, String> requestParameters) throws UIException {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public boolean ServerAction(Container component, Map<String, String> requestParameters) throws UIException {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

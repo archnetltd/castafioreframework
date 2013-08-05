@@ -28,12 +28,10 @@ public class EXHidden extends EXInput{
 	public EXHidden(String name) {
 		super(name);
 		setReadOnlyAttribute("type", "hidden");
-		//super.getReadonlyAttributes().put("type", "hidden");
 	}
 	
 	public EXHidden(String name, String value) {
 		super(name);
-		//super.getReadonlyAttributes().put("type", "hidden");
 		setReadOnlyAttribute("type", "hidden");
 		super.setValue(value);
 	}

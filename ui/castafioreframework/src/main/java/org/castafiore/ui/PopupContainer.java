@@ -14,10 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
- package org.castafiore.ui;
+package org.castafiore.ui;
 
+/**
+ * Marker interface that can be added to a {@link Container} to make is work as
+ * a popup container. Implementation should take care of how to add a popup. A
+ * popup can be any type of {@link Container}.
+ * 
+ * @author arossaye
+ * 
+ */
 public interface PopupContainer extends Container {
-	
+
+	/**
+	 * Adds a popup to the {@link Container}
+	 * @param popup The popup to add
+	 */
 	public void addPopup(Container popup);
 
 }

@@ -24,6 +24,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.castafiore.ComponentNotFoundException;
 import org.castafiore.Constant;
+import org.castafiore.KeyValuePair;
 import org.castafiore.resource.BinaryFileData;
 import org.castafiore.resource.FileData;
 import org.castafiore.resource.ResourceLocator;
@@ -429,7 +430,7 @@ public class Castafiore implements ApplicationContextAware {
 
 				script = getEngine(request).getJQuery(applicationInstance,
 						"root_" + applicationId, applicationInstance,
-						new ListOrderedMap());
+						new ListOrderedMap<String,List<KeyValuePair>>());
 				//script = script + "hideloading();";
 
 			} else if ((componentId != null && eventId != null)

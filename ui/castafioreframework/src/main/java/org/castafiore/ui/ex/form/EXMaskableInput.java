@@ -25,9 +25,6 @@ import org.castafiore.ui.events.Event;
 
 public class EXMaskableInput extends EXInput{
 
-	
-	
-	
 	public EXMaskableInput(String name) {
 		super(name);
 	}
@@ -42,7 +39,6 @@ public class EXMaskableInput extends EXInput{
 	
 	public  void applyMask(final String mask)
 	{
-		//addScript(ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/form/jquery.maskedinput.js"));
 		if(getEvents().containsKey(Event.READY))
 			getEvents().get(Event.READY).clear();
 		

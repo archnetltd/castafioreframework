@@ -170,25 +170,21 @@ public abstract class EXMultiInput extends EXContainer implements StatefullCompo
 				addRow(file);
 			}
 		}
-		//return result;
 	}
 
 	public Decoder getDecoder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 
 	public Encoder getEncoder() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 
 	public String getRawValue() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -198,21 +194,18 @@ public abstract class EXMultiInput extends EXContainer implements StatefullCompo
 
 
 	public void setDecoder(Decoder decoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
 
 
 	public void setEncoder(Encoder encoder) {
-		// TODO Auto-generated method stub
 		
 	}
 
 
 
 	public void setRawValue(String rawValue) {
-		// TODO Auto-generated method stub
 		
 	}
 

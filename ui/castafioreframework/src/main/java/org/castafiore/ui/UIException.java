@@ -18,7 +18,7 @@
 package org.castafiore.ui;
 
 /**
- * 
+ * Generic runtime exception thrown whenever there is an internal error in the engine for whatever reason
  * @author Kureem Rossaye<br>
  *          kureem@gmail.com
  * June 27 2008
@@ -30,6 +30,10 @@ public class UIException extends RuntimeException {
 	public UIException() {
 	}
 
+	/**
+	 * 
+	 * @param message
+	 */
 	public UIException(String message) {
 		super(message);		
 	}

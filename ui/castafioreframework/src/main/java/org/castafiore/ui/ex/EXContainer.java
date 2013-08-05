@@ -33,7 +33,6 @@ import org.castafiore.ui.engine.context.CastafioreApplicationContextHolder;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.events.SimpleDraggableEvent;
 import org.castafiore.ui.events.SimpleResizableEvent;
-import org.castafiore.ui.ex.layout.Layout;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.utils.StringUtil;
 import org.springframework.util.Assert;
@@ -73,14 +72,11 @@ import org.springframework.util.Assert;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-@SuppressWarnings("deprecation")
 public class EXContainer extends EXDynamicHTMLTag implements Container {
 
 	private static final long serialVersionUID = 8510467682895944117L;
 
 	private Map<String, String> readonlyAttributes_ = new LinkedHashMap<String, String>();
-
-	private Layout layout_;
 
 	private Set<String> resources = null;
 
@@ -184,11 +180,6 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	 * Refreshes the layout of this container if ever a layout is applied
 	 */
 	public void refresh() {
-		if (layout_ != null) {
-			for (int i = 0; i < children_.size(); i++) {
-				layout_.doStyling(children_.get(i), this);
-			}
-		}
 
 	}
 
@@ -201,7 +192,6 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		String readonlyAttributes = StringUtil
 				.buildattributesFromMap(this.readonlyAttributes_);
 
-		/* id="sdfsd" */
 		return "<" + getTag() + " " + readonlyAttributes + ">" + getText()
 				+ "</" + getTag() + ">";
 	}
@@ -322,6 +312,8 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	 * 
 	 * @return <code>true</code> if child is valid, <code>false</code> if not
 	 *         valid
+	 * @param child
+	 *            The child to verify if it is valid or not
 	 */
 	public boolean isValidChild(Container child) {
 		return true;
@@ -330,6 +322,9 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	/**
 	 * Removes the child with the specified. Nothing is done if child does not
 	 * exist. Exception is thrown if name is null
+	 * 
+	 * @param name
+	 *            The name of the child to search and remove.
 	 */
 	public Container removeChild(String name) {
 		Assert.notNull(name, "cannot remove a child with name null");
@@ -344,10 +339,14 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * adds the specified container to this current container. It check if the
+	 * Adds the specified container to this current container. It check if the
 	 * component is valid by calling {@link Container#isValidChild(Container)}
 	 * before adding the component. The component cannot be null, or else
-	 * exception is thrown.
+	 * exception is thrown. For this implementation, the framework will
+	 * automatically search natural place to render this component
+	 * 
+	 * @param component
+	 *            The container to add as child
 	 */
 	public Container addChild(Container component) {
 		Assert.notNull(component, "cannot add a component that is null");
@@ -366,7 +365,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * checks if this container has any children.
+	 * Checks if this container has any children.
 	 * 
 	 * @return true if has children, false if does not have children
 	 */
@@ -382,10 +381,10 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * @return a map of readonly attributes. These attributes that cannot be set
-	 *         into a tag after it is created. The engine will generate these
-	 *         attributes together with the tag to create an html to be rendered
-	 *         on the browser
+	 * @return a map of read-only attributes. These attributes that cannot be
+	 *         set into a tag after it is created. The engine will generate
+	 *         these attributes together with the tag to create an HTML to be
+	 *         rendered on the browser
 	 */
 	public Map<String, String> getReadonlyAttributes() {
 		return this.readonlyAttributes_;
@@ -417,7 +416,10 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * sets the width of the container
+	 * Sets the width of the container
+	 * 
+	 * @param width
+	 *            The width of the {@link Container}
 	 */
 	public Container setWidth(Dimension width) {
 		Assert.notNull(width, "cannot set a dimension null");
@@ -437,7 +439,10 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * sets the height of the container
+	 * Sets the height of the container
+	 * 
+	 * @param height
+	 *            The height to apply to this {@link Container}
 	 */
 	public Container setHeight(Dimension height) {
 		Assert.notNull(height, "cannot set a dimension null");
@@ -446,7 +451,7 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * checks if this container is draggable
+	 * Checks if this container is draggable
 	 * 
 	 * @return <code>true</code> if draggable, <code>false</code> if not
 	 *         draggable
@@ -457,10 +462,16 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 	}
 
 	/**
-	 * checks if has event with the sepecified type
+	 * Checks if has event with the sepecified type
 	 * 
 	 * @return <code>true</code> if has event, <code>false</code> if does not
 	 *         has event
+	 * 
+	 * @param event
+	 *            The class type of the event
+	 * @param type
+	 *            The type of event
+	 * @see {@link Event}
 	 */
 	public boolean hasEvent(Class<?> event, int type) {
 		Assert.notNull(event, "cannot search an event to type null");
@@ -477,6 +488,12 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 
 	/**
 	 * Removes the specified event from the container
+	 * 
+	 * @param event
+	 *            The class type of the event
+	 * @param type
+	 *            The type of event
+	 * @see {@link Event}
 	 */
 	public void removeEvent(Class<?> event, int type) {
 		Assert.notNull(event, "cannot remove an event to type null");
@@ -507,7 +524,15 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		return this;
 	}
 
-	
+	/**
+	 * Makes this {@link Container} draggable together with more options. This
+	 * method is very convenient since it allows a great deal of flexibility <a
+	 * href="http://jqueryui.com/">jquery ui</a> has been used to implement the
+	 * draggable feature under the hood<br>
+	 * Please refer to this <a
+	 * href="http://api.jqueryui.com/draggable/">http://api
+	 * .jqueryui.com/draggable/</a> for a list of available options
+	 */
 	public Container setDraggable(boolean draggable, JMap options) {
 		if (draggable) {
 			if (!hasEvent(SimpleDraggableEvent.class, Event.READY)) {
@@ -519,32 +544,41 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		return this;
 	}
 
-	public Container setResizable(boolean res) {
-		setResizable(res, new JMap());
+	/**
+	 * Makes the {@link Container} resizable. Note that this will only make it
+	 * resizable. It will not be possible to control the resizable options using
+	 * this method. To have a more advanced resizable feature on the component,
+	 * consider using the overloaded method (
+	 * {@link #setResizable(boolean, JMap)}
+	 * 
+	 * @param bool
+	 *            to enable or disable resizable feature
+	 */
+	public Container setResizable(boolean bool) {
+		setResizable(bool, new JMap());
 		return this;
 	}
 
-	public Container setResizable(boolean res, JMap options) {
-		if (res) {
+	/**
+	 * Makes this {@link Container} resizable together with more options. This
+	 * method is very convenient since it allows a great deal of flexibility <a
+	 * href="http://jqueryui.com/">jquery ui</a> has been used to implement the
+	 * resizable feature under the hood<br>
+	 * Please refer to this <a
+	 * href="http://api.jqueryui.com/resizable/">http://api
+	 * .jqueryui.com/resizable/</a> for a list of available options
+	 * 
+	 * @param bool
+	 *            to enable or disable resizable feature
+	 */
+	public Container setResizable(boolean bool, JMap options) {
+		if (bool) {
 			if (!hasEvent(SimpleResizableEvent.class, Event.READY)) {
 				this.addEvent(new SimpleResizableEvent(options), Event.READY);
 			}
 		} else {
 			removeEvent(SimpleResizableEvent.class, Event.READY);
 		}
-		return this;
-	}
-
-	public Layout getLayout() {
-		return this.layout_;
-	}
-
-	public Container setLayout(Layout layout) {
-
-		this.layout_ = layout;
-
-		refresh();
-		setRendered(false);
 		return this;
 	}
 
@@ -560,9 +594,22 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		return this;
 	}
 
+	/**
+	 * adds a css file to this container<br>
+	 * This file will be loaded on the browser only when this container is being
+	 * rendered<br>
+	 * It is safe to add many times the same file, it will be delivered to the
+	 * browser only once<br>
+	 * Please not that, the css will NOT be removed from the browser when this
+	 * container is removed.
+	 * 
+	 * @return This container itself
+	 * 
+	 * @param The
+	 *            style sheet url
+	 */
 	public Container addStyleSheet(String stylesheeturl) {
 		Assert.notNull(stylesheeturl, "cannot add a stylesheet that is null");
-		// logger.debug("adding stylesheet " + stylesheeturl);
 		if (resources == null) {
 			resources = new LinkedHashSet<String>();
 		}
@@ -570,6 +617,15 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		return this;
 	}
 
+	/**
+	 * Adds a component in the specified index in the children list.
+	 * 
+	 * @param component
+	 *            The component to add
+	 * @param position
+	 *            The position to add it
+	 * @return This updated {@link Container}
+	 */
 	public Container addChildAt(Container component, int position) {
 		Assert.notNull(component, "cannot add a component that is null");
 		if (isValidChild(component)) {
@@ -587,6 +643,12 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 
 	}
 
+	/**
+	 * Removes the specified class from the tag
+	 * 
+	 * @param sclass
+	 *            The style class to remove
+	 */
 	public Container removeClass(String sclass) {
 		Assert.notNull(sclass, "cannot remove a class null");
 		String cls = getAttribute("class");
@@ -602,6 +664,11 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 
 	}
 
+	/**
+	 * Entry point to add javascripts into the component when it is ready to
+	 * manipulate
+	 * @param A {@link ClientProxy} for this {@link Container} itself
+	 */
 	public void onReady(ClientProxy proxy) {
 
 	}
@@ -610,6 +677,14 @@ public class EXContainer extends EXDynamicHTMLTag implements Container {
 		readonlyAttributes_.put(key, value);
 	}
 
+	/**
+	 * Checks if the container is visible or not. This is based only on the
+	 * styles set via {@link Container#setStyle(String, String)} If the
+	 * component is made invisible via animations or via client side script, the
+	 * method will still return <code>true</code>
+	 * 
+	 * @return <code>true</code> if visible <code>false</code> if not visible
+	 */
 	public boolean isVisible() {
 		String display = getStyle("display");
 

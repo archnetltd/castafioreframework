@@ -27,7 +27,7 @@ public interface RefreshSentive {
 
 	
 	/**
-	 * this method is exected when the page is refreshed
+	 * this method is executed when the page is refreshed
 	 */
 	public void onRefresh();
 	

@@ -26,7 +26,6 @@ import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.ex.form.EXRadioButton;
-import org.castafiore.ui.ex.layout.Layout;
 
 /**
  * 
@@ -114,21 +113,21 @@ public class EXRadio extends AbstractEXList<Object> implements StatefullComponen
 
 
 
-	public void setVertical(){
-		super.setLayout(null);
-		
-	}
-	
-	public void setHorizontal(){
-		super.setLayout(new Layout(){
-
-			public void doStyling(Container child, Container container) {
-				child.setStyle("float", "left");
-				
-			}
-			
-		});
-	}
+//	public void setVertical(){
+//		super.setLayout(null);
+//		
+//	}
+//	
+//	public void setHorizontal(){
+//		super.setLayout(new Layout(){
+//
+//			public void doStyling(Container child, Container container) {
+//				child.setStyle("float", "left");
+//				
+//			}
+//			
+//		});
+//	}
 
 
 	@Override

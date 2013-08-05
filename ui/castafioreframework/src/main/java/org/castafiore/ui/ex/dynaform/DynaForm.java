@@ -35,15 +35,15 @@ import org.castafiore.ui.ex.button.Button;
 public interface DynaForm extends Container{
 	
 	/**
-	 * returns a map of fields configured in this Form
-	 * @return
+	 * 
+	 * @return returns a map of fields configured in this Form
 	 */
 	public Map<String, StatefullComponent> getFieldsMap();
 	
 	/**
-	 * The Form component with the specified name
-	 * @param name
-	 * @return
+	 * 
+	 * @param name The name of the field to search
+	 * @return The Form component with the specified name
 	 */
 	public StatefullComponent getField(String name);
 	
@@ -57,22 +57,22 @@ public interface DynaForm extends Container{
 	
 	/**
 	 * Adds a button to the form
-	 * @param button
-	 * @return
+	 * @param button The button to add
+	 * @return This current form
 	 */
 	public DynaForm addButton(Button button);
 	
 	/**
-	 * Return all fields in the form of a list
-	 * @return
+	 *  
+	 * @return All fields in the form of a list
 	 */
 	public List<StatefullComponent> getFields();
 	
 	
 	/**
 	 * Sets the label for a specified field
-	 * @param label
-	 * @param c
+	 * @param label The label of the field
+	 * @param c The form component to set label for
 	 */
 	public void setLabelFor(String label, StatefullComponent c);
 	

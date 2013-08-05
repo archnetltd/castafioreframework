@@ -43,26 +43,47 @@ public class BinaryFileData implements FileData{
 	
 	private String location = ResourceUtil.getUploadDir() + (this.hashCode() + System.currentTimeMillis()) + ".casta";
 	
+	/**
+	 * @return An {@link InputStream} for the binary data 
+	 */
 	public InputStream getInputStream() throws Exception {
 		return new FileInputStream(location);
 	}
 
+	/**
+	 * @return The mimetype of this Resource
+	 */
 	public String getMimeType() {
 		return mimeType;
 	}
 
+	/**
+	 * Sets the mimetype of this Resource
+	 * @param mimeType The mimetype
+	 */
 	public void setMimeType(String mimeType) {
 		this.mimeType = mimeType;
 	}
 
+	/**
+	 * @return The name of this resource
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * sets the name of this resource
+	 * @param name The name of this resource
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * Returns an {@link OutputStream} ready to write into this resource
+	 * @return The {@link OutputStream} to write into
+	 */
 	public OutputStream getOutputStream() {
 		try{
 			return new FileOutputStream(location);
@@ -71,6 +92,11 @@ public class BinaryFileData implements FileData{
 		}
 	}
 
+	/**
+	 * Writes the array of byte into this resource
+	 * @param bytes The array of byte to write
+	 * @throws Exception If an IOException occures
+	 */
 	public void write(byte[] bytes) throws Exception {
 		OutputStream out = getOutputStream();
 		out.write(bytes);
@@ -79,12 +105,19 @@ public class BinaryFileData implements FileData{
 		
 	}
 
+	/**
+	 * Writes this {@link InputStream} into the the resource
+	 * @param The {@link InputStream} to read from in order to write into the resource
+	 */
 	public void write(InputStream in) throws Exception {
 		OutputStream out = getOutputStream();
 		out.write(IOUtil.getStreamContentAsBytes(in));
 		
 	}
 
+	/**
+	 * sets a url downloadable directly via Castafiore framework
+	 */
 	@Override
 	public void setUrl(String url) {
 		location = url;

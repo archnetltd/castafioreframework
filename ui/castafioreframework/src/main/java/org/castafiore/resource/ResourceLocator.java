@@ -24,6 +24,14 @@
  */
 public interface ResourceLocator {
 	
+	/**
+	 * Returns an implementation of {@link FileData} which is actually an abstraction of Binary data
+	 * @param spec The specification of the Data typically in the form &lt;locatortype&gt;:&lt;path&gt;<br>
+	 * e.g classpath:org/castafiore/resource/image.png 
+	 * @param width The width to resize the resource if it is an image
+	 * @return The Binary representation of the resource
+	 * @throws Exception Thrown whenever resolving fails
+	 */
 	public FileData getResource(String spec, String width)throws Exception;
 
 }

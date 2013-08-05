@@ -41,7 +41,6 @@ public class EXCheckBox extends EXInput{
 	public EXCheckBox(String name, boolean checked) {
 		super(name);
 		setReadOnlyAttribute("type", "checkbox");
-		//super.getReadonlyAttributes().put("type", "checkbox");
 		if(checked)
 		{
 			super.setValue("checked");
@@ -50,7 +49,6 @@ public class EXCheckBox extends EXInput{
 		else
 			super.setValue("");
 		
-		//addEvent(new CHANGE_EVT(), Event.CLICK);
 	}
 
 	
@@ -61,10 +59,8 @@ public class EXCheckBox extends EXInput{
 	public void setChecked(boolean checked){
 		if(checked){
 			super.setValue("checked");
-			//super.setAttribute("checked", "checked");
 		}else{
 			super.setValue("");
-			//super.setAttribute("checked", "false");
 		}
 		if(!rendered() && getParent() != null){
 			getParent().setRendered(false);
@@ -79,7 +75,6 @@ public class EXCheckBox extends EXInput{
 
 		public void Success(ClientProxy container, Map<String, String> request)
 				throws UIException {
-			// TODO Auto-generated method stub
 			
 		}
 
@@ -92,7 +87,6 @@ public class EXCheckBox extends EXInput{
 
 		public boolean ServerAction(Container container,
 				Map<String, String> request) throws UIException {
-			// TODO Auto-generated method stub
 			return false;
 		}
 	

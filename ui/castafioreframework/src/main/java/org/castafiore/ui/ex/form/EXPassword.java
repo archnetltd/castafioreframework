@@ -27,14 +27,12 @@ public class EXPassword extends EXInput {
 
 	public EXPassword(String name) {
 		super(name);
-		//super.getReadonlyAttributes().put("type", "password");
 		setReadOnlyAttribute("type", "password");
 		
 	}
 	
 	public EXPassword(String name, String value) {
 		super(name, value);
-		//super.getReadonlyAttributes().put("type", "password");
 		setReadOnlyAttribute("type", "password");
 		
 	}

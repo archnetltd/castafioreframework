@@ -40,7 +40,6 @@ public class EXTextArea extends AbstractStatefullComponent {
 
 	
 	public void setRawValue(String value) {
-		//setText(value);
 		super.setAttribute("value", value);
 	}
 	

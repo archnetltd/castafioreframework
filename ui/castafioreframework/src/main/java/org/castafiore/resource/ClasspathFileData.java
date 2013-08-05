@@ -27,12 +27,18 @@ public class ClasspathFileData extends BinaryFileData {
 
 	private String location;
 	
-	
+	/**
+	 * @see FileData#getInputStream()
+	 */
 	public InputStream getInputStream() throws Exception {
 		return Thread.currentThread().getContextClassLoader().getResourceAsStream(getLocation());
 	}
 
 
+	/**
+	 * Returns the location of the Resource
+	 * @return The location of the resource
+	 */
 	public String getLocation() {
 		if(location.startsWith("/"))
 			location = location.substring(1);
@@ -40,6 +46,10 @@ public class ClasspathFileData extends BinaryFileData {
 	}
 
 
+	/**
+	 * Sets the location of the resource. Typically for this implementation, it is a classpath 
+	 * @param location The location of the resource
+	 */
 	public void setLocation(String location) {
 		this.location = location;
 	}
