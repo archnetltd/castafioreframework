@@ -26,6 +26,7 @@ import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.EXContainer;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.Var;
+import org.castafiore.utils.ResourceUtil;
 /**
  * Wrapper around an {@link Table} to make is paginable.
  * 
@@ -114,7 +115,7 @@ public class EXPagineableTable extends EXContainer {
 					
 					
 					ClientProxy callback = container.clone().addMethod("jPaginator", options);
-					container.getScript("js1/jPaginator-min.js", callback);
+					container.getScript(ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/js/jPaginator-min.js"), callback);
 					
 				}
 	

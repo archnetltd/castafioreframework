@@ -1,12 +1,8 @@
 <project name="casta-ui"   basedir=".">
 	
 
-		<target name="co">
-		
-		<copydir src="${basedir}/target/castafioreframework/WEB-INF/classes" dest="C:/Adev/apache-tomcat-6.0.36/webapps/castafioreframework/WEB-INF/classes">
-			<exclude name="**/*.java"/>
-		</copydir>
-		
+		<target name="deploy">
+			<copyfile dest="c:/Adev/apache-tomcat-6.0.36/webapps/castafioreframework" src="target/castafioreframework.war"/>
 		</target>
 	
 	

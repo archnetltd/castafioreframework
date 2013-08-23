@@ -90,7 +90,6 @@ public class EXXYLayoutContainer extends EXContainer implements LayoutContainer 
 
 	public void validateLayoutData(String layoutData)
 			throws InvalidLayoutDataException {
-		// TODO Auto-generated method stub
 		
 	}
 	

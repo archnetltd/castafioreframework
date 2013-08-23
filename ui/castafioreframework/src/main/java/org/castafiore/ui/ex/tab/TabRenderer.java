@@ -48,7 +48,13 @@ public interface TabRenderer extends Serializable{
 	 */
 	public void onSelect(TabPanel pane, TabModel model, int index, Container tab);
 	
-	
+	/**
+	 * Decorates the tab header with it loses focus
+	 * @param pane The {@link TabPanel} which is being used
+	 * @param model The {@link TabModel} applied on the {@link TabPanel}
+	 * @param index The index of the tab
+	 * @param tab The actual tab being selected
+	 */
 	public void onDeselect(TabPanel pane, TabModel model, int index, Container tab);
 	
 	

@@ -17,7 +17,7 @@ public class CastafioreServlet extends DispatcherServlet{
 		super.setDetectAllHandlerAdapters(false);
 		super.setDetectAllViewResolvers(false);
 		super.setDetectAllHandlerExceptionResolvers(false);
-		setContextConfigLocation("classpath:configs/**/*-config.xml");
+		setContextConfigLocation("classpath*:configs/**/*-config.xml");
 	}
 
 	public CastafioreServlet(WebApplicationContext webApplicationContext) {
@@ -26,7 +26,7 @@ public class CastafioreServlet extends DispatcherServlet{
 		super.setDetectAllHandlerAdapters(false);
 		super.setDetectAllViewResolvers(false);
 		super.setDetectAllHandlerExceptionResolvers(false);
-		setContextConfigLocation("classpath:configs/**/*-config.xml");
+		setContextConfigLocation("classpath*:configs/**/*-config.xml");
 	}
 	
 }

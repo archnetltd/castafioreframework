@@ -56,8 +56,6 @@ public class EXUnOrderedList extends EXContainer implements LayoutContainer {
 	{	int iLayoutData = Integer.parseInt(layoutData);
 		if(iLayoutData == getChildren().size()){
 			EXContainer li = new EXContainer("", "li");
-//			li.setStyle("float", "left");
-//			li.setStyle("display", "inline");
 			addChild(li);
 		}
 		

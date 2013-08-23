@@ -28,14 +28,12 @@ public class EXVerticalLayoutContainer extends EXContainer implements LayoutCont
 
 	public EXVerticalLayoutContainer() {
 		super("EXColumnLayoutContainer", "ul");
-		//setStyle("clear", "both");
 		setStyle("list-style", "none");
 		setStyle("padding", "0").setStyle("margin", "0");
 	}
 	
 	public EXVerticalLayoutContainer(String name) {
 		super(name, "ul");
-		//setStyle("clear", "both");
 		
 	}
 
@@ -48,8 +46,6 @@ public class EXVerticalLayoutContainer extends EXContainer implements LayoutCont
 	{	int iLayoutData = convertLayoutData(layoutData);
 		if(iLayoutData == getChildren().size()){
 			EXContainer li = new EXContainer("", "li");
-			//li.setStyle("float", "left");
-			//li.setStyle("display", "inline");
 			addChild(li);
 		}
 		

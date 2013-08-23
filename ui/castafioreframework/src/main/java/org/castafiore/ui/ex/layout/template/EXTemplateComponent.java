@@ -151,7 +151,6 @@ public abstract  class EXTemplateComponent extends EXContainer implements
 
 	@Override
 	public Compiler getCompiler() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -67,10 +67,7 @@ public class EXTable extends EXContainer implements Table {
 	public EXTable(String name, TableModel model) {
 		super(name, "table");
 		this.tableModel_ = model;
-
-		setAttribute("class", "EXGrid");
-		addStyleSheet(ResourceUtil.getDownloadURL("classpath",
-				"org/castafiore/resource/table/table.css"));
+		addClass("EXGrid");
 		this.refresh();
 
 	}
@@ -88,11 +85,13 @@ public class EXTable extends EXContainer implements Table {
 		this.tableModel_ = model;
 		this.celleRendere_ = renderer;
 
-		setAttribute("class", "EXGrid");
-		addStyleSheet(ResourceUtil.getDownloadURL("classpath",
-				"org/castafiore/resource/table/table.css"));
+		addClass("EXGrid");
 		this.refresh();
 
+	}
+	
+	public void onReady(ClientProxy proxy){
+		proxy.getCSS(ResourceUtil.getDownloadURL("classpath", "org/castafiore/resource/table/table.css"));
 	}
 
 	/**
