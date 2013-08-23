@@ -24,6 +24,7 @@ castafiore = function(app,params){
 	    }).appendTo('head');
 	};
 	
+	
 		var me = $('#' + app);
 
 		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/aristo/theme.css');
@@ -31,6 +32,7 @@ castafiore = function(app,params){
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.maskedinput-1.3.js');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.rightClick.js');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.blockUI.js');
+		
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.plugin.js',function(){
 			me.append("<div id='root_"+app+"'>");
 			me.append("<div id='script_"+app+"'>");
