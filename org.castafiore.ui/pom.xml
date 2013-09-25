@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>org.castafiore.ui</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Catafiore Web Framework</name>
+	<url>http://www.archnetltd.com</url>
+
+	<distributionManagement>
+		<repository>
+			<id>mydav</id>
+			<url>http://68.68.109.26/upstage/dav/archnetltd/repository</url>
+		</repository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>https://maven.java.net/content/repositories/public/</url>
+		</repository>
+	</repositories>
+	<contributors>
+		<contributor>
+			<name>Humyrah Rossaye</name>
+			<organization>ArchNet ltd</organization>
+			<organizationUrl>http://www.archnetltd.com</organizationUrl>
+			<roles>
+				<role>Tester</role>
+				<role>Specification writer</role>
+			</roles>
+			<email>humyrahbegum@gmail.com</email>
+		</contributor>
+		<contributor>
+			<name>Kureem Rossaye</name>
+			<organization>ArchNet ltd</organization>
+			<organizationUrl>http://www.archnetltd.com</organizationUrl>
+			<roles>
+				<role>Programmer</role>
+				<role>Designer</role>
+			</roles>
+			<email>kureem@gmail.com</email>
+		</contributor>
+	</contributors>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.castafiore</groupId>
+			<artifactId>org.castafiore.resources</artifactId>
+			<version>0.0.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+    <groupId>org.jongo</groupId>
+    <artifactId>jongo</artifactId>
+    <version>0.4</version>
+</dependency>
+	</dependencies>
+	<build>
+
+		<plugins>
+			
+		</plugins>
+	</build>
+
+	<organization>
+		<name>Archnet Ltd</name>
+		<url>http://www.archnetltd.com</url>
+	</organization>
+
+	<groupId>org.castafiore</groupId>
+	<version>0.1.0</version>
+</project>

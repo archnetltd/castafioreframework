@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<bean id="castafioreInterceptorRegistry"
+		class="org.castafiore.ui.interceptors.SpringInterceptorRegistry"></bean>
+
+	<bean class="org.castafiore.ui.SpringApplicationRegistry"></bean>
+
+	<util:map id="templateCache"></util:map>
+
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+		<property name="scopes">
+			<map>
+				<entry key="casta-app">
+					<bean class="org.castafiore.ui.engine.CastafioreApplicationScope" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean class="org.castafiore.ui.engine.RequestContextLoaderFilter"></bean>
+
+	<util:map id="casta_session"></util:map>
+
+
+	<util:map id="uploadprops">
+		<entry key="upload.dir" value="C:/apache-tomcat-6.0.18/files"></entry>
+		<entry key="repository.dir" value="C:/Intel"></entry>
+	</util:map>
+
+
+	<context:component-scan base-package="org.castafiore.web.servlet" />
+
+	<bean id="controllerClassNameHandlerMapping"
+		class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"></bean>
+
+	<bean id="annotationMethodHandlerAdapter"
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
+	<mvc:annotation-driven />
+
+	<bean id="resourcelocator_classpath" class="org.castafiore.resource.ClassPathResourceLocator"></bean>
+
+	<bean id="org.castafiore.ui.Draggable" class="org.castafiore.ui.interceptors.DraggableInterceptor"></bean>
+	<bean id="org.castafiore.ui.Droppable" class="org.castafiore.ui.interceptors.DroppableInterceptor"></bean>
+	<bean id="org.castafiore.ui.ex.contextmenu.ContextMenuAble"
+		class="org.castafiore.ui.ex.contextmenu.ContextMenuAbleInterceptor"></bean>
+	<bean id="org.castafiore.ui.RefreshSentive"
+		class="org.castafiore.ui.interceptors.RefreshSensitiveInterceptor"></bean>
+	<bean id="org.castafiore.ui.Scrollable" class="org.castafiore.ui.interceptors.ScrollableInterceptor"></bean>
+</beans>
+
