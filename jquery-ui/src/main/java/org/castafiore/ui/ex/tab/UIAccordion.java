@@ -30,7 +30,7 @@ import org.castafiore.ui.tab.TabRenderer;
  * @author arossaye
  *
  */
-public class JAccordion extends EXContainer implements TabPanel {
+public class UIAccordion extends EXContainer implements TabPanel {
 	
 	
 	
@@ -48,27 +48,27 @@ public class JAccordion extends EXContainer implements TabPanel {
 	 * Creates an accordion with the specified name
 	 * @param name
 	 */
-	public JAccordion(String name) {
+	public UIAccordion(String name) {
 		super(name, "div");
 		
 	}
 	
-	public JAccordion setCollapsible(Boolean c){
+	public UIAccordion setCollapsible(Boolean c){
 		options.put("collapsible", c);
 		return this;
 	}
 	
-	public JAccordion setDisabled(Boolean d){
+	public UIAccordion setDisabled(Boolean d){
 		options.put("disabled", d);
 		return this;
 	}
 	
-	public JAccordion setHeightStyle(HeightStyle heighStyle){
+	public UIAccordion setHeightStyle(HeightStyle heighStyle){
 		options.put("heightStyle", heighStyle.getValue());
 		return this;
 	}
 	
-	public JAccordion setHeaderIcon(String iconCls){
+	public UIAccordion setHeaderIcon(String iconCls){
 		if(icons == null){
 			icons = new JMap();
 		}
@@ -77,7 +77,7 @@ public class JAccordion extends EXContainer implements TabPanel {
 		return this;
 	}
 	
-	public JAccordion setActiveHeaderIcon(String iconCls){
+	public UIAccordion setActiveHeaderIcon(String iconCls){
 		if(icons == null){
 			icons = new JMap();
 		}
@@ -86,7 +86,7 @@ public class JAccordion extends EXContainer implements TabPanel {
 		return this;
 	}
 	
-	public JAccordion setActivateEvent(Event e){
+	public UIAccordion setActivateEvent(Event e){
 		addEvent(e, Event.MISC);
 		ClientProxy proxy = new ClientProxy(this);
 		e.ClientAction(proxy);
@@ -94,7 +94,7 @@ public class JAccordion extends EXContainer implements TabPanel {
 		return this;
 	}
 	
-	public JAccordion setBeforeActivateEvent(Event e){
+	public UIAccordion setBeforeActivateEvent(Event e){
 		addEvent(e, Event.MISC);
 		ClientProxy proxy = new ClientProxy(this);
 		e.ClientAction(proxy);

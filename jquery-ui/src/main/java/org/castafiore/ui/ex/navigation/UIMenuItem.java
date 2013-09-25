@@ -25,7 +25,7 @@ import org.castafiore.ui.EXContainer;
  * @author arossaye
  *
  */
-public class JMenuItem extends EXContainer implements org.castafiore.ui.navigation.MenuItem{
+public class UIMenuItem extends EXContainer implements org.castafiore.ui.navigation.MenuItem{
 
 	/**
 	 * 
@@ -37,7 +37,7 @@ public class JMenuItem extends EXContainer implements org.castafiore.ui.navigati
 	 * @param name The name of the menu item
 	 * @param label The label to display on the menu item
 	 */
-	public JMenuItem(String name, String label) {
+	public UIMenuItem(String name, String label) {
 		super(name, "a");
 		setAttribute("href", "#");
 		setText(label);

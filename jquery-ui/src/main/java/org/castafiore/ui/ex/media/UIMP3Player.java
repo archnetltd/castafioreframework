@@ -9,7 +9,7 @@ import org.castafiore.ui.layout.Compiler;
 import org.castafiore.ui.template.EXXHTMLFragment;
 import org.castafiore.utils.ResourceUtil;
 
-public class JMP3Player extends EXXHTMLFragment implements org.castafiore.ui.layout.Compiler{
+public class UIMP3Player extends EXXHTMLFragment implements org.castafiore.ui.layout.Compiler{
 
 	
 
@@ -20,7 +20,7 @@ public class JMP3Player extends EXXHTMLFragment implements org.castafiore.ui.lay
 
 
 
-	public JMP3Player(String name) {
+	public UIMP3Player(String name) {
 		super(name, ResourceUtil.getDownloadURL("classpath", "org/castafiore/ui/ex/media/EXMP3Player.xhtml"));
 		setMp3Url(ResourceUtil.getDownloadURL("classpath", "org/castafiore/ui/ex/media/mp3.mp3"));
 	}
@@ -40,7 +40,7 @@ public class JMP3Player extends EXXHTMLFragment implements org.castafiore.ui.lay
 
 
 
-	public JMP3Player setMp3Url(String mp3Url) {
+	public UIMP3Player setMp3Url(String mp3Url) {
 		setAttribute("mp3Url", mp3Url);
 		setRendered(false);
 		return this;

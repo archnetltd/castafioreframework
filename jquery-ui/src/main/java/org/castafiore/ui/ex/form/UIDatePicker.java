@@ -30,7 +30,7 @@ import org.castafiore.ui.js.JMap;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class JDatePicker extends EXInput {
+public class UIDatePicker extends EXInput {
 
 	/**
 	 * 
@@ -40,240 +40,240 @@ public class JDatePicker extends EXInput {
 
 	
 
-	public JDatePicker(String name, String value) {
+	public UIDatePicker(String name, String value) {
 		super(name, value);
 	}
 
-	public JDatePicker(String name) {
+	public UIDatePicker(String name) {
 		super(name);
 	}
 
-	public JDatePicker setAltField(String altField) {
+	public UIDatePicker setAltField(String altField) {
 		options.put("altField", altField);
 		return this;
 	}
 
-	public JDatePicker setAltFormat(String altFormat) {
+	public UIDatePicker setAltFormat(String altFormat) {
 		options.put("altFormat", altFormat);
 		return this;
 	}
 
-	public JDatePicker setAppendText(String appendText) {
+	public UIDatePicker setAppendText(String appendText) {
 		options.put("appendText", appendText);
 		return this;
 	}
 
-	public JDatePicker setAutoSize(Boolean autoSize) {
+	public UIDatePicker setAutoSize(Boolean autoSize) {
 		options.put("autoSize", autoSize);
 		return this;
 	}
 
-	public JDatePicker setButtonImage(String buttonImage) {
+	public UIDatePicker setButtonImage(String buttonImage) {
 		options.put("buttonImage", buttonImage);
 		return this;
 	}
 
-	public JDatePicker setButtonImageOnly(Boolean buttonImageOnly) {
+	public UIDatePicker setButtonImageOnly(Boolean buttonImageOnly) {
 		options.put("buttonImageOnly", buttonImageOnly);
 		return this;
 	}
 
-	public JDatePicker setButtonText(String buttonText) {
+	public UIDatePicker setButtonText(String buttonText) {
 		options.put("buttonText", buttonText);
 		return this;
 	}
 
-	public JDatePicker setChangeMonth(Boolean changeMonth) {
+	public UIDatePicker setChangeMonth(Boolean changeMonth) {
 		options.put("changeMonth", changeMonth);
 		return this;
 	}
 
-	public JDatePicker setChangeYear(Boolean changeYear) {
+	public UIDatePicker setChangeYear(Boolean changeYear) {
 		options.put("changeYear", changeYear);
 		return this;
 	}
 
-	public JDatePicker setCloseText(String closeText) {
+	public UIDatePicker setCloseText(String closeText) {
 		options.put("closeText", closeText);
 		return this;
 	}
 
-	public JDatePicker setConstrainInput(String constrainInput) {
+	public UIDatePicker setConstrainInput(String constrainInput) {
 		options.put("constrainInput", constrainInput);
 		return this;
 	}
 
-	public JDatePicker setCurrentText(String currentText) {
+	public UIDatePicker setCurrentText(String currentText) {
 		options.put("currentText", currentText);
 		return this;
 	}
 
-	public JDatePicker setDateFormat(String dateFormat) {
+	public UIDatePicker setDateFormat(String dateFormat) {
 		options.put("dateFormat", dateFormat);
 		return this;
 	}
 
-	public JDatePicker setDayNames(String[] dayNames) {
+	public UIDatePicker setDayNames(String[] dayNames) {
 		options.put("dayNames", dayNames);
 		return this;
 	}
 
-	public JDatePicker setDayNamesMin(String[] dayNamesMin) {
+	public UIDatePicker setDayNamesMin(String[] dayNamesMin) {
 		options.put("dayNamesMin", dayNamesMin);
 		return this;
 	}
 
-	public JDatePicker setDayNamesShort(String[] dayNamesShort) {
+	public UIDatePicker setDayNamesShort(String[] dayNamesShort) {
 		options.put("dayNamesShort", dayNamesShort);
 		return this;
 	}
 
-	public JDatePicker setDuration(Integer duration) {
+	public UIDatePicker setDuration(Integer duration) {
 		options.put("duration", duration);
 		return this;
 	}
 
-	public JDatePicker setFirstDay(Integer firstDay) {
+	public UIDatePicker setFirstDay(Integer firstDay) {
 		options.put("firstDay", firstDay);
 		return this;
 	}
 
-	public JDatePicker setGotoCurrent(Boolean gotoCurrent) {
+	public UIDatePicker setGotoCurrent(Boolean gotoCurrent) {
 		options.put("gotoCurrent", gotoCurrent);
 		return this;
 	}
 
-	public JDatePicker setHideIfNoPrevNext(Boolean hideIfNoPrevNext) {
+	public UIDatePicker setHideIfNoPrevNext(Boolean hideIfNoPrevNext) {
 		options.put("hideIfNoPrevNext", hideIfNoPrevNext);
 		return this;
 	}
 
-	public JDatePicker setIsRTL(Boolean isRTL) {
+	public UIDatePicker setIsRTL(Boolean isRTL) {
 		options.put("isRTL", isRTL);
 		return this;
 	}
 
-	public JDatePicker setMaxDate(Date maxDate) {
+	public UIDatePicker setMaxDate(Date maxDate) {
 		options.put("maxDate", new JDate(maxDate));
 		return this;
 	}
 
-	public JDatePicker setMinDate(Date minDate) {
+	public UIDatePicker setMinDate(Date minDate) {
 		options.put("minDate", new JDate(minDate));
 		return this;
 	}
 
-	public JDatePicker setMonthNames(String[] monthNames) {
+	public UIDatePicker setMonthNames(String[] monthNames) {
 		options.put("monthNames", monthNames);
 		return this;
 	}
 
-	public JDatePicker setMonthNamesShort(String[] monthNamesShort) {
+	public UIDatePicker setMonthNamesShort(String[] monthNamesShort) {
 		options.put("monthNamesShort", monthNamesShort);
 		return this;
 	}
 
-	public JDatePicker setNavigationAsDateFormat(Boolean navigationAsDateFormat) {
+	public UIDatePicker setNavigationAsDateFormat(Boolean navigationAsDateFormat) {
 		options.put("navigationAsDateFormat", navigationAsDateFormat);
 		return this;
 	}
 
-	public JDatePicker setNextText(String nextText) {
+	public UIDatePicker setNextText(String nextText) {
 		options.put("nextText", nextText);
 		return this;
 	}
 
-	public JDatePicker setNumberOfMonths(Integer[] numberOfMonths) {
+	public UIDatePicker setNumberOfMonths(Integer[] numberOfMonths) {
 		options.put("numberOfMonths", numberOfMonths);
 		return this;
 	}
 
-	public JDatePicker setOnChangeMonthYear(Event onChangeMonthYear) {
+	public UIDatePicker setOnChangeMonthYear(Event onChangeMonthYear) {
 		options.put("onChangeMonthYear", onChangeMonthYear, this);
 		return this;
 	}
 
-	public JDatePicker setOnClose(Event onClose) {
+	public UIDatePicker setOnClose(Event onClose) {
 		options.put("onClose", onClose, this);
 		return this;
 	}
 
-	public JDatePicker setOnSelect(Event onSelect) {
+	public UIDatePicker setOnSelect(Event onSelect) {
 		options.put("onSelect", onSelect, this);
 		return this;
 	}
 
-	public JDatePicker setPrevText(String prevText) {
+	public UIDatePicker setPrevText(String prevText) {
 		options.put("prevText", prevText);
 		return this;
 	}
 
-	public JDatePicker setSelectOtherMonths(Boolean selectOtherMonths) {
+	public UIDatePicker setSelectOtherMonths(Boolean selectOtherMonths) {
 		options.put("selectOtherMonths", selectOtherMonths);
 		return this;
 	}
 
-	public JDatePicker setShortYearCutoff(Integer shortYearCutoff) {
+	public UIDatePicker setShortYearCutoff(Integer shortYearCutoff) {
 		options.put("shortYearCutoff", shortYearCutoff);
 		return this;
 	}
 
-	public JDatePicker setShowAnim(String showAnim) {
+	public UIDatePicker setShowAnim(String showAnim) {
 		options.put("showAnim", showAnim);
 		return this;
 	}
 
-	public JDatePicker setShowButtonPanel(Boolean showButtonPanel) {
+	public UIDatePicker setShowButtonPanel(Boolean showButtonPanel) {
 		options.put("showButtonPanel", showButtonPanel);
 		return this;
 	}
 
-	public JDatePicker setShowCurrentAtPos(Integer showCurrentAtPos) {
+	public UIDatePicker setShowCurrentAtPos(Integer showCurrentAtPos) {
 		options.put("showCurrentAtPos", showCurrentAtPos);
 		return this;
 	}
 
-	public JDatePicker setShowMonthAfterYear(Boolean showMonthAfterYear) {
+	public UIDatePicker setShowMonthAfterYear(Boolean showMonthAfterYear) {
 		options.put("showMonthAfterYear", showMonthAfterYear);
 		return this;
 	}
 
-	public JDatePicker setShowOn(String showOn) {
+	public UIDatePicker setShowOn(String showOn) {
 		options.put("showOn", showOn);
 		return this;
 	}
 
-	public JDatePicker setShowOptions(JMap showOptions) {
+	public UIDatePicker setShowOptions(JMap showOptions) {
 		options.put("showOptions", showOptions);
 		return this;
 	}
 
-	public JDatePicker setShowOtherMonths(Boolean showOtherMonths) {
+	public UIDatePicker setShowOtherMonths(Boolean showOtherMonths) {
 		options.put("showOtherMonths", showOtherMonths);
 		return this;
 	}
 
-	public JDatePicker setShowWeek(Boolean showWeek) {
+	public UIDatePicker setShowWeek(Boolean showWeek) {
 		options.put("showWeek", showWeek);
 		return this;
 	}
 
-	public JDatePicker setStepMonths(Integer stepMonths) {
+	public UIDatePicker setStepMonths(Integer stepMonths) {
 		options.put("stepMonths", stepMonths);
 		return this;
 	}
 
-	public JDatePicker setWeekHeader(String weekHeader) {
+	public UIDatePicker setWeekHeader(String weekHeader) {
 		options.put("weekHeader", weekHeader);
 		return this;
 	}
 
-	public JDatePicker setYearRange(Integer from, Integer to) {
+	public UIDatePicker setYearRange(Integer from, Integer to) {
 		options.put("yearRange", from + ":" + to);
 		return this;
 	}
 
-	public JDatePicker setYearSuffix(String yearSuffix) {
+	public UIDatePicker setYearSuffix(String yearSuffix) {
 		options.put("yearSuffix", yearSuffix);
 		return this;
 	}

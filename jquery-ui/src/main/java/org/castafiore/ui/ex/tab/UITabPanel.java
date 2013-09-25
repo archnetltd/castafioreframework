@@ -39,7 +39,7 @@ import org.castafiore.utils.ComponentUtil;
  * @author arossaye
  * 
  */
-public class JTabPanel extends EXContainer implements JQContants, TabPanel {
+public class UITabPanel extends EXContainer implements JQContants, TabPanel {
 
 	/**
 	 * 
@@ -52,12 +52,12 @@ public class JTabPanel extends EXContainer implements JQContants, TabPanel {
 
 	private TabContentDecorator tabContentDecorator = new JQTabContentDecorator();
 
-	public JTabPanel(String name) {
+	public UITabPanel(String name) {
 		super(name, "div");
 		setAttribute("class", TABS_STYLE);
 	}
 
-	public JTabPanel(String name, TabModel model) {
+	public UITabPanel(String name, TabModel model) {
 		this(name);
 		setModel(model);
 

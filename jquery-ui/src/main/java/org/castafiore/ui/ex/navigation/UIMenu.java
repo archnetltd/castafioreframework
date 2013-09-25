@@ -27,7 +27,7 @@ import org.castafiore.ui.tree.TreeNode;
  * @author arossaye
  *
  */
-public class JMenu extends EXContainer implements Menu{
+public class UIMenu extends EXContainer implements Menu{
 	/**
 	 * 
 	 */
@@ -39,7 +39,7 @@ public class JMenu extends EXContainer implements Menu{
 	 * @param name The name of the menu
 	 * @param node The {@link TreeNode} to populate the menu
 	 */
-	public JMenu(String name, TreeNode<MenuItem> node) {
+	public UIMenu(String name, TreeNode<MenuItem> node) {
 		super(name, "ul");
 
 		setModel(node);
@@ -51,16 +51,16 @@ public class JMenu extends EXContainer implements Menu{
 	 * Constructs an empty menu
 	 * @param name
 	 */
-	public JMenu(String name){
+	public UIMenu(String name){
 		this(name,null);
 	}
 	
 	/**
 	 * Re creates the menu with the specified {@link TreeNode}
 	 * @param node The {@link TreeNode}
-	 * @return The newly created {@link JMenu}
+	 * @return The newly created {@link UIMenu}
 	 */
-	public JMenu setModel(TreeNode<MenuItem> node) {
+	public UIMenu setModel(TreeNode<MenuItem> node) {
 		this.node = node;
 		this.getChildren().clear();
 		this.setRendered(false);
@@ -70,7 +70,7 @@ public class JMenu extends EXContainer implements Menu{
 				TreeNode<MenuItem> n = node.getNodeAt(i);
 				addChild(new EXContainer("", "li").addChild(n.getComponent()));
 				if (!n.isLeaf()) {
-					JMenu menu = new JMenu("", n);
+					UIMenu menu = new UIMenu("", n);
 					addChild(menu);
 				}
 			}

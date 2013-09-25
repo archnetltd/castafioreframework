@@ -32,7 +32,7 @@ import org.castafiore.utils.ResourceUtil;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class JAutoComplete extends EXInput  {
+public class UIAutoComplete extends EXInput  {
 
 	private AutoCompleteSource source_ = null;
 
@@ -43,20 +43,20 @@ public class JAutoComplete extends EXInput  {
 	private List<String> dictionary = new ArrayList<String>();
 	private JMap options = new JMap();
 
-	public JAutoComplete(String name, String value, List<String> dictionary) {
+	public UIAutoComplete(String name, String value, List<String> dictionary) {
 		super(name, value);
 		if (dictionary != null)
 			this.dictionary = dictionary;
 
 	}
 
-	public JAutoComplete setSource(AutoCompleteSource source) {
+	public UIAutoComplete setSource(AutoCompleteSource source) {
 		this.source_ = source;
 		setRendered(false);
 		return this;
 	}
 
-	public JAutoComplete addInDictionary(String... value) {
+	public UIAutoComplete addInDictionary(String... value) {
 		if (value != null) {
 			for (String val : value) {
 				dictionary.add(val);
@@ -66,37 +66,37 @@ public class JAutoComplete extends EXInput  {
 		return this;
 	}
 
-	public JAutoComplete(String name, String value) {
+	public UIAutoComplete(String name, String value) {
 		this(name, value, null);
 
 	}
 
-	public JAutoComplete setAutoFocus(Boolean b) {
+	public UIAutoComplete setAutoFocus(Boolean b) {
 		options.put("autoFocus", b);
 		return this;
 	}
 
-	public JAutoComplete setDelay(Integer delay) {
+	public UIAutoComplete setDelay(Integer delay) {
 		options.put("delay", delay);
 		return this;
 	}
 
-	public JAutoComplete setDisabled(Boolean b) {
+	public UIAutoComplete setDisabled(Boolean b) {
 		options.put("disabled", b);
 		return this;
 	}
 
-	public JAutoComplete setMinLength(Integer minLength) {
+	public UIAutoComplete setMinLength(Integer minLength) {
 		options.put("minLength", minLength);
 		return this;
 	}
 
-	public JAutoComplete setPosition(String position) {
+	public UIAutoComplete setPosition(String position) {
 		options.put("position", position);
 		return this;
 	}
 
-	private JAutoComplete setEvent(Event e, String name) {
+	private UIAutoComplete setEvent(Event e, String name) {
 		addEvent(e, Event.MISC);
 		ClientProxy proxy = new ClientProxy(this);
 		e.ClientAction(proxy);
@@ -104,35 +104,35 @@ public class JAutoComplete extends EXInput  {
 		return this;
 	}
 
-	public JAutoComplete setChangeEvent(Event e) {
+	public UIAutoComplete setChangeEvent(Event e) {
 		return setEvent(e, "change");
 	}
 
-	public JAutoComplete setCloseEvent(Event e) {
+	public UIAutoComplete setCloseEvent(Event e) {
 		return setEvent(e, "close");
 	}
 
-	public JAutoComplete setCreateEvent(Event e) {
+	public UIAutoComplete setCreateEvent(Event e) {
 		return setEvent(e, "create");
 	}
 
-	public JAutoComplete setFocusEvent(Event e) {
+	public UIAutoComplete setFocusEvent(Event e) {
 		return setEvent(e, "focus");
 	}
 
-	public JAutoComplete setOpenEvent(Event e) {
+	public UIAutoComplete setOpenEvent(Event e) {
 		return setEvent(e, "open");
 	}
 
-	public JAutoComplete setResponseEvent(Event e) {
+	public UIAutoComplete setResponseEvent(Event e) {
 		return setEvent(e, "response");
 	}
 
-	public JAutoComplete setSearchEvent(Event e) {
+	public UIAutoComplete setSearchEvent(Event e) {
 		return setEvent(e, "search");
 	}
 
-	public JAutoComplete setSelectEvent(Event e) {
+	public UIAutoComplete setSelectEvent(Event e) {
 		return setEvent(e, "select");
 	}
 

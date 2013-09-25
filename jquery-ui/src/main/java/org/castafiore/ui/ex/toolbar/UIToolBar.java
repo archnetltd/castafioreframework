@@ -28,7 +28,7 @@ import org.castafiore.ui.toolbar.ToolBarItem;
  *          kureem@gmail.com
  * Oct 22, 2008
  */
-public class JToolBar extends EXContainer implements ToolBar  {
+public class UIToolBar extends EXContainer implements ToolBar  {
 
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class JToolBar extends EXContainer implements ToolBar  {
 	private static final long serialVersionUID = 1L;
 	private ViewModel<ToolBarItem> model ;
 	
-	public JToolBar(String name, ViewModel<ToolBarItem> model) {
+	public UIToolBar(String name, ViewModel<ToolBarItem> model) {
 		this(name);
 		setStyle("padding", "4px").setStyle("display", "inline-block");
 		addClass("ui-widget-header").addClass("ui-corner-all");
@@ -45,7 +45,7 @@ public class JToolBar extends EXContainer implements ToolBar  {
 	}
 
 	
-	public JToolBar(String name) {
+	public UIToolBar(String name) {
 		super(name, "div");
 		setStyle("padding", "4px").setStyle("display", "inline-block");
 		addClass("ui-widget-header").addClass("ui-corner-all");

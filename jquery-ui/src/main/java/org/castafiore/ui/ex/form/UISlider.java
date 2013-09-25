@@ -16,7 +16,7 @@ import org.castafiore.ui.events.Event;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.Var;
 
-public class JSlider extends EXContainer implements FormComponent, Event{
+public class UISlider extends EXContainer implements FormComponent, Event{
 	
 	/**
 	 * 
@@ -48,7 +48,7 @@ public class JSlider extends EXContainer implements FormComponent, Event{
 		proxy.addMethod("slider", par);
 	}
 
-	public JSlider(String name) {
+	public UISlider(String name) {
 		super(name, "div");
 		setAttribute("value", "0");
 		addEvent(this, Event.MISC);
