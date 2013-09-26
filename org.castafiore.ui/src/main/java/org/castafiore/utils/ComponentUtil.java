@@ -58,13 +58,13 @@ public class ComponentUtil {
 	 *            - The component to search for
 	 */
 	public static void fastExtractComponents(Container container,
-			List<FormComponent> result, List<Container> ccs, String componentId) {
+			List<FormComponent<?>> result, List<Container> ccs, String componentId) {
 
 		if (container == null) {
 			return;
 		}
 		if (container instanceof FormComponent) {
-			result.add((FormComponent) container);
+			result.add((FormComponent<?>) container);
 		}
 		if (container.getId().equals(componentId)) {
 			ccs.add(container);
@@ -87,12 +87,12 @@ public class ComponentUtil {
 	 *            - will contain the list of all {@link FormComponent}
 	 */
 	public static void getAllStatefullDescendents(Container container,
-			List<FormComponent> result) {
+			List<FormComponent<?>> result) {
 		if (container == null) {
 			return;
 		}
 		if (container instanceof FormComponent) {
-			result.add((FormComponent) container);
+			result.add((FormComponent<?>) container);
 		}
 
 		Iterator<Container> iterChildre = container.getChildren().iterator();

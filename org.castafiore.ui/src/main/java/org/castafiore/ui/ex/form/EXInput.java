@@ -18,13 +18,14 @@
 package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.AbstractFormComponent;
+import org.castafiore.ui.dynaform.Focusable;
 
 /**
  * 
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-public class EXInput extends AbstractFormComponent {
+public class EXInput extends AbstractFormComponent<String> implements Focusable {
 
 	/**
 	 * 
@@ -42,17 +43,7 @@ public class EXInput extends AbstractFormComponent {
 		setReadOnlyAttribute("type", "text");
 	}
 
-	public String getRawValue() {
-		return getAttribute("value");
-	}
-
-	public void setRawValue(String value) {
-		setAttribute("value", value);
-		if (this instanceof EXCheckBox) {
-			super.attributes_.remove("checked");
-			setRendered(false);
-		}
-	}
+	
 
 	public void setEnabled(boolean enabled) {
 		super.setAttribute("disabled", Boolean.toString((!enabled)));
@@ -66,6 +57,42 @@ public class EXInput extends AbstractFormComponent {
 		}
 
 		return true;
+	}
+
+	@Override
+	public String serialize(String value) {
+		return value;
+	}
+
+	@Override
+	public String deserialize(String s) {
+		return s;
+	}
+
+	@Override
+	public int getTabIndex() {
+		try{
+		return Integer.parseInt(getAttribute("tabindex"));
+		}catch(Exception e){
+			return -1;
+		}
+	}
+
+	@Override
+	public void setAccessKey(char key) {
+		
+		setAttribute("accesskey", new String(new char[]{key}));
+	}
+
+	@Override
+	public void setFocus(boolean focused) {
+		setAttribute("hasfocus", focused + "");
+	}
+
+	@Override
+	public void setTabIndex(int index) {
+		setAttribute("tabindex", index + "");
+		
 	}
 
 }

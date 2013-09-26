@@ -22,21 +22,20 @@ import java.util.List;
 import java.util.Map;
 
 import org.castafiore.resource.FileData;
-import org.castafiore.ui.Decoder;
-import org.castafiore.ui.Encoder;
 import org.castafiore.ui.FormComponent;
-import org.castafiore.ui.layout.Compiler;
+import org.castafiore.ui.dynaform.InputVerifier;
+import org.castafiore.ui.template.Compiler;
 import org.castafiore.ui.template.EXXHTMLFragment;
 import org.castafiore.utils.ResourceUtil;
 
 /**
  * 
- *  
+ * 
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXUpload extends EXXHTMLFragment implements FormComponent,
-		Compiler {
+public class EXUpload extends EXXHTMLFragment implements
+		FormComponent<List<FileData>>, Compiler {
 
 	/**
 	 * 
@@ -81,43 +80,22 @@ public class EXUpload extends EXXHTMLFragment implements FormComponent,
 		this.items.add(item);
 	}
 
-	public Decoder getDecoder() {
+	public List<FileData> getValue() {
+		return items;
+	}
 
+	public void setValue(List<FileData> value) {
+		items = value;
+	}
+
+	@Override
+	public FormComponent<List<FileData>> setInputVerifier(InputVerifier verifier) {
+		return this;
+	}
+
+	@Override
+	public InputVerifier getInputVerifier() {
 		return null;
-	}
-
-	public Encoder getEncoder() {
-
-		return null;
-	}
-
-	public String getRawValue() {
-
-		return null;
-	}
-
-	public Object getValue() {
-		if (items.size() == 1)
-			return getFile();
-		else
-			return items;
-	}
-
-	public void setDecoder(Decoder decoder) {
-
-	}
-
-	public void setEncoder(Encoder encoder) {
-
-	}
-
-	public void setRawValue(String rawValue) {
-
-	}
-
-	public void setValue(Object value) {
-		setFile((FileData) value);
-
 	}
 
 }

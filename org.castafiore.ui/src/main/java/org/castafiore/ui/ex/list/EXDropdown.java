@@ -24,6 +24,7 @@ import org.castafiore.ui.Dimension;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
+import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.ex.form.EXInput;
@@ -36,8 +37,10 @@ import org.castafiore.utils.ResourceUtil;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXDropdown<T> extends EXContainer implements FormComponent {
+public class EXDropdown<T> extends EXContainer implements FormComponent<String> {
 
+	private InputVerifier inputVerifier;
+	
 	/**
 	 * 
 	 */
@@ -123,9 +126,9 @@ public class EXDropdown<T> extends EXContainer implements FormComponent {
 
 		public boolean ServerAction(Container container,
 				Map<String, String> request) throws UIException {
-			Object value = ((FormComponent) container).getValue();
+			Object value = ((FormComponent<?>) container).getValue();
 			container.getAncestorOfType(EXDropdown.class)
-					.getDescendentOfType(EXInput.class).setValue(value);
+					.getDescendentOfType(EXInput.class).setValue(value.toString());
 			return true;
 		}
 
@@ -136,7 +139,7 @@ public class EXDropdown<T> extends EXContainer implements FormComponent {
 
 	};
 
-	public EXDropdown(String name, FormComponent list) {
+	public EXDropdown(String name, FormComponent<?> list) {
 
 		super(name, "div");
 
@@ -179,31 +182,37 @@ public class EXDropdown<T> extends EXContainer implements FormComponent {
 		return this;
 	}
 
-	public FormComponent getInput() {
-		return (FormComponent) getChildByIndex(0).getChildByIndex(0);
+	@SuppressWarnings("unchecked")
+	public FormComponent<String> getInput() {
+		return (FormComponent<String>) getChildByIndex(0).getChildByIndex(0);
 	}
 
-	public FormComponent getDropdown() {
-		return (FormComponent) getChildByIndex(1).getChildByIndex(0);
+	@SuppressWarnings("unchecked")
+	public FormComponent<String> getDropdown() {
+		return (FormComponent<String>) getChildByIndex(1).getChildByIndex(0);
 	}
 
-	public String getRawValue() {
-		return getInput().getRawValue();
-	}
+	
 
-	public void setRawValue(String rawValue) {
-		getInput().setRawValue(rawValue);
-
-	}
-
-	public Object getValue() {
+	public String getValue() {
 		return getInput().getValue();
 	}
 
-	public void setValue(Object value) {
+	public void setValue(String value) {
 		getInput().setValue(value);
 		getDropdown().setValue(value);
 
+	}
+
+	@Override
+	public FormComponent<String> setInputVerifier(InputVerifier verifier) {
+		this.inputVerifier = verifier;
+		return this;
+	}
+
+	@Override
+	public InputVerifier getInputVerifier() {
+		return inputVerifier;
 	}
 
 }

@@ -28,7 +28,7 @@ public class EXHLayout extends EXVLayout implements LayoutContainer {
 	private static final long serialVersionUID = 1L;
 
 	public EXHLayout() {
-		super("EXRowLayoutContainer");
+		super("HLayout");
 	}
 
 	public EXHLayout(String name) {

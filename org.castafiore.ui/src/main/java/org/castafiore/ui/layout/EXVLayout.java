@@ -32,7 +32,7 @@ public class EXVLayout extends EXContainer implements LayoutContainer {
 	private static final long serialVersionUID = 1L;
 
 	public EXVLayout() {
-		super("EXColumnLayoutContainer", "ul");
+		super("VLayout", "ul");
 		setStyle("list-style", "none");
 		setStyle("padding", "0").setStyle("margin", "0");
 	}

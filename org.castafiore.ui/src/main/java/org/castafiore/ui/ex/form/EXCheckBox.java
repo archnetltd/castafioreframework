@@ -17,7 +17,10 @@
 
 package org.castafiore.ui.ex.form;
 
+import org.castafiore.ui.AbstractFormComponent;
+import org.castafiore.ui.dynaform.Focusable;
 import org.castafiore.ui.engine.ClientProxy;
+import org.castafiore.ui.js.Var;
 
 /**
  * 
@@ -25,7 +28,7 @@ import org.castafiore.ui.engine.ClientProxy;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXCheckBox extends EXInput {
+public class EXCheckBox extends AbstractFormComponent<Boolean> implements Focusable {
 
 	/**
 	 * 
@@ -37,38 +40,63 @@ public class EXCheckBox extends EXInput {
 	}
 
 	public EXCheckBox(String name, boolean checked) {
-		super(name);
+		super(name, "input");
 		setReadOnlyAttribute("type", "checkbox");
-		if (checked) {
-			super.setValue("checked");
-			super.setAttribute("checked", "checked");
-		} else
-			super.setValue("");
+		setValue(checked);
 
 	}
 
-	public boolean isChecked() {
-		return "checked".equalsIgnoreCase(getValue().toString());
-	}
-
-	public void setChecked(boolean checked) {
-		if (checked) {
-			super.setValue("checked");
-		} else {
-			super.setValue("");
-		}
-		if (!rendered() && getParent() != null) {
-			getParent().setRendered(false);
-		} else {
-			setRendered(false);
-		}
-
-	}
+	
 
 	public void onReady(ClientProxy proxy) {
-		if (isChecked()) {
-			proxy.setAttribute("checked", "checked");
+		if (getValue()) {
+			proxy.addMethod("prop", "checked", true);
 		}
+		proxy.change(proxy.clone().setAttribute("value", new Var("$(this).prop('checked')")));
+	}
+
+	
+	
+	@Override
+	public void setValue(Boolean value) {
+		setRendered(false);
+		super.setValue(value);
+	}
+
+	@Override
+	public String serialize(Boolean value) {
+		return value.toString();
+	}
+
+	@Override
+	public Boolean deserialize(String s) {
+		return Boolean.parseBoolean(s);
+	}
+	
+	@Override
+	public int getTabIndex() {
+		try{
+		return Integer.parseInt(getAttribute("tabindex"));
+		}catch(Exception e){
+			return -1;
+		}
+	}
+
+	@Override
+	public void setAccessKey(char key) {
+		
+		setAttribute("accesskey", new String(new char[]{key}));
+	}
+
+	@Override
+	public void setFocus(boolean focused) {
+		setAttribute("hasfocus", focused + "");
+	}
+
+	@Override
+	public void setTabIndex(int index) {
+		setAttribute("tabindex", index + "");
+		
 	}
 
 }

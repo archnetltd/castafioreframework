@@ -52,7 +52,7 @@ public interface FormModel {
 	 *            - the form on which the field is to be rendered
 	 * @return
 	 */
-	public FormComponent getFieldAt(int index, DynaForm form);
+	public FormComponent<?> getFieldAt(int index, DynaForm form);
 
 	/**
 	 * returns the label of the field at the specified index Here we prefer to

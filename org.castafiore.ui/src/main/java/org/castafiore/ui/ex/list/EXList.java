@@ -125,4 +125,16 @@ public class EXList<T> extends AbstractEXList<T> implements ListItemRenderer<T> 
 			child.removeClass("ui-state-active");
 
 	}
+
+	@Override
+	public String serialize(T value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T deserialize(String s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

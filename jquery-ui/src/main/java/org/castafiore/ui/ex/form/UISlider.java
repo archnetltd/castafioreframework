@@ -3,20 +3,21 @@
  */
 package org.castafiore.ui.ex.form;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.Decoder;
 import org.castafiore.ui.EXContainer;
-import org.castafiore.ui.Encoder;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
+import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.js.JMap;
 import org.castafiore.ui.js.Var;
 
-public class UISlider extends EXContainer implements FormComponent, Event{
+public class UISlider extends EXContainer implements FormComponent<Integer>, Event{
 	
 	/**
 	 * 
@@ -33,20 +34,12 @@ public class UISlider extends EXContainer implements FormComponent, Event{
 	
 	private int step = 1;
 	
+	private List<SliderValueChangeListener> changeListeners;
+	
+	
 	
 
-	@Override
-	public void onReady(ClientProxy proxy) {
-		super.onReady(proxy);
-		
-		String s = "$( '"+proxy.getIdRef()+"' ).slider( 'option', 'value' )";
-		ClientProxy p = proxy.clone().makeServerRequest( new JMap().put("val", new Var(s)),this);
-		
-		JMap par = new JMap().put("origntation", orientation).put("min", min).put("max", max).put("animate", animate).put("step", step).put("value", getAttribute("value"));
-		
-		par.put("stop",p, "event", "ui");
-		proxy.addMethod("slider", par);
-	}
+	
 
 	public UISlider(String name) {
 		super(name, "div");
@@ -54,49 +47,7 @@ public class UISlider extends EXContainer implements FormComponent, Event{
 		addEvent(this, Event.MISC);
 		
 	}
-
-
-	public Decoder getDecoder() {
-		return null;
-	}
-
 	
-	public Encoder getEncoder() {
-		return null;
-	}
-
-	
-	public String getRawValue() {
-		return getAttribute("value");
-	}
-
-	
-	public Object getValue() {
-		return getRawValue();
-	}
-
-
-	public void setDecoder(Decoder decoder) {
-		
-	}
-
-	
-	public void setEncoder(Encoder encoder) {
-		
-	}
-
-
-	public void setRawValue(String rawValue) {
-		setAttribute("value", rawValue);
-		
-	}
-
-	
-	public void setValue(Object value) {
-		setRawValue(value.toString());
-		setRendered(false);
-	}
-
 	public String getOrientation() {
 		return orientation;
 	}
@@ -141,8 +92,33 @@ public class UISlider extends EXContainer implements FormComponent, Event{
 		this.step = step;
 		setRendered(false);
 	}
+	
+	
+	public UISlider addValueChangeListener(SliderValueChangeListener l){
+		if(this.changeListeners == null){
+			changeListeners = new LinkedList<SliderValueChangeListener>();
+		}
+		changeListeners.add(l);
+		return this;
+	}
+	
+	public List<SliderValueChangeListener> getValueChangeListeners(){
+		return changeListeners;
+	}
 
-
+	@Override
+	public void onReady(ClientProxy proxy) {
+		super.onReady(proxy);
+		
+		String s = "$( '"+proxy.getIdRef()+"' ).slider( 'option', 'value' )";
+		ClientProxy p = proxy.clone().makeServerRequest( new JMap().put("val", new Var(s)),this);
+		
+		JMap par = new JMap().put("origntation", orientation).put("min", min).put("max", max).put("animate", animate).put("step", step).put("value", getAttribute("value"));
+		
+		par.put("stop",p, "event", "ui");
+		proxy.addMethod("slider", par);
+	}
+	
 	public void ClientAction(ClientProxy container) {
 		String s = "$( '"+container.getIdRef()+"' ).slider( 'option', 'value' )";
 		container.makeServerRequest( new JMap().put("val", new Var(s)),this);
@@ -154,9 +130,13 @@ public class UISlider extends EXContainer implements FormComponent, Event{
 			throws UIException {
 		String val = request.get("val");
 		setAttribute("value", val);
-		SliderPropagator p = getAncestorOfType(SliderPropagator.class);
-		if(p != null)
-			p.propagate();
+		
+		if(this.changeListeners != null){
+			for(SliderValueChangeListener l : changeListeners){
+				l.onChange(this, getValue());
+			}
+		}
+		
 		return true;
 	}
 
@@ -164,6 +144,27 @@ public class UISlider extends EXContainer implements FormComponent, Event{
 	public void Success(ClientProxy container, Map<String, String> request)
 			throws UIException {
 		
+	}
+
+	public Integer getValue() {
+		try{
+		return Integer.parseInt(getAttribute("value"));
+		}catch(Exception e){
+			setAttribute("value", min + "");
+			return min;
+		}
+	}
+
+	public void setValue(Integer value) {
+		setAttribute("value", value.toString());
+	}
+
+	public FormComponent<Integer> setInputVerifier(InputVerifier verifier) {
+		return this;
+	}
+
+	public InputVerifier getInputVerifier() {
+		return null;
 	}
 
 	

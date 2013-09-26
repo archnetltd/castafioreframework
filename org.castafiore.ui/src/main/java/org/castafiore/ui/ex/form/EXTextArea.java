@@ -24,7 +24,7 @@ import org.castafiore.ui.AbstractFormComponent;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-public class EXTextArea extends AbstractFormComponent {
+public class EXTextArea extends AbstractFormComponent<String> {
 
 	/**
 	 * 
@@ -55,6 +55,16 @@ public class EXTextArea extends AbstractFormComponent {
 
 	public void setRows(int rows) {
 		setAttribute("rows", rows + "");
+	}
+
+	@Override
+	public String serialize(String value) {
+		return value;
+	}
+
+	@Override
+	public String deserialize(String s) {
+		return s;
 	}
 
 }

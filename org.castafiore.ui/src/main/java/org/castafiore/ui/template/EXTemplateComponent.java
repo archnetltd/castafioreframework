@@ -30,7 +30,6 @@ import org.castafiore.ui.LayoutContainer;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.js.JMap;
-import org.castafiore.ui.layout.Compiler;
 import org.castafiore.ui.layout.DroppableSection;
 import org.castafiore.utils.BaseSpringUtil;
 import org.castafiore.utils.EventUtil;

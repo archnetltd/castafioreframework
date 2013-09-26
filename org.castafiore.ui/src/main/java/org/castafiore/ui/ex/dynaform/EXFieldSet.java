@@ -4,19 +4,20 @@
 package org.castafiore.ui.ex.dynaform;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.Decoder;
 import org.castafiore.ui.Dimension;
 import org.castafiore.ui.EXContainer;
-import org.castafiore.ui.Encoder;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.button.Button;
+import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.utils.ComponentUtil;
 
-public class EXFieldSet extends EXContainer implements FormComponent {
+public class EXFieldSet extends EXContainer implements FormComponent<Map<String, ?>> {
 
 	/**
 	 * 
@@ -146,19 +147,19 @@ public class EXFieldSet extends EXContainer implements FormComponent {
 		return tr;
 	}
 
-	public void addField(String label, FormComponent input) {
+	public void addField(String label, FormComponent<?> input) {
 		addField(label, input, false);
 	}
 
-	public void addField(Container label, FormComponent input) {
+	public void addField(Container label, FormComponent<?> input) {
 		addField(label, input, false);
 	}
 
-	public void addField(FormComponent input) {
+	public void addField(FormComponent<?> input) {
 		addField(input, false);
 	}
 
-	public void addField(Container label, FormComponent input,
+	public void addField(Container label, FormComponent<?> input,
 			boolean spancolumn) {
 		if (!spancolumn) {
 			Container[] tds = getLastCellsToAddLabelAndField();
@@ -172,7 +173,7 @@ public class EXFieldSet extends EXContainer implements FormComponent {
 		}
 	}
 
-	public void addField(String label, FormComponent input, boolean spancolumn) {
+	public void addField(String label, FormComponent<?> input, boolean spancolumn) {
 		Container eXLabel = new EXContainer(input.getName() + "_label", "a");
 		eXLabel.setAttribute("href", "#");
 		eXLabel.setText(label);
@@ -180,16 +181,16 @@ public class EXFieldSet extends EXContainer implements FormComponent {
 
 	}
 
-	public void addField(FormComponent input, boolean spancolumn) {
+	public void addField(FormComponent<?> input, boolean spancolumn) {
 		addField(input.getName(), input, spancolumn);
 	}
 
-	public FormComponent getField(String name) {
-		return (FormComponent) getDescendentByName(name);
+	public FormComponent<?> getField(String name) {
+		return (FormComponent<?>) getDescendentByName(name);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<FormComponent> getFields() {
+	public List<FormComponent<?>> getFields() {
 		Container tBody = getChild("tbody");
 
 		@SuppressWarnings("rawtypes")
@@ -200,40 +201,40 @@ public class EXFieldSet extends EXContainer implements FormComponent {
 		return result;
 	}
 
-	public Decoder getDecoder() {
+	
 
+	
+
+	public Map<String, ?> getValue() {
+
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		List<FormComponent<?>>  fields = getFields();
+		for(FormComponent<?> f : fields){
+			result.put(f.getName(), f.getValue());
+		}
+		return result;
+	}
+
+	
+
+	@SuppressWarnings("unchecked")
+	public void setValue(Map<String,?> value) {
+		for(String key : value.keySet()){
+			Object val = value.get(key);
+			FormComponent<Object> fc = (FormComponent<Object>)getField(key);
+			fc.setValue(val);
+		}
+		
+	}
+
+	@Override
+	public FormComponent<Map<String, ?>> setInputVerifier(InputVerifier verifier) {
+		return this;
+	}
+
+	@Override
+	public InputVerifier getInputVerifier() {
 		return null;
-	}
-
-	public Encoder getEncoder() {
-
-		return null;
-	}
-
-	public String getRawValue() {
-
-		return null;
-	}
-
-	public Object getValue() {
-
-		return null;
-	}
-
-	public void setDecoder(Decoder decoder) {
-
-	}
-
-	public void setEncoder(Encoder encoder) {
-
-	}
-
-	public void setRawValue(String rawValue) {
-
-	}
-
-	public void setValue(Object value) {
-
 	}
 
 }

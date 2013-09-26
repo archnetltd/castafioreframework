@@ -39,7 +39,7 @@ public interface DynaForm extends Container {
 	 * 
 	 * @return returns a map of fields configured in this Form
 	 */
-	public Map<String, FormComponent> getFieldsMap();
+	public Map<String, FormComponent<?>> getFieldsMap();
 
 	/**
 	 * 
@@ -47,7 +47,7 @@ public interface DynaForm extends Container {
 	 *            The name of the field to search
 	 * @return The Form component with the specified name
 	 */
-	public FormComponent getField(String name);
+	public FormComponent<?> getField(String name);
 
 	/**
 	 * Adds a field with the specified label
@@ -58,7 +58,7 @@ public interface DynaForm extends Container {
 	 *            - The field
 	 * @return
 	 */
-	public DynaForm addField(String label, FormComponent input);
+	public DynaForm addField(String label, FormComponent<?> input);
 
 	/**
 	 * Adds a button to the form
@@ -73,7 +73,7 @@ public interface DynaForm extends Container {
 	 * 
 	 * @return All fields in the form of a list
 	 */
-	public List<FormComponent> getFields();
+	public List<FormComponent<?>> getFields();
 
 	/**
 	 * Sets the label for a specified field
@@ -83,6 +83,6 @@ public interface DynaForm extends Container {
 	 * @param c
 	 *            The form component to set label for
 	 */
-	public void setLabelFor(String label, FormComponent c);
+	public void setLabelFor(String label, FormComponent<?> c);
 
 }

@@ -54,7 +54,7 @@ public class EXBorderLayout extends EXXHTMLFragment implements LayoutContainer,
 			"EXBorderLayoutContainerbottom" };
 
 	public EXBorderLayout() {
-		this("Border Layout");
+		this("BorderLayout");
 
 	}
 

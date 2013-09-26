@@ -33,7 +33,7 @@ import org.castafiore.ui.ex.form.EXRadioButton;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXRadio extends AbstractEXList<Object> implements FormComponent {
+public class EXRadio extends AbstractEXList<Object> implements FormComponent<Object> {
 
 	/**
 	 * 
@@ -83,7 +83,7 @@ public class EXRadio extends AbstractEXList<Object> implements FormComponent {
 			div.addChild(label);
 			EXRadioButton radio = new EXRadioButton("radiobutton_"
 					+ parent.getName());
-			radio.setRawValue(index + "");
+			radio.setAttribute("value",index + "");
 			radio.addEvent(SETVALUE_EVENT, Event.CLICK);
 
 			div.addChild(radio);

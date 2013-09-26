@@ -17,6 +17,7 @@
 
 package org.castafiore.ui;
 
+import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.utils.ExceptionUtil;
 
 /**
@@ -25,56 +26,51 @@ import org.castafiore.utils.ExceptionUtil;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public abstract class AbstractFormComponent extends EXContainer implements
-		FormComponent {
+public abstract class AbstractFormComponent<T> extends EXContainer implements FormComponent<T> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Encoder encoder_ = DefaultEncoder.INSTANCE;
-
-	private Decoder decoder_ = DefaultDecoder.INSTANCE;
+	
+	private InputVerifier inputVerifier;
 
 	public AbstractFormComponent(String name, String tagName) {
 		super(name, tagName);
 
 	}
 
-	public Decoder getDecoder() {
-		return this.decoder_;
-	}
-
-	public Encoder getEncoder() {
-		return this.encoder_;
-	}
-
-	public void setDecoder(Decoder decoder) {
-		this.decoder_ = decoder;
-
-	}
-
-	public void setEncoder(Encoder encoder) {
-		this.encoder_ = encoder;
-
-	}
-
-	public void setValue(Object value) {
+	public abstract String serialize(T value);
+	
+	public abstract T deserialize(String s);
+	
+	public void setValue(T value) {
 		try {
-			setRawValue((getDecoder().decode(value, this)));
+			setAttribute("value", serialize(value));
 		} catch (Exception e) {
 			throw ExceptionUtil.getRuntimeException(e.getMessage());
 		}
 	}
 
-	public Object getValue() {
+	public T getValue() {
 		try {
-			return getEncoder().encode(getRawValue(), this);
+			return deserialize(getAttribute("value"));
 		} catch (Exception e) {
 
 			throw ExceptionUtil.getRuntimeException("error in encoding value");
 		}
 	}
+
+	public InputVerifier getInputVerifier() {
+		return inputVerifier;
+	}
+
+	public FormComponent<T> setInputVerifier(InputVerifier inputVerifier) {
+		this.inputVerifier = inputVerifier;
+		return this;
+	}
+	
+	
 
 }

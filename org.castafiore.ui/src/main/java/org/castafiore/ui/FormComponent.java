@@ -17,6 +17,8 @@
 
 package org.castafiore.ui;
 
+import org.castafiore.ui.dynaform.InputVerifier;
+
 /**
  * Interface that marks a Form component. All component that wants its value to
  * be automatically retrieved or set to the browser should implement this
@@ -29,28 +31,13 @@ package org.castafiore.ui;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-public interface FormComponent extends Container {
+public interface FormComponent<T> extends Container {
 
-	/**
-	 * 
-	 * @return The raw value of the component the raw value has not been passed
-	 *         through the decoder
-	 */
-	public String getRawValue();
-
-	/**
-	 * sets the raw value of the component. The raw value has not been passed
-	 * through the encoder
-	 * 
-	 * @param rawValue
-	 *            The raw value
-	 */
-	public void setRawValue(String rawValue);
-
+	
 	/**
 	 * @return the value after the raw value has been passed through the encoder
 	 */
-	public Object getValue();
+	public T getValue();
 
 	/**
 	 * sets the raw value by passing the specified value through the decoder
@@ -58,6 +45,21 @@ public interface FormComponent extends Container {
 	 * @param value
 	 *            The value
 	 */
-	public void setValue(Object value);
+	public void setValue(T value);
+	
+	
+	/**
+	 * Sets the input verifier to be used to verify the validity of this FormComponent
+	 * @param verifier The {@link InputVerifier} upon which validation is delegated
+	 * @return This FormComponent itself
+	 */
+	public FormComponent<T> setInputVerifier(InputVerifier verifier);
+	
+	
+	/**
+	 * Returns the input verifier associated to this component
+	 * @return
+	 */
+	public InputVerifier getInputVerifier();
 
 }

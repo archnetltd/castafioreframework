@@ -75,7 +75,7 @@ public class EXDynaForm extends EXPanel implements DynaForm {
 		return this;
 	}
 
-	public DynaForm addField(String label, FormComponent input) {
+	public DynaForm addField(String label, FormComponent<?> input) {
 
 		if (input instanceof EXFieldSet) {
 
@@ -131,7 +131,7 @@ public class EXDynaForm extends EXPanel implements DynaForm {
 		return this;
 	}
 
-	public void setLabelFor(String label, FormComponent input) {
+	public void setLabelFor(String label, FormComponent<?> input) {
 		Container uiLabel = getDescendentByName("label_" + input.getId());
 		if (uiLabel != null) {
 			uiLabel.setText(label);
@@ -139,11 +139,11 @@ public class EXDynaForm extends EXPanel implements DynaForm {
 
 	}
 
-	public Map<String, FormComponent> getFieldsMap() {
-		Map<String, FormComponent> result = new HashMap<String, FormComponent>();
+	public Map<String, FormComponent<?>> getFieldsMap() {
+		Map<String, FormComponent<?>> result = new HashMap<String, FormComponent<?>>();
 		List<Container> children = getBody().getChildren();
 		for (Container c : children) {
-			FormComponent stf = c.getDescendentOfType(FormComponent.class);
+			FormComponent<?> stf = c.getDescendentOfType(FormComponent.class);
 			if (stf != null) {
 				result.put(stf.getName(), stf);
 			}
@@ -151,16 +151,16 @@ public class EXDynaForm extends EXPanel implements DynaForm {
 		return result;
 	}
 
-	public FormComponent getField(String name) {
+	public FormComponent<?> getField(String name) {
 		return getFieldsMap().get(name);
 	}
 
-	public List<FormComponent> getFields() {
-		List<FormComponent> result = new ArrayList<FormComponent>();
+	public List<FormComponent<?>> getFields() {
+		List<FormComponent<?>> result = new ArrayList<FormComponent<?>>();
 		List<Container> children = getBody().getChildren();
 
 		for (Container c : children) {
-			FormComponent stf = c.getDescendentOfType(FormComponent.class);
+			FormComponent<?> stf = c.getDescendentOfType(FormComponent.class);
 			if (stf != null) {
 				result.add(stf);
 			}
@@ -173,7 +173,7 @@ public class EXDynaForm extends EXPanel implements DynaForm {
 		Map<String, String> result = new HashMap<String, String>();
 		List<Container> children = getBody().getChildren();
 		for (Container c : children) {
-			FormComponent stf = c.getDescendentOfType(FormComponent.class);
+			FormComponent<?> stf = c.getDescendentOfType(FormComponent.class);
 			if (stf != null) {
 				result.put(stf.getName(), stf.getValue().toString());
 			}

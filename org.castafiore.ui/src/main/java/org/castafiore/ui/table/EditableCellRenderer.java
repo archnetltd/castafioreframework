@@ -29,7 +29,7 @@ public interface EditableCellRenderer extends CellRenderer {
 	 * @return A form component to be used to edit the current content of the
 	 *         cell
 	 */
-	public FormComponent getInputAt(int row, int column, int page,
+	public FormComponent<Object> getInputAt(int row, int column, int page,
 			EditableTableModel model, EditableTable table);
 
 }

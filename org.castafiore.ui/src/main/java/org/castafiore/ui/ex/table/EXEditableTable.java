@@ -137,7 +137,7 @@ public class EXEditableTable extends EXTable implements Event, EditableTable {
 
 	public void startEdit(int row, int col, int page) {
 		Object value = super.tableModel_.getValueAt(col, row, page);
-		FormComponent sft = ((EditableCellRenderer) this.celleRendere_)
+		FormComponent<Object> sft = ((EditableCellRenderer) this.celleRendere_)
 				.getInputAt(row, col, page, (EditableTableModel) tableModel_,
 						this);
 
@@ -152,7 +152,7 @@ public class EXEditableTable extends EXTable implements Event, EditableTable {
 		container.getEvents().clear();
 	}
 
-	public void cancelEdit(FormComponent stf) {
+	public void cancelEdit(FormComponent<Object> stf) {
 		Container td = stf.getParent();
 		int row = Integer.parseInt(stf.getAttribute("r"));
 		int col = Integer.parseInt(stf.getAttribute("c"));
@@ -174,7 +174,7 @@ public class EXEditableTable extends EXTable implements Event, EditableTable {
 
 		if (!editMode) {
 			Object value = super.tableModel_.getValueAt(col, row, page);
-			FormComponent sft = ((EditableCellRenderer) this.celleRendere_)
+			FormComponent<Object> sft = ((EditableCellRenderer) this.celleRendere_)
 					.getInputAt(row, col, page,
 							(EditableTableModel) tableModel_, this);
 
@@ -203,7 +203,6 @@ public class EXEditableTable extends EXTable implements Event, EditableTable {
 
 	public void Success(ClientProxy container, Map<String, String> request)
 			throws UIException {
-		// TODO Auto-generated method stub
 
 	}
 

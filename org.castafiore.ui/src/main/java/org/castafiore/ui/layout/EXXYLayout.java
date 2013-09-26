@@ -40,7 +40,7 @@ public class EXXYLayout extends EXContainer implements LayoutContainer {
 	}
 
 	public EXXYLayout() {
-		super("EXXYLayoutContainer", "div");
+		super("XYLayout", "div");
 	}
 
 	public void addChild(Container child, String layoutData) {

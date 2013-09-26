@@ -32,7 +32,7 @@ import org.castafiore.ui.EXApplication;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.form.EXHidden;
+import org.castafiore.ui.ex.form.EXInput;
 import org.castafiore.ui.ex.form.EXUpload;
 import org.castafiore.ui.interceptors.Interceptor;
 import org.castafiore.ui.interceptors.InterceptorRegistry;
@@ -91,14 +91,11 @@ public final class CastafioreEngine {
 				container.setAttribute("stf", "true");
 			}
 			if (container instanceof EXUpload) {
-				EXHidden applicationid = new EXHidden("casta_applicationid",
-						root.getName());
-				container.addChild(applicationid);
+				EXInput applicationid = new EXInput("casta_applicationid",root.getName());
+				container.addChild(applicationid.setDisplay(false));
 
-				EXHidden componentId = new EXHidden("casta_componentid",
-						container.getId());
-				container.addChild(applicationid);
-				container.addChild(componentId);
+				EXInput componentId = new EXInput("casta_componentid",	container.getId());
+				container.addChild(componentId.setDisplay(false));
 			}
 
 			InterceptorRegistry interceptorRegistry = BaseSpringUtil
@@ -232,20 +229,21 @@ public final class CastafioreEngine {
 			Application application, String parentId,
 			Map<String, String> parameters) {
 
-		List<FormComponent> statefullcomponents = new ArrayList<FormComponent>();
+		
+		List<FormComponent<?>> statefullcomponents = new ArrayList<FormComponent<?>>();
 		List<Container> cCo = new ArrayList<Container>();
 
 		ComponentUtil.fastExtractComponents(application, statefullcomponents,
 				cCo, componentId);
 		int eventId = Integer.parseInt(parameters.get("casta_eventid"));
-		for (FormComponent component : statefullcomponents) {
+		for (FormComponent<?> component : statefullcomponents) {
 			boolean toUpdate = parameters.containsKey("casta_value_"
 					+ component.getId());
 			if (toUpdate) {
 				String browserValue = parameters.get("casta_value_"
 						+ component.getId());
 
-				String sessionValue = component.getRawValue();
+				String sessionValue = component.getAttribute("value");
 
 				if (browserValue == null && sessionValue == null)
 					continue;
@@ -253,7 +251,7 @@ public final class CastafioreEngine {
 				if (browserValue != null && browserValue.equals(sessionValue))
 					continue;
 
-				component.setRawValue(browserValue);
+				component.setAttribute("value",browserValue);
 			}
 		}
 

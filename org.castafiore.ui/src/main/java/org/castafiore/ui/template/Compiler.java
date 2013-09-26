@@ -15,20 +15,27 @@
  * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
 
-package org.castafiore.ui.dynaform.validator;
+package org.castafiore.ui.template;
 
-import org.castafiore.ui.Container;
+import java.util.Map;
 
 /**
- * 
+ * Interface handling the compilation of template against a context.
  * 
  * @author Kureem Rossaye<br>
- *         kureem@gmail.com Oct 22, 2008
+ *         kureem@gmail.com June 27 2008
  */
-public class NoValidation implements Validator {
+public interface Compiler {
 
-	public boolean validate(Container component) {
-		return true;
-	}
+	/**
+	 * Compiles the template and return a string of the template
+	 * 
+	 * @param template
+	 * @param context
+	 * @return
+	 * @throws Exception
+	 */
+	public String compile(String template, Map<String, Object> context)
+			throws Exception;
 
 }

@@ -18,7 +18,7 @@ package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.AbstractFormComponent;
 
-public class EXLabel extends AbstractFormComponent {
+public class EXLabel extends AbstractFormComponent<String> {
 
 	/**
 	 * 
@@ -31,13 +31,16 @@ public class EXLabel extends AbstractFormComponent {
 
 	}
 
-	public String getRawValue() {
-		return getAttribute("value");
+	@Override
+	public String serialize(String value) {
+		return value;
 	}
 
-	public void setRawValue(String rawValue) {
-		setAttribute("value", rawValue);
-		setText(rawValue);
+	@Override
+	public String deserialize(String s) {
+		return s;
 	}
+
+	
 
 }

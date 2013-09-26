@@ -25,7 +25,7 @@ import org.castafiore.ui.AbstractFormComponent;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public abstract class AbstractEXList<T> extends AbstractFormComponent implements
+public abstract class AbstractEXList<T> extends AbstractFormComponent<T> implements
 		List<T> {
 	/**
 	 * 
@@ -76,7 +76,7 @@ public abstract class AbstractEXList<T> extends AbstractFormComponent implements
 	}
 
 	@Override
-	public Object getValue() {
+	public T getValue() {
 		try {
 			return model_.getValue(Integer.parseInt(getRawValue()));
 		} catch (Exception e) {
@@ -112,5 +112,19 @@ public abstract class AbstractEXList<T> extends AbstractFormComponent implements
 	public void setRawValue(String rawValue) {
 
 		setAttribute("value", rawValue);
+	}
+
+
+
+	@Override
+	public String serialize(T value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T deserialize(String s) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

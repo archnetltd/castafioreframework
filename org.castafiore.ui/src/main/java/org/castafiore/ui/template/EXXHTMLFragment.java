@@ -19,7 +19,6 @@ package org.castafiore.ui.template;
 
 import java.util.Map;
 
-import org.castafiore.ui.layout.Compiler;
 
 /**
  * 

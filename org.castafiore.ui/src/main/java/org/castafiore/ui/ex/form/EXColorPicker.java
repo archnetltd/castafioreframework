@@ -17,7 +17,12 @@
 
 package org.castafiore.ui.ex.form;
 
+import java.awt.Color;
+
+import org.castafiore.ui.AbstractFormComponent;
+import org.castafiore.ui.dynaform.Focusable;
 import org.castafiore.ui.engine.ClientProxy;
+import org.castafiore.utils.ImageUtil;
 import org.castafiore.utils.ResourceUtil;
 
 /**
@@ -26,20 +31,22 @@ import org.castafiore.utils.ResourceUtil;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXColorPicker extends EXInput {
+public class EXColorPicker extends AbstractFormComponent<Color> implements Focusable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public EXColorPicker(String name) {
-		super(name);
+	public EXColorPicker(String name, Color value) {
+		super(name,"input");
+		setReadOnlyAttribute("type", "text");
+		setValue(value);
 	}
 
-	public EXColorPicker(String name, String value) {
-		super(name);
-		setValue(value);
+	public EXColorPicker(String name) {
+		super(name,"input");
+		setReadOnlyAttribute("type", "text");
 
 	}
 
@@ -55,6 +62,46 @@ public class EXColorPicker extends EXInput {
 				proxy.clone().click(
 						proxy.clone()
 								.appendJSFragment("startColorPicker(this)")));
+	}
+
+	@Override
+	public String serialize(Color value) {
+		if(value == null){
+			return "";
+		}
+		String hex = "#"+Integer.toHexString(value.getRGB()).substring(2);
+		return hex;
+	}
+
+	@Override
+	public Color deserialize(String s) {
+		return ImageUtil.hex2Rgb(s);
+	}
+	
+	@Override
+	public int getTabIndex() {
+		try{
+		return Integer.parseInt(getAttribute("tabindex"));
+		}catch(Exception e){
+			return -1;
+		}
+	}
+
+	@Override
+	public void setAccessKey(char key) {
+		
+		setAttribute("accesskey", new String(new char[]{key}));
+	}
+
+	@Override
+	public void setFocus(boolean focused) {
+		setAttribute("hasfocus", focused + "");
+	}
+
+	@Override
+	public void setTabIndex(int index) {
+		setAttribute("tabindex", index + "");
+		
 	}
 
 }
