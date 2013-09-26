@@ -28,6 +28,7 @@ public class EXLabel extends AbstractFormComponent<String> {
 	public EXLabel(String name, String value) {
 		super(name, "span");
 		setValue(value);
+		setText(value);
 
 	}
 

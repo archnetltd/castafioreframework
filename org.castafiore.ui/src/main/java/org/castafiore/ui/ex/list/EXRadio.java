@@ -23,9 +23,9 @@ import org.castafiore.ui.Container;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
+import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.form.EXRadioButton;
 
 /**
  * 
@@ -33,104 +33,115 @@ import org.castafiore.ui.ex.form.EXRadioButton;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXRadio extends AbstractEXList<Object> implements FormComponent<Object> {
-
+public class EXRadio<T> extends EXContainer implements FormComponent<T>, Event {
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private final static Event SETVALUE_EVENT = new Event() {
-
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		public void ClientAction(ClientProxy application) {
-			String attrRef = application.getAttribute("value").getJavascript();
-
-			application.getParent().getParent().setAttribute("value", attrRef);
-
-		}
-
-		public boolean ServerAction(Container component,
-				Map<String, String> requestParameters) throws UIException {
-
-			return false;
-		}
-
-		public void Success(ClientProxy component,
-				Map<String, String> requestParameters) throws UIException {
-
-		}
-
-	};
-
-	private final static ListItemRenderer<Object> RADIO_CELLRENDERER = new ListItemRenderer<Object>() {
-
-		/**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		public ListItem<Object> getCellAt(int index, Object value,
-				DataModel<Object> model, List<Object> parent) {
-			EXListItem<Object> div = new EXListItem<Object>("", "div");
-			div.setStyle("float", "left");
-			EXContainer label = new EXContainer("", "label");
-			label.setText(value.toString());
-			div.addChild(label);
-			EXRadioButton radio = new EXRadioButton("radiobutton_"
-					+ parent.getName());
-			radio.setAttribute("value",index + "");
-			radio.addEvent(SETVALUE_EVENT, Event.CLICK);
-
-			div.addChild(radio);
-			div.setData(value);
-
-			return div;
-		}
-
-	};
-
-	public EXRadio(String name, DataModel<Object> model) {
-		super(name, "div", model);
-
-		super.setRenderer(RADIO_CELLRENDERER);
+	private DataModel<T> model;
+	
+	private InputVerifier verifier;
+	
+	public EXRadio(String name){
+		super(name,"div");
 	}
-
-	public EXRadio(String name, DataModel<Object> model, Object value) {
-		super(name, "div", model);
-
-		super.setRenderer(RADIO_CELLRENDERER);
-		setValue(value);
+	
+	public EXRadio<T> setModel(DataModel<T> model){
+		this.model = model;
+		refresh();
+		return this;
+	}
+	
+	public void refresh(){
+		this.getChildren().clear();
+		setRendered(false);
+		if(model != null){
+			int size =  model.getSize();
+			for(int i = 0; i < size;i++){
+				T v = model.getValue(i);
+				Container radio = new EXContainer("__" + getName(), "input");
+				radio.setReadOnlyAttribute("type", "radio");
+				radio.setAttribute("value", i +"");
+				addChild(radio.addEvent(this, CLICK));
+				addChild(new EXContainer("", "label").setText(v.toString()));
+			}
+		}
+		
+	}
+	
+	public DataModel<T> getModel(){
+		return model;
+	}
+	
+	public EXRadio<T> setSelectedIndex(int index){
+		setAttribute("value", index + "");
+		return this;
+	}
+	
+	public int getSelectedIndex(){
+		try{
+			return Integer.parseInt(getAttribute("value"));
+		}catch(Exception e){
+			setSelectedIndex(0);
+			return 0;
+		}
 	}
 
 	@Override
-	public void selectItem(ListItem<Object> child, boolean selected) {
-		if (selected)
-			child.getChildByIndex(1).setAttribute("checked", "checked");
-		else
-			child.getChildByIndex(1).setAttribute("checked", (String) null);
-
+	public T getValue() {
+		if(model != null)
+			return model.getValue(getSelectedIndex());
+		return null;
 	}
 
 	@Override
-	public void addItem(ListItem<Object> item) {
-		addChild(item);
-
+	public void setValue(T value) {
+		if(model != null){
+			int size =  model.getSize();
+			for(int i = 0; i < size;i++){
+				if(value.equals(model.getValue(i))){
+					setSelectedIndex(i);
+				}
+			}
+		}else{
+			model = new DefaultDataModel<T>().addItem(value);
+			refresh();
+		}
+		
+		
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public ListItem<Object> getItem(int index) {
-		return (ListItem<Object>) getChildByIndex(index);
+	public FormComponent<T> setInputVerifier(InputVerifier verifier) {
+		this.verifier = verifier;
+		return this;
 	}
 
 	@Override
-	public int getSize() {
-		return getChildren().size();
+	public InputVerifier getInputVerifier() {
+		return verifier;
 	}
+
+	@Override
+	public void ClientAction(ClientProxy container) {
+		container.getParent().setAttribute("value", container.getAttribute("value"));
+		
+	}
+
+	@Override
+	public boolean ServerAction(Container container, Map<String, String> request)
+			throws UIException {
+		return false;
+	}
+
+	@Override
+	public void Success(ClientProxy container, Map<String, String> request)
+			throws UIException {
+		
+	}
+
+
 
 }

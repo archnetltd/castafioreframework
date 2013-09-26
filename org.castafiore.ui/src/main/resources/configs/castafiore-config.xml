@@ -50,10 +50,10 @@
 
 	<bean id="org.castafiore.ui.Draggable" class="org.castafiore.ui.interceptors.DraggableInterceptor"></bean>
 	<bean id="org.castafiore.ui.Droppable" class="org.castafiore.ui.interceptors.DroppableInterceptor"></bean>
-	<bean id="org.castafiore.ui.ex.contextmenu.ContextMenuAble"
-		class="org.castafiore.ui.ex.contextmenu.ContextMenuAbleInterceptor"></bean>
 	<bean id="org.castafiore.ui.RefreshSentive"
 		class="org.castafiore.ui.interceptors.RefreshSensitiveInterceptor"></bean>
 	<bean id="org.castafiore.ui.Scrollable" class="org.castafiore.ui.interceptors.ScrollableInterceptor"></bean>
+	
+	<bean name="test" class="org.castafiore.Test" scope="session"></bean>
 </beans>
 

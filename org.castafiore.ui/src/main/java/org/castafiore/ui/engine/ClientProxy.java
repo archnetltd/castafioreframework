@@ -695,7 +695,8 @@ public final class ClientProxy implements Constant {
 	}
 
 	public ClientProxy setAttribute(String key, Var value) {
-		commands.add(makeKeyValuePair("attr", value));
+		//commands.add(makeKeyValuePair("attr", value));
+		addMethod("attr", key,value);
 		return this;
 	}
 

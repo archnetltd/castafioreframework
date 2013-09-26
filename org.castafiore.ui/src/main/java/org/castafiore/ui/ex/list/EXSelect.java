@@ -17,68 +17,114 @@
 
 package org.castafiore.ui.ex.list;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.castafiore.ui.CastafioreController;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.FormComponent;
+import org.castafiore.ui.dynaform.InputVerifier;
+import org.castafiore.ui.engine.ClientProxy;
+import org.castafiore.ui.js.JArray;
+import org.castafiore.ui.js.JMap;
+import org.castafiore.utils.ResourceUtil;
+import org.springframework.web.servlet.ModelAndView;
+
 /**
  * 
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-public class EXSelect extends AbstractEXList<Object> implements
-		ListItemRenderer<Object> {
+public class EXSelect<T> extends EXContainer implements FormComponent<T>, CastafioreController{
+	
+	private DataModel<T> model;
+	
+	private InputVerifier verifier;
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
-	public EXSelect(String name, DataModel<Object> model) {
-		super(name, "select", model);
-		super.setRenderer(this);
-
-		if (model.getSize() > 0)
-			setValue(model.getValue(0));
-
-	}
-
-	public EXSelect(String name, DataModel<Object> model, Object value) {
-		super(name, "select", model);
-		super.setRenderer(this);
-		setValue(value);
-
+	public EXSelect(String name) {
+		super(name, "select");
 	}
 
 	@Override
-	public void selectItem(ListItem<Object> item, boolean selected) {
-		if (selected)
-			item.setAttribute("selected", "selected");
-		else
-			item.setAttribute("selected", (String) null);
+	public T getValue() {
+		String selected = getAttribute("value");
+		try{
+			return model.getValue(Integer.parseInt(selected));
+		}catch(Exception e){
+			setAttribute("value", "0");
+			return model.getValue(0);
+		}
+	}
+	
+	public EXSelect<T> setModel(DataModel<T> model){
+		this.model = model;
+		setRendered(false);
+		return this;
+	}
+	
+	public DataModel<T> getModel(){
+		return model;
 	}
 
 	@Override
-	public ListItem<Object> getCellAt(int index, Object value,
-			DataModel<Object> model, List<Object> holder) {
-		EXListItem<Object> option = new EXListItem<Object>("", "option");
-		option.setAttribute("value", index + "");
-		option.setText(value.toString());
-		option.setData(value);
-		return option;
+	public void setValue(T value) {
+		for(int i = 0; i < model.getSize();i++){
+			if(value.equals(model.getValue(i))){
+				setAttribute("value", i + "");
+			}
+		}
+		
+	}
+	
+	public EXSelect<T> setSelectedIndex(int i){
+		setAttribute("value", i +"");
+		setRendered(false);
+		return this;
+		
+	}
+	
+	public int getSelectedIndex(){
+		try{
+			return Integer.parseInt(getAttribute("value"));
+		}catch(Exception e){
+			setAttribute("value", "0");
+			return 0;
+		}
 	}
 
 	@Override
-	public void addItem(ListItem<Object> item) {
-		addChild(item);
-
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public ListItem<Object> getItem(int index) {
-		return (ListItem<Object>) getChildByIndex(index);
+	public FormComponent<T> setInputVerifier(InputVerifier verifier) {
+		this.verifier = verifier;
+		return this;
 	}
 
 	@Override
-	public int getSize() {
-		return getChildren().size();
+	public InputVerifier getInputVerifier() {
+		return verifier;
 	}
 
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		int size = model.getSize();
+		JArray array = new JArray();
+		int selected = getSelectedIndex();
+		for(int i =0; i < size; i++){
+			T v = model.getValue(i);
+			JMap m = new JMap().put("value", v.toString());
+			m.put("index", i);
+			m.put("selected",selected==i );
+			array.add(m);
+		}
+		response.getWriter().write(array.getJavascript());
+		
+		
+		return null;
+	}
+	
+	public void onReady(ClientProxy proxy){
+		proxy.appendJSFragment("combo($('"+proxy.getIdRef()+"'), '"+ResourceUtil.getMethodUrl(this)+"');");
+	}
+
+	
 }

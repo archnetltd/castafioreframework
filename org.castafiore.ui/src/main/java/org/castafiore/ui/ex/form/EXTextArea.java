@@ -41,13 +41,7 @@ public class EXTextArea extends AbstractFormComponent<String> {
 		setValue(value);
 	}
 
-	public String getRawValue() {
-		return super.getAttribute("value");
-	}
-
-	public void setRawValue(String value) {
-		super.setAttribute("value", value);
-	}
+	
 
 	public void setColumns(int columns) {
 		setAttribute("cols", columns + "");

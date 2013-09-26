@@ -45,7 +45,7 @@ public class EXUpload extends EXXHTMLFragment implements
 
 	public EXUpload(String name) {
 		super(name, ResourceUtil.getDownloadURL("classpath",
-				"org/castafiore/resource/upload/EXUpload.groovy"));
+				"org/castafiore/resources/upload/EXUpload.groovy"));
 
 	}
 

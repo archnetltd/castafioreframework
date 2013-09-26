@@ -1,0 +1,10 @@
+<project name="casta-ui"   basedir=".">
+	
+
+		<target name="deploy">
+			<copyfile dest="c:/Adev/apache-tomcat-6.0.36/webapps/castafioreframework" src="target/castafioreframework.war"/>
+		</target>
+	
+	
+	    	
+</project>

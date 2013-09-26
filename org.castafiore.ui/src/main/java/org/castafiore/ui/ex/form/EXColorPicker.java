@@ -56,9 +56,9 @@ public class EXColorPicker extends AbstractFormComponent<Color> implements Focus
 		super.onReady(proxy);
 
 		proxy.getCSS(ResourceUtil.getDownloadURL("classpath",
-				"org/castafiore/resource/colorpicker/colorpicker.css"));
+				"org/castafiore/resources/colorpicker/colorpicker.css"));
 		proxy.getScript(
-				ResourceUtil.getJavascriptURL("jquery/ui.colorpicker.js"),
+				ResourceUtil.getJavascriptURL("ui.colorpicker.js"),
 				proxy.clone().click(
 						proxy.clone()
 								.appendJSFragment("startColorPicker(this)")));

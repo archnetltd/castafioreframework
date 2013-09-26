@@ -35,7 +35,7 @@ public class ResourceUtil {
  
 	private static String ICONS_REPO = "org/castafiore/resource/icons";
 
-	private static String JS_REPOSITORY = "org/castafiore/resource/js";
+	private static String JS_REPOSITORY = "org/castafiore/resources/js";
 
 	private static java.util.Properties castaProp = new java.util.Properties();
 
@@ -47,12 +47,7 @@ public class ResourceUtil {
 		try {
 			castaProp.load(Thread.currentThread().getContextClassLoader()
 					.getResourceAsStream("castafiore.properties"));
-			MIMETYPES_EXTENSION.load(Thread.currentThread()
-					.getContextClassLoader()
-					.getResourceAsStream("mimetype.properties"));
-			EXTENSION_MIMETYPES.load(Thread.currentThread()
-					.getContextClassLoader()
-					.getResourceAsStream("extensions.properties"));
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -156,9 +151,6 @@ public class ResourceUtil {
 		String contextPath = app.getContextPath();
 		String serverPort = app.getServerPort();
 		String servaerName = app.getServerName();
-		if ("www.3racingtips.com".equalsIgnoreCase(servaerName)) {
-			servaerName = "racingtips.s18.eatj.com";
-		}
 
 		if (!contextPath.startsWith("/")) {
 			contextPath = "/" + contextPath;
