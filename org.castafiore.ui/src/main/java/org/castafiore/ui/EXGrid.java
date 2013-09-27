@@ -53,6 +53,7 @@ public class EXGrid extends EXContainer {
 		super(name, "table");
 		this.columns = cols;
 		this.rows = rows;
+		setStyle("padding", "0").setStyle("margin", "0");
 		refresh();
 	}
 
@@ -66,7 +67,7 @@ public class EXGrid extends EXContainer {
 			EXContainer tr = new EXContainer("", "tr");
 
 			for (int j = 0; j < columns; j++) {
-				EXContainer td = new EXContainer("", "td");
+				Container td = new EXContainer("", "td").setStyle("padding", "0").setStyle("margin", "0");
 				tr.addChild(td);
 			}
 			addChild(tr);

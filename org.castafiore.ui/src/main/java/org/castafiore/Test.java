@@ -9,6 +9,7 @@ import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.button.Button;
+import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.events.ServerEvent;
 import org.castafiore.ui.ex.dynaform.EXDynaForm;
@@ -19,13 +20,22 @@ import org.castafiore.ui.ex.form.EXInput;
 import org.castafiore.ui.ex.form.EXLabel;
 import org.castafiore.ui.ex.form.EXMaskableInput;
 import org.castafiore.ui.ex.form.EXPassword;
+import org.castafiore.ui.ex.form.EXRange;
 import org.castafiore.ui.ex.form.EXTextArea;
 import org.castafiore.ui.ex.list.DefaultDataModel;
 import org.castafiore.ui.ex.list.EXRadio;
 import org.castafiore.ui.ex.list.EXSelect;
 import org.castafiore.ui.ex.tab.EXTabPanel;
+import org.castafiore.ui.ex.tree.DefaultMutableTreeNode;
+import org.castafiore.ui.ex.tree.EXTree;
+import org.castafiore.ui.ex.tree.EXTreeComponent;
+import org.castafiore.ui.layout.EXBorderLayout;
+import org.castafiore.ui.layout.EXGridLayout;
+import org.castafiore.ui.layout.EXHLayout;
+import org.castafiore.ui.layout.EXVLayout;
 import org.castafiore.ui.tab.TabModel;
 import org.castafiore.ui.tab.TabPanel;
+import org.castafiore.ui.tree.TreeNode;
 import org.castafiore.utils.ComponentUtil;
 import org.castafiore.utils.ComponentVisitor;
 
@@ -33,11 +43,12 @@ public class Test extends EXApplication{
 
 	public Test() {
 		super("test");
+		setStyle("font-size", "62%");
 	}
 
 	@Override
 	public void initApp() {
-		setStyle("font-size", "67%");
+		//setStyle("font-size", "67%");
 		final EXDynaForm form = new EXDynaForm("form", "Dynaform");
 		
 		form.setDraggable(false);
@@ -56,6 +67,8 @@ public class Test extends EXApplication{
 		 form.addField("Textarea",new EXTextArea("textarea"));
 		 
 		 form.addField("Check box",new EXCheckBox("cb"));
+		 
+		 form.addField("Range",new EXRange("range", 100).setMin(0).setMax(200).setStep(20));
 		 
 		 
 		 
@@ -100,7 +113,7 @@ public class Test extends EXApplication{
 				if(index == 0){
 					return "Form";
 				}else{
-					return "Custom";
+					return "Layout";
 				}
 			}
 			
@@ -109,7 +122,7 @@ public class Test extends EXApplication{
 				if(index == 0)
 					return form;
 				else
-					return new EXContainer("d", "h1").setText("Hello world");
+					return layout();
 			}
 			
 			@Override
@@ -119,6 +132,60 @@ public class Test extends EXApplication{
 		});
 		
 		addChild(tabs);
+	}
+	
+	
+	public Container layout(){
+		EXBorderLayout border = new EXBorderLayout("border");
+		
+		EXHLayout hlayout = new EXHLayout();
+		for(int i = 0; i < 5; i ++){
+			Container c = new EXContainer("", "div").setStyle("width", "175px").setStyle("height", "30px").setStyle("background", "steelblue").setStyle("margin", "5px");
+			hlayout.addChild(c, i + "");
+			
+		}
+		
+		border.addChild(hlayout, EXBorderLayout.TOP);
+		
+		EXVLayout vlayout = new EXVLayout();
+		for(int i = 0; i < 5; i ++){
+			Container c = new EXContainer("", "div").setStyle("width", "175px").setStyle("height", "30px").setStyle("background", "steelblue").setStyle("margin", "5px");
+			vlayout.addChild(c, i + "");
+			
+		}
+		
+		border.addChild(vlayout, EXBorderLayout.LEFT);
+		
+		EXGridLayout gl = new EXGridLayout("grid", 5, 5);
+		for(int i = 0; i < 5; i ++){
+			Container c = new EXContainer("", "div").setStyle("width", "175px").setStyle("height", "30px").setStyle("background", "steelblue").setStyle("margin", "5px");
+			gl.addChild(c, i + ":" + i);
+			
+		}
+		
+		border.addChild(gl, EXBorderLayout.CENTER);
+		border.addChild(tree(),EXBorderLayout.RIGHT);
+		return border;
+		
+	}
+	
+	
+	public Container tree(){
+		EXTreeComponent c=  new EXTreeComponent("s", "Index ", "https://raw.github.com/joshuaclayton/blueprint-css/master/blueprint/plugins/link-icons/icons/doc.png");
+		DefaultMutableTreeNode root = new DefaultMutableTreeNode(c, false);
+		for(int i =0;i< 10;i++){
+			EXTreeComponent c1=  new EXTreeComponent("s", "Index " + i, "https://raw.github.com/joshuaclayton/blueprint-css/master/blueprint/plugins/link-icons/icons/doc.png");
+			DefaultMutableTreeNode l1 = new DefaultMutableTreeNode(c1, false);
+			root.addChild(l1);
+			
+			for(int ii = 0; ii < 10; ii++){
+				EXTreeComponent c11=  new EXTreeComponent("s", "Index " + i + " " + ii, "https://raw.github.com/joshuaclayton/blueprint-css/master/blueprint/plugins/link-icons/icons/doc.png");
+				DefaultMutableTreeNode l11 = new DefaultMutableTreeNode(c11, false);
+				l1.addChild(l11);
+			}
+		}
+		EXTree tree = new EXTree("tree", root);
+		return tree;
 	}
 
 }

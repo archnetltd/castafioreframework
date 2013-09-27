@@ -17,7 +17,6 @@
 package org.castafiore.ui.layout;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.LayoutContainer;
 
 public class EXHLayout extends EXVLayout implements LayoutContainer {
@@ -35,16 +34,12 @@ public class EXHLayout extends EXVLayout implements LayoutContainer {
 		super(name);
 	}
 
-	public Container getCell(String layoutData) {
-		int iLayoutData = convertLayoutData(layoutData);
-		if (iLayoutData == getChildren().size()) {
-			EXContainer li = new EXContainer("", "li");
-			li.setStyle("float", "left");
-			li.setStyle("display", "inline");
-			addChild(li);
-		}
-
-		return getChildByIndex(iLayoutData);
+	@Override
+	public void addChild(Container child, String layoutData) {
+		super.addChild(child, layoutData);
+		child.setStyle("display", "inline-block");
 	}
+
+	
 
 }

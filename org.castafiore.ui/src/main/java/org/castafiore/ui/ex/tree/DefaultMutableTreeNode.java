@@ -20,7 +20,7 @@ package org.castafiore.ui.ex.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.castafiore.ui.Container;
+import org.castafiore.ui.tree.TreeComponent;
 import org.castafiore.ui.tree.TreeNode;
 
 /**
@@ -30,18 +30,18 @@ import org.castafiore.ui.tree.TreeNode;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class DefaultMutableTreeNode implements TreeNode<Container> {
+public class DefaultMutableTreeNode implements TreeNode<TreeComponent> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private List<TreeNode<Container>> children = new ArrayList<TreeNode<Container>>();
+	private List<TreeNode<TreeComponent>> children = new ArrayList<TreeNode<TreeComponent>>();
 
-	private TreeNode<Container> parent;
+	private TreeNode<TreeComponent> parent;
 
-	private Container userObject = null;
+	private TreeComponent userObject = null;
 
 	private boolean leaf;
 
@@ -54,7 +54,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	 * @param isLeaf
 	 *            if this is a leaf node or not
 	 */
-	public DefaultMutableTreeNode(Container userContainer, boolean isLeaf) {
+	public DefaultMutableTreeNode(TreeComponent userContainer, boolean isLeaf) {
 		this.userObject = userContainer;
 		this.leaf = isLeaf;
 	}
@@ -64,7 +64,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	 * 
 	 * @param node
 	 */
-	public void addChild(TreeNode<Container> node) {
+	public void addChild(TreeNode<TreeComponent> node) {
 		if (node instanceof DefaultMutableTreeNode)
 			((DefaultMutableTreeNode) node).setParent(this);
 		children.add(node);
@@ -83,7 +83,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	/**
 	 * Returns the user container of this node
 	 */
-	public Container getComponent() {
+	public TreeComponent getComponent() {
 
 		return userObject;
 	}
@@ -92,7 +92,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	 * Returns a child node for the specified index. If cannot or index is
 	 * greater or equal than children or is negative, returns null.
 	 */
-	public TreeNode<Container> getNodeAt(int index) {
+	public TreeNode<TreeComponent> getNodeAt(int index) {
 		try {
 			return children.get(index);
 		} catch (Exception e) {
@@ -112,7 +112,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	/**
 	 * Returns the parent node
 	 */
-	public TreeNode<Container> getParent() {
+	public TreeNode<TreeComponent> getParent() {
 		return parent;
 	}
 
@@ -121,7 +121,7 @@ public class DefaultMutableTreeNode implements TreeNode<Container> {
 	 * 
 	 * @param parent
 	 */
-	public void setParent(TreeNode<Container> parent) {
+	public void setParent(TreeNode<TreeComponent> parent) {
 		this.parent = parent;
 	}
 

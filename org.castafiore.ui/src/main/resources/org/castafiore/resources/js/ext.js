@@ -26,7 +26,6 @@ castafiore = function(app,params){
 	
 	
 		var me = $('#' + app);
-
 		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resources/css/themes/aristo/theme.css');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resources/js/jquery-ui-1.8.21.js');
 		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resources/js/jquery.maskedinput-1.3.js');		

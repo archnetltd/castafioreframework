@@ -37,6 +37,15 @@ public class EXInput extends AbstractFormComponent<String> implements Focusable 
 		setValue(value);
 		setReadOnlyAttribute("type", "text");
 	}
+	
+	public EXInput setPlaceHolder(String placeHolder){
+		setAttribute("placeholder", placeHolder);
+		return this;
+	}
+	
+	public String getPlaceHolder(){
+		return getAttribute("placeholder");
+	}
 
 	public EXInput(String name) {
 		super(name, "input");

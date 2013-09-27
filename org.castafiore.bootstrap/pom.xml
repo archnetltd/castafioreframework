@@ -1,0 +1,80 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>org.castafiore.bootstrap</artifactId>
+
+	<name>Catafiore Web Framework</name>
+	<url>http://www.archnetltd.com</url>
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>https://maven.java.net/content/repositories/public/</url>
+		</repository>
+	</repositories>
+	<contributors>
+		<contributor>
+			<name>Humyrah Rossaye</name>
+			<organization>ArchNet ltd</organization>
+			<organizationUrl>http://www.archnetltd.com</organizationUrl>
+			<roles>
+				<role>Tester</role>
+				<role>Specification writer</role>
+			</roles>
+			<email>humyrahbegum@gmail.com</email>
+		</contributor>
+	</contributors>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<tomcat.home>c:/Adev/apache-tomcat-6.0.36</tomcat.home>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.castafiore</groupId>
+			<artifactId>org.castafiore.ui</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+	</dependencies>
+	<build>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<configuration>
+							<tasks>
+								<copyfile dest="${tomcat.home}/webapps/castafioreframework/WEB-INF/lib/org.castafiore.bootstrap.jar" src="target/org.castafiore.bootstrap-0.0.1.jar"/>
+								<copydir src="src/main/webapp" dest="${tomcat.home}/webapps/castafioreframework">
+									<exclude name="**/*.java"/>
+								</copydir>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<organization>
+		<name>Archnet Ltd</name>
+		<url>http://www.archnetltd.com</url>
+	</organization>
+	<groupId>org.castafiore</groupId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+</project>

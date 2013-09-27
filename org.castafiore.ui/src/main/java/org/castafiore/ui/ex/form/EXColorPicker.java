@@ -43,6 +43,15 @@ public class EXColorPicker extends AbstractFormComponent<Color> implements Focus
 		setReadOnlyAttribute("type", "text");
 		setValue(value);
 	}
+	
+	public EXColorPicker setPlaceHolder(String placeHolder){
+		setAttribute("placeholder", placeHolder);
+		return this;
+	}
+	
+	public String getPlaceHolder(){
+		return getAttribute("placeholder");
+	}
 
 	public EXColorPicker(String name) {
 		super(name,"input");

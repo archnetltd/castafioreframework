@@ -1,0 +1,87 @@
+package org.castafiore.bootstrap.example;
+
+import org.castafiore.bootstrap.nav.BTNav;
+import org.castafiore.bootstrap.nav.BTNavContent;
+import org.castafiore.ui.Container;
+import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.ex.tab.TabModel;
+import org.castafiore.ui.ex.tab.TabPanel;
+
+public class NavsExample extends EXContainer{
+
+	public NavsExample(String name) {
+		super(name, "div");
+	}
+	
+	public void createNav(){
+		BTNavContent content = new BTNavContent("s", "div") {
+			private void load(TabPanel panel, TabModel model){
+				if(getChildren().size() >0)
+					return;
+				for(int i =0; i < model.size(); i++){
+					Container c = model.getTabContentAt(panel, i);
+					addChild(c.setDisplay(false));
+				}
+			}
+			
+			@Override
+			public Container showTab(TabPanel panel, TabModel model, int index) {
+				load(panel, model);
+				
+				for(int i =0; i < getChildren().size(); i++){
+					getChildByIndex(i).setDisplay(i==index);
+				}
+				return getChildByIndex(index);
+			}
+		};
+		
+		BTNav nav = new BTNav("nav", content);
+		
+		nav.setModel(getSampleNav());
+		
+		BTLayout layout = new BTLayout("ll", "12,12");
+		
+		layout.addChild(nav, "0,0");
+		layout.addChild(content,"0,1");
+	}
+	
+	public TabModel getSampleNav(){
+		TabModel model = new TabModel() {
+			
+			@Override
+			public int size() {
+				return 3;
+			}
+			
+			@Override
+			public String getTabLabelAt(TabPanel pane, int index, boolean selected) {
+				if(index == 0){
+					return "Home";
+				}else if(index ==1){
+					return "Profile";
+				}else{
+					return "Dropdown";
+				}
+			}
+			
+			@Override
+			public Container getTabContentAt(TabPanel pane, int index) {
+				Container c = new EXContainer("", "p");
+				if(index == 0){
+					c.setText("Raw denim ...");
+				}else if(index == 1){
+					c.setText("Food truck ...");
+				}else{
+					c.setText("Etsy mixtape ...");
+				}
+				return c;
+			}
+			
+			@Override
+			public int getSelectedTab() {
+				return 0;
+			}
+		};
+		return model;
+	}
+}

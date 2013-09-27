@@ -32,13 +32,13 @@ public class EXVLayout extends EXContainer implements LayoutContainer {
 	private static final long serialVersionUID = 1L;
 
 	public EXVLayout() {
-		super("VLayout", "ul");
-		setStyle("list-style", "none");
+		super("VLayout", "div");
 		setStyle("padding", "0").setStyle("margin", "0");
 	}
 
 	public EXVLayout(String name) {
-		super(name, "ul");
+		super(name, "div");
+		setStyle("padding", "0").setStyle("margin", "0");
 
 	}
 
@@ -47,17 +47,11 @@ public class EXVLayout extends EXContainer implements LayoutContainer {
 	}
 
 	protected Container getCell(String layoutData) {
-		int iLayoutData = convertLayoutData(layoutData);
-		if (iLayoutData == getChildren().size()) {
-			EXContainer li = new EXContainer("", "li");
-			addChild(li);
-		}
-
-		return getChildByIndex(iLayoutData);
+		return this;
 	}
 
 	public void addChild(Container child, String layoutData) {
-		getCell(layoutData).addChild(child);
+		getCell(layoutData).addChild(child.setStyle("display", "block"));
 
 	}
 
@@ -85,7 +79,7 @@ public class EXVLayout extends EXContainer implements LayoutContainer {
 	public List<DroppableSection> getSections() {
 		List<DroppableSection> result = new ArrayList<DroppableSection>();
 		for (int i = 0; i < getChildren().size(); i++) {
-			Container item = getCell(i + "").getChildByIndex(0);
+			Container item = getCell(i + "");
 			DroppableSection section = new DroppableSection(item.getId(),
 					item.getName(), i);
 			result.add(section);

@@ -63,8 +63,7 @@ public class EXBorderLayout extends EXXHTMLFragment implements LayoutContainer,
 		super(name, ResourceUtil.getDownloadURL("classpath",
 				"org/castafiore/resource/layout/EXBorderLayoutContainer.xhtml"));
 
-		Container c = ComponentUtil.getContainer("popupContainer", "div", null,
-				null);
+		Container c = ComponentUtil.getContainer("popupContainer", "div", null,	null);
 		c.setStyle("position", "absolute");
 		c.setStyle("top", "10%");
 		c.setStyle("left", "10%");
@@ -72,7 +71,7 @@ public class EXBorderLayout extends EXXHTMLFragment implements LayoutContainer,
 
 		for (String s : CONTENT_NAMES) {
 			EXContainer top = new EXContainer(s, "td");
-			top.setAttribute("valign", "top");
+			top.setAttribute("valign", "top").setStyle("padding", "0").setStyle("margin", "0").setStyle("border", "none").setStyle("width", "-1px");
 			addChild(top);
 		}
 		setWidth(Dimension.parse("100%"));

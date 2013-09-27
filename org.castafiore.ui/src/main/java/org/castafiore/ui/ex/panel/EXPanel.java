@@ -37,43 +37,41 @@ public class EXPanel extends EXContainer implements JQContants, Panel {
 	public EXPanel(String name, String title) {
 		super(name, "div");
 		setStyle("visibility", "hidden");
-		setAttribute("class", DIALOG_STYLE);
-		setStyle("z-index", "1000");
+		addClass("ui-dialog").addClass("ui-widget").addClass("ui-widget-content").addClass("ui-corner-all").addClass("ui-front");
+		setAttribute("tabindex", "-1").setAttribute("role", "dialog").setAttribute("aria-describedby", "dialog");
 
-		Container titleBar = ComponentUtil.getContainer("titleBar", "div",
-				null, DIALOG_TITLE_BAR_STYLE);
+		
+		Container titleBar = new EXContainer("titleBar", "div").addClass("ui-dialog-titlebar").addClass("ui-widget-header").addClass("ui-corner-all").addClass("ui-helper").addClass("ui-helper-clearfix");
 		addChild(titleBar);
-		titleBar.setStyle("-moz-user-select", "none");
+		
 
-		Container uiTitle = ComponentUtil.getContainer("title", "span", title,
-				DIALOG_TITLE_STYLE);
+		Container uiTitle = new EXContainer("title", "span").addClass("ui-dialog-title").setText(title);
 		titleBar.addChild(uiTitle);
-		uiTitle.setStyle("-moz-user-select", "none");
-
-		Container closeButton = ComponentUtil.getContainer("closeButton", "a",
-				null, DIALOG_CLOSE_BUTTON_STYLE);
-		closeButton.setAttribute("href", "#").setStyle("border", "none");
+		setAttribute("aria-labelledby", uiTitle.getId());
+		Container closeButton =new EXContainer("button", "closeButton").addClass("ui-button").addClass("ui-widget").addClass("ui-state-default").addClass("ui-corner-all").addClass("ui-button-icon-only").addClass("ui-dialog-titlebar-close");
+		closeButton.setAttribute("role", "button").setAttribute("aria-disabled", "false").setAttribute("title", "close").setStyle("width", "20px").setStyle("height", "19px");
 		titleBar.addChild(closeButton);
-		closeButton.setStyle("-moz-user-select", "none");
 		closeButton.addEvent(CLOSE_EVENT, Event.CLICK);
-
-		Container uiCloseIcon = ComponentUtil.getContainer("closeIcon", "span",
-				null, DIALOG_CLOSE_ICON_STYLE);
+		Container uiCloseIcon =  new EXContainer("closeIcon", "span").addClass("ui-button-icon-primary").addClass("ui-icon").addClass("ui-icon-closethick").setStyle("margin", "1px").setStyle("top", "0").setStyle("left", "0");
 		closeButton.addChild(uiCloseIcon);
-		uiCloseIcon.setStyle("-moz-user-select", "none");
+	//	closeButton.addChild(new EXContainer("", "span").addClass("ui-button-text").setText("Close"));
 
-		Container content = ComponentUtil.getContainer("content", "div", null,
-				DIALOG_CONTENT_STYLE);
-		content.setStyle("height", "auto").setStyle("min-height", "61px")
-				.setStyle("width", "auto");
+		
+		Container content = new EXContainer("content", "div").addClass("ui-dialog-content").addClass("ui-widget-content");
+				
+		content.setStyle("height", "auto").setStyle("min-height", "105px").setStyle("max-height", "none").setStyle("width", "auto");
 
 		addChild(content);
 
 		Container footer = ComponentUtil.getContainer("panelFooter", "div",
 				null, DIALOG_FOOTER_STYLE);
+		
+		footer.addChild(new EXContainer("footer", "div").addClass("ui-dialog-buttonset"));
+		
 		addChild(footer);
 		footer.setDisplay(false);
 		setDraggable(true);
+		setResizable(true);
 	}
 
 	public EXPanel setPacked(boolean b) {
@@ -145,7 +143,7 @@ public class EXPanel extends EXContainer implements JQContants, Panel {
 	}
 
 	protected Container getFooterContainer() {
-		return getChild("panelFooter");
+		return getChild("panelFooter").getChild("footer");
 	}
 
 	protected Container getBodyContainer() {
