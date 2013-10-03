@@ -7,10 +7,10 @@ import java.util.Date;
 import java.util.List;
 
 import org.castafiore.bootstrap.demo.BSExample;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.table.EXPagineableTable;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.ex.table.EXPageableTable;
 import org.castafiore.ui.ex.table.EXTable;
-import org.castafiore.ui.ex.table.TableModel;
+import org.castafiore.ui.table.TableModel;
 import org.castafiore.utils.IOUtil;
 import org.castafiore.utils.StringUtil;
 
@@ -28,10 +28,10 @@ public class TableExample extends EXContainer {
 	public void createExample1(){
 		data = loadData();
 		EXTable table = new EXTable("table", new MyTableModel());
-		EXPagineableTable ptable = new EXPagineableTable("ptable", table);
+		EXPageableTable ptable = new EXPageableTable("ptable", table);
 		
 		BSExample example = new BSExample("Table");
-		example.setExample(ptable, IOUtil.getStreamContentAsString(Thread.currentThread().getContextClassLoader().getResourceAsStream("samples/TableExample1.txt")));
+		example.setExample(ptable, "https://gist.github.com/kureem/6776174.js");
 		addChild(example);
 	}
 	

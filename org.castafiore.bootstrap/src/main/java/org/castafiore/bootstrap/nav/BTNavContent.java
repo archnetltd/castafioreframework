@@ -1,9 +1,9 @@
 package org.castafiore.bootstrap.nav;
 
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.tab.TabModel;
-import org.castafiore.ui.ex.tab.TabPanel;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.tab.TabModel;
+import org.castafiore.ui.tab.TabPanel;
 
 public abstract class BTNavContent extends EXContainer{
 

@@ -18,7 +18,6 @@
 package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.AbstractFormComponent;
-import org.castafiore.ui.dynaform.Focusable;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.js.Var;
 
@@ -28,7 +27,7 @@ import org.castafiore.ui.js.Var;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXCheckBox extends AbstractFormComponent<Boolean> implements Focusable {
+public class EXCheckBox extends AbstractFormComponent<Boolean>  {
 
 	/**
 	 * 
@@ -65,38 +64,19 @@ public class EXCheckBox extends AbstractFormComponent<Boolean> implements Focusa
 
 	@Override
 	public String serialize(Boolean value) {
+		if(value == null)
+			return Boolean.FALSE.toString();
 		return value.toString();
 	}
 
 	@Override
 	public Boolean deserialize(String s) {
+		if(s == null)
+			return false;
 		return Boolean.parseBoolean(s);
 	}
 	
-	@Override
-	public int getTabIndex() {
-		try{
-		return Integer.parseInt(getAttribute("tabindex"));
-		}catch(Exception e){
-			return -1;
-		}
-	}
 
-	@Override
-	public void setAccessKey(char key) {
-		
-		setAttribute("accesskey", new String(new char[]{key}));
-	}
 
-	@Override
-	public void setFocus(boolean focused) {
-		setAttribute("hasfocus", focused + "");
-	}
-
-	@Override
-	public void setTabIndex(int index) {
-		setAttribute("tabindex", index + "");
-		
-	}
 
 }

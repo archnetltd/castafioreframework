@@ -17,7 +17,6 @@
 
 package org.castafiore.ui;
 
-import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.utils.ExceptionUtil;
 
 /**
@@ -34,7 +33,7 @@ public abstract class AbstractFormComponent<T> extends EXContainer implements Fo
 	private static final long serialVersionUID = 1L;
 
 	
-	private InputVerifier inputVerifier;
+	
 
 	public AbstractFormComponent(String name, String tagName) {
 		super(name, tagName);
@@ -62,14 +61,7 @@ public abstract class AbstractFormComponent<T> extends EXContainer implements Fo
 		}
 	}
 
-	public InputVerifier getInputVerifier() {
-		return inputVerifier;
-	}
-
-	public FormComponent<T> setInputVerifier(InputVerifier inputVerifier) {
-		this.inputVerifier = inputVerifier;
-		return this;
-	}
+	
 	
 	
 

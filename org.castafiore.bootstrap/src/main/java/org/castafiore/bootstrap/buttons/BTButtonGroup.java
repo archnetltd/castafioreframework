@@ -1,8 +1,8 @@
 package org.castafiore.bootstrap.buttons;
 
 import org.castafiore.bootstrap.OrientationType;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.toolbar.ToolBarItem;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.toolbar.ToolBarItem;
 
 public class BTButtonGroup extends EXContainer implements ToolBarItem{
 

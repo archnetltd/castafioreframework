@@ -23,7 +23,6 @@ import java.util.Map;
 
 import org.castafiore.resource.FileData;
 import org.castafiore.ui.FormComponent;
-import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.template.Compiler;
 import org.castafiore.ui.template.EXXHTMLFragment;
 import org.castafiore.utils.ResourceUtil;
@@ -88,14 +87,6 @@ public class EXUpload extends EXXHTMLFragment implements
 		items = value;
 	}
 
-	@Override
-	public FormComponent<List<FileData>> setInputVerifier(InputVerifier verifier) {
-		return this;
-	}
-
-	@Override
-	public InputVerifier getInputVerifier() {
-		return null;
-	}
+	
 
 }

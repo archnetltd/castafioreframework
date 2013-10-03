@@ -3,10 +3,9 @@ package org.castafiore.bootstrap.inputgroup;
 import org.castafiore.bootstrap.AlignmentType;
 import org.castafiore.bootstrap.buttons.BTButton;
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.ex.form.EXCheckBox;
 import org.castafiore.ui.ex.form.EXInput;
-import org.castafiore.ui.ex.form.EXRadioButton;
 
 public class BTInputGroup extends EXContainer {
 	
@@ -56,21 +55,7 @@ public class BTInputGroup extends EXContainer {
 		}
 	}
 	
-	public BTInputGroup setAddOn(EXRadioButton cb){
-		Container addon = getChild("addon");
-		if(addon != null){
-			getChild("addon").setText("").setStyleClass("input-group-addon").getChildren().clear();
-			getChild("addon").addChild(cb);
-			return this;
-		}else{
-			Container dropdown = getChild("dpd");
-			if(dropdown != null){
-				dropdown.remove();
-			}
-			addChildAt(new EXContainer("addon", "span").addClass("input-group-addon").addChild(cb),0);
-			return this;
-		}
-	}
+	
 	
 	public BTInputGroup setAddOn(BTButton bt){
 		

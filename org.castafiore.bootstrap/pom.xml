@@ -42,33 +42,10 @@
 		<dependency>
 			<groupId>org.castafiore</groupId>
 			<artifactId>org.castafiore.ui</artifactId>
-			<version>0.0.2</version>
+			<version>0.1.0</version>
 		</dependency>
 	</dependencies>
-	<build>
-		
-		<plugins>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>install</phase>
-						<configuration>
-							<tasks>
-								<copyfile dest="${tomcat.home}/webapps/castafioreframework/WEB-INF/lib/org.castafiore.bootstrap.jar" src="target/org.castafiore.bootstrap-0.0.1.jar"/>
-								<copydir src="src/main/webapp" dest="${tomcat.home}/webapps/castafioreframework">
-									<exclude name="**/*.java"/>
-								</copydir>
-							</tasks>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+	
 
 	<organization>
 		<name>Archnet Ltd</name>

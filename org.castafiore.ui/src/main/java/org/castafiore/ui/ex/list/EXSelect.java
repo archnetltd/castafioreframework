@@ -23,7 +23,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.castafiore.ui.CastafioreController;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
-import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.js.JArray;
 import org.castafiore.ui.js.JMap;
@@ -39,7 +38,6 @@ public class EXSelect<T> extends EXContainer implements FormComponent<T>, Castaf
 	
 	private DataModel<T> model;
 	
-	private InputVerifier verifier;
 
 	public EXSelect(String name) {
 		super(name, "select");
@@ -68,9 +66,14 @@ public class EXSelect<T> extends EXContainer implements FormComponent<T>, Castaf
 
 	@Override
 	public void setValue(T value) {
-		for(int i = 0; i < model.getSize();i++){
-			if(value.equals(model.getValue(i))){
-				setAttribute("value", i + "");
+		if(value == null)
+		{
+			setSelectedIndex(0);
+		}else{
+			for(int i = 0; i < model.getSize();i++){
+				if(value.equals(model.getValue(i))){
+					setAttribute("value", i + "");
+				}
 			}
 		}
 		
@@ -92,16 +95,6 @@ public class EXSelect<T> extends EXContainer implements FormComponent<T>, Castaf
 		}
 	}
 
-	@Override
-	public FormComponent<T> setInputVerifier(InputVerifier verifier) {
-		this.verifier = verifier;
-		return this;
-	}
-
-	@Override
-	public InputVerifier getInputVerifier() {
-		return verifier;
-	}
 
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request,

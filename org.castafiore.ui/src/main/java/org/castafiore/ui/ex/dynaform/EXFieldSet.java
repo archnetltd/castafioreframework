@@ -13,7 +13,6 @@ import org.castafiore.ui.Dimension;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.button.Button;
-import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.utils.ComponentUtil;
 
@@ -227,14 +226,6 @@ public class EXFieldSet extends EXContainer implements FormComponent<Map<String,
 		
 	}
 
-	@Override
-	public FormComponent<Map<String, ?>> setInputVerifier(InputVerifier verifier) {
-		return this;
-	}
 
-	@Override
-	public InputVerifier getInputVerifier() {
-		return null;
-	}
 
 }

@@ -9,6 +9,8 @@ import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.button.Button;
+import org.castafiore.ui.dynaform.DynaForm;
+import org.castafiore.ui.dynaform.validator.RequiredValidator;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 import org.castafiore.ui.events.ServerEvent;
@@ -69,8 +71,9 @@ public class Test extends EXApplication{
 		 form.addField("Check box",new EXCheckBox("cb"));
 		 
 		 form.addField("Range",new EXRange("range", 100).setMin(0).setMax(200).setStep(20));
+		 form.addValidator("input", new RequiredValidator());
 		 
-		 
+		 form.addValidator("textarea", new RequiredValidator());
 		 
 		 DefaultDataModel<KeyValuePair> model = new DefaultDataModel<KeyValuePair>();
 		 model.addItem(new SimpleKeyValuePair("a", "A"), new SimpleKeyValuePair("b", "B"), new SimpleKeyValuePair("c", "C"));
@@ -81,23 +84,9 @@ public class Test extends EXApplication{
 		 
 		 form.addField("Radio", new EXRadio<KeyValuePair>("radio").setModel(model));
 		 
-		form.addButton((Button)new EXButton("btn", "Submit").addEvent(new ServerEvent() {
-			
-			@Override
-			public boolean ServerAction(Container container, Map<String, String> request)
-					throws UIException {
-				
-				ComponentUtil.iterateOverDescendentsOfType(container.getRoot(), FormComponent.class, new ComponentVisitor() {
-					
-					@Override
-					public void doVisit(Container root) {
-						System.out.println(((FormComponent)root).getValue());
-						
-					}
-				});
-				return true;
-			}
-		}, Event.CLICK));
+		form.addButton((Button)new EXButton("btn", "Submit").addEvent(DynaForm.SUBMIT, Event.CLICK));
+		
+		form.addButton((Button)new EXButton("reset", "Reset").addEvent(DynaForm.RESET, Event.CLICK));
 		
 		
 		

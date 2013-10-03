@@ -3,8 +3,8 @@ package org.castafiore.bootstrap.dropdown;
 import org.castafiore.bootstrap.AlignmentType;
 import org.castafiore.bootstrap.buttons.BTButton;
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.toolbar.ToolBarItem;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.toolbar.ToolBarItem;
 
 public class BTDropDown extends EXContainer implements ToolBarItem {
 

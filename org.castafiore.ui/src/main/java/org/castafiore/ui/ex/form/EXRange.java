@@ -2,7 +2,6 @@ package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
-import org.castafiore.ui.dynaform.InputVerifier;
 
 public class EXRange extends EXContainer implements FormComponent<Integer>{
 	
@@ -10,7 +9,7 @@ public class EXRange extends EXContainer implements FormComponent<Integer>{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private InputVerifier verifier;
+
 
 	public EXRange(String name) {
 		super(name, "input");
@@ -77,19 +76,13 @@ public class EXRange extends EXContainer implements FormComponent<Integer>{
 
 	@Override
 	public void setValue(Integer value) {
-		setAttribute("value", value.toString());
+		if(value == null)
+			setValue(0);
+		else
+			setAttribute("value", value.toString());
 		
 	}
 
-	@Override
-	public FormComponent<Integer> setInputVerifier(InputVerifier verifier) {
-		this.verifier = verifier;
-		return this;
-	}
-
-	@Override
-	public InputVerifier getInputVerifier() {
-		return verifier;
-	}
+	
 
 }

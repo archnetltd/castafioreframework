@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.castafiore.InvalidLayoutDataException;
 import org.castafiore.ui.Container;
+import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.LayoutContainer;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.layout.DroppableSection;
+import org.castafiore.ui.layout.DroppableSection;
 import org.castafiore.utils.StringUtil;
 
 /**

@@ -17,15 +17,12 @@
 
 package org.castafiore.ui;
 
-import org.castafiore.ui.dynaform.InputVerifier;
 
 /**
  * Interface that marks a Form component. All component that wants its value to
  * be automatically retrieved or set to the browser should implement this
  * interface. The engine automatically manages the value attribute components
- * which implements this interface. A valid {@link Encoder} and {@link Decoder}
- * are required to serialize and deserialize the value attribute to and from the
- * browser. The component does not necessary need to an HTML form component. It
+ * which implements this interface . The component does not necessary need to an HTML form component. It
  * can be any component actually.
  * 
  * @author Kureem Rossaye<br>
@@ -48,18 +45,5 @@ public interface FormComponent<T> extends Container {
 	public void setValue(T value);
 	
 	
-	/**
-	 * Sets the input verifier to be used to verify the validity of this FormComponent
-	 * @param verifier The {@link InputVerifier} upon which validation is delegated
-	 * @return This FormComponent itself
-	 */
-	public FormComponent<T> setInputVerifier(InputVerifier verifier);
 	
-	
-	/**
-	 * Returns the input verifier associated to this component
-	 * @return
-	 */
-	public InputVerifier getInputVerifier();
-
 }

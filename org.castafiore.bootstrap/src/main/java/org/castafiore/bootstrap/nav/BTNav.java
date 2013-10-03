@@ -5,13 +5,13 @@ import java.util.Map;
 import org.castafiore.bootstrap.AlignmentType;
 import org.castafiore.bootstrap.dropdown.BTDropDown;
 import org.castafiore.ui.Container;
+import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.tab.TabModel;
-import org.castafiore.ui.ex.tab.TabPanel;
-import org.castafiore.ui.ex.tab.TabRenderer;
+import org.castafiore.ui.tab.TabModel;
+import org.castafiore.ui.tab.TabPanel;
+import org.castafiore.ui.tab.TabRenderer;
 
 public class BTNav extends EXContainer implements TabPanel, TabRenderer, Event {
 

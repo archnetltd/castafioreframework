@@ -1,11 +1,11 @@
 package org.castafiore.bootstrap;
 
 import org.castafiore.ui.Container;
+import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.panel.Panel;
 import org.castafiore.ui.js.Function;
+import org.castafiore.ui.panel.Panel;
 
 
  

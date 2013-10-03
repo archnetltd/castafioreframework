@@ -19,11 +19,12 @@ package org.castafiore.ui.ex.list;
 
 import java.util.Map;
 
+import javax.swing.InputVerifier;
+
 import org.castafiore.ui.Container;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;
 import org.castafiore.ui.UIException;
-import org.castafiore.ui.dynaform.InputVerifier;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
 
@@ -42,7 +43,6 @@ public class EXRadio<T> extends EXContainer implements FormComponent<T>, Event {
 
 	private DataModel<T> model;
 	
-	private InputVerifier verifier;
 	
 	public EXRadio(String name){
 		super(name,"div");
@@ -98,31 +98,26 @@ public class EXRadio<T> extends EXContainer implements FormComponent<T>, Event {
 
 	@Override
 	public void setValue(T value) {
-		if(model != null){
-			int size =  model.getSize();
-			for(int i = 0; i < size;i++){
-				if(value.equals(model.getValue(i))){
-					setSelectedIndex(i);
-				}
-			}
+		if(value == null){
+			setSelectedIndex(0);
 		}else{
-			model = new DefaultDataModel<T>().addItem(value);
-			refresh();
+			if(model != null){
+				int size =  model.getSize();
+				for(int i = 0; i < size;i++){
+					if(value.equals(model.getValue(i))){
+						setSelectedIndex(i);
+					}
+				}
+			}else{
+				model = new DefaultDataModel<T>().addItem(value);
+				refresh();
+			}
 		}
 		
 		
 	}
 
-	@Override
-	public FormComponent<T> setInputVerifier(InputVerifier verifier) {
-		this.verifier = verifier;
-		return this;
-	}
 
-	@Override
-	public InputVerifier getInputVerifier() {
-		return verifier;
-	}
 
 	@Override
 	public void ClientAction(ClientProxy container) {

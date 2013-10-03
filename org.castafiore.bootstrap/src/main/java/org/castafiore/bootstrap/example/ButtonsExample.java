@@ -10,10 +10,9 @@ import org.castafiore.bootstrap.dropdown.BTDropDown;
 import org.castafiore.bootstrap.inputgroup.BTInputGroup;
 import org.castafiore.bootstrap.layout.BTLayout;
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.EXContainer;
+import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.ex.form.EXCheckBox;
 import org.castafiore.ui.ex.form.EXInput;
-import org.castafiore.ui.ex.form.EXRadioButton;
 
 public class ButtonsExample extends EXContainer{
 
@@ -69,7 +68,7 @@ public class ButtonsExample extends EXContainer{
 	
 		
 		BTInputGroup group2 = new BTInputGroup("group2", new EXInput("decimal"));
-		group2.setAddOn(new EXRadioButton("br")).setAddonAlignment(AlignmentType.RIGHT);
+		//group2.setAddOn(new EXRadioButton("br")).setAddonAlignment(AlignmentType.RIGHT);
 		
 		layout.addChild(group1, "0,0");
 		layout.addChild(group2, "1,0");

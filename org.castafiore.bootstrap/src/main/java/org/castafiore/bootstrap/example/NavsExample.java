@@ -7,9 +7,9 @@ import org.castafiore.bootstrap.nav.BTNav;
 import org.castafiore.bootstrap.nav.BTNavContent;
 import org.castafiore.bootstrap.nav.NavType;
 import org.castafiore.ui.Container;
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.tab.TabModel;
-import org.castafiore.ui.ex.tab.TabPanel;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.tab.TabModel;
+import org.castafiore.ui.tab.TabPanel;
 import org.castafiore.utils.IOUtil;
 
 public class NavsExample extends EXContainer{

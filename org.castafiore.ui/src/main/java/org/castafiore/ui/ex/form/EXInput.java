@@ -18,14 +18,13 @@
 package org.castafiore.ui.ex.form;
 
 import org.castafiore.ui.AbstractFormComponent;
-import org.castafiore.ui.dynaform.Focusable;
 
 /**
  * 
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com June 27 2008
  */
-public class EXInput extends AbstractFormComponent<String> implements Focusable {
+public class EXInput extends AbstractFormComponent<String> {
 
 	/**
 	 * 
@@ -78,30 +77,6 @@ public class EXInput extends AbstractFormComponent<String> implements Focusable 
 		return s;
 	}
 
-	@Override
-	public int getTabIndex() {
-		try{
-		return Integer.parseInt(getAttribute("tabindex"));
-		}catch(Exception e){
-			return -1;
-		}
-	}
-
-	@Override
-	public void setAccessKey(char key) {
-		
-		setAttribute("accesskey", new String(new char[]{key}));
-	}
-
-	@Override
-	public void setFocus(boolean focused) {
-		setAttribute("hasfocus", focused + "");
-	}
-
-	@Override
-	public void setTabIndex(int index) {
-		setAttribute("tabindex", index + "");
-		
-	}
+	
 
 }

@@ -1,7 +1,7 @@
 package org.castafiore.bootstrap.buttons;
 
-import org.castafiore.ui.ex.EXContainer;
-import org.castafiore.ui.ex.toolbar.ToolBarItem;
+import org.castafiore.ui.EXContainer;
+import org.castafiore.ui.toolbar.ToolBarItem;
 
 public class BTButton extends EXContainer implements ToolBarItem{
 

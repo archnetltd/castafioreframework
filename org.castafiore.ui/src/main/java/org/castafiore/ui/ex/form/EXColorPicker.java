@@ -20,7 +20,6 @@ package org.castafiore.ui.ex.form;
 import java.awt.Color;
 
 import org.castafiore.ui.AbstractFormComponent;
-import org.castafiore.ui.dynaform.Focusable;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.utils.ImageUtil;
 import org.castafiore.utils.ResourceUtil;
@@ -31,7 +30,7 @@ import org.castafiore.utils.ResourceUtil;
  * @author Kureem Rossaye<br>
  *         kureem@gmail.com Oct 22, 2008
  */
-public class EXColorPicker extends AbstractFormComponent<Color> implements Focusable {
+public class EXColorPicker extends AbstractFormComponent<Color>  {
 
 	/**
 	 * 
@@ -87,30 +86,6 @@ public class EXColorPicker extends AbstractFormComponent<Color> implements Focus
 		return ImageUtil.hex2Rgb(s);
 	}
 	
-	@Override
-	public int getTabIndex() {
-		try{
-		return Integer.parseInt(getAttribute("tabindex"));
-		}catch(Exception e){
-			return -1;
-		}
-	}
-
-	@Override
-	public void setAccessKey(char key) {
-		
-		setAttribute("accesskey", new String(new char[]{key}));
-	}
-
-	@Override
-	public void setFocus(boolean focused) {
-		setAttribute("hasfocus", focused + "");
-	}
-
-	@Override
-	public void setTabIndex(int index) {
-		setAttribute("tabindex", index + "");
-		
-	}
+	
 
 }
