@@ -1,0 +1,32 @@
+package org.castafiore.ui.dynaform.validator;
+
+import org.castafiore.ui.FormComponent;
+import org.castafiore.ui.dynaform.DynaForm;
+
+public class MaxLengthValidator extends AbstractValidator{
+
+	private int length;
+	
+	
+	public MaxLengthValidator(int length) {
+		super();
+		this.length = length;
+		addSupportedType(String.class);
+	}
+
+
+	@Override
+	public boolean doValidate(FormComponent<?> field, DynaForm form) {
+		String s = (String) field.getValue();
+		if(s != null && s.length() >0){
+			if(s.length() <= length){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return true;
+		}
+	}
+
+}
