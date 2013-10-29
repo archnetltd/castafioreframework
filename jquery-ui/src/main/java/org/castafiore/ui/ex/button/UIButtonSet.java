@@ -21,7 +21,7 @@ import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.ViewModel;
 import org.castafiore.ui.toolbar.ToolBarItem;
 
-public class EXButtonSet extends EXContainer implements ToolBarItem {
+public class UIButtonSet extends EXContainer implements ToolBarItem {
 	
 	/**
 	 * 
@@ -32,13 +32,13 @@ public class EXButtonSet extends EXContainer implements ToolBarItem {
 	
 	private boolean touching = true;
 
-	public EXButtonSet(String name, ViewModel<ToolBarItem> buttons) {
+	public UIButtonSet(String name, ViewModel<ToolBarItem> buttons) {
 		super(name, "div");
 		addClass("ui-buttonset");
 		setModel(buttons);
 	}
 	
-	public EXButtonSet(String name) {
+	public UIButtonSet(String name) {
 		this(name,null);
 	}
 
@@ -112,7 +112,7 @@ public class EXButtonSet extends EXContainer implements ToolBarItem {
 	}
 
 
-	public EXButtonSet addItem(ToolBarItem b ){
+	public UIButtonSet addItem(ToolBarItem b ){
 		
 		addChild(b);
 		reAdjustTouching();

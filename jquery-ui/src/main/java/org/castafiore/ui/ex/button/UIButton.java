@@ -29,14 +29,14 @@ import org.castafiore.ui.engine.ClientProxy;
  *          kureem@gmail.com
  * Oct 22, 2008
  */
-public class EXButton extends EXContainer implements  Button {
+public class UIButton extends EXContainer implements  Button {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public EXButton(String name, String label) {
+	public UIButton(String name, String label) {
 		super(name, "button");
 		
 		setText(label);

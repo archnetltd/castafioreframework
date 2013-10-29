@@ -22,7 +22,7 @@ import org.castafiore.ui.button.Button;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.utils.StringUtil;
 
-public class EXIconButton extends EXContainer implements Button , JQContants{
+public class UIIconButton extends EXContainer implements Button , JQContants{
 	
 	/**
 	 * 
@@ -123,27 +123,27 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		}
 	}
 
-	public EXIconButton(String name, String text, Icons leftIcon, Icons rightIcon) {
+	public UIIconButton(String name, String text, Icons leftIcon, Icons rightIcon) {
 		super(name, "button");
 		setButtonText(text).setIconLeft(leftIcon).setIconRight(rightIcon);
 		setAttribute("corner", "all");
 		
 	}
 	
-	public EXIconButton(String name, String text, Icons leftIcon) {
+	public UIIconButton(String name, String text, Icons leftIcon) {
 		super(name, "button");
 		setButtonText(text).setIconLeft(leftIcon);
 		setAttribute("corner", "all");
 	}
 	
-	public EXIconButton(String name, String text) {
+	public UIIconButton(String name, String text) {
 		super(name, "button");
 		setButtonText(text);
 		setAttribute("corner", "all");
 	}
 	
 
-	public EXIconButton(String name,  Icons leftIcon) {
+	public UIIconButton(String name,  Icons leftIcon) {
 		super(name, "button");
 		setIconLeft(leftIcon);
 		setAttribute("corner", "all");
@@ -153,7 +153,7 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		return text;
 	}
 
-	public EXIconButton setButtonText(String text) {
+	public UIIconButton setButtonText(String text) {
 		this.text = text;
 		return this;
 	}
@@ -162,7 +162,7 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		return iconLeft;
 	}
 
-	public EXIconButton setIconLeft(Icons iconLeft) {
+	public UIIconButton setIconLeft(Icons iconLeft) {
 		this.iconLeft = iconLeft;
 		this.iconLeftUrl = null;
 		return this;
@@ -172,7 +172,7 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		return iconRight;
 	}
 
-	public EXIconButton setIconRight(Icons iconRight) {
+	public UIIconButton setIconRight(Icons iconRight) {
 		this.iconRight = iconRight;
 		this.iconRightUrl = null;
 		return this;
@@ -182,7 +182,7 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		return iconLeftUrl;
 	}
 
-	public EXIconButton setIconLeftUrl(String iconLeftUrl) {
+	public UIIconButton setIconLeftUrl(String iconLeftUrl) {
 		this.iconLeftUrl = iconLeftUrl;
 		this.iconLeft = null;
 		return this;
@@ -192,7 +192,7 @@ public class EXIconButton extends EXContainer implements Button , JQContants{
 		return iconRightUrl;
 	}
 
-	public EXIconButton setIconRightUrl(String iconRightUrl) {
+	public UIIconButton setIconRightUrl(String iconRightUrl) {
 		this.iconRightUrl = iconRightUrl;
 		this.iconRight = null;
 		return this;

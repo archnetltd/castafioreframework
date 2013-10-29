@@ -5,18 +5,18 @@ import org.castafiore.ui.button.Button;
 import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.ex.navigation.UIMenu;
 
-public class EXSplitButton extends EXContainer implements Button{
+public class UISplitButton extends EXContainer implements Button{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public EXSplitButton(String name, EXButton button, UIMenu dropdown) {
+	public UISplitButton(String name, UIButton button, UIMenu dropdown) {
 		super(name, "div");
-		EXButtonSet bs = new EXButtonSet("bst");
+		UIButtonSet bs = new UIButtonSet("bst");
 		bs.addItem(button);
-		bs.addItem(new EXIconButton("arrow", null, Icons.ICON_TRIANGLE_1_S));
+		bs.addItem(new UIIconButton("arrow", null, Icons.ICON_TRIANGLE_1_S));
 		addChild(bs);
 		addChild(dropdown.setStyle("display", "none"));
 		
