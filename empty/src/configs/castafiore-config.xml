@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="numguess" class="org.castafiore.sample.NumberGuess" scope="session"></bean>
+	<bean id ="calculator" class="org.castafiore.sample.calculator.Calculator" scope="session"></bean>
+	<bean id ="flexgrid" class="org.castafiore.sample.integrations.FlexGrid" scope="session"></bean>
+	<bean id="caroussel" class="org.castafiore.sample.integrations.caroussel.CarousselApp" scope="session"></bean>
+	<bean id="zino" class="org.castafiore.sample.integrations.zinoui.ZinoApp" scope="session"></bean>
+	
+	
+	<bean id="offlinescript" class="com.maureva.apps.OfflineScriptApp" scope="session"></bean>
+	<!-- add more applications here. The id should match with the constructor value when creating the class -->
+
+</beans>

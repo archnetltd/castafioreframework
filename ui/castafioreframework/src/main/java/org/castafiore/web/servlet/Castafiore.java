@@ -462,7 +462,7 @@ public class Castafiore implements ApplicationContextAware {
 						"files:[");
 				int scount = 0;
 				for (String s : requiredScript) {
-					reqScript.append("'").append(s).append("'");
+					reqScript.append("'").append(s).append("'"); 
 					scount++;
 					if (scount < requiredScript.size()) {
 						reqScript.append(",");
@@ -479,8 +479,8 @@ public class Castafiore implements ApplicationContextAware {
 			}
 			applicationInstance.flush(12031980);
 
-			script = "<script>" + Constant.NO_CONFLICT
-					+ "(document).ready(function(){" + script + "});</script>";
+			script = "" + Constant.NO_CONFLICT
+					+ "(document).ready(function(){" + script + "});";
 
 			response.getOutputStream().write(script.getBytes());
 		}
