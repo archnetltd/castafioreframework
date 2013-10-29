@@ -48,7 +48,7 @@ public class EXPanel extends EXContainer implements JQContants, Panel {
 		Container uiTitle = new EXContainer("title", "span").addClass("ui-dialog-title").setText(title);
 		titleBar.addChild(uiTitle);
 		setAttribute("aria-labelledby", uiTitle.getId());
-		Container closeButton =new EXContainer("button", "closeButton").addClass("ui-button").addClass("ui-widget").addClass("ui-state-default").addClass("ui-corner-all").addClass("ui-button-icon-only").addClass("ui-dialog-titlebar-close");
+		Container closeButton =new EXContainer("closeButton", "button").addClass("ui-button").addClass("ui-widget").addClass("ui-state-default").addClass("ui-corner-all").addClass("ui-button-icon-only").addClass("ui-dialog-titlebar-close");
 		closeButton.setAttribute("role", "button").setAttribute("aria-disabled", "false").setAttribute("title", "close").setStyle("width", "20px").setStyle("height", "19px");
 		titleBar.addChild(closeButton);
 		closeButton.addEvent(CLOSE_EVENT, Event.CLICK);

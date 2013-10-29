@@ -12,28 +12,24 @@ castafiore = function(app,params){
 			    return;
 			var params = {'casta_applicationid' : el.attr('appid'), 'casta_eventid': el.attr('eventid'), 'casta_componentid':el.attr('id')};
 			sCall(params);
-	};
+		};
 
 
-	jQuery.getCSS = function( url ) {
-	    jQuery( document.createElement('link') ).attr({
-	        href: url,
-	        media:'screen',
-	        type: 'text/css',
-	        rel: 'stylesheet'
-	    }).appendTo('head');
-	};
+		jQuery.getCSS = function( url ) {
+			jQuery( document.createElement('link') ).attr({
+				href: url,
+				media:'screen',
+				type: 'text/css',
+				rel: 'stylesheet'
+			}).appendTo('head');
+		};
 	
 	
 		var me = $('#' + app);
-
-		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resource/css/themes/aristo/theme.css');
-		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery-ui-1.8.21.js');
-		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.maskedinput-1.3.js');
-		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.rightClick.js');
-		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.blockUI.js');
-		
-		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resource/js/jquery.plugin.js',function(){
+		jQuery.getCSS('castafiore/resource/classpath/org/castafiore/resources/css/themes/aristo/theme.css');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resources/js/jquery-ui-1.8.21.js');
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resources/js/jquery.maskedinput-1.3.js');		
+		jQuery.getScript('castafiore/resource/classpath/org/castafiore/resources/js/jquery.plugin.js',function(){
 			me.append("<div id='root_"+app+"'>");
 			me.append("<div id='script_"+app+"'>");
 			var url = "castafiore/ui/?casta_applicationid=" + app;
@@ -55,19 +51,11 @@ castafiore = function(app,params){
 };
 	
 function loading(){
-	if(loadingActive==-1){
-		loadingTimeout = setTimeout('$(".loader").fadeIn(100)', 10);
-		loadingActive = 1;
-	}
+	
 }
 
 function hideloading(){
-	$.unblockUI();
-	$(".loader").fadeOut(100);
-	if(loadingActive==1){
-		loadingActive = -1;
-		if (loadingTimeout) clearTimeout(loadingTimeout);
-	}
+	
 }
 
 function sCall(params)
@@ -82,14 +70,7 @@ function sCall(params)
 		}catch(err){
 		}
 	});
-	$(':checkbox').each(function(i){
-		if($(this).is(':checked')){
-			params["casta_value_"+$(this).attr("id")]= "checked";
-		}else{
-			params["casta_value_"+$(this).attr("id")]= "";
-		}
-
-	});
+	
 	$(" *[stf]").each(function(i){
 		if(params["casta_value_"+$(this).attr("id")] == undefined)
 			params["casta_value_"+$(this).attr("id")]=$(this).attr("value");
@@ -100,8 +81,23 @@ function sCall(params)
 		$("#script_"+params['casta_applicationid']).append(data);
 	}, "text");
 }
-
-function rc(mid, mpath, mtag, appto){
-	$("#"+mid+" *[__path^='"+mpath+"']").remove();
-	$(mtag).attr({id:mid}).appendTo($("#" + appto));
+function combo(elem, url){
+	$.ajax({
+			url: url,type: 'POST',
+			dataType: 'json',
+			success: function(data){
+				var mm={};
+				for(mm in data){
+					var m = data[mm];
+					var selected = m['selected'];
+					var val = m['value'];
+					var opt = $('<option>'+val+'</option>');
+					opt.attr('value', m['index']);
+					if(selected){
+						opt.attr('selected','selected');
+					}
+					elem.append(opt);
+				}
+			}
+		});	
 }

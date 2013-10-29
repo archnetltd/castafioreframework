@@ -61,7 +61,7 @@ public class EXBorderLayout extends EXXHTMLFragment implements LayoutContainer,
 	public EXBorderLayout(String name) {
 
 		super(name, ResourceUtil.getDownloadURL("classpath",
-				"org/castafiore/resource/layout/EXBorderLayoutContainer.xhtml"));
+				"org/castafiore/resources/layout/EXBorderLayout.xhtml"));
 
 		Container c = ComponentUtil.getContainer("popupContainer", "div", null,	null);
 		c.setStyle("position", "absolute");

@@ -212,7 +212,7 @@ public class EXTree extends EXContainer implements Tree {
 								"src",
 								ResourceUtil
 										.getDownloadURL("classpath",
-												"org/castafiore/resource/tree/img/nolines_minus.gif"));
+												"org/castafiore/resources/tree/img/nolines_minus.gif"));
 				getDescendentOfType(Plus.class).setAttribute("action", "close");
 				if (currentSize != this.size) {
 					children.getChildren().clear();
@@ -232,7 +232,7 @@ public class EXTree extends EXContainer implements Tree {
 							"src",
 							ResourceUtil
 									.getDownloadURL("classpath",
-											"org/castafiore/resource/tree/img/nolines_plus.gif"));
+											"org/castafiore/resources/tree/img/nolines_plus.gif"));
 			getDescendentOfType(Plus.class).setAttribute("action", "open");
 			return getChild("children").getId();
 		}
@@ -281,7 +281,7 @@ public class EXTree extends EXContainer implements Tree {
 		public Plus() {
 			super("Plus", "img");
 			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
-					"org/castafiore/resource/tree/img/nolines_plus.gif"));
+					"org/castafiore/resources/tree/img/nolines_plus.gif"));
 			addEvent(OPEN, Event.CLICK);
 			setAttribute("action", "open");
 			setStyle("vertical-align", "middle");
@@ -299,7 +299,7 @@ public class EXTree extends EXContainer implements Tree {
 		public Minus(String name) {
 			super(name, "img");
 			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
-					"org/castafiore/resource/tree/img/nolines_minus.gif"));
+					"org/castafiore/resources/tree/img/nolines_minus.gif"));
 			addEvent(OPEN, Event.CLICK);
 		}
 
@@ -315,7 +315,7 @@ public class EXTree extends EXContainer implements Tree {
 		public Empty() {
 			super("Empty", "img");
 			setAttribute("src", ResourceUtil.getDownloadURL("classpath",
-					"org/castafiore/resource/tree/img/empty.gif"));
+					"org/castafiore/resources/tree/img/empty.gif"));
 			setStyle("vertical-align", "middle");
 			setStyle("width", "10px");
 		}

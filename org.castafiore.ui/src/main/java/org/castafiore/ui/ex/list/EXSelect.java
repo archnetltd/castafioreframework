@@ -99,6 +99,9 @@ public class EXSelect<T> extends EXContainer implements FormComponent<T>, Castaf
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
+		if(model != null){
+			
+		
 		int size = model.getSize();
 		JArray array = new JArray();
 		int selected = getSelectedIndex();
@@ -111,7 +114,7 @@ public class EXSelect<T> extends EXContainer implements FormComponent<T>, Castaf
 		}
 		response.getWriter().write(array.getJavascript());
 		
-		
+		}
 		return null;
 	}
 	

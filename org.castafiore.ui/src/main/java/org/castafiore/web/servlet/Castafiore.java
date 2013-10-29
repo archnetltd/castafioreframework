@@ -151,12 +151,13 @@ public class Castafiore implements ApplicationContextAware {
 			throws Exception {
 		pre(request, response);
 		try {
+			
 			ResourceLocator locator = (ResourceLocator) context_
 					.getBean("resourcelocator_" + spec);
 			String url = request.getRequestURL().toString();
 
 			String res = StringUtil.splitByWholeSeparator(url, spec)[1];
-
+			
 			FileData f = locator.getResource(spec + ":" + res, "");
 			OutputStream os = response.getOutputStream();
 			response.setContentType(f.getMimeType());
@@ -165,6 +166,8 @@ public class Castafiore implements ApplicationContextAware {
 			ChannelUtil.TransferData(f.getInputStream(), os);
 			os.flush();
 		} catch (Exception e) {
+			String url = request.getRequestURL().toString();
+			System.err.println(url);
 			error(request, response, e);
 		} finally {
 			post(request, response);
