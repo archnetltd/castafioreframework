@@ -7,6 +7,10 @@ import org.castafiore.ui.js.JMap;
 public class UIDialog extends EXContainer{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JMap options = new JMap();
 	public UIDialog(String name, String title) {
 		super(name, "div");
