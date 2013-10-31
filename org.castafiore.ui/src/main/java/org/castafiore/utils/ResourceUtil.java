@@ -39,7 +39,6 @@ public class ResourceUtil {
 
 	private static java.util.Properties castaProp = new java.util.Properties();
 
-	private static java.util.Properties MIMETYPES_EXTENSION = new java.util.Properties();
 
 	private static java.util.Properties EXTENSION_MIMETYPES = new java.util.Properties();
 

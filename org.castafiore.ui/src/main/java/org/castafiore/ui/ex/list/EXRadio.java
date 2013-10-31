@@ -19,8 +19,6 @@ package org.castafiore.ui.ex.list;
 
 import java.util.Map;
 
-import javax.swing.InputVerifier;
-
 import org.castafiore.ui.Container;
 import org.castafiore.ui.EXContainer;
 import org.castafiore.ui.FormComponent;

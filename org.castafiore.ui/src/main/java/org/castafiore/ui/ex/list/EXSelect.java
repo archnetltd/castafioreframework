@@ -36,6 +36,10 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class EXSelect<T> extends EXContainer implements FormComponent<T>, CastafioreController{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private DataModel<T> model;
 	
 

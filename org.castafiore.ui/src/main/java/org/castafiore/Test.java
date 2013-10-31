@@ -1,19 +1,14 @@
 package org.castafiore;
 
 import java.awt.Color;
-import java.util.Map;
 
 import org.castafiore.ui.Container;
 import org.castafiore.ui.EXApplication;
 import org.castafiore.ui.EXContainer;
-import org.castafiore.ui.FormComponent;
-import org.castafiore.ui.UIException;
 import org.castafiore.ui.button.Button;
 import org.castafiore.ui.dynaform.DynaForm;
 import org.castafiore.ui.dynaform.validator.RequiredValidator;
-import org.castafiore.ui.engine.ClientProxy;
 import org.castafiore.ui.events.Event;
-import org.castafiore.ui.events.ServerEvent;
 import org.castafiore.ui.ex.dynaform.EXDynaForm;
 import org.castafiore.ui.ex.form.EXButton;
 import org.castafiore.ui.ex.form.EXCheckBox;
@@ -37,11 +32,14 @@ import org.castafiore.ui.layout.EXHLayout;
 import org.castafiore.ui.layout.EXVLayout;
 import org.castafiore.ui.tab.TabModel;
 import org.castafiore.ui.tab.TabPanel;
-import org.castafiore.ui.tree.TreeNode;
-import org.castafiore.utils.ComponentUtil;
-import org.castafiore.utils.ComponentVisitor;
 
 public class Test extends EXApplication{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	public Test() {
 		super("test");
@@ -92,6 +90,11 @@ public class Test extends EXApplication{
 		
 		EXTabPanel tabs = new EXTabPanel("tab", new TabModel() {
 			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public int size() {
 				return 2;

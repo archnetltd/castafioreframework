@@ -2,7 +2,6 @@ package org.castafiore.ui.events;
 
 import java.util.Map;
 
-import org.castafiore.ui.Container;
 import org.castafiore.ui.UIException;
 import org.castafiore.ui.engine.ClientProxy;
 

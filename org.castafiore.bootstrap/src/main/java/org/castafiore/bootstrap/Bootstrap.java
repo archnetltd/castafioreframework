@@ -1,5 +1,6 @@
 package org.castafiore.bootstrap;
 
+import org.castafiore.bootstrap.example.NavsExample;
 import org.castafiore.bootstrap.example.TableExample;
 import org.castafiore.bootstrap.layout.BTLayout;
 import org.castafiore.ui.EXApplication;
@@ -31,6 +32,7 @@ public class Bootstrap extends EXApplication{
 	public void initApp() {
 		addChild(root); 
 		root.addChild(new TableExample(), "1,1");
+		root.addChild(new NavsExample("sdf"), "1,1");
 	}
 
 }
